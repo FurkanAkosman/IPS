@@ -1,0 +1,93 @@
+/* ========== Content Page CSS ========== */
+
+/* Tokens */
+:root{
+  --primary:#4d0011;
+  --bg-light:#f8f8f3;
+  --bg-dark:#101622;
+  --text:#333333;
+  --accent:#e0e0e0;
+  --radius:12px;
+  --hdr-h:64px;
+}
+
+/* Base safe defaults */
+*,*::before,*::after{ box-sizing:border-box }
+html{ -webkit-text-size-adjust:100% }
+body{ margin:0; background:var(--bg-light); color:var(--text) }
+img,video{ display:block; max-width:100%; height:auto }
+a{ color:inherit; text-decoration:none }
+a:focus-visible,button:focus-visible{ outline:2px solid var(--primary); outline-offset:2px }
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important }
+}
+
+/* Header */
+#siteHeader{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:saturate(180%) blur(6px);
+  background:color-mix(in oklab, var(--bg-light) 80%, transparent);
+  border-bottom:1px solid color-mix(in oklab, var(--primary) 15%, transparent);
+}
+#siteHeader .brand-logo{ width:24px; height:24px; border-radius:6px; object-fit:cover }
+
+/* Desktop nav states */
+[aria-label="Primary"] a:hover{ color:var(--primary) }
+[aria-label="Primary"] a[aria-current="page"],
+[aria-label="Primary"] .is-active{
+  color:var(--primary); font-weight:700;
+}
+
+/* Mobile menu panel */
+#mobileMenu{
+  border-top:1px solid color-mix(in oklab, var(--primary) 15%, transparent);
+  box-shadow:0 12px 24px rgba(0,0,0,.08);
+}
+#mobileMenu a{ border-radius:8px }
+
+/* Main spacing helper if needed on non-Tailwind pages */
+.has-fixed-header main{ padding-top:var(--hdr-h) }
+
+/* Content formatting */
+.prose img, .prose video{ border-radius:10px }
+.prose blockquote{
+  border-inline-start:4px solid var(--primary);
+  margin:1rem 0; padding:0.25rem 0 0.25rem 1rem; font-style:italic;
+}
+.prose ul{ padding-inline-start:1.2rem }
+.prose ul li{ margin:0.25rem 0 }
+
+/* Gallery tiles */
+.aspect-square{ aspect-ratio:1/1 }
+.rounded-lg{ border-radius:var(--radius) }
+.rounded-xl{ border-radius:calc(var(--radius) + 4px) }
+
+/* Cards hover lift */
+.hover\:shadow-xl:hover{ box-shadow:0 16px 40px rgba(0,0,0,.12) }
+.hover\:-translate-y-1:hover{ transform:translateY(-2px) }
+.transition-all{ transition:all .2s ease }
+
+/* Footer */
+footer{ border-top:1px solid var(--accent) }
+footer .social a:hover{ color:var(--primary) }
+
+/* Dark mode */
+.dark body{ background:var(--bg-dark); color:#d1d5db }
+.dark #siteHeader{
+  background:color-mix(in oklab, var(--bg-dark) 80%, transparent);
+  border-bottom-color:#374151;
+}
+.dark #mobileMenu{ border-top-color:#374151; box-shadow:0 12px 24px rgba(0,0,0,.4) }
+.dark .prose blockquote{ border-color:#fca5a5 }
+.dark footer{ border-top-color:#1f2937 }
+
+/* Utility clamps for headings if non-Tailwind content appears */
+.h-clamp{ font-size:clamp(1.5rem,3.8vw,2.5rem); line-height:1.15; letter-spacing:-0.01em }
+
+/* Button fallback (if Tailwind class yoksa) */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  height:40px; padding:0 16px; border-radius:10px; font-weight:700;
+}
+.btn-primary{ background:var(--primary); color:#fff }
+.btn-primary:hover{ filter:brightness(0.95) }
