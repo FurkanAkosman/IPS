@@ -1,0 +1,97 @@
+:root{
+  --burgundy:#4d0011;
+}
+
+/* Sayfa genişliği ve üst boşluklar */
+.team-wrap{max-width:1280px;margin-inline:auto}
+.team-header{padding:16px}
+
+.team-title{
+  font-weight:900;
+  font-size:clamp(28px,6vw,48px);
+  line-height:1.1;
+  letter-spacing:-.05em;
+  color:var(--burgundy,#4d0011);
+  margin:0 0 12px;
+}
+.team-sub{font-size:18px;line-height:27px;color:rgba(31,31,31,.7);margin:0}
+
+/* Grid: oto sığdır */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
+  padding:16px;
+}
+
+/* Kart */
+.member{
+  background:rgba(240,230,232,.5);
+  border-radius:12px;
+  box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+  padding:24px;
+  display:grid;
+  grid-template-rows:auto auto auto auto 1fr;
+  gap:8px;
+  align-content:start;
+}
+.member>*{justify-self:start}
+
+/* Görsel: kare ve taşmasız */
+.member__img{
+  width:100%;
+  height:auto;
+  aspect-ratio:1/1;
+  max-width:100%;
+  border-radius:8px;
+  object-fit:cover;
+}
+
+/* Metinler */
+.member__name{font-weight:700;font-size:20px;line-height:28px;color:#1f1f1f;margin:0}
+.member__role{font-weight:600;font-size:16px;line-height:24px;color:var(--burgundy,#4d0011)}
+.member__dept{font-size:14px;line-height:20px;color:rgba(31,31,31,.7)}
+.member__bio{font-size:14px;line-height:20px;color:rgba(31,31,31,.8);margin:8px 0 0}
+
+/* Dikey ritim */
+.section{padding:40px 0}
+
+/* Aralık iyileştirmeleri */
+@media (min-width:640px){
+  .team-grid{gap:28px}
+}
+@media (min-width:1024px){
+  .team-grid{gap:32px}
+}
+
+/* Geniş header konteyneri istenirse */
+@media (min-width:1280px){
+  .nav.container{max-width:1760px}
+}
+
+/* Header sabit */
+.site-header{position:fixed;left:0;right:0;top:0;z-index:1000;
+  background:rgba(248,248,243,.9);backdrop-filter:saturate(180%) blur(6px);
+  border-bottom:1px solid rgba(77,0,17,.1)}
+/* Hamburger */
+.nav__toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border:1px solid rgba(77,0,17,.2);
+  border-radius:12px;background:#fff;color:#4d0011;box-shadow:0 2px 8px rgba(0,0,0,.08)
+}
+/* Mobil menü: JS, header yüksekliğine göre top yazacak */
+.nav__menu{
+  display:flex;gap:1.25rem;list-style:none;margin:0;padding:0
+}
+@media (max-width:767.98px){
+  .nav__menu{
+    position:fixed;left:0;right:0; /* top JS’ten gelir */
+    background:#f8f8f3;border-top:1px solid rgba(77,0,17,.1);
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
+    display:none;flex-direction:column;align-items:stretch;gap:0;
+    padding:.25rem .5rem;z-index:1100
+  }
+  .nav__menu a{display:block;padding:12px 8px}
+  .nav__menu.is-open{display:flex}   /* JS açıp kapatır */
+}
+@media (min-width:768px){ .nav__toggle{display:none} }

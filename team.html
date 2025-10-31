@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <script src="js/analytics.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IPS — Team</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/figma.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/team.css">
+
+  <!-- Sayfaya özel düzeltmeler -->
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    img,video{max-width:100%;height:auto;display:block}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    section{overflow:clip}
+
+    /* Header */
+    #siteHeader{
+      position:fixed; inset:0 auto auto 0; top:0; width:100%;
+      z-index:50; background:rgba(248,248,243,.9);
+      border-bottom:1px solid rgba(77,0,17,.1);
+      backdrop-filter:saturate(180%) blur(6px);
+    }
+    .container{max-width:1200px;margin-inline:auto;padding:0 1rem}
+
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+    .nav__brand{display:flex;align-items:center;gap:.5rem;color:inherit;text-decoration:none;white-space:nowrap}
+    .nav__brand img{width:32px;height:32px;border-radius:6px}
+
+    .nav__menu{display:flex;align-items:center;gap:1.25rem;list-style:none;margin:0;padding:0;white-space:nowrap}
+    .nav__menu a{color:inherit;text-decoration:none}
+    .btn.btn--primary{
+      display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 16px;border-radius:12px;
+      background:#4d0011;color:#fff;font-weight:700
+    }
+
+    /* Hamburger kutu */
+    .nav__toggle{
+      display:none; /* varsayılan masaüstünde gizli */
+      align-items:center;justify-content:center;width:44px;height:44px;
+      border:1px solid rgba(77,0,17,.18);border-radius:12px;background:#fff;color:#4d0011;
+      box-shadow:0 2px 8px rgba(0,0,0,.08)
+    }
+    .nav__bar{display:block;width:18px;height:2px;background:currentColor;margin:2px auto;border-radius:1px}
+
+    /* Mobil panel (küçük ekran) */
+    @media (max-width: 767.98px){
+      .nav__toggle{display:inline-flex}
+      .nav__menu{
+        position:fixed;left:0;right:0;top:64px;
+        background:#f8f8f3;border-top:1px solid rgba(77,0,17,.1);
+        box-shadow:0 10px 24px rgba(0,0,0,.08);
+        display:none;flex-direction:column;align-items:stretch;gap:0;padding:.25rem .5rem;z-index:60
+      }
+      .nav__menu a{display:block;padding:12px 8px}
+      #navToggle[aria-expanded="true"] + #navMenu{display:flex}
+    }
+
+    /* Otomatik daralma: menü sığmazsa hamburgeri zorla aç */
+    #siteHeader.is-collapsed .nav__toggle{display:inline-flex}
+    #siteHeader.is-collapsed .nav__menu{
+      position:fixed;left:0;right:0;top:64px;
+      background:#f8f8f3;border-top:1px solid rgba(77,0,17,.1);
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+      display:none;flex-direction:column;align-items:stretch;gap:0;padding:.25rem .5rem;z-index:60
+    }
+    #siteHeader.is-collapsed .nav__menu a{display:block;padding:12px 8px}
+    #siteHeader.is-collapsed #navToggle[aria-expanded="true"] + #navMenu{display:flex}
+
+    /* Header telafisi */
+    main{padding-top:64px}
+
+    /* Grid ve kartlar */
+    .team-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    @media (min-width:640px){ .team-grid{gap:1.25rem} }
+    @media (min-width:1024px){ .team-grid{gap:1.5rem} }
+
+    .member{
+      display:block;background:#fff;border:1px solid rgba(77,0,17,.08);border-radius:14px;
+      padding:14px;text-decoration:none;color:inherit;transition:transform .15s ease, box-shadow .15s ease
+    }
+    .member:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
+    .member__img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px}
+    .member__name{margin:.5rem 0 0;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+    .member__role{font-size:.9rem;font-weight:600;color:#4d0011}
+    .member__dept{font-size:.85rem;color:#654}
+    .member__bio{font-size:.9rem;line-height:1.5;color:#333;margin:.5rem 0 0}
+    .team-header{text-align:center;margin-top:1rem;margin-bottom:1.5rem}
+    .team-title{font-size:clamp(1.75rem,4vw,2.5rem);margin:.25rem 0 0}
+    .team-sub{color:#4d0011;opacity:.85;font-size:clamp(.95rem,2.2vw,1.1rem)}
+  </style>
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <header id="siteHeader" aria-label="Site üst navigasyon">
+    <nav class="nav container" aria-label="Ana menü">
+      <a class="nav__brand" href="index.html">
+        <img src="assets/img/kulup-logo.jpg" alt="IPS Kulüp Logosu" loading="lazy" decoding="async"/>
+        <span class="nav__brand-text">Interdisciplinary Project Society</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false"
+        aria-controls="navMenu" aria-label="Menüyü aç/kapat">
+  <!-- 3 çizgi hamburger -->
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M4 6h16M4 12h16M4 18h16"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</button>
+
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html">Main Page</a></li>
+        <li><a href="team.html" class="is-active">Team</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li>
+          <a class="btn btn--primary" href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">Join Us</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section">
+    <div class="container team-wrap">
+      <header class="team-header">
+        <h1 class="h2 team-title">Meet Our Team</h1>
+        <p class="team-sub">The driving force behind the Interdisciplinary Project Society.</p>
+      </header>
+
+      <!-- Kartlar -->
+      <section class="team-grid">
+        <!-- … mevcut tüm <a class="member"> kartları aynen … -->
+                  <a class="member" href="people/furkan-akosman.html" aria-label="Furkan Akosman">
+          <img class="member__img" src="assets/img/team/furkan_akosman.jpg" alt="Furkan Akosman" loading="lazy" decoding="async">
+          <h3 class="member__name">Furkan Akosman</h3>
+          <div class="member__role">President</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">Interested in AI and machine learning. As President, I oversee all society operations and guide our strategic direction.</p>
+        </a>
+
+        <a class="member" href="people/zeynep-torbaci.html" aria-label="Zeynep Torbacı">
+          <img class="member__img" src="assets/img/team/zeynep_torbaci.jpg" alt="Zeynep Torbacı" loading="lazy" decoding="async">
+          <h3 class="member__name">Zeynep Torbacı</h3>
+          <div class="member__role">Vice President</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">Passionate about biotech and sustainability. I support the President and manage internal affairs.</p>
+        </a>
+
+        <a class="member" href="people/omer-faruk-dokgoz.html" aria-label="Ömer Faruk Dokgöz">
+          <img class="member__img" src="assets/img/team/omer_faruk_dokgoz.jpeg" alt="Ömer Faruk Dokgöz" loading="lazy" decoding="async">
+          <h3 class="member__name">Ömer Faruk Dokgöz</h3>
+          <div class="member__role">Project Manager</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">Love UI/UX and human-centered design. I lead project teams from ideation to completion.</p>
+        </a>
+
+        <a class="member" href="people/efnan-karatas.html" aria-label="Efnan Karataş">
+          <img class="member__img" src="assets/img/team/efnan_karatas.jpeg" alt="Efnan Karataş" loading="lazy" decoding="async">
+          <h3 class="member__name">Efnan Karataş</h3>
+          <div class="member__role">Treasurer</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">Fintech enthusiast. I manage finances, budgeting, and sponsorship outreach.</p>
+        </a>
+
+        <a class="member" href="people/omer-efe-merey.html" aria-label="Ömer Efe Merey">
+          <img class="member__img" src="assets/img/team/omer_efe_merey.jpg" alt="Ömer Efe Merey" loading="lazy" decoding="async">
+          <h3 class="member__name">Ömer Efe Merey</h3>
+          <div class="member__role">Secretary</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">Fascinated by cognitive science. I handle records and internal communications.</p>
+        </a>
+
+        <a class="member" href="people/sudem-ozdemir.html" aria-label="Sudem Özdemir">
+          <img class="member__img" src="assets/img/team/sudem_ozdemir.jpeg" alt="Sudem Özdemir" loading="lazy" decoding="async">
+          <h3 class="member__name">Sudem Özdemir</h3>
+          <div class="member__role">Communications Lead</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">I manage social media, newsletter, and external communications.</p>
+        </a>
+
+        <a class="member" href="people/yigit-buyrul.html" aria-label="Yiğit Buyrul">
+          <img class="member__img" src="assets/img/team/yigit_buyrul.jpg" alt="Yiğit Buyrul" loading="lazy" decoding="async">
+          <h3 class="member__name">Yiğit Buyrul</h3>
+          <div class="member__role">Outreach Coordinator</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">I build relationships with organizations and partners.</p>
+        </a>
+
+        <a class="member" href="people/sena-ozbey.html" aria-label="Sena Özbey">
+          <img class="member__img" src="assets/img/team/sena_ozbey.jpeg" alt="Sena Özbey" loading="lazy" decoding="async">
+          <h3 class="member__name">Sena Özbey</h3>
+          <div class="member__role">Webmaster</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">Maintain and update the IPS website.</p>
+        </a>
+
+        <a class="member" href="people/rumeysa-guclu.html" aria-label="Rümeyse Güçlü">
+          <img class="member__img" src="assets/img/team/rumeysa_guclu.jpeg" alt="Rümeyse Güçlü" loading="lazy" decoding="async">
+          <h3 class="member__name">Rümeyse Güçlü</h3>
+          <div class="member__role">Creative Director</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">Branding and visual identity.</p>
+        </a>
+
+        <a class="member" href="people/yusuf-mete-gecer.html" aria-label="Yusuf Mete Geçer">
+          <img class="member__img" src="assets/img/team/anonim.png" alt="Yusuf Mete Geçer" loading="lazy" decoding="async">
+          <h3 class="member__name">Yusuf Mete Geçer</h3>
+          <div class="member__role">Webmaster</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">Maintain and update the IPS website.</p>
+        </a>
+
+        <a class="member" href="people/ubeyde-acar.html" aria-label="Ubeyde Acar">
+          <img class="member__img" src="assets/img/team/anonim.png" alt="Ubeyde Acar" loading="lazy" decoding="async">
+          <h3 class="member__name">Ubeyde Acar</h3>
+          <div class="member__role">Webmaster</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">Maintain and update the IPS website.</p>
+        </a>
+
+        <a class="member" href="people/yesim-aydin.html" aria-label="Yeşim Aydın">
+          <img class="member__img" src="assets/img/team/yesim_aydin.jpg" alt="Yeşim Aydın" loading="lazy" decoding="async">
+          <h3 class="member__name">Yeşim Aydın</h3>
+          <div class="member__role">Webmaster</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">Maintain and update the IPS website.</p>
+        </a>
+
+        <a class="member" href="people/erkan-kalam.html" aria-label="Erkan Kalam">
+          <img class="member__img" src="assets/img/team/erkan_kalam.jpeg" alt="Erkan Kalam" loading="lazy" decoding="async">
+          <h3 class="member__name">Erkan Kalam</h3>
+          <div class="member__role">Webmaster</div>
+          <div class="member__dept">MBG</div>
+          <p class="member__bio">Maintain and update the IPS website.</p>
+        </a>
+      </section>
+    </div>
+  </main>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span id="y"></span> Interdisciplinary Project Society. All Rights Reserved.</p>
+      <ul class="footer__links">
+        <li><a href="https://www.youtube.com/@ipsociety2025" target="_blank" aria-label="YouTube">
+          <img src="assets/icon/social-media/youtube.png" alt="YouTube" width="22" height="22" loading="lazy" decoding="async">
+        </a></li>
+        <li><a href="https://www.linkedin.com/in/%C4%B1ps" target="_blank" aria-label="LinkedIn">
+          <img src="assets/icon/social-media/linkedin.png" alt="LinkedIn" width="22" height="22" loading="lazy" decoding="async">
+        </a></li>
+        <li><a href="https://www.tiktok.com/@ip_society?_t=ZS-90QYlkW9jJC&_r=1" target="_blank" aria-label="TikTok">
+          <img src="assets/icon/social-media/tik-tok.png" alt="TikTok" width="22" height="22" loading="lazy" decoding="async">
+        </a></li>
+        <li><a href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" aria-label="Instagram">
+          <img src="assets/icon/social-media/instagram.png" alt="Instagram" width="22" height="22" loading="lazy" decoding="async">
+        </a></li>
+        <li><a href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" aria-label="WhatsApp Join">
+          <img src="assets/icon/social-media/whatsapp.png" alt="Join WhatsApp" width="22" height="22" loading="lazy" decoding="async">
+        </a></li>
+      </ul>
+    </div>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <!-- Ortak JS (aktif link, smooth scroll vb.) -->
+  <script src="assets/js/app.js"></script>
+
+  <!-- Otomatik daraltma + menü davranışı -->
+<script>
+  const header = document.querySelector('.site-header');
+  const toggle = document.getElementById('navToggle');
+  const menu   = document.getElementById('navMenu');
+
+  // Menüyü header altına sabitle
+  function placeMenu(){
+    if (getComputedStyle(menu).position === 'fixed') {
+      const h = header ? header.offsetHeight : 64;
+      menu.style.top = h + 'px';
+    } else {
+      menu.style.top = '';
+    }
+  }
+
+  function openMenu(){
+    placeMenu();
+    menu.classList.add('is-open');
+    toggle.setAttribute('aria-expanded','true');
+  }
+  function closeMenu(){
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+  function toggleMenu(){
+    menu.classList.contains('is-open') ? closeMenu() : openMenu();
+  }
+
+  toggle.addEventListener('click', toggleMenu);
+  menu.addEventListener('click', e => { if (e.target.tagName === 'A') closeMenu(); });
+  window.addEventListener('resize', placeMenu, {passive:true});
+  window.addEventListener('scroll', placeMenu, {passive:true});
+  document.addEventListener('DOMContentLoaded', placeMenu);
+</script>
+</body>
+</html>

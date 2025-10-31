@@ -1,0 +1,67 @@
+/* Genel */
+:root{
+  --primary:#4d0011;
+  --overlay: rgba(0,0,0,.45);
+}
+html,body{height:100%}
+
+/* Scroll-snap dikey slider */
+.scroll-snap-container{
+  scroll-snap-type: y mandatory;
+}
+.scroll-snap-child{
+  scroll-snap-align: start;
+}
+
+/* Slayt iskeleti */
+.slide{
+  position:relative;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 1.5rem;
+}
+.slide-bg{
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+  filter: brightness(.9);
+}
+.slide-overlay{
+  position:absolute; inset:0;
+  background: var(--overlay);
+  backdrop-filter: blur(1px);
+}
+.slide-content{
+  position:relative; z-index:10;
+  max-width: 56rem;
+  text-align:center;
+  color:#fff;
+}
+.slide-content h2{
+  font-size:clamp(2rem,4vw,3.5rem);
+  font-weight: 800;
+  letter-spacing:-.02em;
+  color:#fbeff1;
+}
+.slide-content .meta{
+  margin-top:.75rem; opacity:.9
+}
+.slide-content .lead{
+  margin-top:1.25rem; font-size:clamp(1.05rem,1.3vw,1.25rem);
+  line-height:1.6;
+}
+.btn-primary{
+  display:inline-flex; align-items:center; justify-content:center;
+  margin-top:1.75rem; height:3rem; padding:0 1.5rem;
+  border-radius:.75rem; background:var(--primary); color:#fff;
+  font-weight:700; letter-spacing:.01em; text-decoration:none;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.btn-primary:hover{ transform: scale(1.03); opacity:.95 }
+
+/* Küçük ekranlarda daha yumuşak davranış */
+@media (max-width: 640px){
+  .scroll-snap-container{ scroll-snap-type: y proximity; }
+  .slide{ height: 92vh; }
+}

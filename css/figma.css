@@ -1,0 +1,68 @@
+/* Figma'dan çıkarılacak tasarım token'ları */
+:root {
+/* Renkler */
+--clr-bg: #ffffff;
+--clr-surface: #ffffff;
+--clr-text: #1D0C0F; /* Night Rider */
+--clr-muted: #475569;
+--clr-primary: #4D0011; /* Castro */
+--clr-primary-ink: #F8F8F3; /* Pampas */
+--clr-border: #e2e8f0;
+
+
+/* Tipografi */
+--ff-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+--fs-900: clamp(2rem, 3.2vw + 1rem, 3.75rem); /* ~60px desktop */
+--fs-800: 1.875rem; /* 30px */
+--fs-700: 1.25rem; /* 20px */
+--fs-600: 1.125rem; /* 18px */
+--fs-400: 1rem; /* 16px */
+--lh-tight: 1.1; /* h1 */
+--lh-base: 1.6; /* body */
+
+
+/* Spacing ve Radius */
+--space-1: .25rem;
+--space-2: .5rem;
+--space-3: .75rem;
+--space-4: 1rem;
+--space-6: 1.5rem;
+--space-8: 2rem;
+--space-12: 3rem;
+--radius-sm: .5rem;
+--radius-lg: 1rem;
+--shadow-1: 0 1px 2px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.08);
+}
+
+
+@media (max-width: 768px){
+:root { --fs-900: 2rem; --fs-800: 1.5rem; }
+}
+
+/* figma.css içi: kapsam eklemeleri */
+.snap .scroll-snap-container{ scroll-snap-type: y mandatory; }            /* vardı: .scroll-snap-container */
+.snap .scroll-snap-child{ scroll-snap-align: start; }                     /* vardı: .scroll-snap-child */
+
+.snap .slide{ position:relative; height:100vh; display:flex; align-items:center; justify-content:center; padding:0 1.5rem; }
+.snap .slide-bg{ position:absolute; inset:0; background-size:cover; background-position:center; filter:brightness(.9); }
+.snap .slide-overlay{ position:absolute; inset:0; background: var(--overlay); backdrop-filter: blur(1px); }
+.snap .slide-content{ position:relative; z-index:10; max-width:56rem; text-align:center; color:#fff; }
+.snap .slide-content h2{ font-size:clamp(2rem,4vw,3.5rem); font-weight:800; letter-spacing:-.02em; color:#fbeff1; }
+.snap .slide-content .meta{ margin-top:.75rem; opacity:.9 }
+.snap .slide-content .lead{ margin-top:1.25rem; font-size:clamp(1.05rem,1.3vw,1.25rem); line-height:1.6; }
+
+/* Sadece slayt içinde buton stili ver; global .btn-primary ile çakışmaz */
+.snap .btn-primary{
+  display:inline-flex; align-items:center; justify-content:center;
+  margin-top:1.75rem; height:3rem; padding:0 1.5rem;
+  border-radius:.75rem; background:var(--primary); color:#fff;
+  font-weight:700; letter-spacing:.01em; text-decoration:none;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.snap .btn-primary:hover{ transform:scale(1.03); opacity:.95 }
+
+/* Küçük ekran davranışı */
+@media (max-width:640px){
+  .snap .scroll-snap-container{ scroll-snap-type:y proximity; }
+  .snap .slide{ height:92vh; }
+}

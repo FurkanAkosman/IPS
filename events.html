@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <script src="js/analytics.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IPS — Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/figma.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/events.css">
+</head>
+<body>
+  <!-- Header / Nav -->
+<header class="site-header">
+<nav class="nav container" aria-label="Ana menü">
+<a class="nav__brand" href="index.html" aria-label="IPS Ana Sayfa">
+<img src="assets/img/kulup-logo.jpg" alt="IPS Kulüp Logosu" />
+<span class="nav__brand-text">Interdisciplinary Project Society</span>
+</a>
+
+
+<button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menüyü aç/kapat">
+<span class="nav__bar"></span>
+<span class="nav__bar"></span>
+<span class="nav__bar"></span>
+<span class="nav__bar"></span>
+</button>
+
+
+<ul class="nav__menu" id="navMenu">
+<li><a href="index.html" class="is-active">Main Page</a></li>
+<li><a href="team.html">Team</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="blog.html">Blog</a></li>
+<a class="btn btn--primary"
+   href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt"
+   target="_blank" rel="noopener">
+  Join Us
+</a>
+</ul>
+</nav>
+</header>
+
+  <main class="section">
+    <div class="container events-wrap">
+      <!-- Başlık ve “Add Event” -->
+      <div class="events-head">
+        <div class="events-title">
+          <h1 class="h1">IPS Events &amp; Timeline</h1>
+          <p class="lead">Explore our upcoming and past events. Join us to learn, collaborate, and innovate across disciplines.</p>
+        </div>
+
+        <a id="add" class="btn btn--primary add-btn" href="#">
+          <span class="add-btn__ico" aria-hidden="true">+</span>
+          <span>Add Event</span>
+        </a>
+      </div>
+
+      <!-- Arama ve Kategori filtreleri -->
+      <div class="events-toolbar">
+        <label class="search">
+          <span class="search__ico" aria-hidden="true">🔎</span>
+          <input id="eventSearch" type="search" placeholder="Search for events" aria-label="Search events">
+        </label>
+
+        <div class="filters" role="tablist" aria-label="Categories">
+          <button class="chip is-active" data-filter="all">All</button>
+          <button class="chip" data-filter="workshop">Workshops</button>
+          <button class="chip" data-filter="talk">Talks</button>
+          <button class="chip" data-filter="social">Social Events</button>
+        </div>
+      </div>
+
+      <!-- Yaklaşan Etkinlikler -->
+      <section class="timeline">
+        <h2 class="h2">Upcoming Events</h2>
+        <ol class="timeline__list">
+          <li class="tl-item" data-type="workshop">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="card">
+              <h3 class="card__title">Project Writing Workshop</h3>
+              <p class="card__meta">November 23, 2025 · 16:00 · Innovation Hub</p>
+              <p class="card__text">
+                IPS’s first project writing event will guide participants through the essentials of preparing interdisciplinary research proposals.
+              </p>
+              <div class="card__tag">Workshop</div>
+            </article>
+          </li>
+
+          <li class="tl-item" data-type="talk">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="card">
+              <h3 class="card__title">Student Seminar Series</h3>
+              <p class="card__meta">Date: TBA · Room 101</p>
+              <p class="card__text">
+                Members present ongoing research and share insights. Open to Q&A and discussion.
+              </p>
+              <div class="card__tag">Talk</div>
+            </article>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Geçmiş Etkinlikler -->
+      <section class="timeline">
+        <h2 class="h2">Past Events</h2>
+        <ol class="timeline__list">
+          <li class="tl-item" data-type="social">
+            <span class="tl-dot tl-dot--past" aria-hidden="true"></span>
+            <article class="card card--past">
+              <h3 class="card__title">Weekly Meeting – Project Coordination</h3>
+              <p class="card__meta">October 20, 2025 · IPS Office</p>
+              <p class="card__text">Coordination on milestones and upcoming workshops.</p>
+              <div class="card__tag card__tag--past">Social</div>
+            </article>
+          </li>
+
+          <li class="tl-item" data-type="talk">
+            <span class="tl-dot tl-dot--past" aria-hidden="true"></span>
+            <article class="card card--past">
+              <h3 class="card__title">Project Showcase Day</h3>
+              <p class="card__meta">October 27, 2025 · IPS Office</p>
+              <p class="card__text">Refining the blog workflow and publication timeline.</p>
+              <div class="card__tag card__tag--past">Talk</div>
+            </article>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+ <footer class="site-footer">
+  <div class="container footer__inner">
+    <p>© <span id="y"></span> Interdisciplinary Project Society. All Rights Reserved.</p>
+
+    <ul class="footer__links">
+      <li>
+        <a href="https://www.youtube.com/@ipsociety2025" target="_blank" rel="noopener">
+          <img src="assets/icon/social-media/youtube.png" alt="YouTube" width="22" height="22">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/%C4%B1ps" target="_blank" rel="noopener">
+          <img src="assets/icon/social-media/linkedin.png" alt="LinkedIn" width="22" height="22">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.tiktok.com/@ip_society?_t=ZS-90QYlkW9jJC&amp;_r=1" target="_blank" rel="noopener">
+          <img src="assets/icon/social-media/tik-tok.png" alt="TikTok" width="22" height="22">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" rel="noopener">
+          <img src="assets/icon/social-media/instagram.png" alt="Instagram" width="22" height="22">
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    // Basit arama + kategori filtresi
+    const chips = [...document.querySelectorAll('.chip')];
+    const items = [...document.querySelectorAll('.tl-item')];
+    const q = document.getElementById('eventSearch');
+
+    chips.forEach(c => c.addEventListener('click', () => {
+      chips.forEach(x => x.classList.remove('is-active'));
+      c.classList.add('is-active');
+      filter();
+    }));
+
+    q.addEventListener('input', filter);
+
+    function filter(){
+      const type = document.querySelector('.chip.is-active').dataset.filter;
+      const text = q.value.trim().toLowerCase();
+      items.forEach(li => {
+        const okType = type === 'all' || li.dataset.type === type;
+        const okText = li.textContent.toLowerCase().includes(text);
+        li.style.display = okType && okText ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+:root {
+  --castro: #4D0011;
+  --pampas: #F8F8F3;
+  --dawn: #F4E6E9;
+  --text: #1D0C0F;
+}
+
+/* === GLOBAL === */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--pampas);
+  color: var(--text);
+  font: 400 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", Helvetica, Arial;
+}
+.wrap { max-width: 1024px; margin-inline: auto; padding: 0 16px; }
+
+/* === HEADER === */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(248, 248, 243, 0.95);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(77, 0, 17, 0.1);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.brand img { width: 32px; height: 32px; border-radius: 6px; }
+.brand span {
+  font: 700 18px/1 Inter, sans-serif;
+  letter-spacing: -0.27px;
+  color: var(--text);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav a {
+  font: 500 14px/21px Inter, sans-serif;
+  color: var(--text);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav a:hover { color: var(--castro); }
+.nav .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 8px;
+  background: var(--castro);
+  color: var(--pampas);
+  font: 700 14px/20px Inter, sans-serif;
+  text-decoration: none;
+}
+
+/* === PERSON TOP === */
+.person {
+  max-width: 896px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--castro);
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.person__top {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+}
+.person__photo img {
+  width: 260px;
+  height: 260px;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+}
+.person__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.person__name {
+  font-weight: 700;
+  font-size: clamp(24px, 5vw, 32px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--castro);
+  margin: 0 0 8px;
+}
+.person__meta {
+  font-size: 16px;
+  color: rgba(29, 12, 15, 0.8);
+  margin-bottom: 12px;
+}
+
+/* === SOCIAL ICONS === */
+.person__social {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.person__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.person__social img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.person__social a:hover img {
+  transform: scale(1.1);
+  opacity: .85;
+}
+
+/* === SECTIONS === */
+.person__section {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.person__section h2 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  color: var(--castro);
+  margin: 0 0 12px;
+}
+.person__section p {
+  margin: 0;
+  background: #fff;
+  border: 1px solid rgba(77, 0, 17, 0.1);
+  padding: 16px 24px;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* === FOOTER === */
+.site-footer {
+  padding: 32px 16px;
+  border-top: 1px solid rgba(77, 0, 17, 0.2);
+  text-align: center;
+}
+.footer__inner { max-width: 1024px; margin: 0 auto; }
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .person__top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+  .person__photo img {
+    width: 220px;
+    height: 220px;
+  }
+  .nav {
+    display: none; /* mobil menü ayrı kodda gösterilecek */
+  }
+}
+
+/* Footer hizalama ve liste reset */
+.footer__inner{
+  max-width:1024px; margin:0 auto;
+  display:flex; flex-direction:column; gap:12px;
+  align-items:center; justify-content:center; text-align:center;
+}
+.footer__links{
+  list-style:none; margin:0; padding:0;
+  display:flex; align-items:center; justify-content:center;
+  gap:16px; flex-wrap:wrap;
+}
+.footer__links a{ display:inline-flex; align-items:center }
+.footer__links img{ width:22px; height:22px; object-fit:contain; transition:opacity .2s }
+.footer__links a:hover img{ opacity:.8 }
