@@ -14,6 +14,84 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/team.css">
 
+  <!-- Performans ipuçları -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="dns-prefetch" href="//images.unsplash.com">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+  <!-- LCP yardımcı preload -->
+  <link rel="preload" as="image" href="assets/img/kulup-logo.jpg" imagesrcset="assets/img/kulup-logo.jpg 1x" imagesizes="32px" />
+
+  <!-- Sayfa ön getirme (site içi) -->
+  <link rel="prefetch" href="index.html" as="document">
+  <link rel="prefetch" href="events.html" as="document">
+  <link rel="prefetch" href="blog.html" as="document">
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://furkanakosman.github.io/IPS/team.html" />
+  <meta name="description" content="IPS ekibi. Interdisciplinary Project Society'yi ileriye taşıyan çekirdek ve gönüllü ekip üyeleri." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#4d0011" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Interdisciplinary Project Society" />
+  <meta property="og:title" content="IPS — Team" />
+  <meta property="og:description" content="Interdisciplinary Project Society ekibiyle tanışın." />
+  <meta property="og:url" content="https://furkanakosman.github.io/IPS/team.html" />
+  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
+  <meta property="og:locale" content="tr_TR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IPS — Team" />
+  <meta name="twitter:description" content="Interdisciplinary Project Society ekibiyle tanışın." />
+  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Interdisciplinary Project Society",
+    "url":"https://furkanakosman.github.io/IPS/",
+    "logo":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg",
+    "sameAs":[
+      "https://www.instagram.com/ip_society",
+      "https://www.youtube.com/@ipsociety2025",
+      "https://www.tiktok.com/@ip_society",
+      "https://www.linkedin.com/in/%C4%B1ps"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: WebPage (Team) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"IPS — Team",
+    "url":"https://furkanakosman.github.io/IPS/team.html",
+    "description":"IPS ekibi. Interdisciplinary Project Society'yi ileriye taşıyan çekirdek ve gönüllü ekip üyeleri."
+  }
+  </script>
+
+  <!-- JSON-LD: Site navigation -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[
+      {"@type":"SiteNavigationElement","name":"Main Page","url":"https://furkanakosman.github.io/IPS/"},
+      {"@type":"SiteNavigationElement","name":"Team","url":"https://furkanakosman.github.io/IPS/team.html"},
+      {"@type":"SiteNavigationElement","name":"Events","url":"https://furkanakosman.github.io/IPS/events.html"},
+      {"@type":"SiteNavigationElement","name":"Blog","url":"https://furkanakosman.github.io/IPS/blog.html"}
+    ]
+  }
+  </script>
+
   <!-- Sayfaya özel düzeltmeler -->
   <style>
     *,*::before,*::after{box-sizing:border-box}
@@ -44,7 +122,7 @@
 
     /* Hamburger kutu */
     .nav__toggle{
-      display:none; /* varsayılan masaüstünde gizli */
+      display:none;
       align-items:center;justify-content:center;width:44px;height:44px;
       border:1px solid rgba(77,0,17,.18);border-radius:12px;background:#fff;color:#4d0011;
       box-shadow:0 2px 8px rgba(0,0,0,.08)
@@ -75,8 +153,10 @@
     #siteHeader.is-collapsed .nav__menu a{display:block;padding:12px 8px}
     #siteHeader.is-collapsed #navToggle[aria-expanded="true"] + #navMenu{display:flex}
 
-    /* Header telafisi */
+    /* Header telafisi ve CLS azaltımı */
     main{padding-top:64px}
+    h1,h2,h3{line-height:1.2}
+    img[loading="lazy"]{contain-intrinsic-size:auto 200px}
 
     /* Grid ve kartlar */
     .team-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
@@ -104,7 +184,7 @@
   <header id="siteHeader" aria-label="Site üst navigasyon">
     <nav class="nav container" aria-label="Ana menü">
       <a class="nav__brand" href="index.html">
-        <img src="assets/img/kulup-logo.jpg" alt="IPS Kulüp Logosu" loading="lazy" decoding="async"/>
+        <img src="assets/img/kulup-logo.jpg" alt="IPS Kulüp Logosu" loading="lazy" decoding="async" width="32" height="32"/>
         <span class="nav__brand-text">Interdisciplinary Project Society</span>
       </a>
 
@@ -280,14 +360,18 @@
 
   <!-- Otomatik daraltma + menü davranışı -->
 <script>
+  // Header referansı: .site-header yoksa #siteHeader kullan
   const header = document.querySelector('.site-header');
+  const headerFallback = document.getElementById('siteHeader');
+  const headerEl = header || headerFallback;
+
   const toggle = document.getElementById('navToggle');
   const menu   = document.getElementById('navMenu');
 
   // Menüyü header altına sabitle
   function placeMenu(){
     if (getComputedStyle(menu).position === 'fixed') {
-      const h = header ? header.offsetHeight : 64;
+      const h = headerEl ? headerEl.offsetHeight : 64;
       menu.style.top = h + 'px';
     } else {
       menu.style.top = '';

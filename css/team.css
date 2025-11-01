@@ -95,3 +95,54 @@
   .nav__menu.is-open{display:flex}   /* JS açıp kapatır */
 }
 @media (min-width:768px){ .nav__toggle{display:none} }
+
+/* ========================= */
+/* Eklemeler: erişilebilirlik, etkileşim, performans, yazdırma */
+/* ========================= */
+
+/* Aktif link */
+.nav__menu a.is-active,
+.nav__menu a[aria-current="page"]{
+  color:var(--burgundy);
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* Klavye odak görseli */
+:focus-visible{
+  outline:2px solid var(--burgundy);
+  outline-offset:2px;
+  border-radius:6px;
+}
+
+/* Hover ve geçişler */
+.member{
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.member:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(0,0,0,.12), 0 6px 12px rgba(0,0,0,.08);
+}
+
+/* Küçük CLS azaltımı */
+img[loading="lazy"]{contain-intrinsic-size:auto 300px}
+
+/* Ankraj atlamaları: header yüksekliği kadar boşluk */
+[id]{
+  scroll-margin-top:72px;
+}
+
+/* Hareket azaltma tercihi */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .member:hover{transform:none;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)}
+}
+
+/* Yazdırma için sadeleştir */
+@media print{
+  .site-header,.nav__menu,.nav__toggle{display:none !important}
+  .member{box-shadow:none;border:1px solid #ddd}
+  .member__img{break-inside:avoid}
+  .section{padding:0}
+}

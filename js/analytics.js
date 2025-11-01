@@ -1,8 +1,8 @@
-// Google Analytics 4 izleme
+// Google Analytics 4 izleme (Interdisciplinary Project Society)
 window.dataLayer = window.dataLayer || [];
 function gtag(){ dataLayer.push(arguments); }
 
-// gtag.js dosyasını dinamik olarak yükle
+// GA4 scriptini dinamik olarak yükle
 (function(){
   const s = document.createElement('script');
   s.async = true;
@@ -10,6 +10,11 @@ function gtag(){ dataLayer.push(arguments); }
   document.head.appendChild(s);
 })();
 
-// GA yapılandırması
-gtag('js', new Date());
-gtag('config', 'G-RRXXHFHW74', { anonymize_ip: true });
+// Sayfa tamamen yüklendiğinde çalıştır
+window.addEventListener('load', () => {
+  gtag('js', new Date());
+  gtag('config', 'G-RRXXHFHW74', {
+    anonymize_ip: true,     // IP anonimleştirme (GDPR uyumlu)
+    send_page_view: true    // Sayfa görüntülenmelerini otomatik gönder
+  });
+});

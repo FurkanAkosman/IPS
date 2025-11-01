@@ -2,26 +2,32 @@
 document.addEventListener('DOMContentLoaded', () => {
   /** ===============================
    *  Aktif menü linki
-   *  - GitHub Pages gibi alt dizinlerde çalışır
+   *  - Alt dizinlerde (GitHub Pages) doğru çalışır
    * =============================== */
   const normalizePath = (p) => {
     if (!p) return '/';
+    // query ve hash kaldır
     p = p.split('#')[0].split('?')[0];
+    // index.html -> dizin kökü
     if (p.endsWith('/index.html')) p = p.slice(0, -'/index.html'.length) + '/';
+    // trailing slash zorunlu
     if (!p.endsWith('/')) p += '/';
     return p;
   };
+
+  const baseURL = new URL(document.baseURI); // alt dizin bilinci
   const current = normalizePath(location.pathname);
 
   document.querySelectorAll('header a[href]').forEach((a) => {
     try {
-      const url = new URL(a.getAttribute('href'), location.origin);
-      if (url.origin !== location.origin) return;        // dış bağlantı
+      // relative href’leri içinde bulunulan sayfaya göre çöz
+      const url = new URL(a.getAttribute('href'), document.baseURI);
+      // farklı origin ise geç
+      if (url.origin !== location.origin) return;
       const targetPath = normalizePath(url.pathname);
       if (targetPath === current) {
         a.setAttribute('aria-current', 'page');
         a.classList.add('is-active');
-        // stil sınıfı yoksa asgari vurguyu uygula
         a.style.color ||= '#4D0011';
         a.style.fontWeight ||= '700';
       }
@@ -29,7 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /** ===============================
-   *  Mobil menü aç/kapa (opsiyonel)
+   *  target=_blank dış link güvenliği
+   * =============================== */
+  document.querySelectorAll('a[target="_blank"]').forEach((a) => {
+    const rel = (a.getAttribute('rel') || '').split(/\s+/);
+    if (!rel.includes('noopener')) rel.push('noopener');
+    if (!rel.includes('noreferrer')) rel.push('noreferrer');
+    a.setAttribute('rel', rel.join(' ').trim());
+  });
+
+  /** ===============================
+   *  Mobil menü aç/kapa
    *  - .nav__toggle + #navMenu
    * =============================== */
   const toggle = document.getElementById('navToggle');
@@ -81,11 +97,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const hash = link.getAttribute('href');
       if (!hash || hash === '#') return;
       if (link.target === '_blank') return;
-      const target = document.querySelector(hash);
+      const id = decodeURIComponent(hash);
+      const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
       smoothScrollTo(target);
-      history.pushState(null, '', hash);
+      history.pushState(null, '', id);
     }, { passive: false });
+  });
+
+  // Geri/ileri gezinmede hash konumunu koru
+  window.addEventListener('popstate', () => {
+    if (location.hash) {
+      const target = document.querySelector(decodeURIComponent(location.hash));
+      if (target) smoothScrollTo(target);
+    }
   });
 });
