@@ -3,14 +3,6 @@ name: Generate Sitemap
 on:
   push:
     branches: [ main ]
-    paths:
-      - '**/*.html'
-      - 'people/**/*.html'
-      - 'assets/pdf/*.pdf'
-      - 'robots.txt'
-      - '.github/workflows/sitemap.yml'
-    paths-ignore:
-      - 'sitemap.xml'
   workflow_dispatch:
 
 permissions:
@@ -20,40 +12,36 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Generate sitemap.xml
-        shell: bash
         run: |
-          set -u
           BASE_URL="https://furkanakosman.github.io/IPS"
-
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
-
-          # HTML+PDF dosyaları; gizli klasörleri ve workflow klasörünü dışla
           find . -type f \( -name "*.html" -o -name "*.pdf" \) \
-            ! -path "./.git/*" \
-            ! -path "./.github/*" \
-            ! -name "sitemap.xml" \
-            -print0 \
-          | sort -z \
-          | while IFS= read -r -d '' file; do
+            ! -path "./.git/*" ! -path "./.github/*" ! -name "sitemap.xml" \
+          | sort | while read -r file; do
               file="${file#./}"
               url="${BASE_URL}/${file}"
-              # index.html → klasör URL'si
-              url="${url%/index.html}"
               url="${url/index.html/}"
               echo "  <url><loc>${url}</loc></url>" >> sitemap.xml
             done
-
           echo '</urlset>' >> sitemap.xml
 
-      - name: Commit and push (auto)
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: update sitemap [skip ci]"
-          file_pattern: sitemap.xml
+      - name: Commit and push sitemap.xml safely
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+          git pull --rebase origin main || true
+          if ! git diff --quiet sitemap.xml; then
+            git add sitemap.xml
+            git commit -m "chore: update sitemap [skip ci]" || true
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
