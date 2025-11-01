@@ -1,48 +1,88 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <!-- GA4 -->
   <script src="js/analytics.js"></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>IPS — Events</title>
+  <meta name="description" content="IPS etkinlikleri ve zaman çizelgesi: atölyeler, konuşmalar ve sosyal buluşmalar. Disiplinler arası öğrenme ve işbirliği fırsatları." />
+  <link rel="canonical" href="https://furkanakosman.github.io/IPS/events.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#4d0011" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="IPS — Events" />
+  <meta property="og:description" content="IPS etkinlikleri ve zaman çizelgesi: atölyeler, konuşmalar ve sosyal buluşmalar." />
+  <meta property="og:url" content="https://furkanakosman.github.io/IPS/events.html" />
+  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
+  <meta property="og:site_name" content="Interdisciplinary Project Society" />
+  <meta property="og:locale" content="tr_TR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IPS — Events" />
+  <meta name="twitter:description" content="IPS etkinlikleri ve zaman çizelgesi: atölyeler, konuşmalar ve sosyal buluşmalar." />
+  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:wght@400&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/figma.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/events.css">
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"IPS — Events",
+    "url":"https://furkanakosman.github.io/IPS/events.html",
+    "description":"IPS etkinlikleri ve zaman çizelgesi: atölyeler, konuşmalar ve sosyal buluşmalar.",
+    "isPartOf": {
+      "@type": "Website",
+      "name": "Interdisciplinary Project Society",
+      "url": "https://furkanakosman.github.io/IPS/"
+    }
+  }
+  </script>
 </head>
 <body>
   <!-- Header / Nav -->
-<header class="site-header">
-<nav class="nav container" aria-label="Ana menü">
-<a class="nav__brand" href="index.html" aria-label="IPS Ana Sayfa">
-<img src="assets/img/kulup-logo.jpg" alt="IPS Kulüp Logosu" />
-<span class="nav__brand-text">Interdisciplinary Project Society</span>
-</a>
+  <header class="site-header" id="siteHeader" aria-label="Site üst navigasyon">
+    <nav class="nav container" aria-label="Ana menü">
+      <a class="nav__brand" href="index.html" aria-label="IPS Ana Sayfa">
+        <img src="assets/img/kulup-logo.jpg" alt="IPS Kulüp Logosu" width="32" height="32" />
+        <span class="nav__brand-text">Interdisciplinary Project Society</span>
+      </a>
 
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menüyü aç/kapat">
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+      </button>
 
-<button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menüyü aç/kapat">
-<span class="nav__bar"></span>
-<span class="nav__bar"></span>
-<span class="nav__bar"></span>
-<span class="nav__bar"></span>
-</button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html">Main Page</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li>
+          <a class="btn btn--primary"
+             href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt"
+             target="_blank" rel="noopener">Join Us</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-
-<ul class="nav__menu" id="navMenu">
-<li><a href="index.html" class="is-active">Main Page</a></li>
-<li><a href="team.html">Team</a></li>
-<li><a href="events.html">Events</a></li>
-<li><a href="blog.html">Blog</a></li>
-<a class="btn btn--primary"
-   href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt"
-   target="_blank" rel="noopener">
-  Join Us
-</a>
-</ul>
-</nav>
-</header>
-
-  <main class="section">
+  <main class="section" id="main">
     <div class="container events-wrap">
       <!-- Başlık ve “Add Event” -->
       <div class="events-head">
@@ -51,7 +91,7 @@
           <p class="lead">Explore our upcoming and past events. Join us to learn, collaborate, and innovate across disciplines.</p>
         </div>
 
-        <a id="add" class="btn btn--primary add-btn" href="#">
+        <a id="add" class="btn btn--primary add-btn" href="#" aria-label="Add new event">
           <span class="add-btn__ico" aria-hidden="true">+</span>
           <span>Add Event</span>
         </a>
@@ -65,16 +105,16 @@
         </label>
 
         <div class="filters" role="tablist" aria-label="Categories">
-          <button class="chip is-active" data-filter="all">All</button>
-          <button class="chip" data-filter="workshop">Workshops</button>
-          <button class="chip" data-filter="talk">Talks</button>
-          <button class="chip" data-filter="social">Social Events</button>
+          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" data-filter="workshop" role="tab" aria-selected="false">Workshops</button>
+          <button class="chip" data-filter="talk" role="tab" aria-selected="false">Talks</button>
+          <button class="chip" data-filter="social" role="tab" aria-selected="false">Social Events</button>
         </div>
       </div>
 
       <!-- Yaklaşan Etkinlikler -->
-      <section class="timeline">
-        <h2 class="h2">Upcoming Events</h2>
+      <section class="timeline" aria-labelledby="upcoming-title">
+        <h2 class="h2" id="upcoming-title">Upcoming Events</h2>
         <ol class="timeline__list">
           <li class="tl-item" data-type="workshop">
             <span class="tl-dot" aria-hidden="true"></span>
@@ -94,7 +134,7 @@
               <h3 class="card__title">Student Seminar Series</h3>
               <p class="card__meta">Date: TBA · Room 101</p>
               <p class="card__text">
-                Members present ongoing research and share insights. Open to Q&A and discussion.
+                Members present ongoing research and share insights. Open to Q&amp;A and discussion.
               </p>
               <div class="card__tag">Talk</div>
             </article>
@@ -103,8 +143,8 @@
       </section>
 
       <!-- Geçmiş Etkinlikler -->
-      <section class="timeline">
-        <h2 class="h2">Past Events</h2>
+      <section class="timeline" aria-labelledby="past-title">
+        <h2 class="h2" id="past-title">Past Events</h2>
         <ol class="timeline__list">
           <li class="tl-item" data-type="social">
             <span class="tl-dot tl-dot--past" aria-hidden="true"></span>
@@ -130,37 +170,38 @@
     </div>
   </main>
 
- <footer class="site-footer">
-  <div class="container footer__inner">
-    <p>© <span id="y"></span> Interdisciplinary Project Society. All Rights Reserved.</p>
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span id="y"></span> Interdisciplinary Project Society. All Rights Reserved.</p>
 
-    <ul class="footer__links">
-      <li>
-        <a href="https://www.youtube.com/@ipsociety2025" target="_blank" rel="noopener">
-          <img src="assets/icon/social-media/youtube.png" alt="YouTube" width="22" height="22">
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/%C4%B1ps" target="_blank" rel="noopener">
-          <img src="assets/icon/social-media/linkedin.png" alt="LinkedIn" width="22" height="22">
-        </a>
-      </li>
-      <li>
-        <a href="https://www.tiktok.com/@ip_society?_t=ZS-90QYlkW9jJC&amp;_r=1" target="_blank" rel="noopener">
-          <img src="assets/icon/social-media/tik-tok.png" alt="TikTok" width="22" height="22">
-        </a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" rel="noopener">
-          <img src="assets/icon/social-media/instagram.png" alt="Instagram" width="22" height="22">
-        </a>
-      </li>
-    </ul>
-  </div>
+      <ul class="footer__links">
+        <li>
+          <a href="https://www.youtube.com/@ipsociety2025" target="_blank" rel="noopener" aria-label="YouTube">
+            <img src="assets/icon/social-media/youtube.png" alt="YouTube" width="22" height="22">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/%C4%B1ps" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="assets/icon/social-media/linkedin.png" alt="LinkedIn" width="22" height="22">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@ip_society?_t=ZS-90QYlkW9jJC&amp;_r=1" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="assets/icon/social-media/tik-tok.png" alt="TikTok" width="22" height="22">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="assets/icon/social-media/instagram.png" alt="Instagram" width="22" height="22">
+          </a>
+        </li>
+      </ul>
+    </div>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</footer>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
 
+  <!-- Davranış -->
   <script src="js/app.js"></script>
   <script>
     // Basit arama + kategori filtresi
@@ -169,15 +210,20 @@
     const q = document.getElementById('eventSearch');
 
     chips.forEach(c => c.addEventListener('click', () => {
-      chips.forEach(x => x.classList.remove('is-active'));
+      chips.forEach(x => {
+        x.classList.remove('is-active');
+        x.setAttribute('aria-selected','false');
+      });
       c.classList.add('is-active');
+      c.setAttribute('aria-selected','true');
       filter();
     }));
 
     q.addEventListener('input', filter);
 
     function filter(){
-      const type = document.querySelector('.chip.is-active').dataset.filter;
+      const active = document.querySelector('.chip.is-active');
+      const type = active ? active.dataset.filter : 'all';
       const text = q.value.trim().toLowerCase();
       items.forEach(li => {
         const okType = type === 'all' || li.dataset.type === type;
@@ -187,6 +233,5 @@
     }
   </script>
   <script src="js/head-loader.js"></script>
-
 </body>
 </html>

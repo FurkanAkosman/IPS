@@ -1,100 +1,162 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
 <head>
+  <!-- GA4 -->
   <script src="js/analytics.js"></script>
-<!-- Tailwind (tek kez) -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-<!-- Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- Tasarım değişkenleri -->
-<style type="text/tailwindcss">
-  @layer base {
-    :root {
-      --burgundy: #4d0011;
-      --beige: #f8f8f3;
-      --text-main: #1D0C0F;
+  <title>IPS — Blog</title>
+  <meta name="description" content="IPS Blog: disiplinler arası projeler, makaleler ve duyurular." />
+  <link rel="canonical" href="https://furkanakosman.github.io/IPS/blog.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#4d0011" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="IPS — Blog" />
+  <meta property="og:description" content="IPS Blog: disiplinler arası projeler, makaleler ve duyurular." />
+  <meta property="og:url" content="https://furkanakosman.github.io/IPS/blog.html" />
+  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
+  <meta property="og:site_name" content="Interdisciplinary Project Society" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IPS — Blog" />
+  <meta name="twitter:description" content="IPS Blog: disiplinler arası projeler, makaleler ve duyurular." />
+  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
+
+  <!-- Tailwind (tek kez) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+
+  <!-- Tasarım değişkenleri -->
+  <style type="text/tailwindcss">
+    @layer base {
+      :root{
+        --burgundy:#4d0011;
+        --beige:#f8f8f3;
+        --text-main:#1D0C0F;
+        --bg-dark:#101622;
+        --text-dark:#EDEDEE;
+        --accent-light:#f1e8ea;
+        --accent-dark:#6b4b53;
+      }
+    }
+    @layer components {
+      .btn{ @apply inline-flex items-center justify-center text-center h-12 px-6 rounded-xl font-bold; }
+      .btn-primary{ @apply bg-primary text-background-light hover:opacity-90; }
+      .btn-outline{ @apply border border-primary/20 bg-white text-primary hover:scale-[1.02]; }
+    }
+  </style>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "var(--burgundy)",
+            "background-light": "var(--beige)",
+            "text-light": "var(--text-main)",
+            "background-dark": "var(--bg-dark)",
+            "text-dark": "var(--text-dark)",
+            "accent-light": "var(--accent-light)",
+            "accent-dark": "var(--accent-dark)"
+          },
+          fontFamily: {
+            display: ["Inter","system-ui","sans-serif"],
+            body: ["Lora","serif"],
+          },
+          borderRadius: { xl: "12px" },
+        },
+      },
+    };
+  </script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"IPS — Blog",
+    "url":"https://furkanakosman.github.io/IPS/blog.html",
+    "publisher":{
+      "@type":"Organization",
+      "name":"Interdisciplinary Project Society",
+      "logo":{"@type":"ImageObject","url":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg"}
     }
   }
-  @layer components {
-    .btn { @apply inline-flex items-center justify-center text-center h-12 px-6 rounded-xl font-bold; }
-    .btn-primary { @apply bg-primary text-background-light hover:opacity-90; }
-    .btn-outline { @apply border border-primary/20 bg-white text-primary hover:scale-[1.02]; }
-  }
-</style>
-
-<script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          primary: "var(--burgundy)",
-          "background-light": "var(--beige)",
-          "text-light": "var(--text-main)",
-        },
-        fontFamily: {
-          display: ["Inter", "system-ui", "sans-serif"],
-          body: ["Lora", "serif"],
-        },
-        borderRadius: { xl: "12px" },
-      },
-    },
-  };
-</script>
+  </script>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
-    <!-- GLOBAL HEADER (ortak) -->
-    <header
-  id="siteHeader"
-  class="fixed inset-x-0 top-0 z-50 bg-background-light/90 backdrop-blur border-b border-primary/10"
-  aria-label="Main Navigation">
-  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-    <a href="index.html#hero" class="flex items-center gap-3">
-      <img src="assets/img/kulup-logo.jpg" alt="IPS Logo" class="h-8 w-8 rounded" />
-      <span class="font-semibold">Interdisciplinary Project Society</span>
-    </a>
-
-    <ul class="hidden md:flex items-center gap-8 text-sm">
-      <li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
-      <li><a class="hover:text-primary transition-colors" href="team.html">Team</a></li>
-      <li><a class="hover:text-primary transition-colors" href="projects.html">Projects</a></li>
-      <li><a class="hover:text-primary transition-colors" href="events.html">Events</a></li>
-      <li><a class="hover:text-primary transition-colors" href="blog.html">Blog</a></li>
-      <li>
-        <a
-          class="btn btn-primary"
-          href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt"
-          target="_blank" rel="noopener">
-          Join Us
+    <!-- HEADER -->
+    <header id="siteHeader" class="fixed inset-x-0 top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur border-b border-primary/10" aria-label="Main Navigation">
+      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="index.html#hero" class="flex items-center gap-3" aria-label="IPS home">
+          <img src="assets/img/kulup-logo.jpg" alt="IPS Logo" class="h-8 w-8 rounded" width="32" height="32"/>
+          <span class="font-semibold">Interdisciplinary Project Society</span>
         </a>
-      </li>
-    </ul>
-  </nav>
-</header>
 
+        <!-- Desktop -->
+        <ul class="hidden md:flex items-center gap-8 text-sm">
+          <li><a class="hover:text-primary transition-colors navlink" href="index.html">Home</a></li>
+          <li><a class="hover:text-primary transition-colors navlink" href="team.html">Team</a></li>
+          <li><a class="hover:text-primary transition-colors navlink" href="projects.html">Projects</a></li>
+          <li><a class="hover:text-primary transition-colors navlink" href="events.html">Events</a></li>
+          <li><a class="hover:text-primary transition-colors navlink" href="blog.html" aria-current="page">Blog</a></li>
+          <li>
+            <a class="btn btn-primary" href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">Join Us</a>
+          </li>
+        </ul>
 
-    <!-- sayfa içeriği header altında -->
+        <!-- Hamburger -->
+        <button id="menuToggle"
+          class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl border border-primary/20 text-primary bg-white"
+          aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mobile panel -->
+      <div id="mobileMenu" class="md:hidden fixed inset-x-0 top-16 z-[60] bg-background-light dark:bg-background-dark border-t border-primary/10 shadow-lg hidden">
+        <nav class="px-6 py-3">
+          <a class="block py-3 text-base hover:text-primary navlink" href="index.html">Home</a>
+          <a class="block py-3 text-base hover:text-primary navlink" href="team.html">Team</a>
+          <a class="block py-3 text-base hover:text-primary navlink" href="projects.html">Projects</a>
+          <a class="block py-3 text-base hover:text-primary navlink" href="events.html">Events</a>
+          <a class="block py-3 text-base text-primary font-bold navlink" href="blog.html" aria-current="page">Blog</a>
+          <a class="mt-2 inline-flex h-11 items-center justify-center rounded-xl px-4 font-bold bg-primary text-background-light hover:opacity-90"
+             href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">Join Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- SAYFA İÇERİĞİ -->
     <main class="pt-16 flex-1">
       <!-- üst filtre barı -->
-      <div class="sticky top-16 z-10 bg-background-light dark:bg-background-dark py-6 border-b border-accent-light dark:border-accent-dark/20">
+      <div class="sticky top-16 z-10 bg-background-light dark:bg-background-dark py-6 border-b border-primary/10">
         <div class="px-4 md:px-10 lg:px-20 mx-auto max-w-screen-xl">
           <div class="flex flex-col gap-4">
             <label class="flex flex-col w-full">
               <div class="flex w-full items-stretch rounded-lg h-12">
-                <div class="text-accent-dark flex bg-accent-light dark:bg-primary/20 items-center justify-center pl-4 rounded-l-lg">
+                <div class="flex items-center justify-center pl-4 rounded-l-lg bg-accent-light dark:bg-primary/20 text-accent-dark">
                   <span class="material-symbols-outlined">search</span>
                 </div>
                 <input
-                  class="form-input flex w-full min-w-0 flex-1 rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-accent-light dark:bg-primary/20 h-full placeholder:text-accent-dark dark:placeholder:text-text-dark/50 px-4 rounded-l-none"
-                  placeholder="Search articles..." />
+                  class="flex w-full min-w-0 flex-1 h-full rounded-r-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-accent-light dark:bg-primary/20 placeholder:text-accent-dark dark:placeholder:text-text-dark/50 px-4"
+                  placeholder="Search articles..." aria-label="Search articles"/>
               </div>
             </label>
 
@@ -108,14 +170,13 @@
       </div>
 
       <!-- tam ekran kartlar -->
-      <div class="h-[calc(100vh-160px)] overflow-y-auto scroll-snap-container">
-
+      <div class="h-[calc(100vh-160px)] overflow-y-auto snap-y snap-mandatory">
         <!-- 1 -->
-        <section class="flex h-screen items-center justify-center px-4 md:px-10 lg:px-20 scroll-snap-child relative bg-cover bg-center"
+        <section class="flex h-screen items-center justify-center px-4 md:px-10 lg:px-20 relative bg-cover bg-center snap-start"
           style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqqtLcgODmaMVhEGBB7HswyQ_80C7HhFd-oaLHmdfa-mJFjrIW6v1ein1upSBQTdRX5ACqhRjjfZu8EC1c3jOvv6LlYYI26Y-Y2udkvJKbO8bn-39sacHIk1ZnD05hYQA06z9NiWWOiUJjwAA2CHzY94japziKR_6iXYs2t85YsLz6gPU1O_mr_a3T1SjolflLgTu464o1vRwFsyQ18rFWMHyjyIDf0V5e2FuksryK8Ag2vBF3RjuLPmL-TpHQ4Al47unLUsN_KjY");'>
           <div class="absolute inset-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"></div>
           <div class="relative z-10 max-w-3xl text-center flex flex-col items-center">
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.033em] text-primary dark:text-accent-light">The Future of AI in Healthcare</h2>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.033em] text-primary">The Future of AI in Healthcare</h2>
             <p class="mt-4 text-base text-accent-dark dark:text-text-dark/70">Published on: 2023-10-26, by John Doe</p>
             <p class="mt-6 text-lg md:text-xl leading-relaxed max-w-2xl">An in-depth analysis of how artificial intelligence is revolutionizing the medical field, from diagnostics to personalized treatment plans.</p>
             <a href="#" class="mt-8 inline-flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold hover:bg-primary/90 transition-colors">Read More</a>
@@ -123,11 +184,11 @@
         </section>
 
         <!-- 2 -->
-        <section class="flex h-screen items-center justify-center px-4 md:px-10 lg:px-20 scroll-snap-child relative bg-cover bg-center"
+        <section class="flex h-screen items-center justify-center px-4 md:px-10 lg:px-20 relative bg-cover bg-center snap-start"
           style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuCF2RZrJDH8vpgSL4WBcVXlYGti7-h09v-aonJAb-lhbUPi2ww9cBdGA5MnVbzyvTpIF1L1OdjzXiCNCVQoAL-kR842uWJg_yX9ibSt43wuQwcvkJQvkTZSaFlksbqqp7WjRgSgD2OCLdzVezlFxTRdSehBTMJCQJTuvoaIyoNqHEI3UK2h_OhbLqRWMzFyyt_wzBmQ9PFf9Mwswso05mVXf4CsVM-wJU_LjGb9JilTHTNAWJPDRwYuF3h0KIk1PrNUUqZjgBPJfpg");'>
           <div class="absolute inset-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"></div>
           <div class="relative z-10 max-w-3xl text-center flex flex-col items-center">
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.033em] text-primary dark:text-accent-light">Unlocking Creativity: Interdisciplinary Collaboration</h2>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.033em] text-primary">Unlocking Creativity: Interdisciplinary Collaboration</h2>
             <p class="mt-4 text-base text-accent-dark dark:text-text-dark/70">Published on: 2023-10-24, by Jane Smith</p>
             <p class="mt-6 text-lg md:text-xl leading-relaxed max-w-2xl">Explore the synergistic effects of combining diverse fields of study to foster innovation and solve complex problems in novel ways.</p>
             <a href="#" class="mt-8 inline-flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold hover:bg-primary/90 transition-colors">Read More</a>
@@ -135,31 +196,27 @@
         </section>
 
         <!-- 3 -->
-        <section class="flex h-screen items-center justify-center px-4 md:px-10 lg:px-20 scroll-snap-child relative bg-cover bg-center"
+        <section class="flex h-screen items-center justify-center px-4 md:px-10 lg:px-20 relative bg-cover bg-center snap-start"
           style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuDC6QdvvsQfIRP0hRvB5PE2HhCOM0fgWs-X7UibASHDZD-vtcExIBA15jIua4tsCN4nquKVCXGRk7_yYNdbFKh7x9q40pud4DOF-z3NfYNhIviLq1vPai7eJPABkwX2QT6PeEcXjGFvDZRJVtUoSNeE6AyFWq3OzNT-XbsXJV8he_fDdbFhHeruWfKeFVDeM0mTyk3SdsyvMjtVGLaCJFnx6Jofj9EZ4lZDga01Fs7b2N43psukXyc3FRiJceX5bdS5IRlbYvWmduc");'>
           <div class="absolute inset-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"></div>
           <div class="relative z-10 max-w-3xl text-center flex flex-col items-center">
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.033em] text-primary dark:text-accent-light">IPS Announces Annual Research Symposium</h2>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.033em] text-primary">IPS Announces Annual Research Symposium</h2>
             <p class="mt-4 text-base text-accent-dark dark:text-text-dark/70">Published on: 2023-10-22, by IPS Staff</p>
             <p class="mt-6 text-lg md:text-xl leading-relaxed max-w-2xl">Details on the upcoming symposium, including keynote speakers, presentation schedules, and submission guidelines for 2024.</p>
             <a href="#" class="mt-8 inline-flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold hover:bg-primary/90 transition-colors">Read More</a>
           </div>
         </section>
 
-        <!-- 4..N — özgün içerikleriniz burada aynı kalıpla -->
-        <!-- ... aynı bloklarınızı bırakıyorum ... -->
-
+        <!-- 4..N — aynı kalıp ile içeriklerinizi ekleyin -->
       </div>
     </main>
 
-    <!-- GLOBAL FOOTER (ortak) -->
+    <!-- FOOTER -->
     <footer class="w-full bg-text-light text-background-light py-12 mt-16">
       <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
         <div class="flex flex-col items-center md:items-start">
           <div class="flex items-center gap-3">
-            <svg class="h-10 w-10 text-background-light" fill="currentColor" viewBox="0 0 48 48" aria-hidden="true">
-              <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.2561 44 4 35.0457 4 24S7.2561 4 11.2727 4C14.0109 4 16.3957 8.1614 17.6364 14.31C18.877 8.1614 21.2618 4 24 4c2.7382 0 5.123 4.1614 6.3636 10.31C31.6043 8.1614 33.9891 4 36.7273 4 40.7439 4 44 12.9543 44 24s-3.2561 20-7.2727 20Z"/>
-            </svg>
+            <img src="assets/img/kulup-logo.jpg" alt="IPS" class="h-10 w-10 rounded" width="40" height="40"/>
             <span class="text-xl font-bold">IPS</span>
           </div>
           <p class="mt-2 text-sm opacity-70">Bridging disciplines, building futures.</p>
@@ -167,32 +224,27 @@
         </div>
 
         <nav class="flex justify-center gap-8 md:gap-12 text-sm font-medium">
-          <a class="hover:text-white/80 transition-colors" href="team.html">Team</a>
-          <a class="hover:text-white/80 transition-colors" href="projects.html">Projects</a>
-          <a class="hover:text-white/80 transition-colors" href="events.html">Events</a>
-          <a class="hover:text-white/80 transition-colors" href="blog.html" aria-current="page">Blog</a>
+          <a class="hover:text-white/80 transition-colors navlink" href="team.html">Team</a>
+          <a class="hover:text-white/80 transition-colors navlink" href="projects.html">Projects</a>
+          <a class="hover:text-white/80 transition-colors navlink" href="events.html">Events</a>
+          <a class="hover:text-white/80 transition-colors navlink" href="blog.html" aria-current="page">Blog</a>
         </nav>
 
         <div class="flex justify-center md:justify-end items-center gap-6">
-          <!-- LinkedIn -->
           <a class="opacity-80 hover:opacity-100 transition" href="https://www.linkedin.com/in/%C4%B1ps" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0H5A5 5 0 0 0 0 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3v11zM6.5 6.732A1.768 1.768 0 1 1 6.5 3.2a1.768 1.768 0 0 1 0 3.532zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/></svg>
+            <img src="assets/icon/social-media/linkedin.png" width="22" height="22" alt="LinkedIn" loading="lazy" decoding="async">
           </a>
-          <!-- Instagram -->
           <a class="opacity-80 hover:opacity-100 transition" href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.585.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.281-.057 1.689-.069 4.85-.069zM12 8.001a4 4 0 1 0 0 8.001 4 4 0 0 0 0-8.001zm6.406-1.684a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            <img src="assets/icon/social-media/instagram.png" width="22" height="22" alt="Instagram" loading="lazy" decoding="async">
           </a>
-          <!-- YouTube -->
           <a class="opacity-80 hover:opacity-100 transition" href="https://www.youtube.com/@ipsociety2025" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a4.6 4.6 0 0 0-3.2-3.2C17.9 2.5 12 2.5 12 2.5s-5.9 0-8.3.5A4.6 4.6 0 0 0 .5 6.2 48 48 0 0 0 0 12a48 48 0 0 0 .5 5.8 4.6 4.6 0 0 0 3.2 3.2c2.4.5 8.3.5 8.3.5s5.9 0 8.3-.5a4.6 4.6 0 0 0 3.2-3.2 48 48 0 0 0 .5-5.8 48 48 0 0 0-.5-5.8zM9.8 15.5V8.5l6.4 3.5-6.4 3.5z"/></svg>
+            <img src="assets/icon/social-media/youtube.png" width="22" height="22" alt="YouTube" loading="lazy" decoding="async">
           </a>
-          <!-- TikTok -->
           <a class="opacity-80 hover:opacity-100 transition" href="https://www.tiktok.com/@ip_society?_t=ZS-90QYlkW9jJC&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
-            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8.245a7.1 7.1 0 0 0 4 1.26V6.49a4.8 4.8 0 0 1-4-1.98V4h-3.08v12.19a2.43 2.43 0 1 1-2.43-2.43c.17 0 .34.02.5.05V10.6a5.53 5.53 0 1 0 5.01 5.5V8.245Z"/></svg>
+            <img src="assets/icon/social-media/tik-tok.png" width="22" height="22" alt="TikTok" loading="lazy" decoding="async">
           </a>
-          <!-- WhatsApp -->
           <a class="opacity-80 hover:opacity-100 transition" href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 32 32"><path d="M19.11 17.34a4.8 4.8 0 0 1-2.07-.55c-.63-.31-1.34-.73-2.02-1.33-.66-.58-1.27-1.31-1.77-2.07-.44-.66-.8-1.38-1.05-2.04a5.21 5.21 0 0 1-.37-1.95c0-.56.12-1 .24-1.32.13-.33.29-.57.47-.74.2-.19.34-.25.57-.25h.42c.14 0 .32 0 .48.36.17.37.58 1.42.63 1.52.05.1.08.22.01.36-.07.14-.11.22-.22.35l-.31.37c-.1.12-.21.25-.09.49.12.24.55.9 1.19 1.46.82.73 1.51.96 1.76 1.07.25.11.4.09.55-.05.15-.14.64-.75.81-1.01.17-.26.34-.21.57-.12.23.1 1.47.69 1.72.81.25.12.41.18.47.28.06.1.06.58-.12 1.14-.18.56-.98 1.07-1.29 1.2-.31.13-.72.27-1.17.27ZM14.5 29c-1.76 0-3.5-.45-5.03-1.31L4 28l.36-5.36A13.44 13.44 0 1 1 14.5 29Zm0-24.88A11.45 11.45 0 0 0 5.35 23.6l-.23.38-.24 3.5 3.47-.23.39-.23a11.44 11.44 0 1 0 5.76-21.9Z"/></svg>
+            <img src="assets/icon/social-media/whatsapp.png" width="22" height="22" alt="WhatsApp" loading="lazy" decoding="async">
           </a>
         </div>
       </div>
@@ -200,25 +252,34 @@
 
   </div>
 
-  <!-- small helpers -->
+  <!-- Davranış -->
+  <script src="js/app.js"></script>
   <script>
-    // aktif link vurgulama
-    (function () {
-      const path = location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('.navlink').forEach(a => {
-        const href = a.getAttribute('href');
-        if (href === path) {
-          a.classList.add('text-primary','font-semibold');
-          a.setAttribute('aria-current','page');
-        }
-      });
-    })();
+    // mobil menü
+    const toggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const body = document.body;
+    function closeMenu(){
+      mobileMenu.classList.add('hidden');
+      body.classList.remove('overflow-hidden');
+      toggle.setAttribute('aria-expanded','false');
+    }
+    function toggleMenu(){
+      const open = !mobileMenu.classList.contains('hidden');
+      if(open) closeMenu();
+      else{
+        mobileMenu.classList.remove('hidden');
+        body.classList.add('overflow-hidden');
+        toggle.setAttribute('aria-expanded','true');
+      }
+    }
+    toggle.addEventListener('click', toggleMenu);
+    mobileMenu.addEventListener('click', (e)=>{ if(e.target.tagName === 'A') closeMenu(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeMenu(); });
 
     // yıl
     document.getElementById('yy').textContent = new Date().getFullYear();
   </script>
   <script src="js/head-loader.js"></script>
-
 </body>
 </html>
-```

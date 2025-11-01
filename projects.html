@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
 <head>
+  <!-- GA4: erken yükleme -->
+  <script src="js/analytics.js"></script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IPS — Projects & Achievements</title>
+  <meta name="description" content="IPS projects and achievements: student-led research, featured initiatives, and milestones across neuroscience, biotechnology, AI, and more." />
+  <link rel="canonical" href="https://furkanakosman.github.io/IPS/project.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#4d0011" />
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Interdisciplinary Project Society" />
+  <meta property="og:title" content="IPS — Projects & Achievements" />
+  <meta property="og:description" content="Student-led interdisciplinary projects and milestones." />
+  <meta property="og:url" content="https://furkanakosman.github.io/IPS/project.html" />
+  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IPS — Projects & Achievements" />
+  <meta name="twitter:description" content="Student-led interdisciplinary projects and milestones." />
+  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
 
   <!-- Icons + Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="icon" type="image/jpeg" href="assets/img/kulup-logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="assets/img/kulup-logo.jpg" />
-
-  <!-- Design tokens -->
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <style type="text/tailwindcss">
-    @layer base {
-      :root { --burgundy:#4d0011; --beige:#f8f8f3; --text-main:#1D0C0F; }
-    }
+    @layer base { :root { --burgundy:#4d0011; --beige:#f8f8f3; --text-main:#1D0C0F; } }
   </style>
   <script>
     tailwind.config = {
@@ -33,16 +49,38 @@
       }}
     };
   </script>
+
+  <!-- JSON-LD: WebPage + Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"IPS — Projects & Achievements",
+    "url":"https://furkanakosman.github.io/IPS/project.html",
+    "publisher":{"@type":"Organization","name":"Interdisciplinary Project Society"},
+    "description":"Student-led interdisciplinary projects and milestones."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://furkanakosman.github.io/IPS/"},
+      {"@type":"ListItem","position":2,"name":"Projects","item":"https://furkanakosman.github.io/IPS/project.html"}
+    ]
+  }
+  </script>
 </head>
 
 <body class="bg-background-light font-display text-text-light">
   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
     <!-- Header -->
-    <header id="siteHeader" class="sticky top-0 z-50 bg-background-light/90 backdrop-blur border-b border-primary/10">
+    <header id="siteHeader" class="sticky top-0 z-50 bg-background-light/90 backdrop-blur border-b border-primary/10" aria-label="Main Navigation">
       <nav class="mx-auto max-w-7xl px-6 md:px-12 h-16 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-3 shrink-0">
-          <img src="assets/img/kulup-logo.jpg" alt="IPS Logo" class="h-8 w-8 rounded" loading="lazy" decoding="async" />
+        <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="Back to Home">
+          <img src="assets/img/kulup-logo.jpg" alt="IPS Logo" class="h-8 w-8 rounded" loading="lazy" decoding="async" width="32" height="32" />
           <span class="font-bold text-primary">IPS</span>
         </a>
 
@@ -78,8 +116,9 @@
       </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Main -->
     <main class="flex-grow">
+      <!-- Hero -->
       <section class="w-full bg-white py-20 md:py-28">
         <div class="container mx-auto px-6 md:px-12 text-center">
           <h1 class="text-4xl md:text-6xl font-black text-primary">Projects &amp; Achievements</h1>
@@ -167,7 +206,6 @@
           </p>
 
           <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- cards unchanged (3) -->
             <!-- Card A -->
             <div class="bg-background-light border border-primary/10 rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <div class="h-52 overflow-hidden">
@@ -287,15 +325,12 @@
     mobileMenu.addEventListener('click', (e)=>{ if(e.target.tagName === 'A') closeMenu(); });
     window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeMenu(); });
 
-    // aktif link vurgusu (desktop menüde)
+    // aktif link vurgusu
     const here = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('header a[href]').forEach(a=>{
       const href = a.getAttribute('href');
       if(href && href.endsWith(here)){ a.classList.add('text-primary','font-bold'); a.setAttribute('aria-current','page'); }
     });
   </script>
-
-  <!-- Google Analytics (js/analytics.js dosyana koymuştun) -->
-  <script src="js/analytics.js" defer></script>
 </body>
 </html>
