@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://furkanakosman.github.io/IPS/404.html</loc></url>
+  <url><loc>https://furkanakosman.github.io/IPS/</loc></url>
+
   <url><loc>https://furkanakosman.github.io/IPS/blog.html</loc></url>
   <url><loc>https://furkanakosman.github.io/IPS/content.html</loc></url>
   <url><loc>https://furkanakosman.github.io/IPS/events.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/google96f34d8dee2012cf.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/index.html</loc></url>
+  <url><loc>https://furkanakosman.github.io/IPS/projects.html</loc></url>
+  <url><loc>https://furkanakosman.github.io/IPS/sss.html</loc></url>
+  <url><loc>https://furkanakosman.github.io/IPS/team.html</loc></url>
+
   <url><loc>https://furkanakosman.github.io/IPS/people/efnan-karatas.html</loc></url>
   <url><loc>https://furkanakosman.github.io/IPS/people/erkan-kalam.html</loc></url>
   <url><loc>https://furkanakosman.github.io/IPS/people/furkan-akosman.html</loc></url>
@@ -19,7 +22,4 @@
   <url><loc>https://furkanakosman.github.io/IPS/people/yigit-buyrul.html</loc></url>
   <url><loc>https://furkanakosman.github.io/IPS/people/yusuf-mete-gecer.html</loc></url>
   <url><loc>https://furkanakosman.github.io/IPS/people/zeynep-torbaci.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/projects.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/sss.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/team.html</loc></url>
 </urlset>
