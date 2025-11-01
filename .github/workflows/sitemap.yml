@@ -5,28 +5,48 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
-    - name: Generate sitemap.xml
-      run: |
-        echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
-        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
-        find . -type f -name "*.html" ! -path "./assets/*" ! -path "./node_modules/*" | while read file; do
-          url="https://furkanakosman.github.io/IPS/${file#./}"
-          echo "  <url><loc>${url}</loc></url>" >> sitemap.xml
-        done
-        echo '</urlset>' >> sitemap.xml
+      - name: Generate sitemap.xml
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://furkanakosman.github.io/IPS"
+          # header
+          printf '%s\n' '<?xml version="1.0" encoding="UTF-8"?>' \
+                        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' > sitemap.xml
+          # urls
+          while IFS= read -r -d '' file; do
+            url="$BASE/${file#./}"
+            url="${url// /%20}"         # boşlukları kaçır
+            printf '  <url><loc>%s</loc></url>\n' "$url" >> sitemap.xml
+          done < <(find . -type f -name '*.html' \
+                        -not -path './node_modules/*' \
+                        -not -path './.git/*' \
+                        -print0 | sort -z)
+          # footer
+          printf '%s\n' '</urlset>' >> sitemap.xml
 
-    - name: Commit and push sitemap.xml
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add sitemap.xml
-        git commit -m "Auto-update sitemap.xml" || echo "No changes to commit"
-        git push
+      - name: Commit and push if changed
+        shell: bash
+        run: |
+          set -e
+          if git diff --quiet -- sitemap.xml; then
+            echo "No changes"
+          else
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add sitemap.xml
+            git commit -m "Auto-update sitemap.xml"
+            git push
+          fi
