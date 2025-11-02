@@ -99,49 +99,8 @@
 <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
-    <!-- HEADER -->
-    <header id="siteHeader" class="fixed inset-x-0 top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur border-b border-primary/10" aria-label="Main Navigation">
-      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="index.html#hero" class="flex items-center gap-3" aria-label="IPS home">
-          <img src="assets/img/kulup-logo.jpg" alt="IPS Logo" class="h-8 w-8 rounded" width="32" height="32"/>
-          <span class="font-semibold">Interdisciplinary Project Society</span>
-        </a>
-
-        <!-- Desktop -->
-        <ul class="hidden md:flex items-center gap-8 text-sm">
-          <li><a class="hover:text-primary transition-colors navlink" href="index.html">Home</a></li>
-          <li><a class="hover:text-primary transition-colors navlink" href="team.html">Team</a></li>
-          <li><a class="hover:text-primary transition-colors navlink" href="projects.html">Projects</a></li>
-          <li><a class="hover:text-primary transition-colors navlink" href="events.html">Events</a></li>
-          <li><a class="hover:text-primary transition-colors navlink" href="blog.html" aria-current="page">Blog</a></li>
-          <li>
-            <a class="btn btn-primary" href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">Join Us</a>
-          </li>
-        </ul>
-
-        <!-- Hamburger -->
-        <button id="menuToggle"
-          class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl border border-primary/20 text-primary bg-white"
-          aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </nav>
-
-      <!-- Mobile panel -->
-      <div id="mobileMenu" class="md:hidden fixed inset-x-0 top-16 z-[60] bg-background-light dark:bg-background-dark border-t border-primary/10 shadow-lg hidden">
-        <nav class="px-6 py-3">
-          <a class="block py-3 text-base hover:text-primary navlink" href="index.html">Home</a>
-          <a class="block py-3 text-base hover:text-primary navlink" href="team.html">Team</a>
-          <a class="block py-3 text-base hover:text-primary navlink" href="projects.html">Projects</a>
-          <a class="block py-3 text-base hover:text-primary navlink" href="events.html">Events</a>
-          <a class="block py-3 text-base text-primary font-bold navlink" href="blog.html" aria-current="page">Blog</a>
-          <a class="mt-2 inline-flex h-11 items-center justify-center rounded-xl px-4 font-bold bg-primary text-background-light hover:opacity-90"
-             href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">Join Us</a>
-        </nav>
-      </div>
-    </header>
+    <!-- Header: partials/header.html tarafından yüklenecek -->
+    <script src="js/header-loader.js" defer></script>
 
     <!-- SAYFA İÇERİĞİ -->
     <main class="pt-16 flex-1">
@@ -263,34 +222,11 @@
 
   </div>
 
-  <!-- Davranış -->
+  <!-- Ortak davranışlar -->
   <script src="js/app.js"></script>
   <script>
-    // mobil menü
-    const toggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const body = document.body;
-    function closeMenu(){
-      mobileMenu.classList.add('hidden');
-      body.classList.remove('overflow-hidden');
-      toggle.setAttribute('aria-expanded','false');
-    }
-    function toggleMenu(){
-      const open = !mobileMenu.classList.contains('hidden');
-      if(open) closeMenu();
-      else{
-        mobileMenu.classList.remove('hidden');
-        body.classList.add('overflow-hidden');
-        toggle.setAttribute('aria-expanded','true');
-      }
-    }
-    toggle.addEventListener('click', toggleMenu);
-    mobileMenu.addEventListener('click', (e)=>{ if(e.target.tagName === 'A') closeMenu(); });
-    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeMenu(); });
-
-    // yıl
+    // footer yılı
     document.getElementById('yy').textContent = new Date().getFullYear();
   </script>
-  <script src="js/head-loader.js"></script>
 </body>
 </html>

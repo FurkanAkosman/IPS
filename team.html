@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <!-- GA4 -->
   <script src="js/analytics.js"></script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IPS — Team</title>
+
+  <!-- Tailwind (index ile aynı) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4d0011",
+            "background-light": "#f8f8f3",
+            "text-light": "#1D0C0F",
+          },
+          fontFamily: {
+            display: ["Inter","system-ui","sans-serif"],
+            body: ["Lora","serif"],
+          },
+          borderRadius: { xl: "12px" }
+        }
+      }
+    }
+  </script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -14,17 +38,15 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/team.css">
 
-  <!-- Performans ipuçları -->
+  <!-- Performans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="dns-prefetch" href="//images.unsplash.com">
   <link rel="dns-prefetch" href="//www.googletagmanager.com">
-
-  <!-- LCP yardımcı preload -->
   <link rel="preload" as="image" href="assets/img/kulup-logo.jpg" imagesrcset="assets/img/kulup-logo.jpg 1x" imagesizes="32px" />
 
-  <!-- Sayfa ön getirme (site içi) -->
+  <!-- Prefetch -->
   <link rel="prefetch" href="index.html" as="document">
   <link rel="prefetch" href="events.html" as="document">
   <link rel="prefetch" href="blog.html" as="document">
@@ -35,7 +57,7 @@
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#4d0011" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Interdisciplinary Project Society" />
   <meta property="og:title" content="IPS — Team" />
@@ -43,130 +65,48 @@
   <meta property="og:url" content="https://furkanakosman.github.io/IPS/team.html" />
   <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
   <meta property="og:locale" content="tr_TR" />
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="IPS — Team" />
   <meta name="twitter:description" content="Interdisciplinary Project Society ekibiyle tanışın." />
   <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
 
-  <!-- JSON-LD: Organization -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Interdisciplinary Project Society",
-    "url":"https://furkanakosman.github.io/IPS/",
-    "logo":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg",
-    "sameAs":[
-      "https://www.instagram.com/ip_society",
-      "https://www.youtube.com/@ipsociety2025",
-      "https://www.tiktok.com/@ip_society",
-      "https://www.linkedin.com/in/%C4%B1ps"
-    ]
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Interdisciplinary Project Society","url":"https://furkanakosman.github.io/IPS/","logo":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg","sameAs":["https://www.instagram.com/ip_society","https://www.youtube.com/@ipsociety2025","https://www.tiktok.com/@ip_society","https://www.linkedin.com/in/%C4%B1ps"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"IPS — Team","url":"https://furkanakosman.github.io/IPS/team.html","description":"IPS ekibi. Interdisciplinary Project Society'yi ileriye taşıyan çekirdek ve gönüllü ekip üyeleri."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+    {"@type":"SiteNavigationElement","name":"Main Page","url":"https://furkanakosman.github.io/IPS/"},
+    {"@type":"SiteNavigationElement","name":"Team","url":"https://furkanakosman.github.io/IPS/team.html"},
+    {"@type":"SiteNavigationElement","name":"Events","url":"https://furkanakosman.github.io/IPS/events.html"},
+    {"@type":"SiteNavigationElement","name":"Blog","url":"https://furkanakosman.github.io/IPS/blog.html"}]}
   </script>
 
-  <!-- JSON-LD: WebPage (Team) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"IPS — Team",
-    "url":"https://furkanakosman.github.io/IPS/team.html",
-    "description":"IPS ekibi. Interdisciplinary Project Society'yi ileriye taşıyan çekirdek ve gönüllü ekip üyeleri."
-  }
-  </script>
-
-  <!-- JSON-LD: Site navigation -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[
-      {"@type":"SiteNavigationElement","name":"Main Page","url":"https://furkanakosman.github.io/IPS/"},
-      {"@type":"SiteNavigationElement","name":"Team","url":"https://furkanakosman.github.io/IPS/team.html"},
-      {"@type":"SiteNavigationElement","name":"Events","url":"https://furkanakosman.github.io/IPS/events.html"},
-      {"@type":"SiteNavigationElement","name":"Blog","url":"https://furkanakosman.github.io/IPS/blog.html"}
-    ]
-  }
-  </script>
-
-  <!-- Sayfaya özel düzeltmeler -->
+  <!-- Sayfaya özel ufak düzeltmeler -->
   <style>
     *,*::before,*::after{box-sizing:border-box}
     html{-webkit-text-size-adjust:100%}
     img,video{max-width:100%;height:auto;display:block}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    body{margin:0}
     section{overflow:clip}
 
-    /* Header */
-    #siteHeader{
-      position:fixed; inset:0 auto auto 0; top:0; width:100%;
-      z-index:50; background:rgba(248,248,243,.9);
-      border-bottom:1px solid rgba(77,0,17,.1);
-      backdrop-filter:saturate(180%) blur(6px);
-    }
-    .container{max-width:1200px;margin-inline:auto;padding:0 1rem}
-
-    .nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
-    .nav__brand{display:flex;align-items:center;gap:.5rem;color:inherit;text-decoration:none;white-space:nowrap}
-    .nav__brand img{width:32px;height:32px;border-radius:6px}
-
-    .nav__menu{display:flex;align-items:center;gap:1.25rem;list-style:none;margin:0;padding:0;white-space:nowrap}
-    .nav__menu a{color:inherit;text-decoration:none}
-    .btn.btn--primary{
-      display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 16px;border-radius:12px;
-      background:#4d0011;color:#fff;font-weight:700
-    }
-
-    /* Hamburger kutu */
-    .nav__toggle{
-      display:none;
-      align-items:center;justify-content:center;width:44px;height:44px;
-      border:1px solid rgba(77,0,17,.18);border-radius:12px;background:#fff;color:#4d0011;
-      box-shadow:0 2px 8px rgba(0,0,0,.08)
-    }
-    .nav__bar{display:block;width:18px;height:2px;background:currentColor;margin:2px auto;border-radius:1px}
-
-    /* Mobil panel (küçük ekran) */
-    @media (max-width: 767.98px){
-      .nav__toggle{display:inline-flex}
-      .nav__menu{
-        position:fixed;left:0;right:0;top:64px;
-        background:#f8f8f3;border-top:1px solid rgba(77,0,17,.1);
-        box-shadow:0 10px 24px rgba(0,0,0,.08);
-        display:none;flex-direction:column;align-items:stretch;gap:0;padding:.25rem .5rem;z-index:60
-      }
-      .nav__menu a{display:block;padding:12px 8px}
-      #navToggle[aria-expanded="true"] + #navMenu{display:flex}
-    }
-
-    /* Otomatik daralma: menü sığmazsa hamburgeri zorla aç */
-    #siteHeader.is-collapsed .nav__toggle{display:inline-flex}
-    #siteHeader.is-collapsed .nav__menu{
-      position:fixed;left:0;right:0;top:64px;
-      background:#f8f8f3;border-top:1px solid rgba(77,0,17,.1);
-      box-shadow:0 10px 24px rgba(0,0,0,.08);
-      display:none;flex-direction:column;align-items:stretch;gap:0;padding:.25rem .5rem;z-index:60
-    }
-    #siteHeader.is-collapsed .nav__menu a{display:block;padding:12px 8px}
-    #siteHeader.is-collapsed #navToggle[aria-expanded="true"] + #navMenu{display:flex}
-
-    /* Header telafisi ve CLS azaltımı */
+    /* Loader header fixed ~64px → içerik ofseti */
     main{padding-top:64px}
     h1,h2,h3{line-height:1.2}
     img[loading="lazy"]{contain-intrinsic-size:auto 200px}
 
-    /* Grid ve kartlar */
+    .container{max-width:1200px;margin-inline:auto;padding:0 1rem}
+
+    /* Team grid ve kartlar */
     .team-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
     @media (min-width:640px){ .team-grid{gap:1.25rem} }
     @media (min-width:1024px){ .team-grid{gap:1.5rem} }
 
-    .member{
-      display:block;background:#fff;border:1px solid rgba(77,0,17,.08);border-radius:14px;
-      padding:14px;text-decoration:none;color:inherit;transition:transform .15s ease, box-shadow .15s ease
-    }
+    .member{display:block;background:#fff;border:1px solid rgba(77,0,17,.08);border-radius:14px;padding:14px;
+      text-decoration:none;color:inherit;transition:transform .15s, box-shadow .15s}
     .member:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
     .member__img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px}
     .member__name{margin:.5rem 0 0;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
@@ -178,37 +118,10 @@
     .team-sub{color:#4d0011;opacity:.85;font-size:clamp(.95rem,2.2vw,1.1rem)}
   </style>
 </head>
-<body>
 
-  <!-- Header / Nav -->
-  <header id="siteHeader" aria-label="Site üst navigasyon">
-    <nav class="nav container" aria-label="Ana menü">
-      <a class="nav__brand" href="index.html">
-        <img src="assets/img/kulup-logo.jpg" alt="IPS Kulüp Logosu" loading="lazy" decoding="async" width="32" height="32"/>
-        <span class="nav__brand-text">Interdisciplinary Project Society</span>
-      </a>
-
-      <button class="nav__toggle" id="navToggle" aria-expanded="false"
-        aria-controls="navMenu" aria-label="Menüyü aç/kapat">
-  <!-- 3 çizgi hamburger -->
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M4 6h16M4 12h16M4 18h16"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-  </svg>
-</button>
-
-
-      <ul class="nav__menu" id="navMenu">
-        <li><a href="index.html">Main Page</a></li>
-        <li><a href="team.html" class="is-active">Team</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="sss.html">FAQ</a></li>
-          <a class="btn btn--primary" href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">Join Us</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<body class="bg-background-light font-display text-text-light">
+  <!-- Ortak HEADER -->
+  <script src="js/header-loader.js" defer></script>
 
   <main class="section">
     <div class="container team-wrap">
@@ -217,10 +130,9 @@
         <p class="team-sub">The driving force behind the Interdisciplinary Project Society.</p>
       </header>
 
-      <!-- Kartlar -->
       <section class="team-grid">
-        <!-- … mevcut tüm <a class="member"> kartları aynen … -->
-                  <a class="member" href="people/furkan-akosman.html" aria-label="Furkan Akosman">
+        <!-- Kartlar -->
+        <a class="member" href="people/furkan-akosman.html" aria-label="Furkan Akosman">
           <img class="member__img" src="assets/img/team/furkan_akosman.jpg" alt="Furkan Akosman" loading="lazy" decoding="async">
           <h3 class="member__name">Furkan Akosman</h3>
           <div class="member__role">President</div>
@@ -326,77 +238,11 @@
       </section>
     </div>
   </main>
-      </section>
-    </div>
-  </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer__inner">
-      <p>© <span id="y"></span> Interdisciplinary Project Society. All Rights Reserved.</p>
-      <ul class="footer__links">
-        <li><a href="https://www.youtube.com/@ipsociety2025" target="_blank" aria-label="YouTube">
-          <img src="assets/icon/social-media/youtube.png" alt="YouTube" width="22" height="22" loading="lazy" decoding="async">
-        </a></li>
-        <li><a href="https://www.linkedin.com/in/%C4%B1ps" target="_blank" aria-label="LinkedIn">
-          <img src="assets/icon/social-media/linkedin.png" alt="LinkedIn" width="22" height="22" loading="lazy" decoding="async">
-        </a></li>
-        <li><a href="https://www.tiktok.com/@ip_society?_t=ZS-90QYlkW9jJC&_r=1" target="_blank" aria-label="TikTok">
-          <img src="assets/icon/social-media/tik-tok.png" alt="TikTok" width="22" height="22" loading="lazy" decoding="async">
-        </a></li>
-        <li><a href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" aria-label="Instagram">
-          <img src="assets/icon/social-media/instagram.png" alt="Instagram" width="22" height="22" loading="lazy" decoding="async">
-        </a></li>
-        <li><a href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" aria-label="WhatsApp Join">
-          <img src="assets/icon/social-media/whatsapp.png" alt="Join WhatsApp" width="22" height="22" loading="lazy" decoding="async">
-        </a></li>
-      </ul>
-    </div>
-    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
-  </footer>
+  <!-- Ortak FOOTER -->
+  <script src="js/footer-loader.js" defer></script>
 
-  <!-- Ortak JS (aktif link, smooth scroll vb.) -->
+  <!-- Ortak JS -->
   <script src="assets/js/app.js"></script>
-
-  <!-- Otomatik daraltma + menü davranışı -->
-<script>
-  // Header referansı: .site-header yoksa #siteHeader kullan
-  const header = document.querySelector('.site-header');
-  const headerFallback = document.getElementById('siteHeader');
-  const headerEl = header || headerFallback;
-
-  const toggle = document.getElementById('navToggle');
-  const menu   = document.getElementById('navMenu');
-
-  // Menüyü header altına sabitle
-  function placeMenu(){
-    if (getComputedStyle(menu).position === 'fixed') {
-      const h = headerEl ? headerEl.offsetHeight : 64;
-      menu.style.top = h + 'px';
-    } else {
-      menu.style.top = '';
-    }
-  }
-
-  function openMenu(){
-    placeMenu();
-    menu.classList.add('is-open');
-    toggle.setAttribute('aria-expanded','true');
-  }
-  function closeMenu(){
-    menu.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded','false');
-  }
-  function toggleMenu(){
-    menu.classList.contains('is-open') ? closeMenu() : openMenu();
-  }
-
-  toggle.addEventListener('click', toggleMenu);
-  menu.addEventListener('click', e => { if (e.target.tagName === 'A') closeMenu(); });
-  window.addEventListener('resize', placeMenu, {passive:true});
-  window.addEventListener('scroll', placeMenu, {passive:true});
-  document.addEventListener('DOMContentLoaded', placeMenu);
-</script>
-<script src="js/head-loader.js"></script>
-</body>
+  </body>
 </html>

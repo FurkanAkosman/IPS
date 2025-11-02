@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <!-- GA4 -->
-  <script src="../js/analytics.js"></script>
+  <!-- GA4: loader ile gelecek -->
+  <!-- <script src="../js/analytics.js"></script> -->
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,14 +14,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <!-- Fonts (index.html ile aynı aileler) -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Lora:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode:"class",
+      theme:{ extend:{
+        colors:{ primary:"#4d0011","background-light":"#f8f8f3","text-light":"#1D0C0F" },
+        fontFamily:{ display:["Inter","sans-serif"], body:["Lora","serif"] },
+        borderRadius:{ xl:"12px" }
+      }}
+    };
+  </script>
+
+  <!-- Page CSS -->
   <link rel="stylesheet" href="../assets/css/reset.css">
   <link rel="stylesheet" href="person.css">
 
-  <!-- Canonical + Open Graph + Twitter -->
+  <!-- Canonical + OG + Twitter -->
   <link rel="canonical" href="https://furkanakosman.github.io/IPS/people/efnan-karatas.html">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Efnan Karataş — IPS">
@@ -35,70 +48,27 @@
   <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/team/efnan_karatas.jpeg">
   <meta name="theme-color" content="#4d0011">
 
-  <!-- Prefetch: sık ziyaret edilen sayfalar -->
+  <!-- Prefetch -->
   <link rel="prefetch" href="../team.html" as="document">
   <link rel="prefetch" href="../events.html" as="document">
   <link rel="prefetch" href="../blog.html" as="document">
 
-  <!-- JSON-LD: Organization -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Interdisciplinary Project Society",
-    "url":"https://furkanakosman.github.io/IPS/",
-    "logo":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg"
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Interdisciplinary Project Society","url":"https://furkanakosman.github.io/IPS/","logo":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Efnan Karataş","image":"https://furkanakosman.github.io/IPS/assets/img/team/efnan_karatas.jpeg","jobTitle":"Treasurer","affiliation":{"@type":"Organization","name":"Interdisciplinary Project Society","url":"https://furkanakosman.github.io/IPS/"},"knowsAbout":["Moleküler Biyoloji ve Genetik","Nörobilim","Biyoteknoloji","Gen ifadesi düzenlenmesi","Bilgi-işlemsel araçlar"],"url":"https://furkanakosman.github.io/IPS/people/efnan-karatas.html"}
   </script>
 
-  <!-- JSON-LD: Person -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Efnan Karataş",
-    "image":"https://furkanakosman.github.io/IPS/assets/img/team/efnan_karatas.jpeg",
-    "jobTitle":"Treasurer",
-    "affiliation": {
-      "@type":"Organization",
-      "name":"Interdisciplinary Project Society",
-      "url":"https://furkanakosman.github.io/IPS/"
-    },
-    "knowsAbout":[
-      "Moleküler Biyoloji ve Genetik",
-      "Nörobilim",
-      "Biyoteknoloji",
-      "Gen ifadesi düzenlenmesi",
-      "Bilgi-işlemsel araçlar"
-    ],
-    "url":"https://furkanakosman.github.io/IPS/people/efnan-karatas.html"
-  }
-  </script>
-
-  <style>
-    /* LCP ve CLS için küçük iyileştirmeler */
-    img[loading="lazy"]{ contain-intrinsic-size:auto 200px }
-  </style>
+  <style>img[loading="lazy"]{contain-intrinsic-size:auto 200px}</style>
 </head>
 <body>
 
-<header class="site-header" id="siteHeader">
-  <div class="wrap">
-    <a class="brand" href="../index.html" aria-label="IPS ana sayfa">
-      <img src="../assets/img/kulup-logo.jpg" alt="IPS" width="32" height="32" loading="lazy" decoding="async">
-      <span>Interdisciplinary Project Society</span>
-    </a>
-    <nav class="nav" aria-label="Birincil">
-      <a href="../index.html">Main Page</a>
-      <a href="../team.html">Team</a>
-      <a href="../events.html">Events</a>
-      <a href="../blog.html">Blog</a>
-      <a class="btn" href="../join.html">Join Us</a>
-    </nav>
-  </div>
-</header>
+<!-- Header: loader -->
+<script src="../js/header-loader.js" defer></script>
 
-<main class="person">
+<main id="main" class="person">
   <a class="back" href="../team.html" aria-label="Takım sayfasına geri dön">← Back to Team</a>
 
   <div class="person__top">
@@ -139,35 +109,37 @@
   </section>
 </main>
 
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="footer__inner">
-    <p>© <span id="y"></span> Interdisciplinary Project Society. All Rights Reserved.</p>
+<!-- Footer: loader -->
+<script src="../js/footer-loader.js" defer></script>
 
-    <ul class="footer__links">
-      <li><a href="https://www.youtube.com/@ipsociety2025" target="_blank" rel="noopener" aria-label="YouTube">
-        <img src="../assets/icon/social-media/youtube.png" alt="YouTube" width="22" height="22" loading="lazy" decoding="async">
-      </a></li>
-      <li><a href="https://www.linkedin.com/in/%C4%B1ps" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <img src="../assets/icon/social-media/linkedin.png" alt="LinkedIn" width="22" height="22" loading="lazy" decoding="async">
-      </a></li>
-      <li><a href="https://www.tiktok.com/@ip_society?_t=ZS-90QYlkW9jJC&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
-        <img src="../assets/icon/social-media/tik-tok.png" alt="TikTok" width="22" height="22" loading="lazy" decoding="async">
-      </a></li>
-      <li><a href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" rel="noopener" aria-label="Instagram">
-        <img src="../assets/icon/social-media/instagram.png" alt="Instagram" width="22" height="22" loading="lazy" decoding="async">
-      </a></li>
-      <li><a href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener" aria-label="WhatsApp Join">
-        <img src="../assets/icon/social-media/whatsapp.png" alt="WhatsApp" width="22" height="22" loading="lazy" decoding="async">
-      </a></li>
-    </ul>
-  </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</footer>
+<!-- Alt dizin düzeltmesi: header/footer içindeki göreli href/src yollarını prefix'le -->
+<script>
+  (function fixHeaderFooterRelativeUrls(){
+    if(!/\/people\//.test(location.pathname)) return; // sadece alt dizin sayfalarında uygula
+    const prefix = '../';
+    const ABS = /^(?:[a-z]+:|\/\/|#|mailto:|tel:|\/)/i;
 
-<!-- Ortak JS: aktif link, smooth scroll, mobil menü -->
-<script src="../assets/js/app.js"></script>
-<script src="../js/head-loader.js"></script>
+    function rewrite(container){
+      if(!container) return;
+      container.querySelectorAll('a[href]').forEach(a=>{
+        const h=a.getAttribute('href'); if(!h||ABS.test(h)) return;
+        a.setAttribute('href', prefix + h.replace(/^\.\//,''));
+      });
+      container.querySelectorAll('img[src]').forEach(img=>{
+        const s=img.getAttribute('src'); if(!s||ABS.test(s)) return;
+        img.setAttribute('src', prefix + s.replace(/^\.\//,''));
+      });
+    }
 
+    // header/footer loader'ları tamamlandıktan sonra çalıştır
+    window.addEventListener('DOMContentLoaded', ()=> {
+      rewrite(document.querySelector('header'));
+      rewrite(document.querySelector('footer'));
+    });
+  })();
+</script>
+
+<!-- Ortak davranışlar -->
+<script src="../assets/js/app.js" defer></script>
 </body>
 </html>

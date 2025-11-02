@@ -1,0 +1,49 @@
+<header id="siteHeader"
+  class="fixed inset-x-0 top-0 z-50 bg-background-light/90 backdrop-blur border-b border-primary/10 transition-all duration-300"
+  aria-label="Main Navigation">
+  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="#hero" class="flex items-center gap-3" aria-label="Back to hero">
+      <img src="assets/img/kulup-logo.jpg" alt="IPS Logo" class="h-8 w-8 rounded" loading="lazy" decoding="async" width="32" height="32" />
+      <span class="font-semibold">Interdisciplinary Project Society</span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8 text-sm">
+      <li><a class="hover:text-primary transition-colors" href="team.html" aria-label="See IPS team">Team</a></li>
+      <li><a class="hover:text-primary transition-colors" href="projects.html" aria-label="View IPS projects">Projects</a></li>
+      <li><a class="hover:text-primary transition-colors" href="events.html" aria-label="View IPS events">Events</a></li>
+      <li><a class="hover:text-primary transition-colors" href="blog.html" aria-label="Read IPS blog">Blog</a></li>
+      <li><a class="hover:text-primary transition-colors" href="sss.html" aria-label="Read IPS FAQ">FAQ</a></li>
+      <li>
+        <a
+          class="inline-flex h-10 items-center rounded-xl px-4 font-bold bg-primary text-background-light hover:opacity-90"
+          href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt"
+          target="_blank" rel="noopener" aria-label="Open WhatsApp invitation"
+        >Join Us</a>
+      </li>
+    </ul>
+
+    <!-- Hamburger (yalnızca mobil) -->
+    <button id="menuToggle" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg
+      border border-primary/20 text-primary"
+      aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobil menü paneli -->
+  <div id="mobileMenu"
+    class="md:hidden fixed inset-x-0 top-16 z-[60] bg-background-light border-t border-primary/10 shadow-lg hidden">
+    <nav class="px-4 py-3">
+      <a class="block py-3 px-2 text-base hover:text-primary" href="team.html" aria-label="See IPS team from mobile menu">Team</a>
+      <a class="block py-3 px-2 text-base hover:text-primary" href="projects.html" aria-label="View IPS projects from mobile menu">Projects</a>
+      <a class="block py-3 px-2 text-base hover:text-primary" href="events.html" aria-label="View IPS events from mobile menu">Events</a>
+      <a class="block py-3 px-2 text-base hover:text-primary" href="blog.html" aria-label="Read IPS blog from mobile menu">Blog</a>
+      <a aria-label="Open WhatsApp Invitation from Mobile Menu"
+         class="mt-2 inline-flex h-11 items-center justify-center rounded-xl px-4 font-bold
+         bg-primary text-background-light hover:opacity-90" href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt"
+         target="_blank" rel="noopener">Join Us</a>
+    </nav>
+  </div>
+</header>

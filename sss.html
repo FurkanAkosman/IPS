@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html class="light" lang="tr">
 <head>
-  <!-- GA4 -->
-  <script src="js/analytics.js"></script>
+  <!-- GA4: header-loader ekler, ELLE EKLEME -->
+  <!-- <script src="js/analytics.js"></script> -->
 
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -31,6 +31,7 @@
   <meta name="twitter:description" content="Üyelik, projeler, etkinlikler ve finansman hakkında SSS." />
   <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -55,19 +56,12 @@
             display: ["Newsreader", "serif"],
             body: ["Lato", "sans-serif"]
           },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-        },
-      },
+          borderRadius: { "DEFAULT":"0.25rem", "lg":"0.5rem", "xl":"0.75rem", "full":"9999px" }
+        }
+      }
     }
   </script>
-  <style>
-    body { font-family: 'Lato', sans-serif; }
-  </style>
+  <style>body { font-family: 'Lato', sans-serif; }</style>
 
   <!-- FAQPage JSON-LD -->
   <script type="application/ld+json">
@@ -88,60 +82,16 @@
 <body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark">
 <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
-  <!-- ===== Header (site-wide consistent) ===== -->
-  <header id="siteHeader" class="fixed inset-x-0 top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur border-b border-primary/10" aria-label="Main Navigation">
-    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="index.html#hero" class="flex items-center gap-3" aria-label="IPS home">
-        <img src="assets/img/kulup-logo.jpg" alt="IPS Logo" class="h-8 w-8 rounded" width="32" height="32"/>
-        <span class="font-semibold">Interdisciplinary Project Society</span>
-      </a>
-
-      <!-- Desktop -->
-      <ul class="hidden md:flex items-center gap-8 text-sm">
-        <li><a class="hover:text-primary transition-colors navlink" href="index.html">Home</a></li>
-        <li><a class="hover:text-primary transition-colors navlink" href="team.html">Team</a></li>
-        <li><a class="hover:text-primary transition-colors navlink" href="projects.html">Projects</a></li>
-        <li><a class="hover:text-primary transition-colors navlink" href="events.html">Events</a></li>
-        <li><a class="hover:text-primary transition-colors navlink" href="blog.html">Blog</a></li>
-        <li><a class="text-primary font-bold navlink" href="sss.html" aria-current="page">FAQ</a></li>
-        <li>
-          <a class="inline-flex items-center justify-center h-10 px-4 rounded-lg bg-primary text-white text-sm font-bold hover:bg-opacity-90"
-             href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">Join Us</a>
-        </li>
-      </ul>
-
-      <!-- Mobile -->
-      <button id="menuToggle" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl border border-primary/20 text-primary bg-white"
-              aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
-    </nav>
-
-    <!-- Mobile panel -->
-    <div id="mobileMenu" class="md:hidden fixed inset-x-0 top-16 z-[60] bg-background-light dark:bg-background-dark border-t border-primary/10 shadow-lg hidden">
-      <nav class="px-6 py-3">
-        <a class="block py-3 text-base hover:text-primary navlink" href="index.html">Home</a>
-        <a class="block py-3 text-base hover:text-primary navlink" href="team.html">Team</a>
-        <a class="block py-3 text-base hover:text-primary navlink" href="projects.html">Projects</a>
-        <a class="block py-3 text-base hover:text-primary navlink" href="events.html">Events</a>
-        <a class="block py-3 text-base hover:text-primary navlink" href="blog.html">Blog</a>
-        <a class="block py-3 text-base text-primary font-bold navlink" href="sss.html" aria-current="page">FAQ</a>
-        <a class="mt-2 inline-flex h-11 items-center justify-center rounded-xl px-4 font-bold bg-primary text-background-light hover:opacity-90"
-           href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">Join Us</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Header: loader -->
+  <script src="js/header-loader.js" defer></script>
 
   <!-- ===== Page content ===== -->
   <div class="layout-container flex h-full grow flex-col pt-16">
     <div class="flex flex-1 justify-center px-4 py-5 sm:px-8 md:px-20 lg:px-40">
       <div class="layout-content-container flex w-full max-w-[960px] flex-1 flex-col">
 
-        <!-- === Main stays the same (FAQ hero + list + CTA) === -->
-        <main class="py-12 md:py-20">
-          <!-- … mevcut içerik burada değişmedi … -->
-          <!-- SORU: Burayı senin en son gönderdiğin FAQ içeriğiyle bıraktım -->
-          <!-- Başlangıç -->
+        <main id="main" class="py-12 md:py-20">
+          <!-- Hero -->
           <div class="flex flex-col items-center gap-3 px-4 text-center">
             <h1 class="font-display text-4xl font-black leading-tight tracking-[-0.033em] text-primary sm:text-5xl">Sıkça Sorulan Sorular</h1>
             <p class="max-w-xl text-base font-normal leading-normal text-accent-light dark:text-accent-dark">Üyelik, projeler ve etkinlikler hakkında sıkça sorulan soruların yanıtlarını bulun.</p>
@@ -156,94 +106,92 @@
             </div>
           </div>
 
+          <!-- FAQ list -->
           <div class="mt-8 flex flex-col gap-10 px-4">
-      <!-- FAQ list -->
-      <div id="faqList" class="mt-8 flex flex-col">
-        <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="uyelik genel">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-            <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">IPS'e nasıl üye olabilirim?</p>
-            <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-              <span class="material-symbols-outlined">expand_more</span>
-            </div>
-          </summary>
-          <div class="flex flex-col gap-3">
-            <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-              Üyelik başvuruları her akademik yılın başında web sitemiz üzerinden açılmaktadır. Başvuru formunu doldurarak ve belirtilen adımları takip ederek topluluğumuza katılabilirsiniz.
-            </p>
-            <a class="text-sm font-semibold text-primary underline hover:text-opacity-80" href="join.html">Üyelik Sayfası →</a>
-          </div>
-        </details>
+            <div id="faqList" class="mt-8 flex flex-col">
+              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="uyelik genel">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
+                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">IPS'e nasıl üye olabilirim?</p>
+                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
+                    <span class="material-symbols-outlined">expand_more</span>
+                  </div>
+                </summary>
+                <div class="flex flex-col gap-3">
+                  <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
+                    Üyelik başvuruları her akademik yılın başında web sitemiz üzerinden açılmaktadır. Başvuru formunu doldurarak ve belirtilen adımları takip ederek topluluğumuza katılabilirsiniz.
+                  </p>
+                  <a class="text-sm font-semibold text-primary underline hover:text-opacity-80" href="join.html">Üyelik Sayfası →</a>
+                </div>
+              </details>
 
-        <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="finansman projeler">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-            <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">Projeler için finansal destek sağlıyor musunuz?</p>
-            <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-              <span class="material-symbols-outlined">expand_more</span>
-            </div>
-          </summary>
-          <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-            Evet, seçilen projelere başlangıç sermayesi ve kaynak desteği sağlıyoruz. Destek miktarı ve koşulları projenin niteliğine ve ihtiyaçlarına göre değişiklik göstermektedir.
-          </p>
-        </details>
+              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="finansman projeler">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
+                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">Projeler için finansal destek sağlıyor musunuz?</p>
+                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
+                    <span class="material-symbols-outlined">expand_more</span>
+                  </div>
+                </summary>
+                <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
+                  Evet, seçilen projelere başlangıç sermayesi ve kaynak desteği sağlıyoruz. Destek miktarı ve koşulları projenin niteliğine ve ihtiyaçlarına göre değişiklik göstermektedir.
+                </p>
+              </details>
 
-        <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="genel">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-            <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">IPS'in misyonu nedir?</p>
-            <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-              <span class="material-symbols-outlined">expand_more</span>
-            </div>
-          </summary>
-          <div class="flex flex-col gap-3">
-            <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-              IPS, öğrencileri, akademisyenleri ve profesyonelleri çeşitli disiplinlerde bir araya getirerek işbirliğine dayalı projeleri teşvik etmeyi ve disiplinlerarası düşünceyi yaygınlaştırmayı amaçlar.
-            </p>
-            <a class="text-sm font-semibold text-primary underline hover:text-opacity-80" href="team.html">Hakkımızda Daha Fazla Bilgi Edinin →</a>
-          </div>
-        </details>
+              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="genel">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
+                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">IPS'in misyonu nedir?</p>
+                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
+                    <span class="material-symbols-outlined">expand_more</span>
+                  </div>
+                </summary>
+                <div class="flex flex-col gap-3">
+                  <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
+                    IPS, öğrencileri, akademisyenleri ve profesyonelleri çeşitli disiplinlerde bir araya getirerek işbirliğine dayalı projeleri teşvik etmeyi ve disiplinlerarası düşünceyi yaygınlaştırmayı amaçlar.
+                  </p>
+                  <a class="text-sm font-semibold text-primary underline hover:text-opacity-80" href="team.html">Hakkımızda Daha Fazla Bilgi Edinin →</a>
+                </div>
+              </details>
 
-        <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="projeler genel">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-            <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">Projelerinizde yer almak için belirli bir bölümden olmak gerekiyor mu?</p>
-            <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-              <span class="material-symbols-outlined">expand_more</span>
-            </div>
-          </summary>
-          <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-            Hayır, kesinlikle gerekmiyor. IPS, tüm disiplinlerden öğrencilere ve akademisyenlere açıktır. Farklı bakış açılarının yaratıcılığı ve yeniliği teşvik ettiğine inanıyoruz.
-          </p>
-        </details>
+              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="projeler genel">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
+                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">Projelerinizde yer almak için belirli bir bölümden olmak gerekiyor mu?</p>
+                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
+                    <span class="material-symbols-outlined">expand_more</span>
+                  </div>
+                </summary>
+                <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
+                  Hayır, kesinlikle gerekmiyor. IPS, tüm disiplinlerden öğrencilere ve akademisyenlere açıktır. Farklı bakış açılarının yaratıcılığı ve yeniliği teşvik ettiğine inanıyoruz.
+                </p>
+              </details>
 
-        <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="genel">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-            <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">Topluluğunuz ne kadar kapsayıcı? Herkes katılabilir mi?</p>
-            <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-              <span class="material-symbols-outlined">expand_more</span>
-            </div>
-          </summary>
-          <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-            IPS, çeşitliliği ve kapsayıcılığı temel değerleri olarak benimser. Herkesin kendini ait hissedebileceği, fikirlerini özgürce paylaşabileceği ve saygı gördüğü bir ortam yaratmaya özen gösteriyoruz.
-          </p>
-        </details>
+              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="genel">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
+                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">Topluluğunuz ne kadar kapsayıcı? Herkes katılabilir mi?</p>
+                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
+                    <span class="material-symbols-outlined">expand_more</span>
+                  </div>
+                </summary>
+                <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
+                  IPS, çeşitliliği ve kapsayıcılığı temel değerleri olarak benimser. Herkesin kendini ait hissedebileceği, fikirlerini özgürce paylaşabileceği ve saygı gördüğü bir ortam yaratmaya özen gösteriyoruz.
+                </p>
+              </details>
 
-        <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="etkinlikler genel">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-            <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">Etkinlikleriniz hakkında nasıl bilgi alabilirim?</p>
-            <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-              <span class="material-symbols-outlined">expand_more</span>
-            </div>
-          </summary>
-          <div class="flex flex-col gap-3">
-            <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-              Tüm etkinliklerimiz web sitemizin 'Etkinlikler' sayfasında ve sosyal medya hesaplarımızda düzenli olarak duyurulmaktadır. Ayrıca, e-posta bültenimize abone olarak en son güncellemelerden haberdar olabilirsiniz.
-            </p>
-            <a class="text-sm font-semibold text-primary underline hover:text-opacity-80" href="events.html">Etkinlik Takvimini Görüntüle →</a>
-          </div>
-        </details>
+              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="etkinlikler genel">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
+                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">Etkinlikleriniz hakkında nasıl bilgi alabilirim?</p>
+                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
+                    <span class="material-symbols-outlined">expand_more</span>
+                  </div>
+                </summary>
+                <div class="flex flex-col gap-3">
+                  <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
+                    Tüm etkinliklerimiz web sitemizin 'Etkinlikler' sayfasında ve sosyal medya hesaplarımızda düzenli olarak duyurulmaktadır. Ayrıca, e-posta bültenimize abone olarak en son güncellemelerden haberdar olabilirsiniz.
+                  </p>
+                  <a class="text-sm font-semibold text-primary underline hover:text-opacity-80" href="events.html">Etkinlik Takvimini Görüntüle →</a>
+                </div>
+              </details>
 
-        <div class="border-b border-b-primary/20"></div>
-      </div>
-    </div>
-  </div>
+              <div class="border-b border-b-primary/20"></div>
+            </div>
           </div>
 
           <div class="mt-20 rounded-lg border border-primary/20 bg-primary/5 p-8 text-center dark:bg-primary/10">
@@ -262,45 +210,8 @@
           </div>
         </main>
 
-        <!-- ===== Footer (site-wide consistent) ===== -->
-        <footer class="w-full bg-text-light text-background-light py-12 mt-16">
-          <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
-            <div class="flex flex-col items-center md:items-start">
-              <div class="flex items-center gap-3">
-                <img src="assets/img/kulup-logo.jpg" alt="IPS" class="h-10 w-10 rounded" width="40" height="40"/>
-                <span class="text-xl font-bold">IPS</span>
-              </div>
-              <p class="mt-2 text-sm opacity-70">Bridging disciplines, building futures.</p>
-              <p class="mt-2 text-xs opacity-60">© <span id="yy"></span> Interdisciplinary Project Society. All rights reserved.</p>
-            </div>
-
-            <nav class="flex justify-center gap-8 md:gap-12 text-sm font-medium">
-              <a class="hover:text-white/80 transition-colors navlink" href="team.html">Team</a>
-              <a class="hover:text-white/80 transition-colors navlink" href="projects.html">Projects</a>
-              <a class="hover:text-white/80 transition-colors navlink" href="events.html">Events</a>
-              <a class="hover:text-white/80 transition-colors navlink" href="blog.html">Blog</a>
-              <a class="hover:text-white/80 transition-colors navlink" href="sss.html" aria-current="page">FAQ</a>
-            </nav>
-
-            <div class="flex justify-center md:justify-end items-center gap-6">
-              <a class="opacity-80 hover:opacity-100 transition" href="https://www.linkedin.com/in/%C4%B1ps" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <img src="assets/icon/social-media/linkedin.png" width="22" height="22" alt="LinkedIn" loading="lazy" decoding="async">
-              </a>
-              <a class="opacity-80 hover:opacity-100 transition" href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" rel="noopener" aria-label="Instagram">
-                <img src="assets/icon/social-media/instagram.png" width="22" height="22" alt="Instagram" loading="lazy" decoding="async">
-              </a>
-              <a class="opacity-80 hover:opacity-100 transition" href="https://www.youtube.com/@ipsociety2025" target="_blank" rel="noopener" aria-label="YouTube">
-                <img src="assets/icon/social-media/youtube.png" width="22" height="22" alt="YouTube" loading="lazy" decoding="async">
-              </a>
-              <a class="opacity-80 hover:opacity-100 transition" href="https://www.tiktok.com/@ip_society?_t=ZS-90QYlkW9jJC&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
-                <img src="assets/icon/social-media/tik-tok.png" width="22" height="22" alt="TikTok" loading="lazy" decoding="async">
-              </a>
-              <a class="opacity-80 hover:opacity-100 transition" href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener" aria-label="WhatsApp">
-                <img src="assets/icon/social-media/whatsapp.png" width="22" height="22" alt="WhatsApp" loading="lazy" decoding="async">
-              </a>
-            </div>
-          </div>
-        </footer>
+        <!-- Footer: loader -->
+        <script src="js/footer-loader.js" defer></script>
 
       </div>
     </div>
@@ -312,13 +223,12 @@
   (function(){
     const q = document.getElementById('faqSearch');
     const items = Array.from(document.querySelectorAll('.faq-item'));
-    const tabs = Array.from(document.querySelectorAll('.faq-tab'));
+    const tabs  = Array.from(document.querySelectorAll('.faq-tab')); // varsa kategori sekmeleri
 
     function applyFilters(){
-      const term = (q.value || '').toLowerCase().trim();
+      const term = (q?.value || '').toLowerCase().trim();
       const activeTab = tabs.find(t => t.classList.contains('bg-primary')) || tabs[0];
       const cat = activeTab?.dataset.cat || 'all';
-
       items.forEach(it => {
         const text = it.textContent.toLowerCase();
         const cats = (it.dataset.cat || '').split(/\s+/);
@@ -327,9 +237,7 @@
         it.style.display = (catMatch && textMatch) ? '' : 'none';
       });
     }
-
     q?.addEventListener('input', applyFilters);
-
     tabs.forEach(btn => {
       btn.addEventListener('click', () => {
         tabs.forEach(b => b.classList.remove('bg-primary','text-background-light','shadow-md'));
@@ -339,23 +247,22 @@
         applyFilters();
       });
     });
-
     applyFilters();
 
-    // mobile menu toggle
-    const toggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
+    // mobile menu: loader header kimlikleri
+    const toggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('navMenu');
     const body = document.body;
     function closeMenu(){
-      mobileMenu.classList.add('hidden');
+      mobileMenu?.classList.add('hidden');
       body.classList.remove('overflow-hidden');
       toggle?.setAttribute('aria-expanded','false');
     }
     function toggleMenu(){
-      const open = !mobileMenu.classList.contains('hidden');
+      const open = !mobileMenu?.classList.contains('hidden');
       if(open) closeMenu();
       else{
-        mobileMenu.classList.remove('hidden');
+        mobileMenu?.classList.remove('hidden');
         body.classList.add('overflow-hidden');
         toggle?.setAttribute('aria-expanded','true');
       }
@@ -363,11 +270,10 @@
     toggle?.addEventListener('click', toggleMenu);
     mobileMenu?.addEventListener('click', (e)=>{ if(e.target.tagName === 'A') closeMenu(); });
     window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeMenu(); });
-
-    // year
-    const yy = document.getElementById('yy');
-    if(yy) yy.textContent = new Date().getFullYear();
   })();
 </script>
+
+<!-- Davranışlar (genel) -->
+<script src="assets/js/app.js" defer></script>
 </body>
 </html>

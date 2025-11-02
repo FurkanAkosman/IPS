@@ -1,25 +1,12 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <!-- GA4 -->
-  <script src="../js/analytics.js"></script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Yusuf Mete Geçer — IPS</title>
   <meta name="description" content="IPS üyesi Yusuf Mete Geçer: ilgi alanları, IPS’e katkıları ve hedefleri. Moleküler biyoloji, genetik ve disiplinler arası projeler.">
-
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Lora:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="../assets/css/reset.css">
-  <link rel="stylesheet" href="person.css">
+  <meta name="theme-color" content="#4d0011">
 
   <!-- Canonical + Open Graph + Twitter -->
   <link rel="canonical" href="https://furkanakosman.github.io/IPS/people/yusuf-mete-gecer.html">
@@ -33,22 +20,34 @@
   <meta name="twitter:title" content="Yusuf Mete Geçer — IPS">
   <meta name="twitter:description" content="IPS üyesi Yusuf Mete Geçer’in profili.">
   <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/team/anonim.png">
-  <meta name="theme-color" content="#4d0011">
 
-  <!-- Prefetch -->
-  <link rel="prefetch" href="../team.html" as="document">
-  <link rel="prefetch" href="../events.html" as="document">
-  <link rel="prefetch" href="../blog.html" as="document">
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (header/footer kısmi için; site genelinde zaten kullanıyorsanız bırakın) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode:"class",
+      theme:{ extend:{
+        colors:{ primary:"#4d0011","background-light":"#f8f8f3","text-light":"#1D0C0F" },
+        fontFamily:{ display:["Inter","sans-serif"], body:["Lora","serif"] },
+        borderRadius:{ xl:"12px" }
+      }}
+    };
+  </script>
+
+  <!-- Sayfa CSS -->
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="person.css">
 
   <!-- JSON-LD: Organization -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Interdisciplinary Project Society",
-    "url":"https://furkanakosman.github.io/IPS/",
-    "logo":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg"
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Interdisciplinary Project Society","url":"https://furkanakosman.github.io/IPS/","logo":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg"}
   </script>
 
   <!-- JSON-LD: Person -->
@@ -59,44 +58,18 @@
     "name":"Yusuf Mete Geçer",
     "image":"https://furkanakosman.github.io/IPS/assets/img/team/anonim.png",
     "jobTitle":"Member",
-    "affiliation": {
-      "@type":"Organization",
-      "name":"Interdisciplinary Project Society",
-      "url":"https://furkanakosman.github.io/IPS/"
-    },
-    "knowsAbout":[
-      "Moleküler Biyoloji ve Genetik",
-      "Biyoteknoloji",
-      "Deneysel Tasarım",
-      "Veri Düzenleme",
-      "Bilim İletişimi"
-    ],
+    "affiliation":{"@type":"Organization","name":"Interdisciplinary Project Society","url":"https://furkanakosman.github.io/IPS/"},
+    "knowsAbout":["Moleküler Biyoloji ve Genetik","Biyoteknoloji","Deneysel Tasarım","Veri Düzenleme","Bilim İletişimi"],
     "url":"https://furkanakosman.github.io/IPS/people/yusuf-mete-gecer.html"
   }
   </script>
 
-  <style>
-    /* LCP/CLS mikro iyileştirme */
-    img[loading="lazy"]{ contain-intrinsic-size:auto 200px }
-  </style>
+  <style>img[loading="lazy"]{contain-intrinsic-size:auto 200px}</style>
 </head>
 <body>
 
-<header class="site-header" id="siteHeader">
-  <div class="wrap">
-    <a class="brand" href="../index.html" aria-label="IPS ana sayfa">
-      <img src="../assets/img/kulup-logo.jpg" alt="IPS" width="32" height="32" loading="lazy" decoding="async">
-      <span>Interdisciplinary Project Society</span>
-    </a>
-    <nav class="nav" aria-label="Birincil">
-      <a href="../index.html">Main Page</a>
-      <a href="../team.html">Team</a>
-      <a href="../events.html">Events</a>
-      <a href="../blog.html">Blog</a>
-      <a class="btn" href="../join.html">Join Us</a>
-    </nav>
-  </div>
-</header>
+<!-- Header dinamik: GA da buradan yüklenecek -->
+<script src="../js/header-loader.js" defer></script>
 
 <main class="person">
   <a class="back" href="../team.html" aria-label="Takım sayfasına geri dön">← Back to Team</a>
@@ -110,15 +83,9 @@
       <h1 class="person__name">Yusuf Mete Geçer</h1>
       <p class="person__meta">Molecular Biology and Genetics • Bachelor • Istanbul Sabahattin Zaim University</p>
       <ul class="person__social">
-        <li><a href="#" aria-label="LinkedIn" rel="noopener">
-          <img src="../assets/icon/social-media/linkedin.png" alt="LinkedIn" width="20" height="20" loading="lazy" decoding="async">
-        </a></li>
-        <li><a href="#" aria-label="Instagram" rel="noopener">
-          <img src="../assets/icon/social-media/instagram.png" alt="Instagram" width="20" height="20" loading="lazy" decoding="async">
-        </a></li>
-        <li><a href="#" aria-label="YouTube" rel="noopener">
-          <img src="../assets/icon/social-media/youtube.png" alt="YouTube" width="20" height="20" loading="lazy" decoding="async">
-        </a></li>
+        <li><a href="#" aria-label="LinkedIn" rel="noopener"><img src="../assets/icon/social-media/linkedin.png" alt="LinkedIn" width="20" height="20" loading="lazy" decoding="async"></a></li>
+        <li><a href="#" aria-label="Instagram" rel="noopener"><img src="../assets/icon/social-media/instagram.png" alt="Instagram" width="20" height="20" loading="lazy" decoding="async"></a></li>
+        <li><a href="#" aria-label="YouTube" rel="noopener"><img src="../assets/icon/social-media/youtube.png" alt="YouTube" width="20" height="20" loading="lazy" decoding="async"></a></li>
       </ul>
     </div>
   </div>
@@ -139,35 +106,9 @@
   </section>
 </main>
 
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="footer__inner">
-    <p>© <span id="y"></span> Interdisciplinary Project Society. All Rights Reserved.</p>
-
-    <ul class="footer__links">
-      <li><a href="https://www.youtube.com/@ipsociety2025" target="_blank" rel="noopener" aria-label="YouTube">
-        <img src="../assets/icon/social-media/youtube.png" alt="YouTube" width="22" height="22" loading="lazy" decoding="async">
-      </a></li>
-      <li><a href="https://www.linkedin.com/in/%C4%B1ps" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <img src="../assets/icon/social-media/linkedin.png" alt="LinkedIn" width="22" height="22" loading="lazy" decoding="async">
-      </a></li>
-      <li><a href="https://www.tiktok.com/@ip_society?_t=ZS-90QYlkW9jJC&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
-        <img src="../assets/icon/social-media/tik-tok.png" alt="TikTok" width="22" height="22" loading="lazy" decoding="async">
-      </a></li>
-      <li><a href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" rel="noopener" aria-label="Instagram">
-        <img src="../assets/icon/social-media/instagram.png" alt="Instagram" width="22" height="22" loading="lazy" decoding="async">
-      </a></li>
-      <li><a href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener" aria-label="WhatsApp Join">
-        <img src="../assets/icon/social-media/whatsapp.png" alt="WhatsApp" width="22" height="22" loading="lazy" decoding="async">
-      </a></li>
-    </ul>
-  </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</footer>
-
-<!-- Ortak JS -->
-<script src="../assets/js/app.js"></script>
-<script src="../js/head-loader.js"></script>
+<!-- Footer dinamik + ortak davranışlar -->
+<script src="../js/footer-loader.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
 
 </body>
 </html>
