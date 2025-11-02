@@ -1,153 +1,220 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Analytics -->
+  <script src="../js/analytics.js"></script>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Interdisciplinary Project Society - Content Detail Page</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&amp;family=Lora:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style>
-        body {
-            font-family: 'Lora', serif;
-        }
-        h1, h2, h3, h4, h5, h6, .font-sans {
-            font-family: 'Montserrat', sans-serif;
-        }
-    </style>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#4d0011",
-              "background-light": "#f8f8f3",
-              "background-dark": "#101622",
-              "text-body": "#333333",
-              "accent-subtle": "#e0e0e0"
-            },
-            fontFamily: {
-              "display": ["Montserrat", "sans-serif"],
-              "body": ["Lora", "serif"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Unraveling the Societal Impact of AI — IPS</title>
+  <meta name="description" content="Artificial intelligence is reshaping society. This article analyzes ethical dimensions, real-world case studies, and practical implications across sectors.">
+  <meta name="theme-color" content="#4d0011">
+
+  <!-- Canonical + Open Graph + Twitter -->
+  <link rel="canonical" href="https://furkanakosman.github.io/IPS/content.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Unraveling the Societal Impact of AI — IPS">
+  <meta property="og:description" content="Ethical dimensions, case studies, and sectoral implications of AI’s rapid diffusion.">
+  <meta property="og:url" content="https://furkanakosman.github.io/IPS/content.html">
+  <meta property="og:site_name" content="Interdisciplinary Project Society">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuAYGKtQR8Wb9EV7gzJZGSrYE0NrO0ggB45zOmmgAsfHZX6alo18_guPrfibxRn3yO1IPXJqS1BJR21IVECnyXsBdzIk6hldNxqhuxnFVRLAz6osMQvTEAHO7mJJNYGkcsI-gJR8ALk9_7FkvjA8TuPfFen_MGPmbQ0W84FKTGMJHEmHvxdyT5aYicJP84Qi6vXwShXB9e-Ni_SWTS2yPL-cGXjn0W0c177cIugyZ_x89kN8EoLYJaWW6tpqNuMJrSslUc5goXQczeI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Unraveling the Societal Impact of AI — IPS">
+  <meta name="twitter:description" content="Ethics, bias, privacy, and accountability in AI, with sector case studies.">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuAYGKtQR8Wb9EV7gzJZGSrYE0NrO0ggB45zOmmgAsfHZX6alo18_guPrfibxRn3yO1IPXJqS1BJR21IVECnyXsBdzIk6hldNxqhuxnFVRLAz6osMQvTEAHO7mJJNYGkcsI-gJR8ALk9_7FkvjA8TuPfFen_MGPmbQ0W84FKTGMJHEmHvxdyT5aYicJP84Qi6vXwShXB9e-Ni_SWTS2yPL-cGXjn0W0c177cIugyZ_x89kN8EoLYJaWW6tpqNuMJrSslUc5goXQczeI">
+
+  <!-- Prefetch (site pages) -->
+  <link rel="prefetch" href="./index.html" as="document">
+  <link rel="prefetch" href="./blog.html" as="document">
+  <link rel="prefetch" href="./projects.html" as="document">
+
+  <!-- Fonts + Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <!-- Tailwind config -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4d0011",
+            "background-light": "#f8f8f3",
+            "background-dark": "#101622",
+            "text-body": "#333333",
+            "accent-subtle": "#e0e0e0"
           },
-        },
+          fontFamily: {
+            "display": ["Montserrat", "sans-serif"],
+            "body": ["Lora", "serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}
+        }
       }
-    </script>
+    }
+  </script>
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Interdisciplinary Project Society",
+    "url":"https://furkanakosman.github.io/IPS/",
+    "logo":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg"
+  }
+  </script>
+
+  <!-- Article JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Unraveling the Societal Impact of AI",
+    "author":{"@type":"Person","name":"Dr. Eleanor Vance"},
+    "datePublished":"2023-10-26",
+    "image":[
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAYGKtQR8Wb9EV7gzJZGSrYE0NrO0ggB45zOmmgAsfHZX6alo18_guPrfibxRn3yO1IPXJqS1BJR21IVECnyXsBdzIk6hldNxqhuxnFVRLAz6osMQvTEAHO7mJJNYGkcsI-gJR8ALk9_7FkvjA8TuPfFen_MGPmbQ0W84FKTGMJHEmHvxdyT5aYicJP84Qi6vXwShXB9e-Ni_SWTS2yPL-cGXjn0W0c177cIugyZ_x89kN8EoLYJaWW6tpqNuMJrSslUc5goXQczeI",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuC1XNsO_TnDCa2iXwySMOF6GrxapgA39QNpHdZZeCWfqKm8B-oKdZOvrEP7lMuHIe9jNv9iKYQTC1TLsfeMwdRUKQDh-KFzPz02Apfukc8xzs_2E9ZG66tpQGNi_vPYuVNw0h000z2rO6FbDbrluBlNOMxCowowZeunAx5sRVUjSV_Ms4U4za2qbgrGRfs0HHx9-YR7nrhO_6jqLCh4anMO9jxQAeuNLRPIuoJ1Cy2EVWnIlY5-kfXM0cPXsidFq4NtxpOJO_qEoxc",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCeZaYKI-Tmblov0FlhUHK9pQRX9zFc-caoZiVkUAgGH8gQabQs6X_V-BNmgA-hJ3lDTqzSAXcwtY6sB89u8wya-cnYA2-aX8wxHsb5FyAjS-cz9t28ll9_jobdz3A8l3_cgvTznK_YWcVBWwFQPXzlssdhDLKs-EsdiKG_luDVVeM4BlvOFKnezjXAzaft3Wh0n_PShvdjSYyzUmTDEy_Eowr5Jh_E1VIhFAMrx1r0uGDFsIYx-XWfJCcWuSnztK9nG4yoGLxXnhU",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBmcZXaFkZgcPqGrE0Cg23OzGdZExAhUhkLg4qHDaagzQg1fo4pr0s9B70vi3zHJTv7ry-6zZIVS0w0NzCnZKCknVmaiflQhh4WMByyH8WyluvpL1L3r9VxRx9TGZKYvnKsX9WbRCXvrO86A-8Aai6owyFmCKyzWe40A51FKof4UC18gcb-022-PLhatAYRJDRKVU_qgU3Jr-_oYAvjt17TZkAyNk5vr2vBQD6XaBQ3Y0aSFAlfvEGfQVaKLFCyQbZWFJYKxiJkxfE"
+    ],
+    "publisher":{
+      "@type":"Organization",
+      "name":"Interdisciplinary Project Society",
+      "logo":{"@type":"ImageObject","url":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg"}
+    },
+    "mainEntityOfPage":"https://furkanakosman.github.io/IPS/content.html"
+  }
+  </script>
+
+  <style>
+    body { font-family: 'Lora', serif }
+    h1, h2, h3, h4, h5, h6, .font-sans { font-family: 'Montserrat', sans-serif }
+    img[loading="lazy"] { contain-intrinsic-size: auto 300px }
+  </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-body text-text-body dark:text-gray-300">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<!-- TopNavBar -->
-<div class="w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50 border-b border-accent-subtle dark:border-gray-700">
-<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-<header class="flex items-center justify-between whitespace-nowrap py-4">
-<div class="flex items-center gap-3 text-primary dark:text-white">
-<div class="size-6 text-primary dark:text-white">
-<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"></path>
-</svg>
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+  <!-- TopNavBar -->
+  <div class="w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50 border-b border-accent-subtle dark:border-gray-700">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="flex items-center justify-between whitespace-nowrap py-4" aria-label="Primary">
+        <div class="flex items-center gap-3 text-primary dark:text-white">
+          <div class="size-6 text-primary dark:text-white" aria-hidden="true">
+            <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img">
+              <title>IPS</title>
+              <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"></path>
+            </svg>
+          </div>
+          <h2 class="font-display text-lg font-bold tracking-tight">Interdisciplinary Project Society</h2>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a class="font-display text-sm font-medium hover:text-primary" href="./index.html">Home</a>
+          <a class="font-display text-sm font-medium hover:text-primary" href="./projects.html">Projects</a>
+          <a class="font-display text-sm font-medium text-primary font-bold" href="./blog.html">Blog</a>
+          <a class="font-display text-sm font-medium hover:text-primary" href="./team.html">About</a>
+          <a class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold font-display hover:bg-opacity-90" href="./join.html">Contact Us</a>
+        </nav>
+        <button class="md:hidden text-text-body dark:text-gray-300" aria-label="Open menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </header>
+    </div>
+  </div>
+
+  <main class="flex flex-1 justify-center py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <article class="flex flex-col max-w-3xl flex-1 gap-8">
+      <!-- Heading -->
+      <header class="flex flex-col gap-4 text-center">
+        <h1 class="font-display text-primary dark:text-white text-4xl sm:text-5xl font-black leading-tight tracking-tighter">Unraveling the Societal Impact of AI</h1>
+        <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal font-sans">By Dr. Eleanor Vance on October 26, 2023</p>
+      </header>
+
+      <!-- Hero -->
+      <figure class="relative flex items-center justify-center bg-gray-200 bg-cover bg-center aspect-video rounded-xl overflow-hidden" style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYGKtQR8Wb9EV7gzJZGSrYE0NrO0ggB45zOmmgAsfHZX6alo18_guPrfibxRn3yO1IPXJqS1BJR21IVECnyXsBdzIk6hldNxqhuxnFVRLAz6osMQvTEAHO7mJJNYGkcsI-gJR8ALk9_7FkvjA8TuPfFen_MGPmbQ0W84FKTGMJHEmHvxdyT5aYicJP84Qi6vXwShXB9e-Ni_SWTS2yPL-cGXjn0W0c177cIugyZ_x89kN8EoLYJaWW6tpqNuMJrSslUc5goXQczeI");'>
+        <button class="flex shrink-0 items-center justify-center rounded-full size-20 bg-black/50 text-white hover:bg-black/70 transition-colors" aria-label="Play video">
+          <span class="material-symbols-outlined !text-4xl" aria-hidden="true">play_arrow</span>
+        </button>
+        <figcaption class="sr-only">Abstract visualization of neural networks and data points</figcaption>
+      </figure>
+
+      <!-- Body -->
+      <div class="prose prose-lg dark:prose-invert max-w-none leading-relaxed">
+        <p>Artificial intelligence is rapidly reshaping our world, from the way we communicate to the foundations of our industries. This article delves into the multifaceted societal impacts of AI, exploring both its profound benefits and the ethical challenges it presents. We will examine case studies across various sectors to understand the real-world implications of this transformative technology.</p>
+
+        <h2 class="font-display text-primary dark:text-white !mt-12 !mb-4">The Ethical Dimensions</h2>
+        <p>As AI systems become more autonomous, questions of accountability, bias, and transparency come to the forefront. It's crucial to develop frameworks that ensure these technologies are used responsibly and equitably, preventing the amplification of existing societal inequalities.</p>
+        <ul>
+          <li>Algorithmic Bias: Ensuring fairness in automated decision-making.</li>
+          <li>Data Privacy: Protecting individual information in an era of big data.</li>
+          <li>Accountability: Determining responsibility when an AI system makes a mistake.</li>
+        </ul>
+
+        <blockquote class="border-l-4 border-primary dark:border-red-300 pl-6 italic text-gray-600 dark:text-gray-400">
+          "The true measure of technological advancement is not its power, but how it empowers humanity. With AI, we have a profound responsibility to steer its development toward a more just and equitable future for all."
+        </blockquote>
+
+        <h3 class="font-display text-primary dark:text-white !mt-12 !mb-4">Visualizing the Process</h3>
+        <p>To better understand the intricate processes involved, our team has compiled a series of images from various project milestones, illustrating the development cycle from concept to implementation.</p>
+      </div>
+
+      <!-- Gallery -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <img class="rounded-lg object-cover w-full h-full aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1XNsO_TnDCa2iXwySMOF6GrxapgA39QNpHdZZeCWfqKm8B-oKdZOvrEP7lMuHIe9jNv9iKYQTC1TLsfeMwdRUKQDh-KFzPz02Apfukc8xzs_2E9ZG66tpQGNi_vPYuVNw0h000z2rO6FbDbrluBlNOMxCowowZeunAx5sRVUjSV_Ms4U4za2qbgrGRfs0HHx9-YR7nrhO_6jqLCh4anMO9jxQAeuNLRPIuoJ1Cy2EVWnIlY5-kfXM0cPXsidFq4NtxpOJO_qEoxc" alt="Charts and graphs on a computer screen" loading="lazy" decoding="async" width="600" height="600">
+        <img class="rounded-lg object-cover w-full h-full aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeZaYKI-Tmblov0FlhUHK9pQRX9zFc-caoZiVkUAgGH8gQabQs6X_V-BNmgA-hJ3lDTqzSAXcwtY6sB89u8wya-cnYA2-aX8wxHsb5FyAjS-cz9t28ll9_jobdz3A8l3_cgvTznK_YWcVBWwFQPXzlssdhDLKs-EsdiKG_luDVVeM4BlvOFKnezjXAzaft3Wh0n_PShvdjSYyzUmTDEy_Eowr5Jh_E1VIhFAMrx1r0uGDFsIYx-XWfJCcWuSnztK9nG4yoGLxXnhU" alt="Computer motherboard with intricate circuits" loading="lazy" decoding="async" width="600" height="600">
+        <img class="rounded-lg object-cover w-full h-full aspect-square col-span-2 md:col-span-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmcZXaFkZgcPqGrE0Cg23OzGdZExAhUhkLg4qHDaagzQg1fo4pr0s9B70vi3zHJTv7ry-6zZIVS0w0NzCnZKCknVmaiflQhh4WMByyH8WyluvpL1L3r9VxRx9TGZKYvnKsX9WbRCXvrO86A-8Aai6owyFmCKyzWe40A51FKof4UC18gcb-022-PLhatAYRJDRKVU_qgU3Jr-_oYAvjt17TZkAyNk5vr2vBQD6XaBQ3Y0aSFAlfvEGfQVaKLFCyQbZWFJYKxiJkxfE" alt="Screen displaying complex code" loading="lazy" decoding="async" width="600" height="600">
+      </div>
+
+      <!-- Tags -->
+      <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-accent-subtle dark:border-gray-700">
+        <h4 class="font-display text-sm font-bold">Tags:</h4>
+        <a class="font-sans text-sm font-medium px-3 py-1 rounded-full bg-accent-subtle dark:bg-gray-700 hover:bg-primary/20 dark:hover:bg-primary/40 transition-colors" href="#">Computer Science</a>
+        <a class="font-sans text-sm font-medium px-3 py-1 rounded-full bg-accent-subtle dark:bg-gray-700 hover:bg-primary/20 dark:hover:bg-primary/40 transition-colors" href="#">Sociology</a>
+        <a class="font-sans text-sm font-medium px-3 py-1 rounded-full bg-accent-subtle dark:bg-gray-700 hover:bg-primary/20 dark:hover:bg-primary/40 transition-colors" href="#">Data Visualization</a>
+      </div>
+
+      <!-- Related -->
+      <section class="pt-8 border-t border-accent-subtle dark:border-gray-700" aria-label="Related content">
+        <h2 class="font-display text-3xl font-bold text-primary dark:text-white mb-6">Related Content</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article class="flex flex-col group">
+            <img class="rounded-lg object-cover w-full h-40 mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGb307FzRn-KHWPrHhQFet_2yHzLAs4up5M1vgm8EnLQuaJE4_rCSxBN-6MdQ3z7gIfTdI_bsA63oUDCdeiiaR6q6LzXBCuYP9GS-7gXGv1ejJK19r3ff6-8lyLPIJPYr8BAcTrAgs3NlFf1MIdBYqQYVHDAPlv8HVnuHa9MPLuYNTeoT9wczwWkOsq-sR3zTcpK4ra12Cjgl28dDVChp5JUczrOjg3NgA37jGStW5IGLXQfNKmKHFYx50itdmWXg5UIJ21tH7uOs" alt="3D network nodes and lines" loading="lazy" decoding="async" width="640" height="160">
+            <h3 class="font-display text-xl font-bold group-hover:text-primary">Project: Quantum Heuristics</h3>
+            <p class="text-gray-500 dark:text-gray-400 mt-1 flex-1">Exploring the intersection of quantum computing and heuristic problem-solving methodologies.</p>
+            <a class="font-sans font-bold text-primary mt-2 self-start" href="#">Read More →</a>
+          </article>
+
+          <article class="flex flex-col group">
+            <img class="rounded-lg object-cover w-full h-40 mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoDDbUr35n1K_4CrjwaxCzzuQOjcjzLUtjoYseaGbfR0JhQIyljZYkCUeXPMT7okMLttb8aV9ZZBm5FSX1ziTdaPf6ZlJ2ZYy59jnRHdxaSn4G0ajU2162clJQDwjxS81_Dc4svX_eL_noS0TiCAKWWLRv7Owdl3qzBUmvnpFvSthignFIovhj4DKClebcRfTSjRz6_54QN0uWayNnmDanpVEQZZmb6pcoDsqJuzMjU4xMEKw9LWKKb-UEbqHI6r8g6bA8T7ocqL4" alt="Person with laptop in a modern library" loading="lazy" decoding="async" width="640" height="160">
+            <h3 class="font-display text-xl font-bold group-hover:text-primary">Further Reading: The Future of Digital Ethics</h3>
+            <p class="text-gray-500 dark:text-gray-400 mt-1 flex-1">A deep dive into the evolving landscape of ethical considerations in our digital lives.</p>
+            <a class="font-sans font-bold text-primary mt-2 self-start" href="#">Read More →</a>
+          </article>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-900 border-t border-accent-subtle dark:border-gray-800">
+    <div class="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-gray-500 dark:text-gray-400">
+      <p class="font-sans text-sm">© <span id="y"></span> Interdisciplinary Project Society. All Rights Reserved.</p>
+      <nav class="flex justify-center gap-4 mt-4" aria-label="Footer">
+        <a class="hover:text-primary" href="https://x.com" rel="noopener">Twitter</a>
+        <a class="hover:text-primary" href="https://www.linkedin.com/in/%C4%B1ps" rel="noopener">LinkedIn</a>
+        <a class="hover:text-primary" href="./join.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
 </div>
-<h2 class="font-display text-lg font-bold tracking-tight">Interdisciplinary Project Society</h2>
-</div>
-<div class="hidden md:flex items-center gap-8">
-<a class="font-display text-sm font-medium text-text-body dark:text-gray-300 hover:text-primary dark:hover:text-white" href="#">Home</a>
-<a class="font-display text-sm font-medium text-text-body dark:text-gray-300 hover:text-primary dark:hover:text-white" href="#">Projects</a>
-<a class="font-display text-sm font-medium text-primary dark:text-white font-bold" href="#">Blog</a>
-<a class="font-display text-sm font-medium text-text-body dark:text-gray-300 hover:text-primary dark:hover:text-white" href="#">About</a>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:bg-opacity-90 font-display">
-<span class="truncate">Contact Us</span>
-</button>
-</div>
-<div class="md:hidden">
-<button class="text-text-body dark:text-gray-300">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</header>
-</div>
-</div>
-<main class="flex flex-1 justify-center py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
-<article class="layout-content-container flex flex-col max-w-3xl flex-1 gap-8">
-<!-- PageHeading / Metadata -->
-<div class="flex flex-col gap-4 text-center">
-<h1 class="font-display text-primary dark:text-white text-4xl sm:text-5xl font-black leading-tight tracking-tighter">Unraveling the Societal Impact of AI</h1>
-<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal font-sans">By Dr. Eleanor Vance on October 26, 2023</p>
-</div>
-<!-- MediaPlayer / Hero Media -->
-<div class="relative flex items-center justify-center bg-gray-200 bg-cover bg-center aspect-video rounded-xl overflow-hidden" data-alt="Abstract visualization of neural networks and data points" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYGKtQR8Wb9EV7gzJZGSrYE0NrO0ggB45zOmmgAsfHZX6alo18_guPrfibxRn3yO1IPXJqS1BJR21IVECnyXsBdzIk6hldNxqhuxnFVRLAz6osMQvTEAHO7mJJNYGkcsI-gJR8ALk9_7FkvjA8TuPfFen_MGPmbQ0W84FKTGMJHEmHvxdyT5aYicJP84Qi6vXwShXB9e-Ni_SWTS2yPL-cGXjn0W0c177cIugyZ_x89kN8EoLYJaWW6tpqNuMJrSslUc5goXQczeI");'>
-<button class="flex shrink-0 items-center justify-center rounded-full size-20 bg-black/50 text-white hover:bg-black/70 transition-colors">
-<span class="material-symbols-outlined !text-4xl">play_arrow</span>
-</button>
-</div>
-<!-- Main Content Area -->
-<div class="prose prose-lg dark:prose-invert max-w-none leading-relaxed text-text-body dark:text-gray-300" style="line-height: 1.7;">
-<p>
-                            Artificial intelligence is rapidly reshaping our world, from the way we communicate to the foundations of our industries. This article delves into the multifaceted societal impacts of AI, exploring both its profound benefits and the ethical challenges it presents. We will examine case studies across various sectors to understand the real-world implications of this transformative technology.
-                        </p>
-<h2 class="font-display text-primary dark:text-white !mt-12 !mb-4">The Ethical Dimensions</h2>
-<p>
-                            As AI systems become more autonomous, questions of accountability, bias, and transparency come to the forefront. It's crucial to develop frameworks that ensure these technologies are used responsibly and equitably, preventing the amplification of existing societal inequalities.
-                        </p>
-<ul>
-<li>Algorithmic Bias: Ensuring fairness in automated decision-making.</li>
-<li>Data Privacy: Protecting individual information in an era of big data.</li>
-<li>Accountability: Determining responsibility when an AI system makes a mistake.</li>
-</ul>
-<blockquote class="border-l-4 border-primary dark:border-red-300 pl-6 italic text-gray-600 dark:text-gray-400">
-                            "The true measure of technological advancement is not its power, but how it empowers humanity. With AI, we have a profound responsibility to steer its development toward a more just and equitable future for all."
-                        </blockquote>
-<h3 class="font-display text-primary dark:text-white !mt-12 !mb-4">Visualizing the Process</h3>
-<p>
-                            To better understand the intricate processes involved, our team has compiled a series of images from various project milestones, illustrating the development cycle from concept to implementation.
-                        </p>
-</div>
-<!-- Image Gallery -->
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-<img class="rounded-lg object-cover w-full h-full aspect-square" data-alt="A person pointing at charts and graphs on a computer screen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1XNsO_TnDCa2iXwySMOF6GrxapgA39QNpHdZZeCWfqKm8B-oKdZOvrEP7lMuHIe9jNv9iKYQTC1TLsfeMwdRUKQDh-KFzPz02Apfukc8xzs_2E9ZG66tpQGNi_vPYuVNw0h000z2rO6FbDbrluBlNOMxCowowZeunAx5sRVUjSV_Ms4U4za2qbgrGRfs0HHx9-YR7nrhO_6jqLCh4anMO9jxQAeuNLRPIuoJ1Cy2EVWnIlY5-kfXM0cPXsidFq4NtxpOJO_qEoxc"/>
-<img class="rounded-lg object-cover w-full h-full aspect-square" data-alt="A close-up of a computer motherboard with intricate circuits." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeZaYKI-Tmblov0FlhUHK9pQRX9zFc-caoZiVkUAgGH8gQabQs6X_V-BNmgA-hJ3lDTqzSAXcwtY6sB89u8wya-cnYA2-aX8wxHsb5FyAjS-cz9t28ll9_jobdz3A8l3_cgvTznK_YWcVBWwFQPXzlssdhDLKs-EsdiKG_luDVVeM4BlvOFKnezjXAzaft3Wh0n_PShvdjSYyzUmTDEy_Eowr5Jh_E1VIhFAMrx1r0uGDFsIYx-XWfJCcWuSnztK9nG4yoGLxXnhU"/>
-<img class="rounded-lg object-cover w-full h-full aspect-square col-span-2 md:col-span-1" data-alt="A screen displaying complex code with a blue and green color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmcZXaFkZgcPqGrE0Cg23OzGdZExAhUhkLg4qHDaagzQg1fo4pr0s9B70vi3zHJTv7ry-6zZIVS0w0NzCnZKCknVmaiflQhh4WMByyH8WyluvpL1L3r9VxRx9TGZKYvnKsX9WbRCXvrO86A-8Aai6owyFmCKyzWe40A51FKof4UC18gcb-022-PLhatAYRJDRKVU_qgU3Jr-_oYAvjt17TZkAyNk5vr2vBQD6XaBQ3Y0aSFAlfvEGfQVaKLFCyQbZWFJYKxiJkxfE"/>
-</div>
-<!-- Tags/Categories -->
-<div class="flex flex-wrap items-center gap-3 pt-4 border-t border-accent-subtle dark:border-gray-700">
-<h4 class="font-display text-sm font-bold text-text-body dark:text-gray-300">Tags:</h4>
-<a class="font-sans text-sm font-medium px-3 py-1 rounded-full bg-accent-subtle dark:bg-gray-700 dark:text-gray-300 hover:bg-primary/20 dark:hover:bg-primary/40 transition-colors" href="#">Computer Science</a>
-<a class="font-sans text-sm font-medium px-3 py-1 rounded-full bg-accent-subtle dark:bg-gray-700 dark:text-gray-300 hover:bg-primary/20 dark:hover:bg-primary/40 transition-colors" href="#">Sociology</a>
-<a class="font-sans text-sm font-medium px-3 py-1 rounded-full bg-accent-subtle dark:bg-gray-700 dark:text-gray-300 hover:bg-primary/20 dark:hover:bg-primary/40 transition-colors" href="#">Data Visualization</a>
-</div>
-<!-- Related Content Section -->
-<div class="pt-8 border-t border-accent-subtle dark:border-gray-700">
-<h2 class="font-display text-3xl font-bold text-primary dark:text-white mb-6">Related Content</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="flex flex-col group">
-<img class="rounded-lg object-cover w-full h-40 mb-4" data-alt="A 3D render of interconnected nodes and lines in a network." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGb307FzRn-KHWPrHhQFet_2yHzLAs4up5M1vgm8EnLQuaJE4_rCSxBN-6MdQ3z7gIfTdI_bsA63oUDCdeiiaR6q6LzXBCuYP9GS-7gXGv1ejJK19r3ff6-8lyLPIJPYr8BAcTrAgs3NlFf1MIdBYqQYVHDAPlv8HVnuHa9MPLuYNTeoT9wczwWkOsq-sR3zTcpK4ra12Cjgl28dDVChp5JUczrOjg3NgA37jGStW5IGLXQfNKmKHFYx50itdmWXg5UIJ21tH7uOs"/>
-<h3 class="font-display text-xl font-bold text-text-body dark:text-gray-200 group-hover:text-primary dark:group-hover:text-white">Project: Quantum Heuristics</h3>
-<p class="text-gray-500 dark:text-gray-400 mt-1 flex-1">Exploring the intersection of quantum computing and heuristic problem-solving methodologies.</p>
-<a class="font-sans font-bold text-primary dark:text-red-300 mt-2 self-start" href="#">Read More →</a>
-</div>
-<div class="flex flex-col group">
-<img class="rounded-lg object-cover w-full h-40 mb-4" data-alt="A person working on a laptop in a modern library." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoDDbUr35n1K_4CrjwaxCzzuQOjcjzLUtjoYseaGbfR0JhQIyljZYkCUeXPMT7okMLttb8aV9ZZBm5FSX1ziTdaPf6ZlJ2ZYy59jnRHdxaSn4G0ajU2162clJQDwjxS81_Dc4svX_eL_noS0TiCAKWWLRv7Owdl3qzBUmvnpFvSthignFIovhj4DKClebcRfTSjRz6_54QN0uWayNnmDanpVEQZZmb6pcoDsqJuzMjU4xMEKw9LWKKb-UEbqHI6r8g6bA8T7ocqL4"/>
-<h3 class="font-display text-xl font-bold text-text-body dark:text-gray-200 group-hover:text-primary dark:group-hover:text-white">Further Reading: The Future of Digital Ethics</h3>
-<p class="text-gray-500 dark:text-gray-400 mt-1 flex-1">A deep dive into the evolving landscape of ethical considerations in our digital lives.</p>
-<a class="font-sans font-bold text-primary dark:text-red-300 mt-2 self-start" href="#">Read More →</a>
-</div>
-</div>
-</div>
-</article>
-</main>
-<!-- Footer -->
-<footer class="bg-gray-100 dark:bg-gray-900 border-t border-accent-subtle dark:border-gray-800">
-<div class="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-gray-500 dark:text-gray-400">
-<p class="font-sans text-sm">© 2024 Interdisciplinary Project Society. All Rights Reserved.</p>
-<div class="flex justify-center gap-4 mt-4">
-<a class="hover:text-primary dark:hover:text-white" href="#">Twitter</a>
-<a class="hover:text-primary dark:hover:text-white" href="#">LinkedIn</a>
-<a class="hover:text-primary dark:hover:text-white" href="#">Contact</a>
-</div>
-</div>
-</footer>
-</div>
-</div>
-</body></html>
+
+<!-- Shared JS -->
+<script src="../assets/js/app.js"></script>
+<script src="../js/head-loader.js"></script>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
