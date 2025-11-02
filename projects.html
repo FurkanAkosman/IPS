@@ -76,12 +76,12 @@
 <body class="bg-background-light font-display text-text-light">
   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
-    <!-- Header -->
+    <!-- ===== Header (index.html ile aynı) ===== -->
     <header id="siteHeader" class="sticky top-0 z-50 bg-background-light/90 backdrop-blur border-b border-primary/10" aria-label="Main Navigation">
       <nav class="mx-auto max-w-7xl px-6 md:px-12 h-16 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="Back to Home">
+        <a href="index.html#hero" class="flex items-center gap-3 shrink-0" aria-label="Back to Home">
           <img src="assets/img/kulup-logo.jpg" alt="IPS Logo" class="h-8 w-8 rounded" loading="lazy" decoding="async" width="32" height="32" />
-          <span class="font-bold text-primary">IPS</span>
+          <span class="font-semibold">Interdisciplinary Project Society</span>
         </a>
 
         <!-- Desktop -->
@@ -91,6 +91,10 @@
           <li><a class="text-primary font-bold" href="project.html" aria-current="page">Projects</a></li>
           <li><a class="hover:text-primary transition-colors" href="events.html">Events</a></li>
           <li><a class="hover:text-primary transition-colors" href="blog.html">Blog</a></li>
+          <li>
+            <a class="inline-flex items-center justify-center h-10 px-4 rounded-lg bg-primary text-white text-sm font-bold hover:bg-opacity-90"
+               href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">Join Us</a>
+          </li>
         </ul>
 
         <!-- Hamburger -->
@@ -112,11 +116,13 @@
           <a class="block py-3 text-base text-primary font-bold" href="project.html" aria-current="page">Projects</a>
           <a class="block py-3 text-base hover:text-primary" href="events.html">Events</a>
           <a class="block py-3 text-base hover:text-primary" href="blog.html">Blog</a>
+          <a class="mt-2 inline-flex h-11 items-center justify-center rounded-xl px-4 font-bold bg-primary text-white hover:opacity-90"
+             href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">Join Us</a>
         </nav>
       </div>
     </header>
 
-    <!-- Main -->
+    <!-- ===== Main (değişmedi) ===== -->
     <main class="flex-grow">
       <!-- Hero -->
       <section class="w-full bg-white py-20 md:py-28">
@@ -274,34 +280,48 @@
       </section>
     </main>
 
-    <!-- Footer -->
+    <!-- ===== Footer (index.html ile aynı) ===== -->
     <footer class="w-full bg-text-light text-background-light py-12">
       <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
         <div class="flex flex-col items-center md:items-start">
           <div class="flex items-center gap-3">
-            <img src="assets/img/kulup-logo.jpg" alt="IPS" class="h-10 w-10 rounded" />
+            <img src="assets/img/kulup-logo.jpg" alt="IPS" class="h-10 w-10 rounded" width="40" height="40"/>
             <span class="text-xl font-bold">IPS</span>
           </div>
           <p class="mt-2 text-sm font-body text-background-light/70">Bridging disciplines, building futures.</p>
+          <p class="mt-2 text-xs opacity-80">© <span id="yy"></span> Interdisciplinary Project Society. All rights reserved.</p>
         </div>
+
         <nav class="flex justify-center gap-8 md:gap-12 text-sm font-medium">
           <a class="hover:text-white/80 transition-colors" href="team.html">Team</a>
-          <a class="hover:text-white/80 transition-colors" href="project.html">Projects</a>
+          <a class="hover:text-white/80 transition-colors" href="project.html" aria-current="page">Projects</a>
           <a class="hover:text-white/80 transition-colors" href="events.html">Events</a>
+          <a class="hover:text-white/80 transition-colors" href="blog.html">Blog</a>
+          <a class="hover:text-white/80 transition-colors" href="sss.html">FAQ</a>
         </nav>
+
         <div class="flex justify-center md:justify-end items-center gap-6">
-          <a class="hover:opacity-80 transition" href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" aria-label="Instagram">
+          <a class="opacity-80 hover:opacity-100 transition" href="https://www.linkedin.com/in/%C4%B1ps" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="assets/icon/social-media/linkedin.png" width="22" height="22" alt="LinkedIn" loading="lazy" decoding="async">
+          </a>
+          <a class="opacity-80 hover:opacity-100 transition" href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" rel="noopener" aria-label="Instagram">
             <img src="assets/icon/social-media/instagram.png" width="22" height="22" alt="Instagram" loading="lazy" decoding="async">
           </a>
-          <a class="hover:opacity-80 transition" href="https://www.youtube.com/@ipsociety2025" target="_blank" aria-label="YouTube">
+          <a class="opacity-80 hover:opacity-100 transition" href="https://www.youtube.com/@ipsociety2025" target="_blank" rel="noopener" aria-label="YouTube">
             <img src="assets/icon/social-media/youtube.png" width="22" height="22" alt="YouTube" loading="lazy" decoding="async">
+          </a>
+          <a class="opacity-80 hover:opacity-100 transition" href="https://www.tiktok.com/@ip_society?_t=ZS-90QYlkW9jJC&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="assets/icon/social-media/tik-tok.png" width="22" height="22" alt="TikTok" loading="lazy" decoding="async">
+          </a>
+          <a class="opacity-80 hover:opacity-100 transition" href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <img src="assets/icon/social-media/whatsapp.png" width="22" height="22" alt="WhatsApp" loading="lazy" decoding="async">
           </a>
         </div>
       </div>
     </footer>
   </div>
 
-  <!-- Behavior: mobile menu + active link -->
+  <!-- Behavior: mobile menu + active link + year -->
   <script>
     const toggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -331,6 +351,10 @@
       const href = a.getAttribute('href');
       if(href && href.endsWith(here)){ a.classList.add('text-primary','font-bold'); a.setAttribute('aria-current','page'); }
     });
+
+    // yıl
+    const yy = document.getElementById('yy');
+    if(yy) yy.textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
