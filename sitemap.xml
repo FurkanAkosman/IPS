@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://furkanakosman.github.io/IPS/404.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/assets/pdf/Events.pdf</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/assets/pdf/Funding_Guide.pdf</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/blog.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/blog/omer-efe-merey-blog.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/content.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/events.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/google96f34d8dee2012cf.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/partials/footer.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/partials/header.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/efnan-karatas.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/erkan-kalam.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/furkan-akosman.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/omer-efe-merey.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/omer-faruk-dokgoz.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/rumeysa-guclu.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/sena-ozbey.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/sudem-ozdemir.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/ubeyde-acar.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/yesim-aydin.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/yigit-buyrul.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/yusuf-mete-gecer.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/people/zeynep-torbaci.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/projects.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/sss.html</loc></url>
-  <url><loc>https://furkanakosman.github.io/IPS/team.html</loc></url>
+  <url><loc>https://furkanakosman.github.io/IPS/</loc><lastmod>2025-11-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/index.html</loc><lastmod>2025-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/blog.html</loc><lastmod>2025-11-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/blog/omer-efe-merey-blog.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/content.html</loc><lastmod>2025-11-02</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/events.html</loc><lastmod>2025-11-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/projects.html</loc><lastmod>2025-11-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/team.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/sss.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/assets/pdf/Events.pdf</loc><lastmod>2025-11-02</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/assets/pdf/Funding_Guide.pdf</loc><lastmod>2025-11-02</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
+  <!-- People sayfaları -->
+  <url><loc>https://furkanakosman.github.io/IPS/people/efnan-karatas.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/erkan-kalam.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/furkan-akosman.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/omer-efe-merey.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/omer-faruk-dokgoz.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/rumeysa-guclu.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/sena-ozbey.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/sudem-ozdemir.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/ubeyde-acar.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/yesim-aydin.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/yigit-buyrul.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/yusuf-mete-gecer.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://furkanakosman.github.io/IPS/people/zeynep-torbaci.html</loc><lastmod>2025-11-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>
