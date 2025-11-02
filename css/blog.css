@@ -5,14 +5,6 @@
 }
 html,body{height:100%}
 
-/* Scroll-snap dikey slider */
-.scroll-snap-container{
-  scroll-snap-type: y mandatory;
-}
-.scroll-snap-child{
-  scroll-snap-align: start;
-}
-
 /* Slayt iskeleti */
 .slide{
   position:relative;
@@ -60,8 +52,7 @@ html,body{height:100%}
 }
 .btn-primary:hover{ transform: scale(1.03); opacity:.95 }
 
-/* Küçük ekranlarda daha yumuşak davranış */
+/* Küçük ekran ayarı: scroll-snap kaldırıldı */
 @media (max-width: 640px){
-  .scroll-snap-container{ scroll-snap-type: y proximity; }
   .slide{ height: 92vh; }
 }
