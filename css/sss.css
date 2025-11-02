@@ -130,8 +130,15 @@ body{
 }
 
 /* --- Print --- */
-@media print{
-  a[href]:after{content:" (" attr(href) ")"; font-size:.85em}
-  summary::marker{content:"► "}
-  .faq-tab, .footer-social, .@container{display:none!important}
+@media print {
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: .85em;
+  }
+  summary::marker { content: "> "; }
+  .faq-tab,
+  .footer-social,
+  .container {
+    display: none !important;
+  }
 }
