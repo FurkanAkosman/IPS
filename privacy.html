@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="light" lang="en" id="top">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>IPS Privacy Policy</title>
+    <meta
+      name="description"
+      content="Interdisciplinary Project Society (IPS) Privacy Policy. Learn what data we collect, how we use it, how we store it, and your rights."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#4d0011" />
+
+    <!-- Canonical / Social -->
+    <link rel="canonical" href="https://furkanakosman.github.io/IPS/privacy.html" />
+    <meta property="og:title" content="IPS Privacy Policy" />
+    <meta
+      property="og:description"
+      content="Interdisciplinary Project Society (IPS) Privacy Policy. Data collection, usage, storage, sharing, and your rights."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://furkanakosman.github.io/IPS/privacy.html" />
+    <meta property="og:site_name" content="Interdisciplinary Project Society (IPS)" />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Basic CSP (GitHub Pages + external CDNs + GA) -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        base-uri 'self';
+        object-src 'none';
+        frame-ancestors 'self';
+        img-src 'self' data: https:;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com data:;
+        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com;
+        connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.googletagmanager.com;
+        upgrade-insecure-requests
+      "
+    />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // INDEX İLE UYUMLU: bordo ana renk
+              primary: "#4d0011",
+              burgundy: "#4d0011",
+
+              // Arka planları TR sayfalarınla eşleştir
+              "background-light": "#f8f8f3",
+              "background-dark": "#221013",
+
+              // İstersen ileride vurgu için ayrı renk:
+              accent: "#d41132",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        body {
+          background: white !important;
+          color: black !important;
+        }
+      }
+
+      /* TOC active state: kırmızı yerine bordo */
+      .toc-link[aria-current="true"] {
+        background-color: rgba(77, 0, 17, 0.10);
+        color: #4d0011;
+        font-weight: 800;
+        border-left: 4px solid #4d0011;
+      }
+    </style>
+
+    <!-- Header/Footer Loaders (header-loader ayrıca GA'yı tekil yükler) -->
+    <script defer src="js/header-loader.js"></script>
+    <script defer src="js/footer-loader.js"></script>
+
+    <!-- favicon/title otomatik ekliyorsun; bu sayfada ekstra eklemeye gerek yok -->
+    <!-- <script defer src="js/head-loader.js"></script> -->
+  </head>
+
+  <body
+    class="bg-background-light dark:bg-background-dark text-burgundy dark:text-background-light font-display min-h-screen flex flex-col selection:bg-primary/20 selection:text-primary"
+  >
+    <!-- Header inject (partials/header.html) -->
+
+    <div class="flex-grow w-full max-w-[1440px] mx-auto flex flex-col">
+      <div class="px-4 md:px-8 lg:px-12 py-8 md:py-12 flex flex-col md:flex-row gap-12 relative">
+        <!-- SideNavBar -->
+        <aside class="hidden md:block w-64 shrink-0 no-print">
+          <div class="sticky top-32 flex flex-col gap-6">
+            <div class="flex flex-col gap-1">
+              <h3 class="text-sm uppercase tracking-wider font-bold text-primary mb-2">Contents</h3>
+
+              <nav class="flex flex-col gap-1" id="toc">
+                <a
+                  class="toc-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-burgundy/70 dark:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary transition-all border-l-4 border-transparent"
+                  href="#introduction"
+                >
+                  <span class="text-sm font-medium">Introduction</span>
+                </a>
+
+                <a
+                  class="toc-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-burgundy/70 dark:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary transition-all border-l-4 border-transparent"
+                  href="#data-collection"
+                >
+                  <span class="text-sm font-medium">Data Collection</span>
+                </a>
+
+                <a
+                  class="toc-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-burgundy/70 dark:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary transition-all border-l-4 border-transparent"
+                  href="#usage"
+                >
+                  <span class="text-sm font-medium">Usage &amp; Processing</span>
+                </a>
+
+                <a
+                  class="toc-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-burgundy/70 dark:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary transition-all border-l-4 border-transparent"
+                  href="#storage"
+                >
+                  <span class="text-sm font-medium">Data Storage</span>
+                </a>
+
+                <a
+                  class="toc-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-burgundy/70 dark:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary transition-all border-l-4 border-transparent"
+                  href="#sharing"
+                >
+                  <span class="text-sm font-medium">Third-Party Sharing</span>
+                </a>
+
+                <a
+                  class="toc-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-burgundy/70 dark:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary transition-all border-l-4 border-transparent"
+                  href="#rights"
+                >
+                  <span class="text-sm font-medium">Your Rights</span>
+                </a>
+
+                <a
+                  class="toc-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-burgundy/70 dark:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary transition-all border-l-4 border-transparent"
+                  href="#contact"
+                >
+                  <span class="text-sm font-medium">Contact Us</span>
+                </a>
+              </nav>
+            </div>
+
+            <!-- Print Action -->
+            <button
+              id="printPolicy"
+              class="flex items-center gap-2 text-sm font-semibold text-burgundy/60 dark:text-white/60 hover:text-primary transition-colors px-3"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[18px]">print</span>
+              Print Policy
+            </button>
+          </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 max-w-3xl">
+          <div class="mb-10 pb-6 border-b border-primary/10 dark:border-white/10">
+            <h1 class="text-4xl md:text-5xl font-black text-burgundy dark:text-white tracking-tight mb-4">
+              Privacy Policy
+            </h1>
+            <div class="flex items-center gap-2 text-burgundy/70 dark:text-white/70">
+              <span class="material-symbols-outlined text-sm">schedule</span>
+              <p class="text-sm font-medium">Last updated: October 24, 2023</p>
+            </div>
+          </div>
+
+          <div class="space-y-12">
+            <section class="scroll-mt-32" id="introduction">
+              <p class="text-lg leading-relaxed text-burgundy/80 dark:text-white/80">
+                At the Interdisciplinary Project Society (IPS), we value your privacy and are committed to protecting
+                your personal data. This Privacy Policy outlines our practices regarding the collection, use, and
+                disclosure of your information when you use our website and services. By accessing or using our
+                platform, you agree to the terms of this policy.
+              </p>
+            </section>
+
+            <section class="scroll-mt-32" id="data-collection">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary font-bold text-sm">1</span>
+                <h2 class="text-2xl font-bold text-burgundy dark:text-white">Information We Collect</h2>
+              </div>
+
+              <p class="text-base leading-relaxed text-burgundy/80 dark:text-white/80 mb-4">
+                We collect different types of information to provide and improve our services to you. This includes:
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-5 rounded-xl bg-white dark:bg-white/5 border border-primary/5 dark:border-white/5">
+                  <div class="flex items-center gap-2 mb-2 text-primary">
+                    <span class="material-symbols-outlined">person</span>
+                    <h3 class="font-bold">Personal Identity</h3>
+                  </div>
+                  <p class="text-sm text-burgundy/70 dark:text-white/70">
+                    Name, email address, phone number, and student ID numbers provided during registration.
+                  </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-white dark:bg-white/5 border border-primary/5 dark:border-white/5">
+                  <div class="flex items-center gap-2 mb-2 text-primary">
+                    <span class="material-symbols-outlined">school</span>
+                    <h3 class="font-bold">Academic Data</h3>
+                  </div>
+                  <p class="text-sm text-burgundy/70 dark:text-white/70">
+                    University affiliation, major, year of study, and project interests for matching purposes.
+                  </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-white dark:bg-white/5 border border-primary/5 dark:border-white/5">
+                  <div class="flex items-center gap-2 mb-2 text-primary">
+                    <span class="material-symbols-outlined">devices</span>
+                    <h3 class="font-bold">Technical Data</h3>
+                  </div>
+                  <p class="text-sm text-burgundy/70 dark:text-white/70">
+                    IP address, browser type, device information, and usage statistics via cookies.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="scroll-mt-32" id="usage">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary font-bold text-sm">2</span>
+                <h2 class="text-2xl font-bold text-burgundy dark:text-white">Usage &amp; Processing</h2>
+              </div>
+
+              <p class="text-base leading-relaxed text-burgundy/80 dark:text-white/80 mb-4">
+                The data we collect is used primarily to facilitate the core functions of the IPS platform. Specifically,
+                we process your data to:
+              </p>
+
+              <ul class="list-none space-y-3 pl-2">
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-primary text-xl mt-0.5">check_circle</span>
+                  <span class="text-burgundy/80 dark:text-white/80">Match students with relevant interdisciplinary projects and mentors.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-primary text-xl mt-0.5">check_circle</span>
+                  <span class="text-burgundy/80 dark:text-white/80">Communicate important updates regarding events, hackathons, and society news.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-primary text-xl mt-0.5">check_circle</span>
+                  <span class="text-burgundy/80 dark:text-white/80">Maintain the security and integrity of our user accounts.</span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="scroll-mt-32" id="storage">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary font-bold text-sm">3</span>
+                <h2 class="text-2xl font-bold text-burgundy dark:text-white">Data Storage &amp; Security</h2>
+              </div>
+
+              <div class="p-6 bg-primary/5 rounded-xl border border-primary/10">
+                <p class="text-base leading-relaxed text-burgundy/80 dark:text-white/80">
+                  Your data is stored on secure, encrypted servers located within the European Economic Area (EEA). We
+                  employ industry-standard security measures, including SSL encryption and restricted access protocols,
+                  to protect your personal information from unauthorized access, alteration, or destruction. We retain
+                  your data only for as long as necessary to fulfill the purposes outlined in this policy or as required
+                  by law.
+                </p>
+              </div>
+            </section>
+
+            <section class="scroll-mt-32" id="sharing">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary font-bold text-sm">4</span>
+                <h2 class="text-2xl font-bold text-burgundy dark:text-white">Third-Party Sharing</h2>
+              </div>
+
+              <p class="text-base leading-relaxed text-burgundy/80 dark:text-white/80">
+                IPS does not sell or rent your personal data to marketers or third parties. We may share anonymized,
+                aggregated data with academic partners for research purposes. Limited personal data may be processed by
+                trusted third-party service providers (e.g., email dispatch services, hosting providers) who are
+                contractually bound to keep your data confidential and secure.
+              </p>
+            </section>
+
+            <section class="scroll-mt-32" id="rights">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary font-bold text-sm">5</span>
+                <h2 class="text-2xl font-bold text-burgundy dark:text-white">Your Rights</h2>
+              </div>
+
+              <p class="text-base leading-relaxed text-burgundy/80 dark:text-white/80 mb-6">
+                Under applicable data protection laws (such as GDPR), you have specific rights regarding your personal data:
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-2 p-4 bg-white dark:bg-white/5 rounded-lg border-l-4 border-primary shadow-sm">
+                  <h4 class="font-bold text-burgundy dark:text-white">Right to Access</h4>
+                  <p class="text-sm text-burgundy/70 dark:text-white/70">Request a copy of the personal data we hold about you.</p>
+                </div>
+
+                <div class="flex flex-col gap-2 p-4 bg-white dark:bg-white/5 rounded-lg border-l-4 border-primary shadow-sm">
+                  <h4 class="font-bold text-burgundy dark:text-white">Right to Rectification</h4>
+                  <p class="text-sm text-burgundy/70 dark:text-white/70">Correct any inaccurate or incomplete data.</p>
+                </div>
+
+                <div class="flex flex-col gap-2 p-4 bg-white dark:bg-white/5 rounded-lg border-l-4 border-primary shadow-sm">
+                  <h4 class="font-bold text-burgundy dark:text-white">Right to Erasure</h4>
+                  <p class="text-sm text-burgundy/70 dark:text-white/70">Request deletion of your data ("Right to be forgotten").</p>
+                </div>
+
+                <div class="flex flex-col gap-2 p-4 bg-white dark:bg-white/5 rounded-lg border-l-4 border-primary shadow-sm">
+                  <h4 class="font-bold text-burgundy dark:text-white">Right to Restrict</h4>
+                  <p class="text-sm text-burgundy/70 dark:text-white/70">Limit how we use your data in certain circumstances.</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="scroll-mt-32 pt-4" id="contact">
+              <div class="bg-burgundy dark:bg-white/5 text-white dark:text-white rounded-2xl p-8 md:p-10 relative overflow-hidden">
+                <!-- kırmızı glow yerine bordo ton -->
+                <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+
+                <div class="relative z-10">
+                  <h2 class="text-2xl md:text-3xl font-bold mb-4">Have questions about your privacy?</h2>
+                  <p class="text-white/80 mb-8 max-w-xl">
+                    If you have any questions, concerns, or wish to exercise your rights, please do not hesitate to
+                    contact our Data Protection Officer.
+                  </p>
+
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <a
+                      class="flex items-center justify-center gap-2 bg-white text-burgundy hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition-colors"
+                      href="mailto:privacy@ips-society.org"
+                    >
+                      <span class="material-symbols-outlined">mail</span>
+                      privacy@ips-society.org
+                    </a>
+
+                    <div class="flex items-center justify-center gap-2 border border-white/30 text-white font-medium py-3 px-6 rounded-lg">
+                      <span class="material-symbols-outlined">location_on</span>
+                      IPS Headquarters, Building A
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Footer inject (partials/footer.html) -->
+
+    <!-- Back to top -->
+    <a
+      href="#top"
+      class="no-print fixed bottom-6 right-6 z-40 inline-flex items-center justify-center rounded-full bg-burgundy text-white shadow-lg hover:opacity-90 transition px-3 py-3"
+      aria-label="Back to top"
+    >
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </a>
+
+    <script>
+      // Print
+      (function () {
+        const btn = document.getElementById("printPolicy");
+        if (btn) btn.addEventListener("click", () => window.print());
+      })();
+
+      // TOC scrollspy
+      (function () {
+        const links = Array.from(document.querySelectorAll("#toc .toc-link"));
+        const sections = links.map((a) => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+        if (!links.length || !sections.length) return;
+
+        function setActive(id) {
+          links.forEach((a) =>
+            a.setAttribute("aria-current", a.getAttribute("href") === "#" + id ? "true" : "false")
+          );
+        }
+
+        const io = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((e) => e.isIntersecting)
+              .sort((a, b) => (a.boundingClientRect.top > b.boundingClientRect.top ? 1 : -1))[0];
+            if (visible?.target?.id) setActive(visible.target.id);
+          },
+          { root: null, threshold: 0.12, rootMargin: "-20% 0px -60% 0px" }
+        );
+
+        sections.forEach((s) => io.observe(s));
+        if (sections[0]?.id) setActive(sections[0].id);
+      })();
+    </script>
+  </body>
+</html>

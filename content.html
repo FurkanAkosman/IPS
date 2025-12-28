@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Analytics -->
-  <script src="../js/analytics.js"></script>
+  <!-- Analytics (defer: render bloklamasın) -->
+  <script src="../js/analytics.js" defer></script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,8 @@
   <meta name="theme-color" content="#4d0011">
 
   <!-- Canonical + Open Graph + Twitter -->
+  <!-- Not: content.html blog klasörü içindeyse canonical ve og:url yolu /IPS/content.html değil /IPS/blog/content.html olmalı.
+       Şimdilik senin verdiğin URL'yi korudum. -->
   <link rel="canonical" href="https://furkanakosman.github.io/IPS/content.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Unraveling the Societal Impact of AI — IPS">
@@ -25,11 +27,11 @@
   <meta name="twitter:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuAYGKtQR8Wb9EV7gzJZGSrYE0NrO0ggB45zOmmgAsfHZX6alo18_guPrfibxRn3yO1IPXJqS1BJR21IVECnyXsBdzIk6hldNxqhuxnFVRLAz6osMQvTEAHO7mJJNYGkcsI-gJR8ALk9_7FkvjA8TuPfFen_MGPmbQ0W84FKTGMJHEmHvxdyT5aYicJP84Qi6vXwShXB9e-Ni_SWTS2yPL-cGXjn0W0c177cIugyZ_x89kN8EoLYJaWW6tpqNuMJrSslUc5goXQczeI">
 
   <!-- Prefetch (site pages) -->
-  <link rel="prefetch" href="./index.html" as="document">
-  <link rel="prefetch" href="./blog.html" as="document">
-  <link rel="prefetch" href="./projects.html" as="document">
-  <link rel="prefetch" href="./team.html" as="document">
-  <link rel="prefetch" href="./sss.html" as="document">
+  <link rel="prefetch" href="../index.html" as="document">
+  <link rel="prefetch" href="../blog.html" as="document">
+  <link rel="prefetch" href="../projects.html" as="document">
+  <link rel="prefetch" href="../team.html" as="document">
+  <link rel="prefetch" href="../sss.html" as="document">
 
   <!-- Fonts + Tailwind -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -43,17 +45,22 @@
       theme: {
         extend: {
           colors: {
-            "primary": "#4d0011",
+            primary: "#4d0011",
             "background-light": "#f8f8f3",
             "background-dark": "#101622",
             "text-body": "#333333",
             "accent-subtle": "#e0e0e0"
           },
           fontFamily: {
-            "display": ["Montserrat", "sans-serif"],
-            "body": ["Lora", "serif"]
+            display: ["Montserrat", "sans-serif"],
+            body: ["Lora", "serif"]
           },
-          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          }
         }
       }
     }
@@ -99,10 +106,17 @@
     img[loading="lazy"] { contain-intrinsic-size: auto 300px }
   </style>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-body text-text-body dark:text-gray-300">
 <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+  <!-- Skip link (a11y) -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-primary">
+    Skip to content
+  </a>
+
   <!-- TopNavBar -->
-  <div class="w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50 border-b border-accent-subtle dark:border-gray-700">
+  <div id="siteHeader" class="w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50 border-b border-accent-subtle dark:border-gray-700">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <header class="flex items-center justify-between whitespace-nowrap py-4" aria-label="Primary">
         <div class="flex items-center gap-3 text-primary dark:text-white">
@@ -114,31 +128,53 @@
           </div>
           <h2 class="font-display text-lg font-bold tracking-tight">Interdisciplinary Project Society</h2>
         </div>
-        <nav class="hidden md:flex items-center gap-8">
-          <a class="font-display text-sm font-medium hover:text-primary" href="./index.html">Home</a>
-          <a class="font-display text-sm font-medium hover:text-primary" href="./projects.html">Projects</a>
-          <a class="font-display text-sm font-medium text-primary font-bold" href="./blog.html">Blog</a>
-          <a class="font-display text-sm font-medium hover:text-primary" href="./team.html">About</a>
-          <a class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold font-display hover:bg-opacity-90" href="./join.html">Contact Us</a>
+
+        <nav class="hidden md:flex items-center gap-8" aria-label="Primary navigation">
+          <!-- Not: içerik sayfası genelde /IPS/blog/... altında olur; linkleri ../ ile normalize ettim -->
+          <a class="font-display text-sm font-medium hover:text-primary" href="../index.html">Home</a>
+          <a class="font-display text-sm font-medium hover:text-primary" href="../projects.html">Projects</a>
+          <a class="font-display text-sm font-medium text-primary font-bold" href="../blog.html">Blog</a>
+          <a class="font-display text-sm font-medium hover:text-primary" href="../team.html">About</a>
+          <a class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold font-display hover:bg-opacity-90" href="../join.html">Contact Us</a>
         </nav>
-        <button class="md:hidden text-text-body dark:text-gray-300" aria-label="Open menu">
-          <span class="material-symbols-outlined">menu</span>
+
+        <!-- Mobile toggle: id/aria ile app.js uyumu -->
+        <button id="navToggle" class="md:hidden text-text-body dark:text-gray-300" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" type="button">
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
         </button>
       </header>
+
+      <!-- Mobile menu -->
+      <div id="navMenu" class="md:hidden hidden pb-4" aria-label="Mobile navigation">
+        <nav class="flex flex-col gap-2">
+          <a class="px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10" href="../index.html">Home</a>
+          <a class="px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10" href="../projects.html">Projects</a>
+          <a class="px-3 py-2 rounded-lg bg-primary/10 text-primary dark:text-white dark:bg-white/10" href="../blog.html">Blog</a>
+          <a class="px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10" href="../team.html">About</a>
+          <a class="px-3 py-2 rounded-lg bg-primary text-white font-bold" href="../join.html">Contact Us</a>
+        </nav>
+      </div>
+
     </div>
   </div>
 
-  <main class="flex flex-1 justify-center py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
+  <main id="main" class="flex flex-1 justify-center py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
     <article class="flex flex-col max-w-3xl flex-1 gap-8">
       <!-- Heading -->
       <header class="flex flex-col gap-4 text-center">
-        <h1 class="font-display text-primary dark:text-white text-4xl sm:text-5xl font-black leading-tight tracking-tighter">Unraveling the Societal Impact of AI</h1>
-        <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal font-sans">By Dr. Eleanor Vance on October 26, 2023</p>
+        <h1 class="font-display text-primary dark:text-white text-4xl sm:text-5xl font-black leading-tight tracking-tighter">
+          Unraveling the Societal Impact of AI
+        </h1>
+        <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal font-sans">
+          By Dr. Eleanor Vance on October 26, 2023
+        </p>
       </header>
 
       <!-- Hero -->
-      <figure class="relative flex items-center justify-center bg-gray-200 bg-cover bg-center aspect-video rounded-xl overflow-hidden" style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYGKtQR8Wb9EV7gzJZGSrYE0NrO0ggB45zOmmgAsfHZX6alo18_guPrfibxRn3yO1IPXJqS1BJR21IVECnyXsBdzIk6hldNxqhuxnFVRLAz6osMQvTEAHO7mJJNYGkcsI-gJR8ALk9_7FkvjA8TuPfFen_MGPmbQ0W84FKTGMJHEmHvxdyT5aYicJP84Qi6vXwShXB9e-Ni_SWTS2yPL-cGXjn0W0c177cIugyZ_x89kN8EoLYJaWW6tpqNuMJrSslUc5goXQczeI");'>
-        <button class="flex shrink-0 items-center justify-center rounded-full size-20 bg-black/50 text-white hover:bg-black/70 transition-colors" aria-label="Play video">
+      <figure class="relative flex items-center justify-center bg-gray-200 bg-cover bg-center aspect-video rounded-xl overflow-hidden"
+        style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYGKtQR8Wb9EV7gzJZGSrYE0NrO0ggB45zOmmgAsfHZX6alo18_guPrfibxRn3yO1IPXJqS1BJR21IVECnyXsBdzIk6hldNxqhuxnFVRLAz6osMQvTEAHO7mJJNYGkcsI-gJR8ALk9_7FkvjA8TuPfFen_MGPmbQ0W84FKTGMJHEmHvxdyT5aYicJP84Qi6vXwShXB9e-Ni_SWTS2yPL-cGXjn0W0c177cIugyZ_x89kN8EoLYJaWW6tpqNuMJrSslUc5goXQczeI");'>
+        <!-- Buton gerçek video yoksa kaldır; şimdilik modal/video implement edilmediği için gizledim -->
+        <button class="hidden" aria-label="Play video" type="button">
           <span class="material-symbols-outlined !text-4xl" aria-hidden="true">play_arrow</span>
         </button>
         <figcaption class="sr-only">Abstract visualization of neural networks and data points</figcaption>
@@ -166,9 +202,17 @@
 
       <!-- Gallery -->
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <img class="rounded-lg object-cover w-full h-full aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1XNsO_TnDCa2iXwySMOF6GrxapgA39QNpHdZZeCWfqKm8B-oKdZOvrEP7lMuHIe9jNv9iKYQTC1TLsfeMwdRUKQDh-KFzPz02Apfukc8xzs_2E9ZG66tpQGNi_vPYuVNw0h000z2rO6FbDbrluBlNOMxCowowZeunAx5sRVUjSV_Ms4U4za2qbgrGRfs0HHx9-YR7nrhO_6jqLCh4anMO9jxQAeuNLRPIuoJ1Cy2EVWnIlY5-kfXM0cPXsidFq4NtxpOJO_qEoxc" alt="Charts and graphs on a computer screen" loading="lazy" decoding="async" width="600" height="600">
-        <img class="rounded-lg object-cover w-full h-full aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeZaYKI-Tmblov0FlhUHK9pQRX9zFc-caoZiVkUAgGH8gQabQs6X_V-BNmgA-hJ3lDTqzSAXcwtY6sB89u8wya-cnYA2-aX8wxHsb5FyAjS-cz9t28ll9_jobdz3A8l3_cgvTznK_YWcVBWwFQPXzlssdhDLKs-EsdiKG_luDVVeM4BlvOFKnezjXAzaft3Wh0n_PShvdjSYyzUmTDEy_Eowr5Jh_E1VIhFAMrx1r0uGDFsIYx-XWfJCcWuSnztK9nG4yoGLxXnhU" alt="Computer motherboard with intricate circuits" loading="lazy" decoding="async" width="600" height="600">
-        <img class="rounded-lg object-cover w-full h-full aspect-square col-span-2 md:col-span-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmcZXaFkZgcPqGrE0Cg23OzGdZExAhUhkLg4qHDaagzQg1fo4pr0s9B70vi3zHJTv7ry-6zZIVS0w0NzCnZKCknVmaiflQhh4WMByyH8WyluvpL1L3r9VxRx9TGZKYvnKsX9WbRCXvrO86A-8Aai6owyFmCKyzWe40A51FKof4UC18gcb-022-PLhatAYRJDRKVU_qgU3Jr-_oYAvjt17TZkAyNk5vr2vBQD6XaBQ3Y0aSFAlfvEGfQVaKLFCyQbZWFJYKxiJkxfE" alt="Screen displaying complex code" loading="lazy" decoding="async" width="600" height="600">
+        <img class="rounded-lg object-cover w-full h-full aspect-square"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1XNsO_TnDCa2iXwySMOF6GrxapgA39QNpHdZZeCWfqKm8B-oKdZOvrEP7lMuHIe9jNv9iKYQTC1TLsfeMwdRUKQDh-KFzPz02Apfukc8xzs_2E9ZG66tpQGNi_vPYuVNw0h000z2rO6FbDbrluBlNOMxCowowZeunAx5sRVUjSV_Ms4U4za2qbgrGRfs0HHx9-YR7nrhO_6jqLCh4anMO9jxQAeuNLRPIuoJ1Cy2EVWnIlY5-kfXM0cPXsidFq4NtxpOJO_qEoxc"
+          alt="Charts and graphs on a computer screen" loading="lazy" decoding="async" width="600" height="600">
+
+        <img class="rounded-lg object-cover w-full h-full aspect-square"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeZaYKI-Tmblov0FlhUHK9pQRX9zFc-caoZiVkUAgGH8gQabQs6X_V-BNmgA-hJ3lDTqzSAXcwtY6sB89u8wya-cnYA2-aX8wxHsb5FyAjS-cz9t28ll9_jobdz3A8l3_cgvTznK_YWcVBWwFQPXzlssdhDLKs-EsdiKG_luDVVeM4BlvOFKnezjXAzaft3Wh0n_PShvdjSYyzUmTDEy_Eowr5Jh_E1VIhFAMrx1r0uGDFsIYx-XWfJCcWuSnztK9nG4yoGLxXnhU"
+          alt="Computer motherboard with intricate circuits" loading="lazy" decoding="async" width="600" height="600">
+
+        <img class="rounded-lg object-cover w-full h-full aspect-square col-span-2 md:col-span-1"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmcZXaFkZgcPqGrE0Cg23OzGdZExAhUhkLg4qHDaagzQg1fo4pr0s9B70vi3zHJTv7ry-6zZIVS0w0NzCnZKCknVmaiflQhh4WMByyH8WyluvpL1L3r9VxRx9TGZKYvnKsX9WbRCXvrO86A-8Aai6owyFmCKyzWe40A51FKof4UC18gcb-022-PLhatAYRJDRKVU_qgU3Jr-_oYAvjt17TZkAyNk5vr2vBQD6XaBQ3Y0aSFAlfvEGfQVaKLFCyQbZWFJYKxiJkxfE"
+          alt="Screen displaying complex code" loading="lazy" decoding="async" width="600" height="600">
       </div>
 
       <!-- Tags -->
@@ -183,19 +227,29 @@
       <section class="pt-8 border-t border-accent-subtle dark:border-gray-700" aria-label="Related content">
         <h2 class="font-display text-3xl font-bold text-primary dark:text-white mb-6">Related Content</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
           <article class="flex flex-col group">
-            <img class="rounded-lg object-cover w-full h-40 mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGb307FzRn-KHWPrHhQFet_2yHzLAs4up5M1vgm8EnLQuaJE4_rCSxBN-6MdQ3z7gIfTdI_bsA63oUDCdeiiaR6q6LzXBCuYP9GS-7gXGv1ejJK19r3ff6-8lyLPIJPYr8BAcTrAgs3NlFf1MIdBYqQYVHDAPlv8HVnuHa9MPLuYNTeoT9wczwWkOsq-sR3zTcpK4ra12Cjgl28dDVChp5JUczrOjg3NgA37jGStW5IGLXQfNKmKHFYx50itdmWXg5UIJ21tH7uOs" alt="3D network nodes and lines" loading="lazy" decoding="async" width="640" height="160">
+            <img class="rounded-lg object-cover w-full h-40 mb-4"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGb307FzRn-KHWPrHhQFet_2yHzLAs4up5M1vgm8EnLQuaJE4_rCSxBN-6MdQ3z7gIfTdI_bsA63oUDCdeiiaR6q6LzXBCuYP9GS-7gXGv1ejJK19r3ff6-8lyLPIJPYr8BAcTrAgs3NlFf1MIdBYqQYVHDAPlv8HVnuHa9MPLuYNTeoT9wczwWkOsq-sR3zTcpK4ra12Cjgl28dDVChp5JUczrOjg3NgA37jGStW5IGLXQfNKmKHFYx50itdmWXg5UIJ21tH7uOs"
+              alt="3D network nodes and lines" loading="lazy" decoding="async" width="640" height="160">
             <h3 class="font-display text-xl font-bold group-hover:text-primary">Project: Quantum Heuristics</h3>
-            <p class="text-gray-500 dark:text-gray-400 mt-1 flex-1">Exploring the intersection of quantum computing and heuristic problem-solving methodologies.</p>
+            <p class="text-gray-500 dark:text-gray-400 mt-1 flex-1">
+              Exploring the intersection of quantum computing and heuristic problem-solving methodologies.
+            </p>
             <a class="font-sans font-bold text-primary mt-2 self-start" href="#">Read More →</a>
           </article>
 
           <article class="flex flex-col group">
-            <img class="rounded-lg object-cover w-full h-40 mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoDDbUr35n1K_4CrjwaxCzzuQOjcjzLUtjoYseaGbfR0JhQIyljZYkCUeXPMT7okMLttb8aV9ZZBm5FSX1ziTdaPf6ZlJ2ZYy59jnRHdxaSn4G0ajU2162clJQDwjxS81_Dc4svX_eL_noS0TiCAKWWLRv7Owdl3qzBUmvnpFvSthignFIovhj4DKClebcRfTSjRz6_54QN0uWayNnmDanpVEQZZmb6pcoDsqJuzMjU4xMEKw9LWKKb-UEbqHI6r8g6bA8T7ocqL4" alt="Person with laptop in a modern library" loading="lazy" decoding="async" width="640" height="160">
+            <img class="rounded-lg object-cover w-full h-40 mb-4"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoDDbUr35n1K_4CrjwaxCzzuQOjcjzLUtjoYseaGbfR0JhQIyljZYkCUeXPMT7okMLttb8aV9ZZBm5FSX1ziTdaPf6ZlJ2ZYy59jnRHdxaSn4G0ajU2162clJQDwjxS81_Dc4svX_eL_noS0TiCAKWWLRv7Owdl3qzBUmvnpFvSthignFIovhj4DKClebcRfTSjRz6_54QN0uWayNnmDanpVEQZZmb6pcoDsqJuzMjU4xMEKw9LWKKb-UEbqHI6r8g6bA8T7ocqL4"
+              alt="Person with laptop in a modern library" loading="lazy" decoding="async" width="640" height="160">
             <h3 class="font-display text-xl font-bold group-hover:text-primary">Further Reading: The Future of Digital Ethics</h3>
-            <p class="text-gray-500 dark:text-gray-400 mt-1 flex-1">A deep dive into the evolving landscape of ethical considerations in our digital lives.</p>
+            <p class="text-gray-500 dark:text-gray-400 mt-1 flex-1">
+              A deep dive into the evolving landscape of ethical considerations in our digital lives.
+            </p>
             <a class="font-sans font-bold text-primary mt-2 self-start" href="#">Read More →</a>
           </article>
+
         </div>
       </section>
     </article>
@@ -206,17 +260,31 @@
     <div class="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-gray-500 dark:text-gray-400">
       <p class="font-sans text-sm">© <span id="y"></span> Interdisciplinary Project Society. All Rights Reserved.</p>
       <nav class="flex justify-center gap-4 mt-4" aria-label="Footer">
-        <a class="hover:text-primary" href="https://x.com" rel="noopener">Twitter</a>
-        <a class="hover:text-primary" href="https://www.linkedin.com/in/%C4%B1ps" rel="noopener">LinkedIn</a>
-        <a class="hover:text-primary" href="./join.html">Contact</a>
+        <a class="hover:text-primary" href="https://x.com" rel="noopener noreferrer" target="_blank">Twitter</a>
+        <a class="hover:text-primary" href="https://www.linkedin.com/in/%C4%B1ps" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+        <a class="hover:text-primary" href="../join.html">Contact</a>
       </nav>
     </div>
   </footer>
 </div>
 
-<!-- Shared JS -->
-<script src="../assets/js/app.js"></script>
-<script src="../js/head-loader.js"></script>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<!-- Shared JS (yolları normalize ettim) -->
+<script src="../js/app.js" defer></script>
+
+<!-- Bu sayfada head-loader gereksiz; kaldırıldı -->
+<script defer>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Mobile menu toggle (bu sayfaya özel garanti)
+  const t = document.getElementById('navToggle');
+  const m = document.getElementById('navMenu');
+  if (t && m) {
+    t.addEventListener('click', () => {
+      const open = t.getAttribute('aria-expanded') === 'true';
+      t.setAttribute('aria-expanded', String(!open));
+      m.classList.toggle('hidden', open);
+    });
+  }
+</script>
 </body>
 </html>

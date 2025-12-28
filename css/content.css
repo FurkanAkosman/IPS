@@ -1,4 +1,4 @@
-/* ========== Content Page CSS ========== */
+/* ========== Content Page CSS (safe + non-conflicting) ========== */
 
 /* Tokens */
 :root{
@@ -8,7 +8,9 @@
   --text:#333333;
   --accent:#e0e0e0;
   --radius:12px;
-  --hdr-h:64px;
+
+  /* JS set ediyor: --header-h */
+  --header-h:64px;
 }
 
 /* Base safe defaults */
@@ -18,76 +20,117 @@ body{ margin:0; background:var(--bg-light); color:var(--text) }
 img,video{ display:block; max-width:100%; height:auto }
 a{ color:inherit; text-decoration:none }
 a:focus-visible,button:focus-visible{ outline:2px solid var(--primary); outline-offset:2px }
+
 @media (prefers-reduced-motion:reduce){
   *{ animation:none !important; transition:none !important; scroll-behavior:auto !important }
 }
 
 /* Header */
 #siteHeader{
-  position:sticky; top:0; z-index:50;
+  position:sticky;
+  top:0;
+  z-index:50;
   backdrop-filter:saturate(180%) blur(6px);
-  background:color-mix(in oklab, var(--bg-light) 80%, transparent);
-  border-bottom:1px solid color-mix(in oklab, var(--primary) 15%, transparent);
+
+  /* Fallback first */
+  background:rgba(248,248,243,.85);
+  border-bottom:1px solid rgba(77,0,17,.12);
 }
-#siteHeader .brand-logo{ width:24px; height:24px; border-radius:6px; object-fit:cover }
+
+/* Progressive enhancement */
+@supports (background: color-mix(in oklab, white 80%, transparent)){
+  #siteHeader{
+    background:color-mix(in oklab, var(--bg-light) 80%, transparent);
+    border-bottom:1px solid color-mix(in oklab, var(--primary) 15%, transparent);
+  }
+}
+
+#siteHeader .brand-logo{
+  width:24px; height:24px; border-radius:6px; object-fit:cover;
+}
 
 /* Desktop nav states */
 [aria-label="Primary"] a:hover{ color:var(--primary) }
 [aria-label="Primary"] a[aria-current="page"],
 [aria-label="Primary"] .is-active{
-  color:var(--primary); font-weight:700;
+  color:var(--primary);
+  font-weight:700;
 }
 
 /* Mobile menu panel */
 #mobileMenu{
-  border-top:1px solid color-mix(in oklab, var(--primary) 15%, transparent);
+  border-top:1px solid rgba(77,0,17,.12);
   box-shadow:0 12px 24px rgba(0,0,0,.08);
 }
 #mobileMenu a{ border-radius:8px }
 
-/* Main spacing helper if needed on non-Tailwind pages */
-.has-fixed-header main{ padding-top:var(--hdr-h) }
+/* Main spacing helper (only if you add this class to body/html) */
+.has-fixed-header main{ padding-top:var(--header-h) }
 
-/* Content formatting */
-.prose img, .prose video{ border-radius:10px }
+/* Content formatting (namespaced to prose) */
+.prose img,
+.prose video{ border-radius:10px }
+
 .prose blockquote{
   border-inline-start:4px solid var(--primary);
-  margin:1rem 0; padding:0.25rem 0 0.25rem 1rem; font-style:italic;
+  margin:1rem 0;
+  padding:0.25rem 0 0.25rem 1rem;
+  font-style:italic;
 }
+
 .prose ul{ padding-inline-start:1.2rem }
 .prose ul li{ margin:0.25rem 0 }
 
-/* Gallery tiles */
-.aspect-square{ aspect-ratio:1/1 }
-.rounded-lg{ border-radius:var(--radius) }
-.rounded-xl{ border-radius:calc(var(--radius) + 4px) }
+/* Gallery tiles (namespaced to avoid Tailwind overrides) */
+.content-aspect-square{ aspect-ratio:1/1 }
+.content-rounded-lg{ border-radius:var(--radius) }
+.content-rounded-xl{ border-radius:calc(var(--radius) + 4px) }
 
-/* Cards hover lift */
-.hover\:shadow-xl:hover{ box-shadow:0 16px 40px rgba(0,0,0,.12) }
-.hover\:-translate-y-1:hover{ transform:translateY(-2px) }
-.transition-all{ transition:all .2s ease }
+/* Cards hover lift (namespaced) */
+.content-hover-lift{ transition:transform .2s ease, box-shadow .2s ease; }
+.content-hover-lift:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 40px rgba(0,0,0,.12);
+}
 
 /* Footer */
 footer{ border-top:1px solid var(--accent) }
 footer .social a:hover{ color:var(--primary) }
 
-/* Dark mode */
-.dark body{ background:var(--bg-dark); color:#d1d5db }
-.dark #siteHeader{
-  background:color-mix(in oklab, var(--bg-dark) 80%, transparent);
+/* Dark mode (match html.dark) */
+html.dark body{ background:var(--bg-dark); color:#d1d5db }
+
+html.dark #siteHeader{
+  background:rgba(16,22,34,.75);
   border-bottom-color:#374151;
 }
-.dark #mobileMenu{ border-top-color:#374151; box-shadow:0 12px 24px rgba(0,0,0,.4) }
-.dark .prose blockquote{ border-color:#fca5a5 }
-.dark footer{ border-top-color:#1f2937 }
 
-/* Utility clamps for headings if non-Tailwind content appears */
-.h-clamp{ font-size:clamp(1.5rem,3.8vw,2.5rem); line-height:1.15; letter-spacing:-0.01em }
+@supports (background: color-mix(in oklab, white 80%, transparent)){
+  html.dark #siteHeader{
+    background:color-mix(in oklab, var(--bg-dark) 80%, transparent);
+    border-bottom-color:#374151;
+  }
+}
 
-/* Button fallback (if Tailwind class yoksa) */
-.btn{
+html.dark #mobileMenu{
+  border-top-color:#374151;
+  box-shadow:0 12px 24px rgba(0,0,0,.4);
+}
+
+html.dark .prose blockquote{ border-color:#fca5a5 }
+html.dark footer{ border-top-color:#1f2937 }
+
+/* Utility clamp (safe) */
+.h-clamp{
+  font-size:clamp(1.5rem,3.8vw,2.5rem);
+  line-height:1.15;
+  letter-spacing:-0.01em;
+}
+
+/* Button fallback (namespaced to avoid Tailwind class collisions) */
+.content-btn{
   display:inline-flex; align-items:center; justify-content:center;
   height:40px; padding:0 16px; border-radius:10px; font-weight:700;
 }
-.btn-primary{ background:var(--primary); color:#fff }
-.btn-primary:hover{ filter:brightness(0.95) }
+.content-btn-primary{ background:var(--primary); color:#fff }
+.content-btn-primary:hover{ filter:brightness(0.95) }

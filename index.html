@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
 <head>
-  <!-- GA kaldırıldı: header-loader tek seferlik enjekte edecek -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IPS - Main Page</title>
@@ -14,34 +13,45 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:ital,wght@0,400..700;1,400..700;1,400..700&display=swap"
     rel="stylesheet"
   />
 
-  <!-- Design tokens + base tweaks -->
-  <style type="text/tailwindcss">
-    @layer base {
-      :root {
-        --burgundy: #4d0011;
-        --beige: #f8f8f3;
-        --text-main: #1D0C0F;
-      }
-      *,*::before,*::after{ box-sizing:border-box }
-      html{ -webkit-text-size-adjust:100% }
-      img,video{ max-width:100%; height:auto; display:block }
-      section{ overflow: clip; }
-    }
-    @layer components {
-      .btn { @apply inline-flex items-center justify-center text-center h-12 px-6 rounded-xl font-bold; }
-      .btn-primary { @apply bg-primary text-background-light hover:opacity-90; }
-      .btn-outline { @apply border border-primary/20 bg-white text-primary hover:scale-[1.02]; }
-    }
-    /* CLS ve tutarlılık */
-    h1,h2,h3{ line-height:1.2 }
-    .btn,.btn-primary,.btn-outline{ line-height:1 }
-    img[loading="lazy"]{ contain-intrinsic-size:auto 200px }
-  </style>
+  <!-- SEO -->
+  <meta name="description" content="Interdisciplinary Project Society (IPS): student-led research, projects, and events across neuroscience, genetics, AI, and biotechnology. Join our collaborative community." />
+  <link rel="canonical" href="https://furkanakosman.github.io/IPS/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#4d0011" />
+  <link rel="preload" as="image" href="assets/img/kulup-logo.jpg" />
+  <link rel="icon" href="assets/img/kulup-logo.jpg" sizes="32x32" />
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Interdisciplinary Project Society" />
+  <meta property="og:title" content="Interdisciplinary Project Society (IPS)" />
+  <meta property="og:description" content="Student-led interdisciplinary research, projects, and events." />
+  <meta property="og:url" content="https://furkanakosman.github.io/IPS/" />
+  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Interdisciplinary Project Society (IPS)" />
+  <meta name="twitter:description" content="Student-led interdisciplinary research, projects, and events." />
+  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://cdn.pixabay.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="//cdn.pixabay.com" />
+  <link rel="dns-prefetch" href="//images.unsplash.com" />
+
+  <link rel="prefetch" href="projects.html" as="document" />
+  <link rel="prefetch" href="events.html" as="document" />
+  <link rel="prefetch" href="team.html" as="document" />
+  <link rel="prefetch" href="blog.html" as="document" />
+
+  <!-- Tailwind config -->
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -62,34 +72,68 @@
     };
   </script>
 
-  <!-- === SEO: Primary === -->
-  <meta name="description" content="Interdisciplinary Project Society (IPS): student-led research, projects, and events across neuroscience, genetics, AI, and biotechnology. Join our collaborative community." />
-  <link rel="canonical" href="https://furkanakosman.github.io/IPS/" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="theme-color" content="#4d0011" />
+  <!-- Design tokens + base tweaks + FX -->
+  <style type="text/tailwindcss">
+    @layer base {
+      :root {
+        --burgundy: #4d0011;
+        --beige: #f8f8f3;
+        --text-main: #1D0C0F;
+      }
 
-  <!-- LCP yardımcı preload -->
-  <link rel="preload" as="image" href="assets/img/kulup-logo.jpg" />
+      *, *::before, *::after { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+      body { height: 100%; }
+      img, video { max-width: 100%; height: auto; display: block; }
+      section { overflow: clip; }
 
-  <!-- === Open Graph === -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Interdisciplinary Project Society" />
-  <meta property="og:title" content="Interdisciplinary Project Society (IPS)" />
-  <meta property="og:description" content="Student-led interdisciplinary research, projects, and events." />
-  <meta property="og:url" content="https://furkanakosman.github.io/IPS/" />
-  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
-  <meta property="og:locale" content="en_US" />
+      /* scroll-snap */
+      .snap-y-mandatory { scroll-snap-type: y mandatory; }
+      .snap-start { scroll-snap-align: start; }
+      .snap-stop { scroll-snap-stop: always; }
+      .snap-none { scroll-snap-align: none !important; }
 
-  <!-- === Twitter === -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Interdisciplinary Project Society (IPS)" />
-  <meta name="twitter:description" content="Student-led interdisciplinary research, projects, and events." />
-  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
+      /* gsap-friendly */
+      .reveal { will-change: transform, opacity, filter; }
+      .parallax { will-change: transform; }
 
-  <!-- Favicon -->
-  <link rel="icon" href="assets/img/kulup-logo.jpg" sizes="32x32" />
+      /* floating icons background */
+      .fx-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1; /* video z-0, content z-30 */
+        overflow: hidden;
+      }
+      .fx-icon {
+        position: absolute;
+        opacity: 0.08;
+        transform: translate3d(0,0,0);
+        will-change: transform, opacity;
+        animation: fxFloatUp linear infinite;
+      }
+      @keyframes fxFloatUp {
+        from { transform: translate3d(0, 18px, 0) rotate(0deg); }
+        to   { transform: translate3d(0, -120px, 0) rotate(20deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .fx-icon { animation: none !important; }
+      }
+    }
 
-  <!-- === JSON-LD: Organization === -->
+    @layer components {
+      .btn { @apply inline-flex items-center justify-center text-center h-12 px-6 rounded-xl font-bold; }
+      .btn-primary { @apply bg-primary text-background-light hover:opacity-90; }
+      .btn-outline { @apply border border-primary/20 bg-white text-primary hover:scale-[1.02]; }
+    }
+
+    h1, h2, h3 { line-height: 1.2; }
+    .btn, .btn-primary, .btn-outline { line-height: 1; }
+    img[loading="lazy"] { contain-intrinsic-size: auto 200px; }
+  </style>
+
+  <!-- JSON-LD: Organization -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -106,7 +150,7 @@
   }
   </script>
 
-  <!-- === JSON-LD: WebSite + SearchAction === -->
+  <!-- JSON-LD: WebSite + SearchAction -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -121,7 +165,7 @@
   }
   </script>
 
-  <!-- === JSON-LD: VideoObject (Hero) === -->
+  <!-- JSON-LD: VideoObject (Hero) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -134,44 +178,28 @@
   }
   </script>
 
-  <!-- Performans ipuçları -->
-  <link rel="preconnect" href="https://cdn.pixabay.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link rel="dns-prefetch" href="//cdn.pixabay.com">
-  <link rel="dns-prefetch" href="//images.unsplash.com">
-
-  <!-- Ön getirme -->
-  <link rel="prefetch" href="projects.html" as="document">
-  <link rel="prefetch" href="events.html" as="document">
-  <link rel="prefetch" href="team.html" as="document">
-  <link rel="prefetch" href="blog.html" as="document">
-
-  <!-- Site navigation JSON-LD -->
   <script type="application/ld+json">
   {
-   "@context":"https://schema.org",
-   "@type":"ItemList",
-   "itemListElement":[
-     {"@type":"SiteNavigationElement","name":"Team","url":"https://furkanakosman.github.io/IPS/team.html"},
-     {"@type":"SiteNavigationElement","name":"Projects","url":"https://furkanakosman.github.io/IPS/projects.html"},
-     {"@type":"SiteNavigationElement","name":"Events","url":"https://furkanakosman.github.io/IPS/events.html"},
-     {"@type":"SiteNavigationElement","name":"Blog","url":"https://furkanakosman.github.io/IPS/blog.html"}
-   ]
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[
+      {"@type":"SiteNavigationElement","name":"Team","url":"https://furkanakosman.github.io/IPS/team.html"},
+      {"@type":"SiteNavigationElement","name":"Projects","url":"https://furkanakosman.github.io/IPS/projects.html"},
+      {"@type":"SiteNavigationElement","name":"Events","url":"https://furkanakosman.github.io/IPS/events.html"},
+      {"@type":"SiteNavigationElement","name":"Blog","url":"https://furkanakosman.github.io/IPS/blog.html"}
+    ]
   }
   </script>
 
-  <!-- JS kapalıyken kahraman görseli -->
   <noscript>
     <style>video{display:none!important}</style>
     <link rel="preload" as="image"
       href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3">
   </noscript>
 
-  <!-- Kanonik ve paylaşım görselleri (sabit) -->
-  <link rel="canonical" href="https://furkanakosman.github.io/IPS/">
-  <meta property="og:url" content="https://furkanakosman.github.io/IPS/">
-  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg">
-  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg">
+  <!-- GSAP (animasyon + scroll geçiş) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 </head>
 
 <body class="bg-background-light font-display text-text-light m-0">
@@ -181,7 +209,7 @@
 
     <!-- HERO -->
     <section id="hero" class="relative h-screen w-full">
-      <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 z-0 parallax" data-parallax>
         <video
           class="h-full w-full object-cover"
           autoplay muted loop playsinline preload="none"
@@ -193,44 +221,54 @@
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
 
+      <!-- background FX layer -->
+      <div class="fx-bg" data-fx="hero" aria-hidden="true"></div>
+
       <div class="relative z-10 flex h-full flex-col items-center justify-center text-center text-background-light px-4">
-        <h1 class="font-black max-w-4xl text-4xl sm:text-5xl md:text-6xl leading-tight" style="color:#fff;">
+        <h1 class="font-black max-w-4xl text-4xl sm:text-5xl md:text-6xl leading-tight reveal" data-reveal="hero">
           We help students turn ideas into reality.
         </h1>
-        <p class="mt-6 max-w-2xl font-body text-lg sm:text-xl md:text-2xl" style="color:#f8f8f3;">
+        <p class="mt-6 max-w-2xl font-body text-lg sm:text-xl md:text-2xl reveal" data-reveal="hero">
           A student-led research community empowering young innovators to build projects that make a real impact.
         </p>
         <button id="ctaBegin" aria-label="Scroll to About Section"
-          class="inline-flex items-center justify-center text-center mt-10 h-12 px-8 rounded-xl bg-primary text-background-light text-base font-bold tracking-[0.015em] transition-transform duration-300 hover:scale-105">
+          class="inline-flex items-center justify-center text-center mt-10 h-12 px-8 rounded-xl bg-primary text-background-light text-base font-bold tracking-[0.015em] transition-transform duration-300 hover:scale-105 reveal"
+          data-reveal="hero"
+          type="button"
+        >
           <span class="truncate">Let’s Begin</span>
         </button>
       </div>
     </section>
 
     <!-- WHO WE ARE + VISION + MISSION -->
-    <section id="about" class="min-h-[100svh] md:h-[100svh] bg-background-light py-12 sm:py-16 md:py-20">
-      <div class="h-full container mx-auto px-6 md:px-12 md:flex md:items-center">
+    <section id="about" class="relative min-h-[100svh] md:h-[100svh] bg-background-light py-12 sm:py-16 md:py-20 snap-start snap-stop scroll-mt-20">
+      <div class="fx-bg" data-fx="about" aria-hidden="true"></div>
+
+      <div class="relative z-10 h-full container mx-auto px-6 md:px-12 md:flex md:items-center">
         <div class="w-full text-center">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-text-light">Who We Are</h2>
-          <p class="mt-4 max-w-3xl mx-auto font-body text-base sm:text-lg md:text-xl" style="color:#4D0011;">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-text-light reveal" data-reveal>
+            Who We Are
+          </h2>
+          <p class="mt-4 max-w-3xl mx-auto font-body text-base sm:text-lg md:text-xl text-primary reveal" data-reveal>
             A student-powered community redefining how ideas grow, connect, and evolve.
           </p>
 
           <div class="mt-10 sm:mt-12 max-h-[68svh] overflow-y-auto pr-1 space-y-10">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-              <div class="flex flex-col items-center p-6 border border-primary/10 rounded-lg">
+              <div class="flex flex-col items-center p-6 border border-primary/10 rounded-lg reveal" data-reveal>
                 <h3 class="text-xl sm:text-2xl font-bold text-text-light">Idea to Impact</h3>
                 <p class="mt-2 font-body text-sm sm:text-base text-primary/80">
                   Transforming conceptual ideas into tangible projects with real-world applications and societal benefits.
                 </p>
               </div>
-              <div class="flex flex-col items-center p-6 border border-primary/10 rounded-lg">
+              <div class="flex flex-col items-center p-6 border border-primary/10 rounded-lg reveal" data-reveal>
                 <h3 class="text-xl sm:text-2xl font-bold text-text-light">Mentorship & Training</h3>
                 <p class="mt-2 font-body text-sm sm:text-base text-primary/80">
                   Providing guidance from experienced mentors and hands-on training to develop critical skills.
                 </p>
               </div>
-              <div class="flex flex-col items-center p-6 border border-primary/10 rounded-lg">
+              <div class="flex flex-col items-center p-6 border border-primary/10 rounded-lg reveal" data-reveal>
                 <h3 class="text-xl sm:text-2xl font-bold text-text-light">Community & Collaboration</h3>
                 <p class="mt-2 font-body text-sm sm:text-base text-primary/80">
                   Building a supportive network where students from all disciplines can connect, share, and create together.
@@ -239,14 +277,14 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 text-left">
-              <article class="p-8 bg-white border border-primary/10 rounded-lg shadow-sm">
+              <article class="p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
                 <h3 class="text-2xl sm:text-3xl font-extrabold text-text-light">Our Vision</h3>
                 <p class="mt-4 font-body text-base md:text-lg text-primary/80">
                   To become a leading global hub for student-driven research and innovation, creating sustainable, real-world solutions through interdisciplinary collaboration.
                 </p>
               </article>
 
-              <article class="p-8 bg-white border border-primary/10 rounded-lg shadow-sm">
+              <article class="p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
                 <h3 class="text-2xl sm:text-3xl font-extrabold text-text-light">Our Mission</h3>
                 <p class="mt-4 font-body text-base md:text-lg text-primary/80">
                   To equip students with the mentorship, funding, and technical support needed to bring innovative ideas to life — fostering a culture where rejection fuels creativity and every idea finds a path to impact.
@@ -260,33 +298,37 @@
     </section>
 
     <!-- QUICK STATS -->
-    <section id="stats" class="w-full min-h-[100svh] md:h-[100svh] bg-white py-12 sm:py-16 md:py-20 md:flex md:items-center md:justify-center">
-      <div class="container mx-auto px-6 md:px-12 text-center">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-text-light">Rapid Insights &amp; Impact Areas</h2>
-        <p class="mt-4 max-w-3xl mx-auto font-body text-base sm:text-lg md:text-xl text-primary">
+    <section id="stats" class="relative w-full min-h-[100svh] md:h-[100svh] bg-white py-12 sm:py-16 md:py-20 md:flex md:items-center md:justify-center snap-none">
+      <div class="fx-bg" data-fx="stats" aria-hidden="true"></div>
+
+      <div class="relative z-10 container mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-text-light reveal" data-reveal>
+          Rapid Insights &amp; Impact Areas
+        </h2>
+        <p class="mt-4 max-w-3xl mx-auto font-body text-base sm:text-lg md:text-xl text-primary reveal" data-reveal>
           Discover IPS’s growth, interdisciplinary structure, and creative power through numbers.
         </p>
 
         <div class="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-center">
-          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm">
+          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm reveal" data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">groups</span>
             <h3 class="mt-4 text-3xl sm:text-4xl font-black text-text-light counter" data-target="67">67</h3>
             <p class="mt-2 font-body text-primary/90 text-base sm:text-lg">Members</p>
           </div>
 
-          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm">
+          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm reveal" data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">diversity_3</span>
             <h3 class="mt-4 text-3xl sm:text-4xl font-black text-text-light counter" data-target="12">12</h3>
             <p class="mt-2 font-body text-primary/90 text-base sm:text-lg">Core Member</p>
           </div>
 
-          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm">
+          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm reveal" data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">psychology</span>
             <h3 class="mt-4 text-3xl sm:text-4xl font-black text-text-light counter" data-target="5">5</h3>
             <p class="mt-2 font-body text-primary/90 text-base sm:text-lg">Multidisipline Count</p>
           </div>
 
-          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm">
+          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm reveal" data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">lightbulb</span>
             <h3 class="mt-4 text-3xl sm:text-4xl font-black text-text-light counter" data-target="26">26</h3>
             <p class="mt-2 font-body text-primary/90 text-base sm:text-lg">Innoviative Idea</p>
@@ -296,20 +338,26 @@
     </section>
 
     <!-- Focus Areas -->
-    <section id="focus" class="w-full bg-background-light min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center">
-      <div class="container mx-auto px-6 md:px-12 text-center">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-text-light">Focus Areas for 2025</h2>
-        <p class="mt-4 max-w-3xl mx-auto font-body text-base sm:text-lg md:text-xl text-primary">
+    <section id="focus" class="relative w-full bg-background-light min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center snap-none">
+      <div class="fx-bg" data-fx="focus" aria-hidden="true"></div>
+
+      <div class="relative z-10 container mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-text-light reveal" data-reveal>
+          Focus Areas for 2025
+        </h2>
+        <p class="mt-4 max-w-3xl mx-auto font-body text-base sm:text-lg md:text-xl text-primary reveal" data-reveal>
           Our strategic goals for the upcoming year are centered around key areas of technological and scientific advancement.
         </p>
 
         <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 text-left">
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm">
+          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
             <div class="flex items-center gap-4">
               <span class="material-symbols-outlined text-4xl text-primary">neurology</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">Computational Neuroscience</h3>
             </div>
-            <p class="mt-4 font-body text-sm sm:text-base text-primary/80">We aim to deepen our understanding of neural circuits and their relation to behavior through advanced computational models and data analysis techniques.</p>
+            <p class="mt-4 font-body text-sm sm:text-base text-primary/80">
+              We aim to deepen our understanding of neural circuits and their relation to behavior through advanced computational models and data analysis techniques.
+            </p>
             <ul class="mt-4 space-y-2 font-body text-sm sm:text-base text-primary/80 list-disc list-inside">
               <li>Developing brain-computer interfaces (BCIs).</li>
               <li>Simulating neural networks to study cognitive processes.</li>
@@ -317,12 +365,14 @@
             </ul>
           </div>
 
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm">
+          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
             <div class="flex items-center gap-4">
               <span class="material-symbols-outlined text-4xl text-primary">biotech</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">Biotechnology Innovations</h3>
             </div>
-            <p class="mt-4 font-body text-sm sm:text-base text-primary/80">Our focus is on pioneering novel biotech solutions, from synthetic biology to biomaterials, to address pressing challenges in healthcare and environmental sustainability.</p>
+            <p class="mt-4 font-body text-sm sm:text-base text-primary/80">
+              Our focus is on pioneering novel biotech solutions, from synthetic biology to biomaterials, to address pressing challenges in healthcare and environmental sustainability.
+            </p>
             <ul class="mt-4 space-y-2 font-body text-sm sm:text-base text-primary/80 list-disc list-inside">
               <li>Engineering smart biomaterials for tissue regeneration.</li>
               <li>Exploring CRISPR-based gene editing technologies.</li>
@@ -330,12 +380,14 @@
             </ul>
           </div>
 
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm">
+          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
             <div class="flex items-center gap-4">
               <span class="material-symbols-outlined text-4xl text-primary">psychology</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">AI in Cognitive Science</h3>
             </div>
-            <p class="mt-4 font-body text-sm sm:text-base text-primary/80">This area investigates the intersection of artificial intelligence and human cognition, using machine learning to model mental processes and enhance human capabilities.</p>
+            <p class="mt-4 font-body text-sm sm:text-base text-primary/80">
+              This area investigates the intersection of artificial intelligence and human cognition, using machine learning to model mental processes and enhance human capabilities.
+            </p>
             <ul class="mt-4 space-y-2 font-body text-sm sm:text-base text-primary/80 list-disc list-inside">
               <li>Building AI models for language and learning.</li>
               <li>Studying decision-making with reinforcement learning.</li>
@@ -344,13 +396,13 @@
           </div>
         </div>
 
-        <div class="mt-10 md:mt-12 flex flex-wrap items-center justify-center gap-4">
+        <div class="mt-10 md:mt-12 flex flex-wrap items-center justify-center gap-4 reveal" data-reveal>
           <a href="projects.html"
             class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl bg-primary text-background-light font-bold hover:opacity-90 transition">
             Explore Projects
           </a>
 
-        <a href="events.html"
+          <a href="events.html"
             class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl border border-primary/20 bg-white text-primary font-bold hover:scale-[1.02] transition">
             Workshop &amp; Talks Calendar
           </a>
@@ -359,32 +411,36 @@
     </section>
 
     <!-- WHY -->
-    <section id="why" class="w-full bg-white min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center">
-      <div class="container mx-auto px-6 md:px-12 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-text-light">IF YOU SAY THESE</h2>
+    <section id="why" class="relative w-full bg-white min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center snap-none">
+      <div class="fx-bg" data-fx="why" aria-hidden="true"></div>
+
+      <div class="relative z-10 container mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-text-light reveal" data-reveal>IF YOU SAY THESE</h2>
 
         <div class="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2">
+          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal" data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">school</span>
             <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“Classes at school aren’t enough. How can I improve myself further?”</p>
           </div>
-          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2">
+          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal" data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">science</span>
             <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“I want to explore other fields, but I don’t know where to start.”</p>
           </div>
-          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2">
+          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal" data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">emoji_objects</span>
             <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“I have a project idea, but I can’t make it happen alone.”</p>
           </div>
-          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2">
+          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal" data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">workspaces</span>
             <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“How can I collaborate with people outside my field?”</p>
           </div>
         </div>
 
-        <p class="mt-8 md:mt-10 font-display text-xl md:text-3xl font-bold text-primary">THEN IPS IS THE BEST FOR YOU</p>
+        <p class="mt-8 md:mt-10 font-display text-xl md:text-3xl font-bold text-primary reveal" data-reveal>
+          THEN IPS IS THE BEST FOR YOU
+        </p>
 
-        <div class="mt-6 md:mt-8 flex flex-wrap items-center justify-center gap-4">
+        <div class="mt-6 md:mt-8 flex flex-wrap items-center justify-center gap-4 reveal" data-reveal>
           <a href="#join"
             class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl bg-primary text-background-light font-bold hover:opacity-90 transition">
             LET'S START
@@ -399,42 +455,40 @@
     </section>
 
     <!-- JOIN -->
-    <section id="join" class="w-full bg-background-light min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center">
-      <div class="container mx-auto px-6 md:px-12">
+    <section id="join" class="relative w-full bg-background-light min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center snap-none">
+      <div class="fx-bg" data-fx="join" aria-hidden="true"></div>
+
+      <div class="relative z-10 container mx-auto px-6 md:px-12">
         <div class="text-center">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-text-light">Do you want to join us?</h2>
-          <p class="mt-4 max-w-3xl mx-auto font-body text-base sm:text-lg md:text-xl text-primary">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-text-light reveal" data-reveal>
+            Do you want to join us?
+          </h2>
+          <p class="mt-4 max-w-3xl mx-auto font-body text-base sm:text-lg md:text-xl text-primary reveal" data-reveal>
             Become a part of our community and start your journey of innovation and collaboration.
           </p>
         </div>
 
-        <div class="mt-12 md:mt-16 max-w-6xl mx-auto
-            grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12
-            justify-items-center items-stretch">
-          <div class="w-full max-w-xl h-full
-            bg-primary/5 p-8 rounded-xl border border-primary/10
-            text-center flex flex-col items-center justify-center">
+        <div class="mt-12 md:mt-16 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 justify-items-center items-stretch">
+          <div class="w-full max-w-xl h-full bg-primary/5 p-8 rounded-xl border border-primary/10 text-center flex flex-col items-center justify-center reveal" data-reveal>
             <span class="material-symbols-outlined text-6xl text-primary">groups</span>
             <h3 class="mt-4 text-2xl font-bold text-text-light">Become a Member</h3>
             <p class="mt-2 max-w-md mx-auto font-body text-primary/80">
               Join our community to participate in projects, attend workshops, and collaborate with peers from various disciplines.
             </p>
             <a href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" rel="noopener"
-              class="mt-8 h-12 px-8 rounded-xl bg-white text-primary font-bold border border-primary/20 shadow-sm hover:scale-[1.02] transition">
+              class="mt-8 h-12 px-8 rounded-xl bg-white text-primary font-bold border border-primary/20 shadow-sm hover:scale-[1.02] transition inline-flex items-center justify-center">
               Apply for Membership
             </a>
           </div>
 
-          <div class="w-full max-w-xl h-full
-            bg-primary/5 p-8 rounded-xl border border-primary/10
-            text-center flex flex-col items-center justify-center">
+          <div class="w-full max-w-xl h-full bg-primary/5 p-8 rounded-xl border border-primary/10 text-center flex flex-col items-center justify-center reveal" data-reveal>
             <span class="material-symbols-outlined text-6xl text-primary">diversity_3</span>
             <h3 class="mt-4 text-2xl font-bold text-text-light">Join the Core Team</h3>
             <p class="mt-2 max-w-md mx-auto font-body text-primary/80">
               Ready to take a leading role? We are looking for passionate individuals to help shape the future of IPS.
             </p>
             <a href="https://forms.gle/rdHp8C726DhxqceL9" target="_blank" rel="noopener"
-              class="mt-8 h-12 px-8 rounded-xl bg-white text-primary font-bold border border-primary/20 shadow-sm hover:scale-[1.02] transition">
+              class="mt-8 h-12 px-8 rounded-xl bg-white text-primary font-bold border border-primary/20 shadow-sm hover:scale-[1.02] transition inline-flex items-center justify-center">
               View Application Form
             </a>
           </div>
@@ -443,16 +497,18 @@
     </section>
 
     <!-- FUNDING -->
-    <section id="funding" class="w-full bg-background-light min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center">
-      <div class="container mx-auto px-6 md:px-12 text-center">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-primary">Funding Sources</h2>
-        <p class="mt-4 max-w-3xl mx-auto font-body text-base sm:text-lg md:text-xl text-text-light">
+    <section id="funding" class="relative w-full bg-background-light min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center snap-none">
+      <div class="fx-bg" data-fx="funding" aria-hidden="true"></div>
+
+      <div class="relative z-10 container mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-primary reveal" data-reveal>Funding Sources</h2>
+        <p class="mt-4 max-w-3xl mx-auto font-body text-base sm:text-lg md:text-xl text-text-light reveal" data-reveal>
           IPS utilizes various funding opportunities to bring projects to life.
           These resources differ depending on the project’s scope, goals, and interdisciplinary relevance.
         </p>
 
         <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-left">
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm">
+          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-4xl text-primary">account_balance</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">Public Funds</h3>
@@ -467,7 +523,7 @@
             </ul>
           </div>
 
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm">
+          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-4xl text-primary">business_center</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">Private Sector Support</h3>
@@ -482,7 +538,7 @@
             </ul>
           </div>
 
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm">
+          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-4xl text-primary">volunteer_activism</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">NGO &amp; Foundation Grants</h3>
@@ -496,7 +552,7 @@
             </ul>
           </div>
 
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm">
+          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-4xl text-primary">language</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">International Funds</h3>
@@ -512,7 +568,7 @@
           </div>
         </div>
 
-        <div class="mt-10 md:mt-12 flex flex-wrap items-center justify-center gap-4">
+        <div class="mt-10 md:mt-12 flex flex-wrap items-center justify-center gap-4 reveal" data-reveal>
           <a href="assets/pdf/Funding_Guide.pdf" target="_blank" rel="noopener"
             class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl bg-primary text-background-light font-bold hover:opacity-90 transition">
             Funding Guide (PDF)
@@ -527,41 +583,119 @@
     </section>
 
     <!-- FUN VIDEO -->
-    <section class="relative h-[100svh] overflow-hidden">
+    <section id="fun" class="relative h-[100svh] overflow-hidden snap-none">
       <video
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover parallax z-0"
         autoplay muted loop playsinline preload="metadata" poster="assets/img/fun_poster.jpg"
+        data-parallax
       >
         <source src="assets/video/fun.mp4" type="video/mp4" />
         <source src="assets/video/fun.webm" type="video/webm" />
       </video>
 
-      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+      <!-- background FX layer -->
+      <div class="fx-bg" data-fx="fun" aria-hidden="true"></div>
 
       <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 space-y-6">
-        <p class="text-3xl sm:text-4xl md:text-5xl font-bold">WE ALWAYS TRY OUR BEST</p>
-        <p class="font-body text-xl sm:text-2xl md:text-3xl text-white/90">WE COULDN'T MAKE PROJECT IF WE COULDN'T GET FUN</p>
+        <p class="text-3xl sm:text-4xl md:text-5xl font-bold reveal" data-reveal>WE ALWAYS TRY OUR BEST</p>
+        <p class="font-body text-xl sm:text-2xl md:text-3xl text-white/90 reveal" data-reveal>
+          WE COULDN'T MAKE PROJECT IF WE COULDN'T GET FUN
+        </p>
         <a aria-label="Open WhatsApp Invitation"
-          class="inline-flex h-12 items-center justify-center rounded-xl px-8 bg-background-light text-primary font-bold hover:scale-105 transition"
+          class="inline-flex h-12 items-center justify-center rounded-xl px-8 bg-background-light text-primary font-bold hover:scale-105 transition reveal"
+          data-reveal
           href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener"
         >JOIN US NOW</a>
       </div>
     </section>
+
   </div>
 
   <!-- Loader'lar: ortak header + GA, ortak footer -->
   <script src="js/header-loader.js" defer></script>
   <script src="js/footer-loader.js" defer></script>
 
-  <!-- Sayfa davranışları: loader'lardan sonra -->
+  <!-- Sayfa davranışları + animasyonlar + floating icons -->
   <script>
-    // CTA → About scroll
+    function initFloatingIcons() {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion) return;
+      
+
+      const ICONS = {
+        hero:   ["science","hub","insights","biotech","neurology","psychology"],
+        about:  ["lightbulb","groups","school","rocket_launch","handshake"],
+        stats:  ["analytics","groups","psychology","emoji_objects"],
+        focus:  ["biotech","neurology","model_training","memory","data_usage"],
+        why:    ["school","science","emoji_objects","workspaces"],
+        join:   ["groups","diversity_3","badge","support_agent"],
+        funding:["account_balance","business_center","language","volunteer_activism"],
+        fun:    ["sentiment_satisfied","sports_esports","celebration","movie"]
+      };
+
+      const isMdUp = window.matchMedia("(min-width: 768px)").matches;
+
+      document.querySelectorAll("section").forEach((sec) => {
+        const layer = sec.querySelector(".fx-bg");
+        if (!layer) return;
+
+        layer.innerHTML = "";
+        // ✅ VIDEO ÜSTÜNDE EMOJİ OLMASIN: hero + fun’da kapat
+if (sec.id === "hero" || sec.id === "fun") {
+  layer.innerHTML = "";
+  return;
+}
+
+        const key = layer.getAttribute("data-fx") || sec.id || "default";
+        const list = ICONS[key] || ["science","lightbulb","hub"];
+
+        const prefersWhite = sec.id === "hero" || sec.id === "fun";
+        const iconColor = prefersWhite ? "rgba(255,255,255,0.95)" : "var(--burgundy)";
+        const iconOpacity = prefersWhite ? 0.10 : 0.07;
+
+        const count = isMdUp ? 18 : 10;
+
+        for (let i = 0; i < count; i++) {
+          const span = document.createElement("span");
+          span.className = "material-symbols-outlined fx-icon";
+          span.textContent = list[Math.floor(Math.random() * list.length)];
+
+          const size = 18 + Math.random() * 26;
+          const left = Math.random() * 100;
+          const top = 20 + Math.random() * 70;
+          const dur = 10 + Math.random() * 18;
+          const delay = -Math.random() * dur;
+          const rot = (Math.random() * 40) - 20;
+
+          span.style.fontSize = size + "px";
+          span.style.left = left + "%";
+          span.style.top = top + "%";
+          span.style.animationDuration = dur + "s";
+          span.style.animationDelay = delay + "s";
+          span.style.transform = `translate3d(0,0,0) rotate(${rot}deg)`;
+          span.style.color = iconColor;
+          span.style.opacity = String(iconOpacity);
+
+          layer.appendChild(span);
+        }
+      });
+    }
+
     window.addEventListener('load', () => {
+      initFloatingIcons();
+      window.addEventListener("resize", () => {
+        window.clearTimeout(window.__fxResizeT);
+        window.__fxResizeT = window.setTimeout(initFloatingIcons, 200);
+      });
+
+      // CTA → About scroll
       document.getElementById('ctaBegin')?.addEventListener('click', () => {
         document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
 
-      // Header görünürlüğü (hero var ise)
+      // Header visibility (hero var ise)
       const header = document.getElementById('siteHeader');
       const hero = document.getElementById('hero');
       const mq = window.matchMedia('(min-width: 768px)');
@@ -589,6 +723,96 @@
       }
       setupHeaderObserver();
       mq.addEventListener('change', setupHeaderObserver);
+
+      // ===== GSAP Animations =====
+      if (!window.gsap || !window.ScrollTrigger) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+
+      // 1) Hero intro
+      gsap.fromTo(
+        '[data-reveal="hero"]',
+        { opacity: 0, y: 20, filter: 'blur(6px)' },
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.9, stagger: 0.12, ease: 'power3.out' }
+      );
+
+      // 2) Element reveal (no reverse for cleaner flow)
+      gsap.utils.toArray('[data-reveal]:not([data-reveal="hero"])').forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 28, filter: 'blur(8px)' },
+          {
+            opacity: 1, y: 0, filter: 'blur(0px)',
+            duration: 0.8, ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 85%',
+              end: 'top 60%',
+              toggleActions: 'play none none none'
+            }
+          }
+        );
+      });
+
+      // 3) Parallax
+      gsap.utils.toArray('[data-parallax]').forEach((el) => {
+        gsap.to(el, {
+          y: -40,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: el.closest('section') || el,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 0.6
+          }
+        });
+      });
+
+      // 4) Counter
+      gsap.utils.toArray('.counter').forEach((counter) => {
+        const target = Number(counter.getAttribute('data-target') || counter.textContent || 0);
+        const obj = { val: 0 };
+
+        ScrollTrigger.create({
+          trigger: counter,
+          start: 'top 85%',
+          once: true,
+          onEnter: () => {
+            gsap.to(obj, {
+              val: target,
+              duration: 1.2,
+              ease: 'power2.out',
+              onUpdate: () => { counter.textContent = Math.round(obj.val).toString(); }
+            });
+          }
+        });
+      });
+
+      // 5) Section-level smooth lift (bottom -> top), NO PIN
+      gsap.utils.toArray('section').forEach((sec) => {
+        if (sec.id === 'hero') return;
+        gsap.fromTo(
+          sec,
+          { opacity: 0.92, y: 60, filter: 'blur(6px)' },
+          {
+            opacity: 1,
+            y: 0,
+            filter: 'blur(0px)',
+            duration: 0.9,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: sec,
+              start: 'top 85%',
+              end: 'top 55%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      });
+
+      ScrollTrigger.refresh(true);
     });
   </script>
 </body>

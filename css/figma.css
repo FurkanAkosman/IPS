@@ -1,13 +1,15 @@
 /* ========== Figma Embed Styles (namespaced) ========== */
-/* Tokens: Tailwind değişkenleriyle uyumlu */
+/* IPS tokens ile uyumlu: varsayılan olarak IPS değişkenlerini kullanır */
 :root {
-  --figma-bg: #f8f8f3;         /* var(--beige) */
-  --figma-fg: #1D0C0F;         /* var(--text-main) */
-  --figma-brand: #4d0011;      /* var(--burgundy) */
+  --figma-bg: var(--beige, #f8f8f3);
+  --figma-fg: var(--text-main, #1D0C0F);
+  --figma-brand: var(--burgundy, #4d0011);
+
   --figma-border: rgba(77, 0, 17, 0.15);
   --figma-shadow: 0 6px 24px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
 }
 
+/* Dark mode: html.dark veya .dark sınıfı */
 html.dark, .dark {
   --figma-bg: #0f0d0e;
   --figma-fg: #e9e5e5;
@@ -22,7 +24,12 @@ html.dark, .dark {
   border: 1px solid var(--figma-border);
   border-radius: 12px;
   box-shadow: var(--figma-shadow);
-  overflow: clip;
+  overflow: hidden; /* fallback */
+}
+
+/* overflow: clip destekleniyorsa kullan */
+@supports (overflow: clip) {
+  .figma-wrap { overflow: clip; }
 }
 
 /* Başlık satırı (opsiyonel) */
@@ -32,25 +39,38 @@ html.dark, .dark {
   gap: .5rem;
   padding: .75rem 1rem;
   border-bottom: 1px solid var(--figma-border);
-  background: color-mix(in oklab, var(--figma-bg) 92%, transparent);
+  background: rgba(0,0,0,0.02); /* fallback */
 }
+
+/* color-mix destekleniyorsa daha iyi ton */
+@supports (background: color-mix(in oklab, white 50%, transparent)) {
+  .figma-head {
+    background: color-mix(in oklab, var(--figma-bg) 92%, transparent);
+  }
+}
+
 .figma-head .figma-title {
   font-weight: 800;
   letter-spacing: .2px;
   font-size: 0.95rem;
 }
+
 .figma-head .figma-meta {
   margin-left: auto;
   font-size: .8rem;
   opacity: .7;
 }
 
-/* Oran koruma: modern + geriye uyumlu */
+/* Embed alanı */
 .figma-embed {
   position: relative;
   background: #000;
   isolation: isolate;
+  aspect-ratio: 16 / 9; /* modern */
+  min-height: 320px;    /* iframe 0px olmasın (özellikle küçük ekran / bazı embed durumları) */
 }
+
+/* iframe */
 .figma-embed iframe {
   width: 100%;
   height: 100%;
@@ -59,38 +79,43 @@ html.dark, .dark {
   background: #fff;
   color-scheme: light dark;
 }
-.figma-embed {
-  aspect-ratio: 16 / 9;           /* modern */
-}
+
+/* aspect-ratio fallback */
 @supports not (aspect-ratio: 16 / 9) {
-  .figma-embed::before {          /* fallback */
+  .figma-embed::before {
     content: "";
     display: block;
     padding-top: calc(100% * 9 / 16);
   }
   .figma-embed iframe {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
-/* Yoğun mod: küçük ekranlarda daha ince kenarlık ve gölge */
+/* Yoğun mod: küçük ekran */
 @media (max-width: 640px) {
   .figma-wrap { border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
   .figma-head { padding: .6rem .8rem; }
+  .figma-embed { min-height: 240px; }
 }
 
 /* Hotspot/annotation katmanları (opsiyonel) */
 .figma-notes {
-  position: relative;
+  position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 2;
 }
+
 .figma-note {
   position: absolute;
   transform: translate(-50%, -50%);
   pointer-events: auto;
-  background: color-mix(in oklab, var(--figma-bg) 70%, var(--figma-brand));
+
+  background: rgba(77, 0, 17, 0.14); /* fallback */
   color: var(--figma-fg);
   border: 1px solid var(--figma-border);
   border-radius: 10px;
@@ -99,43 +124,84 @@ html.dark, .dark {
   font-weight: 700;
   box-shadow: var(--figma-shadow);
 }
-.figma-note[data-variant="warn"] {
-  background: #ffe8e8; color: #6b0000; border-color: rgba(255,0,0,.25);
+
+/* color-mix destekleniyorsa daha iyi */
+@supports (background: color-mix(in oklab, white 50%, black)) {
+  .figma-note {
+    background: color-mix(in oklab, var(--figma-bg) 70%, var(--figma-brand));
+  }
 }
+
+.figma-note[data-variant="warn"] {
+  background: #ffe8e8;
+  color: #6b0000;
+  border-color: rgba(255,0,0,.25);
+}
+
 html.dark .figma-note[data-variant="warn"] {
-  background: #2b1416; color: #ffd6d6; border-color: rgba(255,160,160,.25);
+  background: #2b1416;
+  color: #ffd6d6;
+  border-color: rgba(255,160,160,.25);
 }
 
 /* Grid overlay (tasarım inceleme) */
 .figma-grid {
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+
   background-image:
     linear-gradient(to right, rgba(77,0,17,.08) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(77,0,17,.08) 1px, transparent 1px);
   background-size: 16px 16px;
   mix-blend-mode: multiply;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity .2s ease;
 }
+
+/* dark mode grid daha yumuşak */
+html.dark .figma-grid, .dark .figma-grid {
+  background-image:
+    linear-gradient(to right, rgba(233,229,229,.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(233,229,229,.10) 1px, transparent 1px);
+  mix-blend-mode: normal;
+}
+
 .figma-wrap[data-grid="on"] .figma-grid { opacity: 1; }
 
-/* Açıklama balonu */
+/* Açıklama */
 .figma-caption {
   padding: .75rem 1rem;
   border-top: 1px solid var(--figma-border);
   font-size: .9rem;
   line-height: 1.45;
-  color: color-mix(in oklab, var(--figma-fg) 92%, #555);
+  color: rgba(0,0,0,0.68); /* fallback */
+}
+
+@supports (color: color-mix(in oklab, white 50%, black)) {
+  .figma-caption {
+    color: color-mix(in oklab, var(--figma-fg) 92%, #555);
+  }
+}
+
+html.dark .figma-caption, .dark .figma-caption {
+  color: rgba(233,229,229,0.78);
 }
 
 /* Erişilebilirlik yardımcıları */
 .figma-sr-only {
   position: absolute !important;
-  height: 1px; width: 1px;
-  overflow: hidden; clip: rect(1px,1px,1px,1px);
-  white-space: nowrap; border: 0; padding: 0; margin: -1px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
 }
+
 .figma-focusable:focus {
   outline: 2px solid var(--figma-brand);
   outline-offset: 2px;
@@ -147,34 +213,13 @@ html.dark .figma-note[data-variant="warn"] {
   .figma-grid { transition: none; }
 }
 
-/* Baskı (PDF teslimleri için arka plan ve kenarlıklar) */
+/* Baskı */
 @media print {
   .figma-wrap {
-    box-shadow: none; border-color: #999; background: #fff; color: #000;
+    box-shadow: none;
+    border-color: #999;
+    background: #fff;
+    color: #000;
   }
   .figma-grid { opacity: 0 !important; }
 }
-
-/* ========== Kullanım örneği (HTML) ==========
-<div class="figma-wrap" data-grid="off">
-  <div class="figma-head">
-    <span class="figma-title">IPS — Landing v2</span>
-    <span class="figma-meta">File · Read-only</span>
-  </div>
-  <div class="figma-embed">
-    <iframe
-      title="Figma Embed"
-      loading="lazy"
-      allowfullscreen
-      class="figma-focusable"
-      src="https://www.figma.com/embed?embed_host=ips&url=<FIGMA_FILE_URL>&node-id=<NODE_ID>&hide-ui=1">
-    </iframe>
-    <div class="figma-grid"></div>
-    <div class="figma-notes">
-      <div class="figma-note" style="left:20%;top:35%;">Hero CTA</div>
-      <div class="figma-note" data-variant="warn" style="left:72%;top:66%;">Contrast</div>
-    </div>
-  </div>
-  <p class="figma-caption">Primary funnel: Join → Projects → Events. Contrast AA sağlandı.</p>
-</div>
-================================================ */

@@ -1,48 +1,191 @@
-<header id="siteHeader"
-  class="fixed inset-x-0 top-0 z-50 bg-background-light/90 backdrop-blur border-b border-primary/10 transition-all duration-300"
-  aria-label="Main Navigation">
-  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<!-- partials/header.html (Güncellenmiş)
+  - “About/Legal” benzeri sayfalar tek dropdown altında toplandı (FAQ / Terms / Privacy / About / KVKK)
+  - Projects altında 2 alt sekme eklendi: Zaim University, Public
+  - Mobil menüde aynı yapı <details> ile sağlandı (tasarım bozulmadan)
+-->
 
+<header
+  id="siteHeader"
+  class="fixed inset-x-0 top-0 z-50 bg-background-light/90 backdrop-blur border-b border-primary/10 transition-all duration-300"
+  aria-label="Main Navigation"
+>
+  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
     <!-- Logo + İsim: Ana sayfa -->
     <a href="index.html" class="flex items-center gap-3" aria-label="Go to Home Page">
-      <img src="assets/img/kulup-logo.jpg" alt="IPS Logo" class="h-8 w-8 rounded" loading="lazy" decoding="async" width="32" height="32" />
+      <img
+        src="assets/img/kulup-logo.jpg"
+        alt="IPS Logo"
+        class="h-8 w-8 rounded"
+        loading="lazy"
+        decoding="async"
+        width="32"
+        height="32"
+      />
       <span class="font-semibold">Interdisciplinary Project Society</span>
     </a>
 
     <ul class="hidden md:flex items-center gap-8 text-sm">
       <li><a class="hover:text-primary transition-colors" href="index.html" aria-label="Go to Main Page">Main page</a></li>
       <li><a class="hover:text-primary transition-colors" href="team.html" aria-label="See IPS team">Team</a></li>
-      <li><a class="hover:text-primary transition-colors" href="projects.html" aria-label="View IPS projects">Projects</a></li>
+
+      <!-- Projects (dropdown) -->
+      <li class="relative group">
+        <a
+          class="hover:text-primary transition-colors inline-flex items-center gap-1"
+          href="projects.html"
+          aria-label="View IPS projects"
+        >
+          Projects
+          <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path
+              fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+
+        <div
+          class="absolute left-0 top-full mt-2 w-56 rounded-xl border border-primary/10 bg-background-light shadow-lg py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition"
+          role="menu"
+          aria-label="Projects submenu"
+        >
+          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="projects.html">
+            All Projects
+          </a>
+          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="projects-zaim.html">
+            Zaim University
+          </a>
+          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="projects-public.html">
+            Public
+          </a>
+        </div>
+      </li>
+
       <li><a class="hover:text-primary transition-colors" href="events.html" aria-label="View IPS events">Events</a></li>
-      <li><a class="hover:text-primary transition-colors" href="blog.html" aria-label="Read IPS blog">Blog</a></li>
-      <li><a class="hover:text-primary transition-colors" href="sss.html" aria-label="Read IPS FAQ">FAQ</a></li>
+
+      <!-- Event Registration -->
       <li>
-        <a class="inline-flex h-10 items-center rounded-xl px-4 font-bold bg-primary text-background-light hover:opacity-90"
-           href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt"
-           target="_blank" rel="noopener" aria-label="Open WhatsApp invitation">Join Us</a>
+        <a class="hover:text-primary transition-colors" href="event-register.html" aria-label="Register for IPS event">
+          Kai-Sen
+        </a>
+      </li>
+
+      <li><a class="hover:text-primary transition-colors" href="blog.html" aria-label="Read IPS blog">Blog</a></li>
+
+      <!-- About / Legal (dropdown) -->
+      <li class="relative group">
+        <button
+          class="hover:text-primary transition-colors inline-flex items-center gap-1"
+          type="button"
+          aria-label="Open About menu"
+        >
+          About
+          <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path
+              fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+
+        <div
+          class="absolute left-0 top-full mt-2 w-56 rounded-xl border border-primary/10 bg-background-light shadow-lg py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition"
+          role="menu"
+          aria-label="About submenu"
+        >
+          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="about.html">
+            About Us
+          </a>
+          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="sss.html">
+            FAQ
+          </a>
+          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="kvkk.html">
+            KVKK
+          </a>
+          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="privacy.html">
+            Privacy
+          </a>
+          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="terms.html">
+            Terms
+          </a>
+        </div>
+      </li>
+
+      <li>
+        <a
+          class="inline-flex h-10 items-center rounded-xl px-4 font-bold bg-primary text-background-light hover:opacity-90"
+          href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open WhatsApp invitation"
+        >
+          Join Us
+        </a>
       </li>
     </ul>
 
-    <button id="menuToggle" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg
-      border border-primary/20 text-primary" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+    <button
+      id="menuToggle"
+      class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg border border-primary/20 text-primary"
+      aria-label="Open menu"
+      aria-controls="mobileMenu"
+      aria-expanded="false"
+      type="button"
+    >
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
       </svg>
     </button>
   </nav>
 
-  <div id="mobileMenu"
-    class="md:hidden fixed inset-x-0 top-16 z-[60] bg-background-light border-t border-primary/10 shadow-lg hidden">
+  <div
+    id="mobileMenu"
+    class="md:hidden fixed inset-x-0 top-16 z-[60] bg-background-light border-t border-primary/10 shadow-lg hidden"
+  >
     <nav class="px-4 py-3">
       <a class="block py-3 px-2 text-base hover:text-primary" href="index.html">Main page</a>
       <a class="block py-3 px-2 text-base hover:text-primary" href="team.html">Team</a>
-      <a class="block py-3 px-2 text-base hover:text-primary" href="projects.html">Projects</a>
+
+      <!-- Projects (mobile accordion) -->
+      <details class="group border-t border-primary/10">
+        <summary class="flex cursor-pointer items-center justify-between py-3 px-2 text-base hover:text-primary">
+          <span>Projects</span>
+          <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+        </summary>
+        <div class="pb-2">
+          <a class="block py-2 px-4 text-sm hover:text-primary" href="projects.html">All Projects</a>
+          <a class="block py-2 px-4 text-sm hover:text-primary" href="projects-zaim.html">Zaim University</a>
+          <a class="block py-2 px-4 text-sm hover:text-primary" href="projects-public.html">Public</a>
+        </div>
+      </details>
+
       <a class="block py-3 px-2 text-base hover:text-primary" href="events.html">Events</a>
+      <a class="block py-3 px-2 text-base hover:text-primary" href="event-register.html">Event Register</a>
       <a class="block py-3 px-2 text-base hover:text-primary" href="blog.html">Blog</a>
-      <a class="block py-3 px-2 text-base hover:text-primary" href="sss.html">FAQ</a>
-      <a class="mt-2 inline-flex h-11 items-center justify-center rounded-xl px-4 font-bold
-         bg-primary text-background-light hover:opacity-90"
-         href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">
+
+      <!-- About (mobile accordion) -->
+      <details class="group border-t border-primary/10">
+        <summary class="flex cursor-pointer items-center justify-between py-3 px-2 text-base hover:text-primary">
+          <span>About</span>
+          <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+        </summary>
+        <div class="pb-2">
+          <a class="block py-2 px-4 text-sm hover:text-primary" href="about.html">About Us</a>
+          <a class="block py-2 px-4 text-sm hover:text-primary" href="sss.html">FAQ</a>
+          <a class="block py-2 px-4 text-sm hover:text-primary" href="kvkk.html">KVKK</a>
+          <a class="block py-2 px-4 text-sm hover:text-primary" href="privacy.html">Privacy</a>
+          <a class="block py-2 px-4 text-sm hover:text-primary" href="terms.html">Terms</a>
+        </div>
+      </details>
+
+      <a
+        class="mt-2 inline-flex h-11 items-center justify-center rounded-xl px-4 font-bold bg-primary text-background-light hover:opacity-90 w-full"
+        href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Join Us
       </a>
     </nav>

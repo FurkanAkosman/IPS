@@ -1,0 +1,226 @@
+/* ===============================
+   IPS — KVKK Page Styles
+   =============================== */
+
+/* Tema değişkenleri (site ile uyumlu) */
+:root{
+  --primary:#4d0011;          /* IPS burgundy */
+  --bg-light:#f8f8f3;
+  --bg-dark:#101622;
+  --text-main:#1D0C0F;
+  --text-muted:#6b4b53;
+  --border-soft:rgba(77,0,17,.12);
+  --radius:12px;
+}
+
+/* Sayfa genel zemin */
+body{
+  background:var(--bg-light);
+  color:var(--text-main);
+}
+.dark body{
+  background:var(--bg-dark);
+  color:#e5e7eb;
+}
+
+/* Ana başlık alanı */
+.kvkk-hero{
+  background:linear-gradient(
+    180deg,
+    rgba(77,0,17,.04),
+    rgba(77,0,17,0)
+  );
+  border-bottom:1px solid var(--border-soft);
+}
+.dark .kvkk-hero{
+  background:linear-gradient(
+    180deg,
+    rgba(255,255,255,.04),
+    rgba(255,255,255,0)
+  );
+}
+
+/* Üst etiket (Hukuki Metinler) */
+.kvkk-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--primary);
+}
+
+/* Sayfa başlığı */
+.kvkk-title{
+  font-size:clamp(2.2rem,4vw,3rem);
+  font-weight:900;
+  line-height:1.1;
+  letter-spacing:-.02em;
+  color:var(--text-main);
+}
+.dark .kvkk-title{ color:#fff }
+
+/* Açıklama metni */
+.kvkk-lead{
+  max-width:56ch;
+  font-size:1.05rem;
+  color:var(--text-muted);
+}
+.dark .kvkk-lead{ color:#9ca3af }
+
+/* Meta bilgi satırı */
+.kvkk-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.5rem;
+  font-size:.85rem;
+  color:#6b7280;
+}
+.dark .kvkk-meta{ color:#9ca3af }
+.kvkk-meta span{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+}
+
+/* İçerik sarmalayıcı */
+.kvkk-content{
+  max-width:1200px;
+  margin-inline:auto;
+}
+
+/* Sidebar (İçindekiler) */
+.kvkk-toc{
+  background:#fff;
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius);
+}
+.dark .kvkk-toc{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(255,255,255,.08);
+}
+
+.kvkk-toc h3{
+  font-weight:800;
+  font-size:.9rem;
+  margin-bottom:.75rem;
+}
+
+/* İçindekiler linkleri */
+.kvkk-toc a{
+  display:block;
+  padding:.45rem .6rem;
+  border-radius:8px;
+  font-size:.85rem;
+  color:#4b5563;
+  transition:background .15s ease,color .15s ease;
+}
+.dark .kvkk-toc a{ color:#d1d5db }
+
+.kvkk-toc a:hover{
+  background:rgba(77,0,17,.06);
+  color:var(--primary);
+}
+.dark .kvkk-toc a:hover{
+  background:rgba(255,255,255,.08);
+  color:#fff;
+}
+
+.kvkk-toc a.active{
+  background:rgba(77,0,17,.08);
+  color:var(--primary);
+  font-weight:700;
+  border-left:3px solid var(--primary);
+}
+
+/* Makale içeriği */
+.kvkk-article section{
+  scroll-margin-top:8rem;
+}
+
+.kvkk-article h2{
+  font-size:1.4rem;
+  font-weight:800;
+  margin-bottom:.75rem;
+  color:var(--text-main);
+}
+.dark .kvkk-article h2{ color:#fff }
+
+.kvkk-article p{
+  line-height:1.65;
+  color:#4b5563;
+}
+.dark .kvkk-article p{ color:#d1d5db }
+
+/* Bilgi kartları */
+.kvkk-card{
+  background:#fff;
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius);
+  padding:1.1rem;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+.kvkk-card:hover{
+  border-color:rgba(77,0,17,.25);
+  box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+.dark .kvkk-card{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(255,255,255,.1);
+}
+
+/* Uyarı kutusu */
+.kvkk-warning{
+  background:#fff7ed;
+  border-left:4px solid #f59e0b;
+  border-radius:8px;
+}
+.dark .kvkk-warning{
+  background:rgba(245,158,11,.12);
+}
+
+/* Accordion (details) */
+.kvkk-accordion summary{
+  cursor:pointer;
+  font-weight:600;
+}
+.kvkk-accordion[open]{
+  border-color:rgba(77,0,17,.3);
+}
+
+/* Çerez alanı */
+.kvkk-cookie{
+  background:rgba(0,0,0,.03);
+  border-radius:10px;
+}
+.dark .kvkk-cookie{
+  background:rgba(255,255,255,.06);
+}
+
+/* İletişim kartları */
+.kvkk-contact a{
+  text-decoration:none;
+}
+.kvkk-contact a:hover{
+  box-shadow:0 6px 16px rgba(0,0,0,.08);
+}
+
+/* Back to top */
+.kvkk-top{
+  background:var(--text-main);
+  color:#fff;
+}
+.kvkk-top:hover{
+  background:var(--primary);
+}
+
+/* Print */
+@media print{
+  .no-print{ display:none!important }
+  body{
+    background:#fff!important;
+    color:#000!important;
+  }
+}

@@ -1,0 +1,28 @@
+/* Background FX layer */
+.fx-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Individual icons */
+.fx-icon {
+  position: absolute;
+  opacity: 0.08;              /* okunabilirlik için düşük */
+  transform: translate3d(0,0,0);
+  will-change: transform, opacity;
+  animation: fxFloatUp linear infinite;
+}
+
+/* Movement */
+@keyframes fxFloatUp {
+  from { transform: translate3d(0, 18px, 0) rotate(0deg); }
+  to   { transform: translate3d(0, -120px, 0) rotate(20deg); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fx-icon { animation: none !important; }
+}

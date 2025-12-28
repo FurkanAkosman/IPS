@@ -1,0 +1,334 @@
+/* ===============================
+   IPS — Privacy Page Styles (privacy.css)
+   Site ile uyumlu, Tailwind'e dokunmadan.
+   =============================== */
+
+:root{
+  --primary:#4d0011;          /* IPS burgundy */
+  --bg-light:#f8f8f3;
+  --bg-dark:#101622;
+  --text-main:#1D0C0F;
+  --text-muted:#6b4b53;
+  --border-soft:rgba(77,0,17,.12);
+  --radius:12px;
+
+  --ok:#16a34a;
+  --warn:#f59e0b;
+  --danger:#dc2626;
+}
+
+/* Genel */
+body{
+  background:var(--bg-light);
+  color:var(--text-main);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.dark body{
+  background:var(--bg-dark);
+  color:#e5e7eb;
+}
+
+/* Sayfa üst bandı (hero) */
+.privacy-hero{
+  background:linear-gradient(180deg, rgba(77,0,17,.05), rgba(77,0,17,0));
+  border-bottom:1px solid var(--border-soft);
+}
+.dark .privacy-hero{
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0));
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.privacy-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  color:var(--primary);
+  font-size:.75rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.privacy-title{
+  font-size:clamp(2.2rem, 4vw, 3rem);
+  font-weight:900;
+  line-height:1.1;
+  letter-spacing:-.02em;
+  color:var(--text-main);
+}
+.dark .privacy-title{ color:#fff; }
+
+.privacy-lead{
+  max-width:60ch;
+  font-size:1.05rem;
+  color:var(--text-muted);
+  line-height:1.55;
+}
+.dark .privacy-lead{ color:#9ca3af; }
+
+.privacy-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.25rem;
+  font-size:.85rem;
+  color:#6b7280;
+}
+.dark .privacy-meta{ color:#9ca3af; }
+.privacy-meta .meta-item{
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+}
+
+/* Layout container */
+.privacy-container{
+  max-width:1200px;
+  margin-inline:auto;
+}
+.privacy-grid{
+  display:flex;
+  gap:2rem;
+}
+@media (max-width: 1024px){
+  .privacy-grid{ flex-direction:column; }
+}
+
+/* Sidebar / TOC */
+.privacy-toc{
+  width:16rem;
+  flex:0 0 16rem;
+}
+@media (max-width: 1024px){
+  .privacy-toc{ width:100%; flex:1 1 auto; }
+}
+
+.privacy-toc-card{
+  position:sticky;
+  top:7rem;
+  background:#fff;
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius);
+  padding:1rem;
+}
+.dark .privacy-toc-card{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(255,255,255,.10);
+}
+
+.privacy-toc-title{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  font-weight:900;
+  font-size:.9rem;
+  margin-bottom:.75rem;
+  color:var(--text-main);
+}
+.dark .privacy-toc-title{ color:#fff; }
+
+.privacy-toc a{
+  display:block;
+  padding:.45rem .6rem;
+  border-radius:10px;
+  font-size:.86rem;
+  color:#4b5563;
+  transition:background .15s ease, color .15s ease;
+}
+.dark .privacy-toc a{ color:#d1d5db; }
+
+.privacy-toc a:hover{
+  background:rgba(77,0,17,.06);
+  color:var(--primary);
+}
+.dark .privacy-toc a:hover{
+  background:rgba(255,255,255,.08);
+  color:#fff;
+}
+
+.privacy-toc a.active{
+  background:rgba(77,0,17,.08);
+  color:var(--primary);
+  font-weight:800;
+  border-left:3px solid var(--primary);
+}
+
+/* İçerik */
+.privacy-article{
+  flex:1 1 auto;
+  min-width:0;
+}
+.privacy-article section{
+  scroll-margin-top:8rem;
+}
+
+.privacy-article h2{
+  font-size:1.35rem;
+  font-weight:900;
+  margin:0 0 .75rem 0;
+  color:var(--text-main);
+}
+.dark .privacy-article h2{ color:#fff; }
+
+.privacy-article h3{
+  font-size:1.1rem;
+  font-weight:800;
+  margin:1.25rem 0 .5rem 0;
+  color:var(--text-main);
+}
+.dark .privacy-article h3{ color:#fff; }
+
+.privacy-article p{
+  line-height:1.7;
+  color:#4b5563;
+  margin:.75rem 0;
+}
+.dark .privacy-article p{ color:#d1d5db; }
+
+.privacy-article ul,
+.privacy-article ol{
+  margin:.75rem 0 .75rem 1.25rem;
+  color:#4b5563;
+}
+.dark .privacy-article ul,
+.dark .privacy-article ol{ color:#d1d5db; }
+.privacy-article li{ margin:.35rem 0; }
+
+.privacy-divider{
+  border:none;
+  border-top:1px solid rgba(0,0,0,.08);
+  margin:2rem 0;
+}
+.dark .privacy-divider{
+  border-top:1px solid rgba(255,255,255,.10);
+}
+
+/* Kartlar */
+.privacy-card{
+  background:#fff;
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius);
+  padding:1.1rem;
+  transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.privacy-card:hover{
+  border-color:rgba(77,0,17,.25);
+  box-shadow:0 10px 24px rgba(0,0,0,.06);
+  transform:translateY(-1px);
+}
+.dark .privacy-card{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(255,255,255,.10);
+}
+
+/* Bilgi / uyarı kutuları */
+.privacy-callout{
+  border-radius:12px;
+  padding:1rem 1.1rem;
+  border:1px solid rgba(0,0,0,.08);
+  background:rgba(0,0,0,.02);
+}
+.dark .privacy-callout{
+  border-color:rgba(255,255,255,.10);
+  background:rgba(255,255,255,.05);
+}
+.privacy-callout--ok{
+  border-left:4px solid var(--ok);
+}
+.privacy-callout--warn{
+  border-left:4px solid var(--warn);
+  background:#fff7ed;
+}
+.dark .privacy-callout--warn{
+  background:rgba(245,158,11,.12);
+}
+.privacy-callout--danger{
+  border-left:4px solid var(--danger);
+  background:#fef2f2;
+}
+.dark .privacy-callout--danger{
+  background:rgba(220,38,38,.14);
+}
+
+/* Accordion (details) */
+.privacy-accordion{
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+}
+.dark .privacy-accordion{
+  border-color:rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+}
+.privacy-accordion summary{
+  cursor:pointer;
+  list-style:none;
+  padding:1rem 1.1rem;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+.privacy-accordion summary::-webkit-details-marker{ display:none; }
+.privacy-accordion[open]{
+  border-color:rgba(77,0,17,.25);
+  box-shadow:0 8px 18px rgba(0,0,0,.05);
+}
+.privacy-accordion .accordion-body{
+  padding:0 1.1rem 1rem 1.1rem;
+  color:#4b5563;
+}
+.dark .privacy-accordion .accordion-body{ color:#d1d5db; }
+
+/* Linkler */
+.privacy-article a{
+  color:var(--primary);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.privacy-article a:hover{
+  opacity:.9;
+}
+
+/* “Back to top” */
+.privacy-top{
+  position:fixed;
+  right:1.5rem;
+  bottom:1.5rem;
+  width:44px;
+  height:44px;
+  border-radius:9999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--text-main);
+  color:#fff;
+  box-shadow:0 12px 26px rgba(0,0,0,.18);
+  transition:background .15s ease, transform .15s ease, opacity .15s ease;
+  z-index:50;
+}
+.privacy-top:hover{
+  background:var(--primary);
+  transform:translateY(-1px);
+}
+.dark .privacy-top{
+  background:var(--primary);
+}
+.dark .privacy-top:hover{
+  filter:brightness(1.05);
+}
+
+/* Print */
+@media print{
+  .no-print{ display:none!important; }
+  body{
+    background:#fff!important;
+    color:#000!important;
+  }
+  .privacy-toc-card{
+    position:static!important;
+    box-shadow:none!important;
+  }
+}
