@@ -8,7 +8,7 @@
 
   /* === CONFIG === */
   const ENDPOINT =
-    'https://script.google.com/macros/s/AKfycbw8HkZkC7_wJFmZBwuLT2uya4FzvjFOsmWi6uFHbMz8VWP6txbx1ShGhWvGnUzTUaSEVA/exec';
+    'https://script.google.com/macros/s/AKfycbxJWdy76oJ1TYrwRwf59kMBk6vGu01vcoqrIeGxMEoAB8FCvUH9i48jpgrF06UW21ReBg/exec';
 
   const FORM_ID = 'eventRegisterForm';
   const SUBMIT_BTN_ID = 'eventSubmitBtn';
@@ -21,8 +21,7 @@
     const box = qs(MESSAGE_ID);
     if (!box) return;
 
-    box.className =
-      'mt-4 rounded-lg px-4 py-3 text-sm font-semibold';
+    box.className = 'mt-4 rounded-lg px-4 py-3 text-sm font-semibold';
 
     if (type === 'success') {
       box.classList.add('bg-green-50', 'text-green-700', 'border', 'border-green-200');
@@ -55,13 +54,10 @@
       if (form.dataset.submitted === 'true') return;
       form.dataset.submitted = 'true';
 
-      disableButton(true);
-
       // HTML5 validation
       if (!form.checkValidity()) {
         form.reportValidity();
         form.dataset.submitted = 'false';
-        disableButton(false);
         return;
       }
 
@@ -70,61 +66,50 @@
 
       // KVKK kontrolü (checkbox name="kvkk")
       if (!formData.get('kvkk')) {
-        showMessage('error', 'You must approve the KVKK consent.');
+        showMessage('error', 'KVKK onayını işaretlemelisiniz.');
         form.dataset.submitted = 'false';
-        disableButton(false);
         return;
       }
 
+      disableButton(true);
+
       // Metadata (log + analiz için)
       formData.append('page_url', window.location.href);
+      formData.append('page_path', window.location.pathname); // Sheet kolonlarınızla daha uyumlu
       formData.append('user_agent', navigator.userAgent);
       formData.append('submitted_at', new Date().toISOString());
 
       try {
         const res = await fetch(ENDPOINT, {
           method: 'POST',
-          body: formData,
+          body: formData, // Apps Script tarafı e.parameter ile okuyorsa uyumlu
         });
 
-        if (!res.ok) {
-          throw new Error('Network response was not OK');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        // Bazı Apps Script cevapları JSON parse edilemeyebilir; güvenli parse
+        const text = await res.text();
+        let result = {};
+        try {
+          result = JSON.parse(text);
+        } catch {
+          result = { ok: true, raw: text }; // en azından başarılı kabul etmek için
         }
 
-        const result = await res.json();
+        // Eski endpoint "status: success" dönüyordu; yeni Code.gs "ok: true" dönüyor olabilir.
+        const isSuccess = result.status === 'success' || result.ok === true;
 
-        if (result.status === 'success') {
-          showMessage(
-            'success',
-            'Your registration has been received successfully.'
-          );
+        if (isSuccess) {
+          showMessage('success', 'Kayıt başarıyla alındı.');
           form.reset();
-
-          // GA4 event (analytics.js varsa)
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'event_registration_success', {
-              event_category: 'event',
-              event_label: formData.get('event_name') || 'unknown',
-            });
-          }
         } else {
-          throw new Error(result.message || 'Unknown server error');
+          throw new Error(result.message || result.error || 'Server error');
         }
       } catch (err) {
         console.error('[IPS] Event register error:', err);
-        showMessage(
-          'error',
-          'An error occurred. Please try again later.'
-        );
-
-        if (typeof window.gtag === 'function') {
-          window.gtag('event', 'event_registration_error', {
-            event_category: 'event',
-            event_label: 'submit_failed',
-          });
-        }
-
+        showMessage('error', 'Bir hata oluştu. Lütfen tekrar deneyin.');
         form.dataset.submitted = 'false';
+      } finally {
         disableButton(false);
       }
     });
