@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,11 +15,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:ital,wght@0,400..700;1,400..700;1,400..700&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 
   <!-- SEO -->
-  <meta name="description" content="Interdisciplinary Project Society (IPS): student-led research, projects, and events across neuroscience, genetics, AI, and biotechnology. Join our collaborative community." />
+  <meta name="description"
+    content="Interdisciplinary Project Society (IPS): student-led research, projects, and events across neuroscience, genetics, AI, and biotechnology. Join our collaborative community." />
   <link rel="canonical" href="https://furkanakosman.github.io/IPS/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#4d0011" />
@@ -123,14 +124,17 @@
     }
 
     @layer components {
-      .btn { @apply inline-flex items-center justify-center text-center h-12 px-6 rounded-xl font-bold; }
-      .btn-primary { @apply bg-primary text-background-light hover:opacity-90; }
-      .btn-outline { @apply border border-primary/20 bg-white text-primary hover:scale-[1.02]; }
+      .btn { @apply inline-flex items-center justify-center text-center h-12 px-6 rounded-xl font-bold transition-all duration-300; }
+      .btn-primary { @apply bg-primary text-background-light shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1 hover:opacity-95; }
+      .btn-outline { @apply border border-primary/20 bg-white text-primary hover:bg-primary/5 hover:border-primary/40 hover:-translate-y-1; }
     }
 
     h1, h2, h3 { line-height: 1.2; }
-    .btn, .btn-primary, .btn-outline { line-height: 1; }
+    .btn, .btn-primary, .btn-outline { line-height: 1; transition: all 0.3s ease; }
     img[loading="lazy"] { contain-intrinsic-size: auto 200px; }
+    
+    /* Text Shadow Utility */
+    .text-shadow-hero { text-shadow: 0 4px 12px rgba(0,0,0,0.5); }
   </style>
 
   <!-- JSON-LD: Organization -->
@@ -192,7 +196,11 @@
   </script>
 
   <noscript>
-    <style>video{display:none!important}</style>
+    <style>
+      video {
+        display: none !important
+      }
+    </style>
     <link rel="preload" as="image"
       href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3">
   </noscript>
@@ -210,39 +218,43 @@
     <!-- HERO -->
     <section id="hero" class="relative h-screen w-full">
       <div class="absolute inset-0 z-0 parallax" data-parallax>
-        <video
-          class="h-full w-full object-cover"
-          autoplay muted loop playsinline preload="none"
-          poster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3"
-        >
+        <video class="h-full w-full object-cover" autoplay muted loop playsinline preload="none"
+          poster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3">
           <source src="https://cdn.pixabay.com/video/2021/09/16/87184-620241945_large.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div class="absolute inset-0 bg-black/40"></div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/70"></div>
       </div>
 
       <!-- background FX layer -->
       <div class="fx-bg" data-fx="hero" aria-hidden="true"></div>
 
-      <div class="relative z-10 flex h-full flex-col items-center justify-center text-center text-background-light px-4">
-        <h1 class="font-black max-w-4xl text-4xl sm:text-5xl md:text-6xl leading-tight reveal" data-reveal="hero">
+      <div
+        class="relative z-10 flex h-full flex-col items-center justify-center text-center text-background-light px-4">
+        <h1 class="font-black max-w-4xl text-4xl sm:text-5xl md:text-6xl leading-tight reveal text-shadow-hero"
+          data-reveal="hero">
           We help students turn ideas into reality.
         </h1>
-        <p class="mt-6 max-w-2xl font-body text-lg sm:text-xl md:text-2xl reveal" data-reveal="hero">
+        <p class="mt-6 max-w-2xl font-body text-lg sm:text-xl md:text-2xl reveal text-shadow-hero" data-reveal="hero">
           A student-led research community empowering young innovators to build projects that make a real impact.
         </p>
         <button id="ctaBegin" aria-label="Scroll to About Section"
-          class="inline-flex items-center justify-center text-center mt-10 h-12 px-8 rounded-xl bg-primary text-background-light text-base font-bold tracking-[0.015em] transition-transform duration-300 hover:scale-105 reveal"
-          data-reveal="hero"
-          type="button"
-        >
+          class="inline-flex items-center justify-center text-center mt-10 h-12 px-8 rounded-xl bg-primary text-background-light text-base font-bold tracking-[0.015em] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/40 reveal"
+          data-reveal="hero" type="button">
           <span class="truncate">Let’s Begin</span>
         </button>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-80 reveal" data-reveal="hero">
+          <span class="material-symbols-outlined text-4xl text-white/80">expand_more</span>
+        </div>
       </div>
     </section>
 
     <!-- WHO WE ARE + VISION + MISSION -->
-    <section id="about" class="relative min-h-[100svh] md:h-[100svh] bg-background-light py-12 sm:py-16 md:py-20 snap-start snap-stop scroll-mt-20">
+    <section id="about"
+      class="relative min-h-[100svh] lg:min-h-screen lg:flex lg:flex-col lg:justify-center bg-background-light py-12 sm:py-16 md:py-20 snap-start snap-stop scroll-mt-20">
       <div class="fx-bg" data-fx="about" aria-hidden="true"></div>
 
       <div class="relative z-10 h-full container mx-auto px-6 md:px-12 md:flex md:items-center">
@@ -256,38 +268,55 @@
 
           <div class="mt-10 sm:mt-12 max-h-[68svh] overflow-y-auto pr-1 space-y-10">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-              <div class="flex flex-col items-center p-6 border border-primary/10 rounded-lg reveal" data-reveal>
-                <h3 class="text-xl sm:text-2xl font-bold text-text-light">Idea to Impact</h3>
+              <div
+                class="flex flex-col items-center p-6 bg-white/50 backdrop-blur-sm border border-primary/5 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group reveal"
+                data-reveal>
+                <h3 class="text-xl sm:text-2xl font-bold text-text-light group-hover:text-primary transition-colors">
+                  Idea to Impact</h3>
                 <p class="mt-2 font-body text-sm sm:text-base text-primary/80">
-                  Transforming conceptual ideas into tangible projects with real-world applications and societal benefits.
+                  Transforming conceptual ideas into tangible projects with real-world applications and societal
+                  benefits.
                 </p>
               </div>
-              <div class="flex flex-col items-center p-6 border border-primary/10 rounded-lg reveal" data-reveal>
-                <h3 class="text-xl sm:text-2xl font-bold text-text-light">Mentorship & Training</h3>
+              <div
+                class="flex flex-col items-center p-6 bg-white/50 backdrop-blur-sm border border-primary/5 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group reveal"
+                data-reveal>
+                <h3 class="text-xl sm:text-2xl font-bold text-text-light group-hover:text-primary transition-colors">
+                  Mentorship & Training</h3>
                 <p class="mt-2 font-body text-sm sm:text-base text-primary/80">
                   Providing guidance from experienced mentors and hands-on training to develop critical skills.
                 </p>
               </div>
-              <div class="flex flex-col items-center p-6 border border-primary/10 rounded-lg reveal" data-reveal>
-                <h3 class="text-xl sm:text-2xl font-bold text-text-light">Community & Collaboration</h3>
+              <div
+                class="flex flex-col items-center p-6 bg-white/50 backdrop-blur-sm border border-primary/5 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group reveal"
+                data-reveal>
+                <h3 class="text-xl sm:text-2xl font-bold text-text-light group-hover:text-primary transition-colors">
+                  Community & Collaboration</h3>
                 <p class="mt-2 font-body text-sm sm:text-base text-primary/80">
-                  Building a supportive network where students from all disciplines can connect, share, and create together.
+                  Building a supportive network where students from all disciplines can connect, share, and create
+                  together.
                 </p>
               </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 text-left">
-              <article class="p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
+              <article
+                class="p-8 bg-white border border-primary/10 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal"
+                data-reveal>
                 <h3 class="text-2xl sm:text-3xl font-extrabold text-text-light">Our Vision</h3>
                 <p class="mt-4 font-body text-base md:text-lg text-primary/80">
-                  To become a leading global hub for student-driven research and innovation, creating sustainable, real-world solutions through interdisciplinary collaboration.
+                  To become a leading global hub for student-driven research and innovation, creating sustainable,
+                  real-world solutions through interdisciplinary collaboration.
                 </p>
               </article>
 
-              <article class="p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
+              <article
+                class="p-8 bg-white border border-primary/10 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal"
+                data-reveal>
                 <h3 class="text-2xl sm:text-3xl font-extrabold text-text-light">Our Mission</h3>
                 <p class="mt-4 font-body text-base md:text-lg text-primary/80">
-                  To equip students with the mentorship, funding, and technical support needed to bring innovative ideas to life — fostering a culture where rejection fuels creativity and every idea finds a path to impact.
+                  To equip students with the mentorship, funding, and technical support needed to bring innovative ideas
+                  to life — fostering a culture where rejection fuels creativity and every idea finds a path to impact.
                 </p>
               </article>
             </div>
@@ -298,7 +327,8 @@
     </section>
 
     <!-- QUICK STATS -->
-    <section id="stats" class="relative w-full min-h-[100svh] md:h-[100svh] bg-white py-12 sm:py-16 md:py-20 md:flex md:items-center md:justify-center snap-none">
+    <section id="stats"
+      class="relative w-full min-h-[100svh] lg:min-h-screen lg:flex lg:flex-col lg:justify-center bg-white py-12 sm:py-16 md:py-20 snap-start">
       <div class="fx-bg" data-fx="stats" aria-hidden="true"></div>
 
       <div class="relative z-10 container mx-auto px-6 md:px-12 text-center">
@@ -310,53 +340,66 @@
         </p>
 
         <div class="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-center">
-          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm reveal" data-reveal>
-            <span class="material-symbols-outlined text-5xl text-primary">groups</span>
+          <div
+            class="p-6 bg-gradient-to-br from-white to-primary/5 border border-primary/10 rounded-2xl shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 reveal"
+            data-reveal>
+            <span class="material-symbols-outlined text-5xl text-primary drop-shadow-sm">groups</span>
             <h3 class="mt-4 text-3xl sm:text-4xl font-black text-text-light counter" data-target="67">67</h3>
             <p class="mt-2 font-body text-primary/90 text-base sm:text-lg">Members</p>
           </div>
 
-          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm reveal" data-reveal>
-            <span class="material-symbols-outlined text-5xl text-primary">diversity_3</span>
+          <div
+            class="p-6 bg-gradient-to-br from-white to-primary/5 border border-primary/10 rounded-2xl shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 reveal"
+            data-reveal>
+            <span class="material-symbols-outlined text-5xl text-primary drop-shadow-sm">diversity_3</span>
             <h3 class="mt-4 text-3xl sm:text-4xl font-black text-text-light counter" data-target="12">12</h3>
-            <p class="mt-2 font-body text-primary/90 text-base sm:text-lg">Core Member</p>
+            <p class="mt-2 font-body text-primary/90 text-base sm:text-lg">Core Members</p>
           </div>
 
-          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm reveal" data-reveal>
-            <span class="material-symbols-outlined text-5xl text-primary">psychology</span>
+          <div
+            class="p-6 bg-gradient-to-br from-white to-primary/5 border border-primary/10 rounded-2xl shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 reveal"
+            data-reveal>
+            <span class="material-symbols-outlined text-5xl text-primary drop-shadow-sm">psychology</span>
             <h3 class="mt-4 text-3xl sm:text-4xl font-black text-text-light counter" data-target="5">5</h3>
-            <p class="mt-2 font-body text-primary/90 text-base sm:text-lg">Multidisipline Count</p>
+            <p class="mt-2 font-body text-primary/90 text-base sm:text-lg">Disciplines Represented</p>
           </div>
 
-          <div class="p-6 bg-primary/5 border border-primary/10 rounded-xl shadow-sm reveal" data-reveal>
-            <span class="material-symbols-outlined text-5xl text-primary">lightbulb</span>
+          <div
+            class="p-6 bg-gradient-to-br from-white to-primary/5 border border-primary/10 rounded-2xl shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 reveal"
+            data-reveal>
+            <span class="material-symbols-outlined text-5xl text-primary drop-shadow-sm">lightbulb</span>
             <h3 class="mt-4 text-3xl sm:text-4xl font-black text-text-light counter" data-target="26">26</h3>
-            <p class="mt-2 font-body text-primary/90 text-base sm:text-lg">Innoviative Idea</p>
+            <p class="mt-2 font-body text-primary/90 text-base sm:text-lg">Innovative Ideas</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Focus Areas -->
-    <section id="focus" class="relative w-full bg-background-light min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center snap-none">
+    <section id="focus"
+      class="relative w-full bg-background-light min-h-[100svh] lg:min-h-screen lg:flex lg:flex-col lg:justify-center py-12 sm:py-16 md:py-20 snap-start">
       <div class="fx-bg" data-fx="focus" aria-hidden="true"></div>
 
       <div class="relative z-10 container mx-auto px-6 md:px-12 text-center">
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-text-light reveal" data-reveal>
-          Focus Areas for 2025
+          Focus Areas for 2026
         </h2>
         <p class="mt-4 max-w-3xl mx-auto font-body text-base sm:text-lg md:text-xl text-primary reveal" data-reveal>
-          Our strategic goals for the upcoming year are centered around key areas of technological and scientific advancement.
+          Our strategic goals for the upcoming year are centered around key areas of technological and scientific
+          advancement.
         </p>
 
         <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 text-left">
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
+          <div
+            class="flex flex-col p-8 bg-white border border-primary/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal"
+            data-reveal>
             <div class="flex items-center gap-4">
-              <span class="material-symbols-outlined text-4xl text-primary">neurology</span>
+              <span class="material-symbols-outlined text-4xl text-primary bg-primary/5 p-2 rounded-lg">neurology</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">Computational Neuroscience</h3>
             </div>
             <p class="mt-4 font-body text-sm sm:text-base text-primary/80">
-              We aim to deepen our understanding of neural circuits and their relation to behavior through advanced computational models and data analysis techniques.
+              We aim to deepen our understanding of neural circuits and their relation to behavior through advanced
+              computational models and data analysis techniques.
             </p>
             <ul class="mt-4 space-y-2 font-body text-sm sm:text-base text-primary/80 list-disc list-inside">
               <li>Developing brain-computer interfaces (BCIs).</li>
@@ -365,13 +408,16 @@
             </ul>
           </div>
 
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
+          <div
+            class="flex flex-col p-8 bg-white border border-primary/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal"
+            data-reveal>
             <div class="flex items-center gap-4">
-              <span class="material-symbols-outlined text-4xl text-primary">biotech</span>
+              <span class="material-symbols-outlined text-4xl text-primary bg-primary/5 p-2 rounded-lg">biotech</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">Biotechnology Innovations</h3>
             </div>
             <p class="mt-4 font-body text-sm sm:text-base text-primary/80">
-              Our focus is on pioneering novel biotech solutions, from synthetic biology to biomaterials, to address pressing challenges in healthcare and environmental sustainability.
+              Our focus is on pioneering novel biotech solutions, from synthetic biology to biomaterials, to address
+              pressing challenges in healthcare and environmental sustainability.
             </p>
             <ul class="mt-4 space-y-2 font-body text-sm sm:text-base text-primary/80 list-disc list-inside">
               <li>Engineering smart biomaterials for tissue regeneration.</li>
@@ -380,13 +426,17 @@
             </ul>
           </div>
 
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
+          <div
+            class="flex flex-col p-8 bg-white border border-primary/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal"
+            data-reveal>
             <div class="flex items-center gap-4">
-              <span class="material-symbols-outlined text-4xl text-primary">psychology</span>
+              <span
+                class="material-symbols-outlined text-4xl text-primary bg-primary/5 p-2 rounded-lg">psychology</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">AI in Cognitive Science</h3>
             </div>
             <p class="mt-4 font-body text-sm sm:text-base text-primary/80">
-              This area investigates the intersection of artificial intelligence and human cognition, using machine learning to model mental processes and enhance human capabilities.
+              This area investigates the intersection of artificial intelligence and human cognition, using machine
+              learning to model mental processes and enhance human capabilities.
             </p>
             <ul class="mt-4 space-y-2 font-body text-sm sm:text-base text-primary/80 list-disc list-inside">
               <li>Building AI models for language and learning.</li>
@@ -398,12 +448,12 @@
 
         <div class="mt-10 md:mt-12 flex flex-wrap items-center justify-center gap-4 reveal" data-reveal>
           <a href="projects.html"
-            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl bg-primary text-background-light font-bold hover:opacity-90 transition">
+            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl bg-primary text-background-light font-bold hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-300">
             Explore Projects
           </a>
 
           <a href="events.html"
-            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl border border-primary/20 bg-white text-primary font-bold hover:scale-[1.02] transition">
+            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl border border-primary/20 bg-white text-primary font-bold hover:bg-primary/5 hover:border-primary/40 hover:-translate-y-1 transition-all duration-300">
             Workshop &amp; Talks Calendar
           </a>
         </div>
@@ -411,28 +461,41 @@
     </section>
 
     <!-- WHY -->
-    <section id="why" class="relative w-full bg-white min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center snap-none">
+    <section id="why"
+      class="relative w-full bg-white min-h-[100svh] lg:min-h-screen lg:flex lg:flex-col lg:justify-center py-12 sm:py-16 md:py-20 snap-start">
       <div class="fx-bg" data-fx="why" aria-hidden="true"></div>
 
       <div class="relative z-10 container mx-auto px-6 md:px-12 text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-text-light reveal" data-reveal>IF YOU SAY THESE</h2>
 
         <div class="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal" data-reveal>
+          <div
+            class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal"
+            data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">school</span>
-            <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“Classes at school aren’t enough. How can I improve myself further?”</p>
+            <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“Classes at school aren’t enough. How can I
+              improve myself further?”</p>
           </div>
-          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal" data-reveal>
+          <div
+            class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal"
+            data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">science</span>
-            <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“I want to explore other fields, but I don’t know where to start.”</p>
+            <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“I want to explore other fields, but I don’t
+              know where to start.”</p>
           </div>
-          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal" data-reveal>
+          <div
+            class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal"
+            data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">emoji_objects</span>
-            <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“I have a project idea, but I can’t make it happen alone.”</p>
+            <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“I have a project idea, but I can’t make it
+              happen alone.”</p>
           </div>
-          <div class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal" data-reveal>
+          <div
+            class="flex flex-col items-center p-6 bg-primary/5 border border-primary/10 rounded-xl transition-transform duration-300 hover:-translate-y-2 reveal"
+            data-reveal>
             <span class="material-symbols-outlined text-5xl text-primary">workspaces</span>
-            <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“How can I collaborate with people outside my field?”</p>
+            <p class="mt-4 font-body text-base sm:text-lg text-primary/90">“How can I collaborate with people outside my
+              field?”</p>
           </div>
         </div>
 
@@ -442,12 +505,12 @@
 
         <div class="mt-6 md:mt-8 flex flex-wrap items-center justify-center gap-4 reveal" data-reveal>
           <a href="#join"
-            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl bg-primary text-background-light font-bold hover:opacity-90 transition">
+            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl bg-primary text-background-light font-bold hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-300">
             LET'S START
           </a>
 
           <a href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener"
-            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl border border-primary/20 bg-white text-primary font-bold hover:scale-[1.02] transition">
+            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl border border-primary/20 bg-white text-primary font-bold hover:bg-primary/5 hover:border-primary/40 hover:-translate-y-1 transition-all duration-300">
             WhatsApp Invitation
           </a>
         </div>
@@ -455,7 +518,8 @@
     </section>
 
     <!-- JOIN -->
-    <section id="join" class="relative w-full bg-background-light min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center snap-none">
+    <section id="join"
+      class="relative w-full bg-background-light min-h-[100svh] lg:min-h-screen lg:flex lg:flex-col lg:justify-center py-12 sm:py-16 md:py-20 snap-start">
       <div class="fx-bg" data-fx="join" aria-hidden="true"></div>
 
       <div class="relative z-10 container mx-auto px-6 md:px-12">
@@ -468,26 +532,32 @@
           </p>
         </div>
 
-        <div class="mt-12 md:mt-16 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 justify-items-center items-stretch">
-          <div class="w-full max-w-xl h-full bg-primary/5 p-8 rounded-xl border border-primary/10 text-center flex flex-col items-center justify-center reveal" data-reveal>
+        <div
+          class="mt-12 md:mt-16 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 justify-items-center items-stretch">
+          <div
+            class="w-full max-w-xl h-full bg-primary/5 p-8 rounded-xl border border-primary/10 text-center flex flex-col items-center justify-center reveal"
+            data-reveal>
             <span class="material-symbols-outlined text-6xl text-primary">groups</span>
             <h3 class="mt-4 text-2xl font-bold text-text-light">Become a Member</h3>
             <p class="mt-2 max-w-md mx-auto font-body text-primary/80">
-              Join our community to participate in projects, attend workshops, and collaborate with peers from various disciplines.
+              Join our community to participate in projects, attend workshops, and collaborate with peers from various
+              disciplines.
             </p>
-            <a href="https://www.instagram.com/ip_society?igsh=eTlrOTJoNjBzdjkz" target="_blank" rel="noopener"
+            <a href="member-register.html"
               class="mt-8 h-12 px-8 rounded-xl bg-white text-primary font-bold border border-primary/20 shadow-sm hover:scale-[1.02] transition inline-flex items-center justify-center">
               Apply for Membership
             </a>
           </div>
 
-          <div class="w-full max-w-xl h-full bg-primary/5 p-8 rounded-xl border border-primary/10 text-center flex flex-col items-center justify-center reveal" data-reveal>
+          <div
+            class="w-full max-w-xl h-full bg-primary/5 p-8 rounded-xl border border-primary/10 text-center flex flex-col items-center justify-center reveal"
+            data-reveal>
             <span class="material-symbols-outlined text-6xl text-primary">diversity_3</span>
             <h3 class="mt-4 text-2xl font-bold text-text-light">Join the Core Team</h3>
             <p class="mt-2 max-w-md mx-auto font-body text-primary/80">
               Ready to take a leading role? We are looking for passionate individuals to help shape the future of IPS.
             </p>
-            <a href="https://forms.gle/rdHp8C726DhxqceL9" target="_blank" rel="noopener"
+            <a href="core-register.html"
               class="mt-8 h-12 px-8 rounded-xl bg-white text-primary font-bold border border-primary/20 shadow-sm hover:scale-[1.02] transition inline-flex items-center justify-center">
               View Application Form
             </a>
@@ -497,7 +567,8 @@
     </section>
 
     <!-- FUNDING -->
-    <section id="funding" class="relative w-full bg-background-light min-h-[100svh] md:h-[100svh] py-12 sm:py-16 md:py-20 md:flex md:items-center snap-none">
+    <section id="funding"
+      class="relative w-full bg-background-light min-h-[100svh] lg:min-h-screen lg:flex lg:flex-col lg:justify-center py-12 sm:py-16 md:py-20 snap-start">
       <div class="fx-bg" data-fx="funding" aria-hidden="true"></div>
 
       <div class="relative z-10 container mx-auto px-6 md:px-12 text-center">
@@ -508,7 +579,9 @@
         </p>
 
         <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-left">
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
+          <div
+            class="flex flex-col p-8 bg-white border border-primary/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal"
+            data-reveal>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-4xl text-primary">account_balance</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">Public Funds</h3>
@@ -523,7 +596,9 @@
             </ul>
           </div>
 
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
+          <div
+            class="flex flex-col p-8 bg-white border border-primary/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal"
+            data-reveal>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-4xl text-primary">business_center</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">Private Sector Support</h3>
@@ -538,13 +613,16 @@
             </ul>
           </div>
 
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
+          <div
+            class="flex flex-col p-8 bg-white border border-primary/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal"
+            data-reveal>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-4xl text-primary">volunteer_activism</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">NGO &amp; Foundation Grants</h3>
             </div>
             <p class="mt-4 font-body text-sm sm:text-base text-primary/80">
-              Funding opportunities from non-governmental organizations focused on social benefit and community development.
+              Funding opportunities from non-governmental organizations focused on social benefit and community
+              development.
             </p>
             <ul class="mt-4 space-y-2 font-body text-sm sm:text-base text-primary/80 list-disc list-inside">
               <li>Grant Programs</li>
@@ -552,7 +630,9 @@
             </ul>
           </div>
 
-          <div class="flex flex-col p-8 bg-white border border-primary/10 rounded-lg shadow-sm reveal" data-reveal>
+          <div
+            class="flex flex-col p-8 bg-white border border-primary/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal"
+            data-reveal>
             <div class="flex items-center gap-3">
               <span class="material-symbols-outlined text-4xl text-primary">language</span>
               <h3 class="text-xl sm:text-2xl font-bold text-text-light">International Funds</h3>
@@ -563,32 +643,30 @@
             <ul class="mt-4 space-y-2 font-body text-sm sm:text-base text-primary/80 list-disc list-inside">
               <li>European Union (Erasmus+, Horizon Europe)</li>
               <li>United Nations Development Programme (UNDP)</li>
-              <li>WORLD BANK</li>
+              <li>World Bank</li>
             </ul>
           </div>
         </div>
 
         <div class="mt-10 md:mt-12 flex flex-wrap items-center justify-center gap-4 reveal" data-reveal>
           <a href="assets/pdf/Funding_Guide.pdf" target="_blank" rel="noopener"
-            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl bg-primary text-background-light font-bold hover:opacity-90 transition">
+            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl bg-primary text-background-light font-bold hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-300">
             Funding Guide (PDF)
           </a>
 
-          <a href="mailto:ipsociety@uni.edu?subject=Fon%20Dan%C4%B1%C5%9Fmanl%C4%B1%C4%9F%C4%B1%20Talebi"
-            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl border border-primary/20 bg-white text-primary font-bold hover:scale-[1.02] transition">
-            MADE YOUR REQUEST
+          <a href="mailto:ipsociety2025@gmail.com?subject=Fon%20Dan%C4%B1%C5%9Fmanl%C4%B1%C4%9F%C4%B1%20Talebi"
+            class="inline-flex items-center justify-center text-center h-12 px-6 rounded-xl border border-primary/20 bg-white text-primary font-bold hover:bg-primary/5 hover:border-primary/40 hover:-translate-y-1 transition-all duration-300">
+            Request Funding Support
           </a>
         </div>
       </div>
     </section>
 
     <!-- FUN VIDEO -->
-    <section id="fun" class="relative h-[100svh] overflow-hidden snap-none">
+    <section id="fun" class="relative min-h-[100svh] lg:min-h-screen overflow-hidden snap-start">
       <video
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover parallax z-0"
-        autoplay muted loop playsinline preload="metadata" poster="assets/img/fun_poster.jpg"
-        data-parallax
-      >
+        autoplay muted loop playsinline preload="metadata" poster="assets/img/fun_poster.jpg" data-parallax>
         <source src="assets/video/fun.mp4" type="video/mp4" />
         <source src="assets/video/fun.webm" type="video/webm" />
       </video>
@@ -601,13 +679,12 @@
       <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 space-y-6">
         <p class="text-3xl sm:text-4xl md:text-5xl font-bold reveal" data-reveal>WE ALWAYS TRY OUR BEST</p>
         <p class="font-body text-xl sm:text-2xl md:text-3xl text-white/90 reveal" data-reveal>
-          WE COULDN'T MAKE PROJECT IF WE COULDN'T GET FUN
+          We couldn't build projects if we didn't have fun
         </p>
         <a aria-label="Open WhatsApp Invitation"
           class="inline-flex h-12 items-center justify-center rounded-xl px-8 bg-background-light text-primary font-bold hover:scale-105 transition reveal"
-          data-reveal
-          href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener"
-        >JOIN US NOW</a>
+          data-reveal href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank"
+          rel="noopener">JOIN US NOW</a>
       </div>
     </section>
 
@@ -622,17 +699,17 @@
     function initFloatingIcons() {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduceMotion) return;
-      
+
 
       const ICONS = {
-        hero:   ["science","hub","insights","biotech","neurology","psychology"],
-        about:  ["lightbulb","groups","school","rocket_launch","handshake"],
-        stats:  ["analytics","groups","psychology","emoji_objects"],
-        focus:  ["biotech","neurology","model_training","memory","data_usage"],
-        why:    ["school","science","emoji_objects","workspaces"],
-        join:   ["groups","diversity_3","badge","support_agent"],
-        funding:["account_balance","business_center","language","volunteer_activism"],
-        fun:    ["sentiment_satisfied","sports_esports","celebration","movie"]
+        hero: ["science", "hub", "insights", "biotech", "neurology", "psychology"],
+        about: ["lightbulb", "groups", "school", "rocket_launch", "handshake"],
+        stats: ["analytics", "groups", "psychology", "emoji_objects"],
+        focus: ["biotech", "neurology", "model_training", "memory", "data_usage"],
+        why: ["school", "science", "emoji_objects", "workspaces"],
+        join: ["groups", "diversity_3", "badge", "support_agent"],
+        funding: ["account_balance", "business_center", "language", "volunteer_activism"],
+        fun: ["sentiment_satisfied", "sports_esports", "celebration", "movie"]
       };
 
       const isMdUp = window.matchMedia("(min-width: 768px)").matches;
@@ -643,13 +720,13 @@
 
         layer.innerHTML = "";
         // ✅ VIDEO ÜSTÜNDE EMOJİ OLMASIN: hero + fun’da kapat
-if (sec.id === "hero" || sec.id === "fun") {
-  layer.innerHTML = "";
-  return;
-}
+        if (sec.id === "hero" || sec.id === "fun") {
+          layer.innerHTML = "";
+          return;
+        }
 
         const key = layer.getAttribute("data-fx") || sec.id || "default";
-        const list = ICONS[key] || ["science","lightbulb","hub"];
+        const list = ICONS[key] || ["science", "lightbulb", "hub"];
 
         const prefersWhite = sec.id === "hero" || sec.id === "fun";
         const iconColor = prefersWhite ? "rgba(255,255,255,0.95)" : "var(--burgundy)";
@@ -708,17 +785,17 @@ if (sec.id === "hero" || sec.id === "fun") {
           io = new IntersectionObserver((entries) => {
             const e = entries[0];
             if (e.isIntersecting) {
-              header.classList.add('opacity-0','-translate-y-4','pointer-events-none');
-              header.classList.remove('opacity-100','translate-y-0','pointer-events-auto');
+              header.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+              header.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
             } else {
-              header.classList.add('opacity-100','translate-y-0','pointer-events-auto');
-              header.classList.remove('opacity-0','-translate-y-4','pointer-events-none');
+              header.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+              header.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
             }
           }, { threshold: 0.01 });
           io.observe(hero);
         } else {
-          header.classList.add('opacity-100','translate-y-0','pointer-events-auto');
-          header.classList.remove('opacity-0','-translate-y-4','pointer-events-none');
+          header.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+          header.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
         }
       }
       setupHeaderObserver();
@@ -816,4 +893,5 @@ if (sec.id === "hero" || sec.id === "fun") {
     });
   </script>
 </body>
+
 </html>

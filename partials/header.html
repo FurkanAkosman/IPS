@@ -1,193 +1,233 @@
-<!-- partials/header.html (Güncellenmiş)
-  - “About/Legal” benzeri sayfalar tek dropdown altında toplandı (FAQ / Terms / Privacy / About / KVKK)
-  - Projects altında 2 alt sekme eklendi: Zaim University, Public
-  - Mobil menüde aynı yapı <details> ile sağlandı (tasarım bozulmadan)
--->
-
-<header
-  id="siteHeader"
-  class="fixed inset-x-0 top-0 z-50 bg-background-light/90 backdrop-blur border-b border-primary/10 transition-all duration-300"
-  aria-label="Main Navigation"
->
-  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-    <!-- Logo + İsim: Ana sayfa -->
-    <a href="index.html" class="flex items-center gap-3" aria-label="Go to Home Page">
-      <img
-        src="assets/img/kulup-logo.jpg"
-        alt="IPS Logo"
-        class="h-8 w-8 rounded"
-        loading="lazy"
-        decoding="async"
-        width="32"
-        height="32"
-      />
-      <span class="font-semibold">Interdisciplinary Project Society</span>
+<!-- partials/header.html -->
+<header id="siteHeader"
+  class="fixed inset-x-0 top-0 z-50 bg-background-light/90 backdrop-blur border-b border-primary/10 transition-all duration-300">
+  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3 group">
+      <img src="assets/img/kulup-logo.jpg" alt="IPS Logo"
+        class="h-10 w-10 rounded-lg object-cover group-hover:opacity-90 transition-opacity">
+      <div class="flex flex-col">
+        <span class="font-black text-lg leading-none tracking-tight">IPS</span>
+        <span class="text-[10px] uppercase font-bold tracking-widest opacity-60">Interdisciplinary</span>
+      </div>
     </a>
 
-    <ul class="hidden md:flex items-center gap-8 text-sm">
-      <li><a class="hover:text-primary transition-colors" href="index.html" aria-label="Go to Main Page">Main page</a></li>
-      <li><a class="hover:text-primary transition-colors" href="team.html" aria-label="See IPS team">Team</a></li>
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex items-center gap-8 text-sm font-bold text-text-light/80">
 
-      <!-- Projects (dropdown) -->
-      <li class="relative group">
-        <a
-          class="hover:text-primary transition-colors inline-flex items-center gap-1"
-          href="projects.html"
-          aria-label="View IPS projects"
-        >
-          Projects
-          <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path
-              fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </a>
-
-        <div
-          class="absolute left-0 top-full mt-2 w-56 rounded-xl border border-primary/10 bg-background-light shadow-lg py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition"
-          role="menu"
-          aria-label="Projects submenu"
-        >
-          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="projects.html">
-            All Projects
-          </a>
-          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="projects-zaim.html">
-            Zaim University
-          </a>
-          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="projects-public.html">
-            Public
-          </a>
-        </div>
-      </li>
-
-      <li><a class="hover:text-primary transition-colors" href="events.html" aria-label="View IPS events">Events</a></li>
-
-      <!-- Event Registration -->
+      <!-- 0. IPS (Home) -->
       <li>
-        <a class="hover:text-primary transition-colors" href="event-register.html" aria-label="Register for IPS event">
-          Kai-Sen
-        </a>
+        <a class="hover:text-primary transition-colors py-6 block" href="index.html">IPS</a>
       </li>
 
-      <li><a class="hover:text-primary transition-colors" href="blog.html" aria-label="Read IPS blog">Blog</a></li>
-
-      <!-- About / Legal (dropdown) -->
+      <!-- 1. About (Dropdown) -->
       <li class="relative group">
-        <button
-          class="hover:text-primary transition-colors inline-flex items-center gap-1"
-          type="button"
-          aria-label="Open About menu"
-        >
+        <button id="ddAboutBtn" class="flex items-center gap-1 hover:text-primary transition-colors py-6"
+          aria-expanded="false">
           About
-          <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path
-              fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
-              clip-rule="evenodd"
-            />
-          </svg>
+          <span
+            class="material-symbols-outlined text-lg opacity-50 group-hover:opacity-100 transition-opacity">expand_more</span>
         </button>
-
-        <div
-          class="absolute left-0 top-full mt-2 w-56 rounded-xl border border-primary/10 bg-background-light shadow-lg py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition"
-          role="menu"
-          aria-label="About submenu"
-        >
-          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="about.html">
+        <!-- Dropdown Menu -->
+        <div id="ddAboutMenu"
+          class="absolute left-0 top-full mt-0 w-56 p-2 rounded-xl border border-primary/10 bg-white/95 backdrop-blur shadow-xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-[.open]:opacity-100 group-[.open]:translate-y-0 group-[.open]:pointer-events-auto transition-all duration-200 ease-out">
+          <div class="px-3 py-2 text-xs font-black text-primary/40 uppercase tracking-widest">Who We Are</div>
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 hover:text-primary transition-colors"
+            href="about.html">
+            <span class="material-symbols-outlined text-lg opacity-70">info</span>
             About Us
           </a>
-          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="sss.html">
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 hover:text-primary transition-colors"
+            href="team.html">
+            <span class="material-symbols-outlined text-lg opacity-70">groups</span>
+            Our Team
+          </a>
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 hover:text-primary transition-colors"
+            href="sss.html">
+            <span class="material-symbols-outlined text-lg opacity-70">help</span>
             FAQ
           </a>
-          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="kvkk.html">
-            KVKK
+          <div class="h-px bg-primary/10 my-1"></div>
+          <div class="px-3 py-2 text-xs font-black text-primary/40 uppercase tracking-widest">Join IPS</div>
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 hover:text-primary transition-colors"
+            href="member-register.html">
+            <span class="material-symbols-outlined text-lg opacity-70">person_add</span>
+            Become a Member
           </a>
-          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="privacy.html">
-            Privacy
-          </a>
-          <a class="block px-4 py-2 text-sm hover:bg-black/5 hover:text-primary transition" href="terms.html">
-            Terms
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 hover:text-primary transition-colors"
+            href="core-register.html">
+            <span class="material-symbols-outlined text-lg opacity-70">diversity_3</span>
+            Core Application
           </a>
         </div>
       </li>
 
+      <!-- 2. Projects (Dropdown) -->
+      <li class="relative group">
+        <button id="ddProjectsBtn" class="flex items-center gap-1 hover:text-primary transition-colors py-6"
+          aria-expanded="false">
+          Projects
+          <span
+            class="material-symbols-outlined text-lg opacity-50 group-hover:opacity-100 transition-opacity">expand_more</span>
+        </button>
+        <div id="ddProjectsMenu"
+          class="absolute left-0 top-full mt-0 w-64 p-2 rounded-xl border border-primary/10 bg-white/95 backdrop-blur shadow-xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-[.open]:opacity-100 group-[.open]:translate-y-0 group-[.open]:pointer-events-auto transition-all duration-200 ease-out">
+          <div class="px-3 py-2 text-xs font-black text-primary/40 uppercase tracking-widest">Explore</div>
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 hover:text-primary transition-colors"
+            href="projects.html">
+            <span class="material-symbols-outlined text-lg opacity-70">grid_view</span>
+            All Projects
+          </a>
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 hover:text-primary transition-colors"
+            href="projects-zaim.html">
+            <span class="material-symbols-outlined text-lg opacity-70">school</span>
+            Academic (IZU)
+          </a>
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 hover:text-primary transition-colors"
+            href="projects-public.html">
+            <span class="material-symbols-outlined text-lg opacity-70">public</span>
+            Public Projects
+          </a>
+          <div class="h-px bg-primary/10 my-1"></div>
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/5 text-primary font-bold hover:bg-primary hover:text-white transition-all"
+            href="submit-idea.html">
+            <span class="material-symbols-outlined text-lg">lightbulb</span>
+            Submit Idea
+          </a>
+        </div>
+      </li>
+
+      <!-- 3. Events (Dropdown) -->
+      <li class="relative group">
+        <button id="ddEventsBtn" class="flex items-center gap-1 hover:text-primary transition-colors py-6"
+          aria-expanded="false">
+          Events
+          <span
+            class="material-symbols-outlined text-lg opacity-50 group-hover:opacity-100 transition-opacity">expand_more</span>
+        </button>
+        <div id="ddEventsMenu"
+          class="absolute left-0 top-full mt-0 w-56 p-2 rounded-xl border border-primary/10 bg-white/95 backdrop-blur shadow-xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-[.open]:opacity-100 group-[.open]:translate-y-0 group-[.open]:pointer-events-auto transition-all duration-200 ease-out">
+          <div class="px-3 py-2 text-xs font-black text-primary/40 uppercase tracking-widest">Participate</div>
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 hover:text-primary transition-colors"
+            href="events.html">
+            <span class="material-symbols-outlined text-lg opacity-70">calendar_month</span>
+            Calendar
+          </a>
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 hover:text-primary transition-colors"
+            href="event-register.html">
+            <span class="material-symbols-outlined text-lg opacity-70">how_to_reg</span>
+            Event Register
+          </a>
+        </div>
+      </li>
+
+      <!-- 4. Blog -->
       <li>
-        <a
-          class="inline-flex h-10 items-center rounded-xl px-4 font-bold bg-primary text-background-light hover:opacity-90"
-          href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open WhatsApp invitation"
-        >
+        <a class="hover:text-primary transition-colors py-6 block" href="blog.html">Blog</a>
+      </li>
+
+      <!-- 5. Contact -->
+      <li>
+        <a class="hover:text-primary transition-colors py-6 block" href="contact.html">Contact</a>
+      </li>
+
+      <!-- 6. CTA -->
+      <li class="pl-4">
+        <a class="inline-flex h-11 items-center justify-center rounded-xl px-6 font-bold bg-primary text-white shadow-lg shadow-primary/20 hover:scale-105 hover:shadow-primary/40 transition-all"
+          href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">
           Join Us
         </a>
       </li>
     </ul>
 
-    <button
-      id="menuToggle"
-      class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg border border-primary/20 text-primary"
-      aria-label="Open menu"
-      aria-controls="mobileMenu"
-      aria-expanded="false"
-      type="button"
-    >
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-      </svg>
+    <!-- Mobile Toggle -->
+    <button id="menuToggle"
+      class="md:hidden p-2 text-text-light hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+      aria-label="Toggle Menu">
+      <span class="material-symbols-outlined text-3xl">menu</span>
     </button>
   </nav>
 
-  <div
-    id="mobileMenu"
-    class="md:hidden fixed inset-x-0 top-16 z-[60] bg-background-light border-t border-primary/10 shadow-lg hidden"
-  >
-    <nav class="px-4 py-3">
-      <a class="block py-3 px-2 text-base hover:text-primary" href="index.html">Main page</a>
-      <a class="block py-3 px-2 text-base hover:text-primary" href="team.html">Team</a>
+  <!-- Mobile Menu (Accordion Style) -->
+  <div id="mobileMenu"
+    class="hidden md:hidden bg-background-light border-t border-primary/10 h-[calc(100vh-80px)] overflow-y-auto">
+    <div class="p-4 space-y-1">
 
-      <!-- Projects (mobile accordion) -->
-      <details class="group border-t border-primary/10">
-        <summary class="flex cursor-pointer items-center justify-between py-3 px-2 text-base hover:text-primary">
-          <span>Projects</span>
-          <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
-        </summary>
-        <div class="pb-2">
-          <a class="block py-2 px-4 text-sm hover:text-primary" href="projects.html">All Projects</a>
-          <a class="block py-2 px-4 text-sm hover:text-primary" href="projects-zaim.html">Zaim University</a>
-          <a class="block py-2 px-4 text-sm hover:text-primary" href="projects-public.html">Public</a>
-        </div>
-      </details>
-
-      <a class="block py-3 px-2 text-base hover:text-primary" href="events.html">Events</a>
-      <a class="block py-3 px-2 text-base hover:text-primary" href="event-register.html">Event Register</a>
-      <a class="block py-3 px-2 text-base hover:text-primary" href="blog.html">Blog</a>
-
-      <!-- About (mobile accordion) -->
-      <details class="group border-t border-primary/10">
-        <summary class="flex cursor-pointer items-center justify-between py-3 px-2 text-base hover:text-primary">
-          <span>About</span>
-          <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
-        </summary>
-        <div class="pb-2">
-          <a class="block py-2 px-4 text-sm hover:text-primary" href="about.html">About Us</a>
-          <a class="block py-2 px-4 text-sm hover:text-primary" href="sss.html">FAQ</a>
-          <a class="block py-2 px-4 text-sm hover:text-primary" href="kvkk.html">KVKK</a>
-          <a class="block py-2 px-4 text-sm hover:text-primary" href="privacy.html">Privacy</a>
-          <a class="block py-2 px-4 text-sm hover:text-primary" href="terms.html">Terms</a>
-        </div>
-      </details>
-
-      <a
-        class="mt-2 inline-flex h-11 items-center justify-center rounded-xl px-4 font-bold bg-primary text-background-light hover:opacity-90 w-full"
-        href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Join Us
+      <!-- Home -->
+      <a class="block px-4 py-3 rounded-xl font-bold text-text-light hover:bg-primary/5 hover:text-primary transition-colors"
+        href="index.html">
+        Home
       </a>
-    </nav>
+
+      <!-- About -->
+      <details class="group/mob rounded-xl overflow-hidden">
+        <summary
+          class="flex cursor-pointer items-center justify-between px-4 py-3 font-bold text-text-light hover:bg-primary/5 hover:text-primary transition-colors list-none">
+          <span>About</span>
+          <span class="material-symbols-outlined transition-transform group-open/mob:rotate-180">expand_more</span>
+        </summary>
+        <div class="bg-black/5 px-4 py-2 space-y-1">
+          <a class="block px-4 py-2 rounded-lg text-sm hover:text-primary" href="about.html">About Us</a>
+          <a class="block px-4 py-2 rounded-lg text-sm hover:text-primary" href="team.html">Our Team</a>
+          <a class="block px-4 py-2 rounded-lg text-sm hover:text-primary" href="sss.html">FAQ</a>
+          <a class="block px-4 py-2 rounded-lg text-sm hover:text-primary text-primary font-semibold"
+            href="member-register.html">Become a Member</a>
+          <a class="block px-4 py-2 rounded-lg text-sm hover:text-primary text-primary font-semibold"
+            href="core-register.html">Core Application</a>
+        </div>
+      </details>
+
+      <!-- Projects -->
+      <details class="group/mob rounded-xl overflow-hidden">
+        <summary
+          class="flex cursor-pointer items-center justify-between px-4 py-3 font-bold text-text-light hover:bg-primary/5 hover:text-primary transition-colors list-none">
+          <span>Projects</span>
+          <span class="material-symbols-outlined transition-transform group-open/mob:rotate-180">expand_more</span>
+        </summary>
+        <div class="bg-black/5 px-4 py-2 space-y-1">
+          <a class="block px-4 py-2 rounded-lg text-sm hover:text-primary" href="projects.html">All Projects</a>
+          <a class="block px-4 py-2 rounded-lg text-sm hover:text-primary" href="projects-zaim.html">Academic (Zaim)</a>
+          <a class="block px-4 py-2 rounded-lg text-sm hover:text-primary" href="projects-public.html">Public
+            Projects</a>
+          <a class="block px-4 py-2 rounded-lg text-sm font-bold text-primary" href="submit-idea.html">Submit Idea</a>
+        </div>
+      </details>
+
+      <!-- Events -->
+      <details class="group/mob rounded-xl overflow-hidden">
+        <summary
+          class="flex cursor-pointer items-center justify-between px-4 py-3 font-bold text-text-light hover:bg-primary/5 hover:text-primary transition-colors list-none">
+          <span>Events</span>
+          <span class="material-symbols-outlined transition-transform group-open/mob:rotate-180">expand_more</span>
+        </summary>
+        <div class="bg-black/5 px-4 py-2 space-y-1">
+          <a class="block px-4 py-2 rounded-lg text-sm hover:text-primary" href="events.html">Calendar</a>
+          <a class="block px-4 py-2 rounded-lg text-sm hover:text-primary" href="event-register.html">Register</a>
+        </div>
+      </details>
+
+      <!-- Blog -->
+      <a class="block px-4 py-3 rounded-xl font-bold text-text-light hover:bg-primary/5 hover:text-primary transition-colors"
+        href="blog.html">
+        Blog
+      </a>
+
+      <!-- Contact -->
+      <a class="block px-4 py-3 rounded-xl font-bold text-text-light hover:bg-primary/5 hover:text-primary transition-colors"
+        href="contact.html">
+        Contact
+      </a>
+
+
+
+      <!-- CTA -->
+      <div class="pt-4 mt-4 border-t border-primary/10">
+        <a class="flex items-center justify-center w-full h-12 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform"
+          href="https://chat.whatsapp.com/HADGwCJO9N4ERFz1mRFK7d?mode=wwt" target="_blank" rel="noopener">
+          Join Us
+        </a>
+      </div>
+
+    </div>
   </div>
 </header>

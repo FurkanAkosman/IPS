@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>IPS Project Detail Template</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4d0011",
+                        "primary-hover": "#6e0019",
+                        secondary: "#1D0C0F",
+                        "background-light": "#f8f8f3",
+                        "background-dark": "#101622",
+                        surface: "#ffffff",
+                        muted: "#6b5d60",
+                        "border-color": "#e7cfd3"
+                    },
+                    fontFamily: {
+                        display: ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        xl: "1rem"
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Global Header/Footer -->
+    <script defer src="../js/header-loader.js"></script>
+    <script defer src="../js/footer-loader.js"></script>
+</head>
+
+<body class="bg-background-light text-secondary font-display antialiased min-h-screen flex flex-col">
+    <!-- Header -->
+    <header id="siteHeader"></header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative bg-primary py-20 lg:py-32 overflow-hidden">
+            <div
+                class="absolute inset-0 opacity-20 bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1XNsO_TnDCa2iXwySMOF6GrxapgA39QNpHdZZeCWfqKm8B-oKdZOvrEP7lMuHIe9jNv9iKYQTC1TLsfeMwdRUKQDh-KFzPz02Apfukc8xzs_2E9ZG66tpQGNi_vPYuVNw0h000z2rO6FbDbrluBlNOMxCowowZeunAx5sRVUjSV_Ms4U4za2qbgrGRfs0HHx9-YR7nrhO_6jqLCh4anMO9jxQAeuNLRPIuoJ1Cy2EVWnIlY5-kfXM0cPXsidFq4NtxpOJO_qEoxc')] bg-cover bg-center mix-blend-overlay">
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-white/10 text-white/90 text-xs font-bold uppercase tracking-wider mb-6 border border-white/20">
+                    Technology / AI
+                </span>
+                <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6">
+                    Project Title Here
+                </h1>
+                <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    A short, compelling tagline or summary of the project goes here. It should explain the core value
+                    proposition in one sentence.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+
+                <!-- Main Content -->
+                <div class="lg:col-span-8 space-y-12">
+                    <!-- Overview -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-secondary mb-4 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">info</span>
+                            About the Project
+                        </h2>
+                        <div class="prose prose-lg text-muted leading-relaxed">
+                            <p>
+                                Detailed description of the project. Explain the background, the inspiration, and the
+                                context. Why was this project started? What are the main objectives?
+                            </p>
+                            <p>
+                                You can add multiple paragraphs here to fully describe the scope and vision of the work.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Screen/Image Carousel Placeholder -->
+                    <section>
+                        <div
+                            class="rounded-2xl overflow-hidden bg-gray-100 border border-border-color shadow-sm aspect-video flex items-center justify-center relative group">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeZaYKI-Tmblov0FlhUHK9pQRX9zFc-caoZiVkUAgGH8gQabQs6X_V-BNmgA-hJ3lDTqzSAXcwtY6sB89u8wya-cnYA2-aX8wxHsb5FyAjS-cz9t28ll9_jobdz3A8l3_cgvTznK_YWcVBWwFQPXzlssdhDLKs-EsdiKG_luDVVeM4BlvOFKnezjXAzaft3Wh0n_PShvdjSYyzUmTDEy_Eowr5Jh_E1VIhFAMrx1r0uGDFsIYx-XWfJCcWuSnztK9nG4yoGLxXnhU"
+                                alt="Project Screenshot" class="w-full h-full object-cover">
+                            <div
+                                class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white font-medium">Main Dashboard Interface</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Problem & Solution -->
+                    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-2xl border border-border-color shadow-sm">
+                            <div
+                                class="size-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined">warning</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-secondary mb-2">The Problem</h3>
+                            <p class="text-muted text-sm leading-relaxed">
+                                Describe the core problem or pain point that this project addresses. What gap exists in
+                                the current market or academic landscape?
+                            </p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-border-color shadow-sm">
+                            <div
+                                class="size-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-secondary mb-2">Our Solution</h3>
+                            <p class="text-muted text-sm leading-relaxed">
+                                Explain your innovative solution. How does it effectively solve the problem? What makes
+                                it unique or effective?
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Technical Stack -->
+                    <section>
+                        <h2 class="text-xl font-bold text-secondary mb-6">Technologies Used</h2>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 rounded-lg bg-surface border border-border-color text-sm font-semibold text-secondary shadow-sm">Python</span>
+                            <span
+                                class="px-4 py-2 rounded-lg bg-surface border border-border-color text-sm font-semibold text-secondary shadow-sm">TensorFlow</span>
+                            <span
+                                class="px-4 py-2 rounded-lg bg-surface border border-border-color text-sm font-semibold text-secondary shadow-sm">React
+                                Native</span>
+                            <span
+                                class="px-4 py-2 rounded-lg bg-surface border border-border-color text-sm font-semibold text-secondary shadow-sm">AWS</span>
+                            <span
+                                class="px-4 py-2 rounded-lg bg-surface border border-border-color text-sm font-semibold text-secondary shadow-sm">Arduino</span>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="lg:col-span-4 space-y-8">
+                    <!-- Project Status Card -->
+                    <div class="bg-white p-6 rounded-2xl border border-border-color shadow-sm">
+                        <h3 class="text-sm font-bold text-muted uppercase tracking-wider mb-4">Project Details</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+                                <span class="text-muted text-sm">Status</span>
+                                <span
+                                    class="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-bold rounded">Ongoing</span>
+                            </div>
+                            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+                                <span class="text-muted text-sm">Term</span>
+                                <span class="text-secondary text-sm font-semibold">2024-2025</span>
+                            </div>
+                            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+                                <span class="text-muted text-sm">Category</span>
+                                <span class="text-secondary text-sm font-semibold">Health Tech</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 space-y-3">
+                            <a href="#"
+                                class="flex items-center justify-center w-full h-11 rounded-lg bg-secondary text-white font-bold text-sm hover:opacity-90 transition-opacity gap-2">
+                                <span class="material-symbols-outlined text-[18px]">code</span>
+                                View on GitHub
+                            </a>
+                            <a href="#"
+                                class="flex items-center justify-center w-full h-11 rounded-lg bg-background-light border border-border-color text-secondary font-bold text-sm hover:bg-gray-100 transition-colors gap-2">
+                                <span class="material-symbols-outlined text-[18px]">description</span>
+                                Download Paper
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Team -->
+                    <div class="bg-white p-6 rounded-2xl border border-border-color shadow-sm">
+                        <h3 class="text-sm font-bold text-muted uppercase tracking-wider mb-4">The Team</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="size-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-500 text-xs">
+                                    AE</div>
+                                <div>
+                                    <p class="text-sm font-bold text-secondary">Ahmet E.</p>
+                                    <p class="text-xs text-muted">Lead Developer</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="size-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-500 text-xs">
+                                    ZK</div>
+                                <div>
+                                    <p class="text-sm font-bold text-secondary">Zeynep K.</p>
+                                    <p class="text-xs text-muted">Data Scientist</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="size-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-500 text-xs">
+                                    MY</div>
+                                <div>
+                                    <p class="text-sm font-bold text-secondary">Mustafa Y.</p>
+                                    <p class="text-xs text-muted">UI/UX Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

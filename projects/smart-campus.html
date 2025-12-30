@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Smart Green Campus — IPS Project</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0f5132",
+                        "primary-hover": "#0a3622",
+                        secondary: "#1D0C0F",
+                        "background-light": "#f8fcf9",
+                        "background-dark": "#051b11",
+                        surface: "#ffffff",
+                        muted: "#5ea080",
+                        "border-color": "#d1e7dd"
+                    },
+                    fontFamily: {
+                        display: ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        xl: "1rem"
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Global Header/Footer -->
+    <script defer src="../js/header-loader.js"></script>
+    <script defer src="../js/footer-loader.js"></script>
+</head>
+
+<body class="bg-background-light text-secondary font-display antialiased min-h-screen flex flex-col">
+    <!-- Header -->
+    <header id="siteHeader"></header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative bg-primary py-20 lg:py-32 overflow-hidden">
+            <div
+                class="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1581093121901-b2586bf2cfa1?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay">
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-white/10 text-white/90 text-xs font-bold uppercase tracking-wider mb-6 border border-white/20">
+                    Sustainability / IoT
+                </span>
+                <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6">
+                    Smart Green Campus
+                </h1>
+                <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    An integrated IoT network optimizing energy consumption and waste management across the IZU campus.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+
+                <!-- Main Content -->
+                <div class="lg:col-span-8 space-y-12">
+                    <!-- Overview -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-secondary mb-4 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">eco</span>
+                            About the Project
+                        </h2>
+                        <div class="prose prose-lg text-gray-600 leading-relaxed">
+                            <p>
+                                Smart Green Campus is a multidisciplinary initiative aiming to transform the IZU campus
+                                into a living lab for sustainability. By deploying a dense network of low-cost IoT
+                                sensors, we monitor real-time energy usage, water quality, and waste bin levels.
+                            </p>
+                            <p>
+                                The data collected is aggregated into a central dashboard accessible to university
+                                administration and students, fostering awareness and enabling data-driven decisions to
+                                reduce our carbon footprint.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Tech -->
+                    <section>
+                        <div
+                            class="rounded-2xl overflow-hidden bg-gray-100 border border-border-color shadow-sm h-64 flex items-center justify-center relative group">
+                            <!-- Abstract IoT Mesh Image placeholder -->
+                            <div class="text-center">
+                                <span class="material-symbols-outlined text-6xl text-muted/50">hub</span>
+                                <p class="mt-2 text-sm text-muted">Network Topology Visualization</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Impact -->
+                    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-border-color shadow-sm text-center">
+                            <div class="text-3xl font-black text-primary mb-1">15%</div>
+                            <div class="text-xs font-bold text-gray-500 uppercase">Energy Savings</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-border-color shadow-sm text-center">
+                            <div class="text-3xl font-black text-primary mb-1">50+</div>
+                            <div class="text-xs font-bold text-gray-500 uppercase">Sensors Deployed</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-border-color shadow-sm text-center">
+                            <div class="text-3xl font-black text-primary mb-1">24/7</div>
+                            <div class="text-xs font-bold text-gray-500 uppercase">Monitoring</div>
+                        </div>
+                    </section>
+
+                    <!-- Technical Stack -->
+                    <section>
+                        <h2 class="text-xl font-bold text-secondary mb-6">Technologies Used</h2>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 rounded-lg bg-white border border-border-color text-sm font-semibold text-secondary shadow-sm">LoRaWAN</span>
+                            <span
+                                class="px-4 py-2 rounded-lg bg-white border border-border-color text-sm font-semibold text-secondary shadow-sm">Arduino</span>
+                            <span
+                                class="px-4 py-2 rounded-lg bg-white border border-border-color text-sm font-semibold text-secondary shadow-sm">Grafana</span>
+                            <span
+                                class="px-4 py-2 rounded-lg bg-white border border-border-color text-sm font-semibold text-secondary shadow-sm">Solar
+                                Power</span>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="lg:col-span-4 space-y-8">
+                    <!-- Project Status Card -->
+                    <div class="bg-white p-6 rounded-2xl border border-border-color shadow-sm">
+                        <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Project Details</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+                                <span class="text-gray-500 text-sm">Status</span>
+                                <span
+                                    class="px-2.5 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded">Active</span>
+                            </div>
+                            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+                                <span class="text-gray-500 text-sm">Category</span>
+                                <span class="text-secondary text-sm font-semibold">Environment</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <button
+                                class="flex items-center justify-center w-full h-11 rounded-lg bg-primary text-white font-bold text-sm hover:bg-primary-hover transition-colors gap-2">
+                                <span class="material-symbols-outlined text-[18px]">dashboard</span>
+                                Live Dashboard
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Team -->
+                    <div class="bg-white p-6 rounded-2xl border border-border-color shadow-sm">
+                        <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">EcoTech Team</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="size-10 rounded-full bg-green-100 flex items-center justify-center font-bold text-green-700 text-xs">
+                                    ED</div>
+                                <div>
+                                    <p class="text-sm font-bold text-secondary">Elif Demir</p>
+                                    <p class="text-xs text-gray-500">Project Lead</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="size-10 rounded-full bg-green-100 flex items-center justify-center font-bold text-green-700 text-xs">
+                                    OA</div>
+                                <div>
+                                    <p class="text-sm font-bold text-secondary">Oğuz Ak</p>
+                                    <p class="text-xs text-gray-500">Hardware Eng.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

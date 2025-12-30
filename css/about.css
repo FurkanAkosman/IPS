@@ -1,0 +1,138 @@
+/* about.css
+   Amaç:
+   - About Us sayfasına özel, minimal ve akademik bir polish
+   - Tailwind tasarımını BOZMADAN desteklemek
+   - Tipografi, hero, kartlar ve manifesto bölümü için ince ayar
+
+   Kullanım:
+   /assets/css/about.css
+   <link rel="stylesheet" href="./assets/css/about.css" />
+*/
+
+/* =========================
+   Genel yardımcılar
+   ========================= */
+html { scroll-behavior: smooth; }
+
+.material-symbols-outlined{
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* =========================
+   Header güvenliği (sticky + blur bug fix)
+   ========================= */
+header{
+  isolation: isolate;
+}
+header, header *{
+  pointer-events: auto;
+}
+
+/* =========================
+   Hero arka plan dokusu
+   ========================= */
+.about-hero-pattern::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(212,17,50,.10), transparent 45%),
+    radial-gradient(circle at 85% 70%, rgba(77,0,17,.08), transparent 50%);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* =========================
+   Section geçişleri
+   ========================= */
+.section-fade{
+  animation: fadeInUp .7s ease-out both;
+}
+
+@keyframes fadeInUp{
+  from{ opacity:0; transform: translateY(18px); }
+  to{ opacity:1; transform:none; }
+}
+
+/* =========================
+   Kartlar (Founding Members)
+   ========================= */
+.member-card{
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.member-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.08);
+}
+
+/* Kart görsel overlay yumuşatma */
+.member-card .overlay{
+  transition: opacity .25s ease;
+}
+
+/* =========================
+   Tipografi – Manifesto
+   ========================= */
+.manifesto{
+  line-height: 1.75;
+}
+.manifesto blockquote{
+  position: relative;
+}
+.manifesto blockquote::before{
+  content: "“";
+  position: absolute;
+  left: -18px;
+  top: -10px;
+  font-size: 3rem;
+  color: rgba(212,17,50,.35);
+  font-family: serif;
+}
+
+/* İlk harf vurgusu fallback */
+.manifesto p:first-of-type::first-letter{
+  font-size: 3rem;
+  font-weight: 700;
+  color: #d41132;
+  float: left;
+  line-height: 1;
+  padding-right: 8px;
+}
+
+/* =========================
+   CTA hover
+   ========================= */
+.about-cta-btn{
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.about-cta-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(212,17,50,.25);
+}
+
+/* =========================
+   Link ince ayar
+   ========================= */
+a{
+  text-underline-offset: 3px;
+}
+
+/* =========================
+   Accessibility
+   ========================= */
+:focus-visible{
+  outline:2px solid rgba(212,17,50,.55);
+  outline-offset:2px;
+  border-radius:8px;
+}
+
+/* =========================
+   Reduced motion
+   ========================= */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+}

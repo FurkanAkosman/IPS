@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CBT App — IPS Project</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4d0011",
+                        "primary-hover": "#6e0019",
+                        secondary: "#1D0C0F",
+                        "background-light": "#f8f8f3",
+                        "background-dark": "#101622",
+                        surface: "#ffffff",
+                        muted: "#6b5d60",
+                        "border-color": "#e7cfd3"
+                    },
+                    fontFamily: {
+                        display: ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+    <script defer src="../js/header-loader.js"></script>
+    <script defer src="../js/footer-loader.js"></script>
+</head>
+
+<body class="bg-background-light text-secondary font-display antialiased min-h-screen flex flex-col">
+    <!-- Header -->
+    <header id="siteHeader"></header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative bg-primary py-20 lg:py-32 overflow-hidden">
+            <div
+                class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1550063873-ab792950096b?auto=format&fit=crop&w=1200')] bg-cover bg-center mix-blend-overlay">
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-white/10 text-white/90 text-xs font-bold uppercase tracking-wider mb-6 border border-white/20">
+                    Social / Psychology
+                </span>
+                <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6">
+                    Cognitive Behavioral App
+                </h1>
+                <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    An interactive mobile application designed to support CBT techniques for mild depression management
+                    using gamification.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+
+                <!-- Main Content -->
+                <div class="lg:col-span-8 space-y-12">
+                    <section>
+                        <h2 class="text-2xl font-bold text-secondary mb-4 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">info</span>
+                            About the Project
+                        </h2>
+                        <div class="prose prose-lg text-muted leading-relaxed">
+                            <p>
+                                Access to therapy remains a challenge for many. This project digitizes standard
+                                Cognitive Behavioral Therapy (CBT) exercises—such as mood tracking and cognitive
+                                reframing—into a user-friendly mobile interface.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="lg:col-span-4 space-y-8">
+                    <div class="bg-white p-6 rounded-2xl border border-border-color shadow-sm">
+                        <h3 class="text-sm font-bold text-muted uppercase tracking-wider mb-4">Project Details</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+                                <span class="text-muted text-sm">Status</span>
+                                <span
+                                    class="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-bold rounded">Ongoing</span>
+                            </div>
+                            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+                                <span class="text-muted text-sm">Team Lead</span>
+                                <span class="text-secondary text-sm font-semibold">Sudem Özdemir</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,117 +1,153 @@
 <!doctype html>
-<html lang="tr">
-<head>
-  <!-- GA4 -->
-<script src="js/analytics.js" defer></script>
+<html lang="en" class="scroll-smooth">
 
+<head>
+  <script src="../js/analytics.js" defer></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Yiğit Buyrul — IPS</title>
-  <meta name="description" content="IPS üyesi Yiğit Buyrul: ilgi alanları, IPS’e katkıları ve hedefleri. Moleküler biyoloji, genetik ve disiplinler arası projeler.">
-  <meta name="theme-color" content="#4d0011">
-
-  <!-- Canonical + Open Graph + Twitter -->
-  <link rel="canonical" href="https://furkanakosman.github.io/IPS/people/yigit-buyrul.html">
-  <meta property="og:type" content="profile">
-  <meta property="og:title" content="Yiğit Buyrul — IPS">
-  <meta property="og:description" content="IPS üyesi Yiğit Buyrul’ın ilgi alanları, katkıları ve hedefleri.">
-  <meta property="og:url" content="https://furkanakosman.github.io/IPS/people/yigit-buyrul.html">
-  <meta property="og:site_name" content="Interdisciplinary Project Society">
-  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/team/yigit_buyrul.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Yiğit Buyrul — IPS">
-  <meta name="twitter:description" content="IPS üyesi Yiğit Buyrul’ın profili.">
-  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/team/yigit_buyrul.jpg">
-
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Lora:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind (header/footer için) -->
+  <meta name="description" content="Profile of Yiğit Buyrul, Advertising Team at IPS. Focusing on Marketing and PR.">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
-      darkMode:"class",
-      theme:{ extend:{
-        colors:{ primary:"#4d0011","background-light":"#f8f8f3","text-light":"#1D0C0F" },
-        fontFamily:{ display:["Inter","sans-serif"], body:["Lora","serif"] },
-        borderRadius:{ xl:"12px" }
-      }}
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4d0011",
+            "primary-light": "#6b0018",
+            "background-light": "#f8f8f3",
+            "background-dark": "#1a0508",
+            "text-light": "#1D0C0F",
+            "text-muted": "#9a4c59",
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+            body: ["Manrope", "sans-serif"],
+            serif: ["Lora", "serif"]
+          },
+        }
+      }
     };
   </script>
-
-  <!-- Sayfa CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;600;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/reset.css">
-  <link rel="stylesheet" href="person.css">
+  <meta name="theme-color" content="#4d0011">
+  <style>
+    body {
+      background-color: #f8f8f3;
+      color: #1D0C0F;
+    }
 
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Interdisciplinary Project Society","url":"https://furkanakosman.github.io/IPS/","logo":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg"}
-  </script>
-
-  <!-- JSON-LD: Person -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Yiğit Buyrul",
-    "image":"https://furkanakosman.github.io/IPS/assets/img/team/yigit_buyrul.jpg",
-    "jobTitle":"Member",
-    "affiliation":{"@type":"Organization","name":"Interdisciplinary Project Society","url":"https://furkanakosman.github.io/IPS/"},
-    "knowsAbout":["Moleküler Biyoloji ve Genetik","Biyoteknoloji","Deneysel Tasarım","Veri Düzenleme","Bilim İletişimi"],
-    "url":"https://furkanakosman.github.io/IPS/people/yigit-buyrul.html"
-  }
-  </script>
-
-  <style>img[loading="lazy"]{contain-intrinsic-size:auto 200px}</style>
+    .timeline-line::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 7px;
+      width: 2px;
+      background-color: #e5e5e5;
+    }
+  </style>
 </head>
-<body>
 
-<!-- Header (dinamik; GA da buradan yüklenecek) -->
-<script src="../js/header-loader.js" defer></script>
-
-<main class="person">
-  <a class="back" href="../team.html" aria-label="Takım sayfasına geri dön">← Back to Team</a>
-
-  <div class="person__top">
-    <div class="person__photo">
-      <img src="../assets/img/team/yigit_buyrul.jpg" alt="Yiğit Buyrul" width="640" height="640" loading="lazy" decoding="async">
+<body class="selection:bg-primary/20 selection:text-primary font-body">
+  <script src="../js/header-loader.js" defer></script>
+  <main class="min-h-screen pt-24 pb-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <a href="../team.html"
+        class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all mb-12 group">
+        <span
+          class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+        Back to Team
+      </a>
+      <!-- Hero -->
+      <div class="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-12 items-start mb-20 animate-[fade-in_0.5s_ease-out]">
+        <div class="relative group">
+          <div
+            class="absolute inset-0 bg-primary rounded-2xl rotate-3 opacity-20 group-hover:rotate-6 transition-transform duration-500">
+          </div>
+          <img src="../assets/img/team/yigit_buyrul.jpg" alt="Yiğit Buyrul"
+            class="relative z-10 w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
+        </div>
+        <div class="pt-4">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4 border border-primary/20">
+            Advertising</div>
+          <h1 class="text-4xl md:text-6xl font-black text-primary mb-4 tracking-tight leading-tight font-display">Yiğit
+            Buyrul</h1>
+          <p class="text-xl md:text-2xl text-text-light/80 font-serif italic mb-6 leading-relaxed">
+            Public Relations & Advertising (2nd Year)<br>
+            <span class="text-base text-text-muted not-italic font-sans font-medium">Istanbul Sabahattin Zaim
+              University</span>
+          </p>
+          <p class="text-lg text-text-light/70 leading-relaxed mb-8 max-w-2xl">
+            Specializing in advertising strategies and brand promotion for IPS.
+          </p>
+          <div class="flex gap-4">
+            <a href="#"
+              class="size-12 rounded-full bg-white border border-primary/10 flex items-center justify-center hover:bg-primary/5 hover:border-primary transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1"><img
+                src="../assets/icon/social-media/linkedin.png" class="w-6 h-6 object-contain"></a>
+            <a href="#"
+              class="size-12 rounded-full bg-white border border-primary/10 flex items-center justify-center hover:bg-primary/5 hover:border-primary transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1"><img
+                src="../assets/icon/social-media/instagram.png" class="w-6 h-6 object-contain"></a>
+            <a href="mailto:contact@izu.edu.tr"
+              class="size-12 rounded-full bg-white border border-primary/10 flex items-center justify-center text-primary/80 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1"><span
+                class="material-symbols-outlined">mail</span></a>
+          </div>
+        </div>
+      </div>
+      <!-- About -->
+      <div class="mb-20">
+        <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2 font-display"><span
+            class="material-symbols-outlined">person</span> About Me</h2>
+        <div
+          class="bg-white rounded-2xl p-8 shadow-sm border border-primary/5 leading-relaxed text-lg text-text-light/80 font-serif">
+          <p class="mb-4">I am a sophomore studying Public Relations and Advertising. I have a creative mindset and a
+            strategic approach to marketing.</p>
+          <p>My role in IPS is to manage our advertising campaigns, ensuring that our events and projects reach the
+            widest possible audience.</p>
+        </div>
+      </div>
+      <!-- Experience/Skills/Projects -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div>
+          <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2 font-display"><span
+              class="material-symbols-outlined">history_edu</span> Experience</h2>
+          <div class="relative timeline-line pl-8 space-y-10">
+            <div class="relative">
+              <div class="absolute -left-[39px] mt-1.5 size-4 rounded-full bg-primary border-4 border-[#f8f8f3]"></div>
+              <div class="text-sm font-bold text-primary/60 mb-1 font-display">2024 — Present</div>
+              <h3 class="text-lg font-bold text-text-light">Advertising Team</h3>
+              <div class="text-sm font-medium text-text-muted mb-2">Interdisciplinary Project Society (IPS)</div>
+              <p class="text-text-light/70 text-sm leading-relaxed">Promoting events and managing brand identity.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2 font-display"><span
+              class="material-symbols-outlined">bolt</span> Skills & Interests</h2>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-4 py-2 rounded-lg bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm">Advertising</span>
+            <span
+              class="px-4 py-2 rounded-lg bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm">Digital
+              Marketing</span>
+            <span
+              class="px-4 py-2 rounded-lg bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm">PR</span>
+            <span
+              class="px-4 py-2 rounded-lg bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm">Creativity</span>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="person__info">
-      <h1 class="person__name">Yiğit Buyrul</h1>
-      <p class="person__meta">Molecular Biology and Genetics • Bachelor • Istanbul Sabahattin Zaim University</p>
-      <ul class="person__social">
-        <li><a href="#" aria-label="LinkedIn" rel="noopener"><img src="../assets/icon/social-media/linkedin.png" alt="LinkedIn" width="20" height="20" loading="lazy" decoding="async"></a></li>
-        <li><a href="#" aria-label="Instagram" rel="noopener"><img src="../assets/icon/social-media/instagram.png" alt="Instagram" width="20" height="20" loading="lazy" decoding="async"></a></li>
-        <li><a href="#" aria-label="YouTube" rel="noopener"><img src="../assets/icon/social-media/youtube.png" alt="YouTube" width="20" height="20" loading="lazy" decoding="async"></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <section class="person__section">
-    <h2>Areas of Interest</h2>
-    <p>Yiğit’in ilgi alanları moleküler genetik ve biyoteknolojiyi kapsar. Deneysel tasarım, veri düzenleme ve sonuçların erişilebilir çıktılara dönüştürülmesine odaklanır.</p>
-  </section>
-
-  <section class="person__section">
-    <h2>IPS Contributions</h2>
-    <p>IPS içinde etkinlik planlama, proje dokümantasyonu ve ekipler arası koordinasyon süreçlerine katkı sağlar. Duyuru şablonlarının tutarlı kullanımı ve etkinlik sonrası özetlerin yayımlanmasını destekler.</p>
-  </section>
-
-  <section class="person__section">
-    <h2>Future Aspirations</h2>
-    <p>Disiplinler arası projelerde yer alarak veri temelli içerik üretimini geliştirmeyi ve uluslararası işbirlikleriyle IPS’in görünürlüğünü artırmayı hedefler.</p>
-  </section>
-</main>
-
-<!-- Footer (dinamik) + ortak davranışlar -->
-<script src="../js/footer-loader.js" defer></script>
-<script src="../assets/js/app.js" defer></script>
-
+  </main>
+  <script src="../js/footer-loader.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
 </body>
+
 </html>

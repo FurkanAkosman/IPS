@@ -101,9 +101,37 @@
 
     // 3) CLS spacer yüksekliğini gerçek header yüksekliğine göre ayarla
     // (sticky header olduğu için body yukarı zıplamasın)
+    // ANCAK: Anasayfada (index.html) header'ın hero'nun üzerine binmesi (transparent) isteniyor.
+    // Bu yüzden anasayfada spacer 0px olmalı.
+    const isHome = currentNorm === "/" || currentNorm === "/index.html" || currentNorm === "/IPS/" || currentNorm === "/IPS/index.html";
+
     requestAnimationFrame(() => {
-      const h = hdr.getBoundingClientRect().height || 64;
-      spacer.style.height = `${Math.round(h)}px`;
+      if (isHome) {
+        // Anasayfada spacer yok (overlay için)
+        spacer.style.height = "0px";
+
+        // Header stil güncelleyici (Scroll)
+        const solidClasses = ["bg-background-light/90", "backdrop-blur", "border-b", "border-primary/10", "shadow-sm"];
+
+        function updateHeaderStyle() {
+          if (window.scrollY > 20) {
+            hdr.classList.add(...solidClasses);
+            hdr.classList.remove("bg-transparent", "border-transparent");
+          } else {
+            hdr.classList.remove(...solidClasses);
+            hdr.classList.add("bg-transparent", "border-transparent");
+          }
+        }
+
+        window.addEventListener("scroll", updateHeaderStyle, { passive: true });
+        // İlk çalıştır
+        updateHeaderStyle();
+
+      } else {
+        // Diğer sayfalarda standart spacer
+        const h = hdr.getBoundingClientRect().height || 80;
+        spacer.style.height = `${Math.round(h)}px`;
+      }
     });
 
     // 4) GA tekil yükleme (analytics.js)
@@ -234,6 +262,51 @@
 
     setupHeaderObserver();
     mq.addEventListener("change", setupHeaderObserver);
+    // 9) Desktop Dropdown Behavior (Hover + Click Pin)
+    // partials/header.html içinde:
+    // Li.group > Button#ddXxxBtn + Div#ddXxxMenu
+    const dropdowns = [
+      { btn: hdr.querySelector("#ddAboutBtn"), menu: hdr.querySelector("#ddAboutMenu") },
+      { btn: hdr.querySelector("#ddProjectsBtn"), menu: hdr.querySelector("#ddProjectsMenu") },
+      { btn: hdr.querySelector("#ddEventsBtn"), menu: hdr.querySelector("#ddEventsMenu") },
+    ].filter(d => d.btn && d.menu);
+
+    const closeAllDropdowns = () => {
+      dropdowns.forEach(d => {
+        d.menu.closest("li").classList.remove("open");
+        d.btn.setAttribute("aria-expanded", "false");
+      });
+    };
+
+    dropdowns.forEach(d => {
+      const li = d.menu.closest("li");
+
+      // Button Click: Toggle "open" (pin)
+      d.btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = li.classList.contains("open");
+        closeAllDropdowns(); // Close others
+        if (!isOpen) {
+          li.classList.add("open");
+          d.btn.setAttribute("aria-expanded", "true");
+        }
+      });
+
+      // Menu Click: Stop propagation (prevent closing when clicking inside)
+      d.menu.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    });
+
+    // Close on outside click
+    document.addEventListener("click", () => closeAllDropdowns());
+
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeAllDropdowns();
+    });
+
   } catch (err) {
     console.error("[IPS] header-loader error:", err);
     // Header gelmezse spacer kalsın diye kaldırmıyorum; ama istersen:

@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!doctype html>
+<html lang="en">
+
 <head>
   <!-- GA4 -->
-  <script src="js/analytics.js"></script>
+  <script src="js/analytics.js" defer></script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IPS — Team</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Tailwind (index ile aynı) -->
+  <title>Our Team — IPS</title>
+  <meta name="description"
+    content="Meet the interdisciplinary team behind IPS. Students from MBG, Psychology, Engineering, and more.">
+
+  <!-- Font & Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
@@ -17,232 +27,305 @@
         extend: {
           colors: {
             primary: "#4d0011",
+            "primary-light": "#6b0018",
             "background-light": "#f8f8f3",
+            "background-dark": "#1a0508",
             "text-light": "#1D0C0F",
           },
           fontFamily: {
-            display: ["Inter","system-ui","sans-serif"],
-            body: ["Lora","serif"],
+            display: ["Inter", "sans-serif"],
+            body: ["Lora", "serif"]
           },
-          borderRadius: { xl: "12px" }
         }
       }
-    }
+    };
   </script>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-
-  <!-- Site CSS -->
-  <link rel="stylesheet" href="css/figma.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/team.css">
-
-  <!-- Performans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link rel="dns-prefetch" href="//images.unsplash.com">
-  <link rel="dns-prefetch" href="//www.googletagmanager.com">
-  <link rel="preload" as="image" href="assets/img/kulup-logo.jpg" imagesrcset="assets/img/kulup-logo.jpg 1x" imagesizes="32px" />
-
-  <!-- Prefetch -->
-  <link rel="prefetch" href="index.html" as="document">
-  <link rel="prefetch" href="events.html" as="document">
-  <link rel="prefetch" href="blog.html" as="document">
-
-  <!-- SEO -->
-  <link rel="canonical" href="https://furkanakosman.github.io/IPS/team.html" />
-  <meta name="description" content="IPS ekibi. Interdisciplinary Project Society'yi ileriye taşıyan çekirdek ve gönüllü ekip üyeleri." />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="theme-color" content="#4d0011" />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Interdisciplinary Project Society" />
-  <meta property="og:title" content="IPS — Team" />
-  <meta property="og:description" content="Interdisciplinary Project Society ekibiyle tanışın." />
-  <meta property="og:url" content="https://furkanakosman.github.io/IPS/team.html" />
-  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
-  <meta property="og:locale" content="tr_TR" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="IPS — Team" />
-  <meta name="twitter:description" content="Interdisciplinary Project Society ekibiyle tanışın." />
-  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Interdisciplinary Project Society","url":"https://furkanakosman.github.io/IPS/","logo":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg","sameAs":["https://www.instagram.com/ip_society","https://www.youtube.com/@ipsociety2025","https://www.tiktok.com/@ip_society","https://www.linkedin.com/in/%C4%B1ps"]}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"IPS — Team","url":"https://furkanakosman.github.io/IPS/team.html","description":"IPS ekibi. Interdisciplinary Project Society'yi ileriye taşıyan çekirdek ve gönüllü ekip üyeleri."}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ItemList","itemListElement":[
-    {"@type":"SiteNavigationElement","name":"Main Page","url":"https://furkanakosman.github.io/IPS/"},
-    {"@type":"SiteNavigationElement","name":"Team","url":"https://furkanakosman.github.io/IPS/team.html"},
-    {"@type":"SiteNavigationElement","name":"Events","url":"https://furkanakosman.github.io/IPS/events.html"},
-    {"@type":"SiteNavigationElement","name":"Blog","url":"https://furkanakosman.github.io/IPS/blog.html"}]}
-  </script>
-
-  <!-- Sayfaya özel ufak düzeltmeler -->
-  <style>
-    *,*::before,*::after{box-sizing:border-box}
-    html{-webkit-text-size-adjust:100%}
-    img,video{max-width:100%;height:auto;display:block}
-    body{margin:0}
-    section{overflow:clip}
-
-    /* Loader header fixed ~64px → içerik ofseti */
-    main{padding-top:64px}
-    h1,h2,h3{line-height:1.2}
-    img[loading="lazy"]{contain-intrinsic-size:auto 200px}
-
-    .container{max-width:1200px;margin-inline:auto;padding:0 1rem}
-
-    /* Team grid ve kartlar */
-    .team-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-    @media (min-width:640px){ .team-grid{gap:1.25rem} }
-    @media (min-width:1024px){ .team-grid{gap:1.5rem} }
-
-    .member{display:block;background:#fff;border:1px solid rgba(77,0,17,.08);border-radius:14px;padding:14px;
-      text-decoration:none;color:inherit;transition:transform .15s, box-shadow .15s}
-    .member:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
-    .member__img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px}
-    .member__name{margin:.5rem 0 0;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
-    .member__role{font-size:.9rem;font-weight:600;color:#4d0011}
-    .member__dept{font-size:.85rem;color:#654}
-    .member__bio{font-size:.9rem;line-height:1.5;color:#333;margin:.5rem 0 0}
-    .team-header{text-align:center;margin-top:1rem;margin-bottom:1.5rem}
-    .team-title{font-size:clamp(1.75rem,4vw,2.5rem);margin:.25rem 0 0}
-    .team-sub{color:#4d0011;opacity:.85;font-size:clamp(.95rem,2.2vw,1.1rem)}
-  </style>
+  <meta name="theme-color" content="#4d0011">
 </head>
 
-<body class="bg-background-light font-display text-text-light">
-  <!-- Ortak HEADER -->
+<body
+  class="bg-background-light text-text-light font-body selection:bg-primary/20 selection:text-primary min-h-screen flex flex-col">
+
+  <!-- Header -->
   <script src="js/header-loader.js" defer></script>
 
-  <main class="section">
-    <div class="container team-wrap">
-      <header class="team-header">
-        <h1 class="h2 team-title">Meet Our Team</h1>
-        <p class="team-sub">The driving force behind the Interdisciplinary Project Society.</p>
-      </header>
+  <main class="flex-grow pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-6">
 
-      <section class="team-grid">
-        <!-- Kartlar -->
-        <a class="member" href="people/furkan-akosman.html" aria-label="Furkan Akosman">
-          <img class="member__img" src="assets/img/team/furkan_akosman.jpg" alt="Furkan Akosman" loading="lazy" decoding="async">
-          <h3 class="member__name">Furkan Akosman</h3>
-          <div class="member__role">President</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">Interested in AI and machine learning. As President, I oversee all society operations and guide our strategic direction.</p>
+      <!-- Hero -->
+      <div class="text-center max-w-3xl mx-auto mb-20 animate-[fade-in_0.5s_ease-out]">
+        <div
+          class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+          Interdisciplinary Project Society
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black text-primary mb-8 tracking-tight font-display">
+          Meet the Team
+        </h1>
+        <p class="text-xl text-text-light/70 leading-relaxed font-serif">
+          A diverse group of students driven by curiosity, innovation, and the desire to make an impact. We bridge the
+          gap between biology, psychology, and engineering.
+        </p>
+      </div>
+
+      <!-- Filters (Optional visual element for now) -->
+      <div class="flex flex-wrap justify-center gap-2 mb-16 font-display">
+        <button class="px-4 py-2 rounded-full bg-primary text-white font-bold text-sm shadow-md">All Members</button>
+        <button
+          class="px-4 py-2 rounded-full bg-white border border-primary/10 text-text-light/70 font-bold text-sm hover:bg-primary/5 transition-colors">MBG</button>
+        <button
+          class="px-4 py-2 rounded-full bg-white border border-primary/10 text-text-light/70 font-bold text-sm hover:bg-primary/5 transition-colors">Psychology</button>
+        <button
+          class="px-4 py-2 rounded-full bg-white border border-primary/10 text-text-light/70 font-bold text-sm hover:bg-primary/5 transition-colors">Engineering</button>
+      </div>
+
+      <!-- Team Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+
+        <!-- Furkan Akosman -->
+        <a class="member group" href="people/furkan-akosman.html" aria-label="Furkan Akosman">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+            <img class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/furkan_akosman.jpg" alt="Furkan Akosman" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Furkan Akosman</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">President</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Neurotechnology, BCI, and IPS Leadership.</p>
         </a>
 
-        <a class="member" href="people/zeynep-torbaci.html" aria-label="Zeynep Torbacı">
-          <img class="member__img" src="assets/img/team/zeynep_torbaci.jpg" alt="Zeynep Torbacı" loading="lazy" decoding="async">
-          <h3 class="member__name">Zeynep Torbacı</h3>
-          <div class="member__role">Vice President</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">Passionate about biotech and sustainability. I support the President and manage internal affairs.</p>
+        <!-- Yeşim Aydın -->
+        <a class="member group" href="people/yesim-aydin.html" aria-label="Yeşim Aydın">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+            <img class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/yesim_aydin.jpg" alt="Yeşim Aydın" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Yeşim Aydın</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Content Creator</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Cancer Research, Content Strategy, and Project Management.
+          </p>
         </a>
 
-        <a class="member" href="people/omer-faruk-dokgoz.html" aria-label="Ömer Faruk Dokgöz">
-          <img class="member__img" src="assets/img/team/omer_faruk_dokgoz.jpeg" alt="Ömer Faruk Dokgöz" loading="lazy" decoding="async">
-          <h3 class="member__name">Ömer Faruk Dokgöz</h3>
-          <div class="member__role">Project Manager</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">Love UI/UX and human-centered design. I lead project teams from ideation to completion.</p>
+        <!-- Zeynep Torbacı -->
+        <a class="member group" href="people/zeynep-torbaci.html" aria-label="Zeynep Torbacı">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+            <img class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/zeynep_torbaci.jpg" alt="Zeynep Torbacı" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Zeynep Torbacı</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Planning</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Cancer Research and Strategic Planning.</p>
         </a>
 
-        <a class="member" href="people/efnan-karatas.html" aria-label="Efnan Karataş">
-          <img class="member__img" src="assets/img/team/efnan_karatas.jpeg" alt="Efnan Karataş" loading="lazy" decoding="async">
-          <h3 class="member__name">Efnan Karataş</h3>
-          <div class="member__role">Treasurer</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">Fintech enthusiast. I manage finances, budgeting, and sponsorship outreach.</p>
+        <!-- Ubeyde Acar -->
+        <a class="member group" href="people/ubeyde-acar.html" aria-label="Ubeyde Acar">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4 bg-white border border-primary/10">
+            <img
+              class="object-contain w-full h-full p-4 transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/ubeyde_acar.png" alt="Ubeyde Acar" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Ubeyde Acar</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Teknofest Team</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Neuroscience, Technology, and Innovation.</p>
         </a>
 
-        <a class="member" href="people/omer-efe-merey.html" aria-label="Ömer Efe Merey">
-          <img class="member__img" src="assets/img/team/omer_efe_merey.jpg" alt="Ömer Efe Merey" loading="lazy" decoding="async">
-          <h3 class="member__name">Ömer Efe Merey</h3>
-          <div class="member__role">Secretary</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">Fascinated by cognitive science. I handle records and internal communications.</p>
+        <!-- Ömer Faruk Dokgöz -->
+        <a class="member group" href="people/omer-faruk-dokgoz.html" aria-label="Ömer Faruk Dokgöz">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+            <img class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/omer_faruk_dokgoz.jpeg" alt="Ömer Faruk Dokgöz" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Ömer Faruk Dokgöz</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Organization</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Neuroscience and Event Organization.</p>
         </a>
 
-        <a class="member" href="people/sudem-ozdemir.html" aria-label="Sudem Özdemir">
-          <img class="member__img" src="assets/img/team/sudem_ozdemir.jpeg" alt="Sudem Özdemir" loading="lazy" decoding="async">
-          <h3 class="member__name">Sudem Özdemir</h3>
-          <div class="member__role">Communications Lead</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">I manage social media, newsletter, and external communications.</p>
+        <!-- Efnan Karataş -->
+        <a class="member group" href="people/efnan-karatas.html" aria-label="Efnan Karataş">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+            <img class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/efnan_karatas.jpeg" alt="Efnan Karataş" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Efnan Karataş</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Social Media</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Psychology and Digital Communication.</p>
         </a>
 
-        <a class="member" href="people/yigit-buyrul.html" aria-label="Yiğit Buyrul">
-          <img class="member__img" src="assets/img/team/yigit_buyrul.jpg" alt="Yiğit Buyrul" loading="lazy" decoding="async">
-          <h3 class="member__name">Yiğit Buyrul</h3>
-          <div class="member__role">Outreach Coordinator</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">I build relationships with organizations and partners.</p>
+        <!-- Sudem Özdemir -->
+        <a class="member group" href="people/sudem-ozdemir.html" aria-label="Sudem Özdemir">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+            <img class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/sudem_ozdemir.jpeg" alt="Sudem Özdemir" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Sudem Özdemir</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Social Media</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Psychology and Content Strategy.</p>
         </a>
 
-        <a class="member" href="people/sena-ozbey.html" aria-label="Sena Özbey">
-          <img class="member__img" src="assets/img/team/sena_ozbey.jpeg" alt="Sena Özbey" loading="lazy" decoding="async">
-          <h3 class="member__name">Sena Özbey</h3>
-          <div class="member__role">Webmaster</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">Maintain and update the IPS website.</p>
+        <!-- Rümeysa Güçlü -->
+        <a class="member group" href="people/rumeysa-guclu.html" aria-label="Rümeysa Güçlü">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+            <img class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/rumeysa_guclu.jpeg" alt="Rümeysa Güçlü" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Rümeysa Güçlü</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Social Media</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Psychology and Community Engagement.</p>
         </a>
 
-        <a class="member" href="people/rumeysa-guclu.html" aria-label="Rümeyse Güçlü">
-          <img class="member__img" src="assets/img/team/rumeysa_guclu.jpeg" alt="Rümeyse Güçlü" loading="lazy" decoding="async">
-          <h3 class="member__name">Rümeyse Güçlü</h3>
-          <div class="member__role">Creative Director</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">Branding and visual identity.</p>
+        <!-- Yusuf Mete Gece -->
+        <a class="member group" href="people/yusuf-mete-gecer.html" aria-label="Yusuf Mete Gece">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4 bg-white border border-primary/10">
+            <img
+              class="object-contain w-full h-full p-4 transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/yusuf_mete_gecer.png" alt="Yusuf Mete Gece" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Yusuf Mete Gece</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Sponsorship</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Corporate Relations and Networking.</p>
         </a>
 
-        <a class="member" href="people/yusuf-mete-gecer.html" aria-label="Yusuf Mete Geçer">
-          <img class="member__img" src="assets/img/team/anonim.png" alt="Yusuf Mete Geçer" loading="lazy" decoding="async">
-          <h3 class="member__name">Yusuf Mete Geçer</h3>
-          <div class="member__role">Webmaster</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">Maintain and update the IPS website.</p>
+        <!-- Yiğit Buyrul -->
+        <a class="member group" href="people/yigit-buyrul.html" aria-label="Yiğit Buyrul">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+            <img class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/yigit_buyrul.jpg" alt="Yiğit Buyrul" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Yiğit Buyrul</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Advertising</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Marketing and Brand Management.</p>
         </a>
 
-        <a class="member" href="people/ubeyde-acar.html" aria-label="Ubeyde Acar">
-          <img class="member__img" src="assets/img/team/anonim.png" alt="Ubeyde Acar" loading="lazy" decoding="async">
-          <h3 class="member__name">Ubeyde Acar</h3>
-          <div class="member__role">Webmaster</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">Maintain and update the IPS website.</p>
+        <!-- Ömer Efe Merey -->
+        <a class="member group" href="people/omer-efe-merey.html" aria-label="Ömer Efe Merey">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+            <img class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/omer_efe_merey.jpg" alt="Ömer Efe Merey" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Ömer Efe Merey</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Content Creator</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Marine Biology and Scientific Writing.</p>
         </a>
 
-        <a class="member" href="people/yesim-aydin.html" aria-label="Yeşim Aydın">
-          <img class="member__img" src="assets/img/team/yesim_aydin.jpg" alt="Yeşim Aydın" loading="lazy" decoding="async">
-          <h3 class="member__name">Yeşim Aydın</h3>
-          <div class="member__role">Webmaster</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">Maintain and update the IPS website.</p>
+        <!-- Erkan Kalam -->
+        <a class="member group" href="people/erkan-kalam.html" aria-label="Erkan Kalam">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+            <img class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/erkan_kalam.jpeg" alt="Erkan Kalam" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Erkan Kalam</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Content Creator</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Medical Devices and Biomedical Innovations.</p>
         </a>
 
-        <a class="member" href="people/erkan-kalam.html" aria-label="Erkan Kalam">
-          <img class="member__img" src="assets/img/team/erkan_kalam.jpeg" alt="Erkan Kalam" loading="lazy" decoding="async">
-          <h3 class="member__name">Erkan Kalam</h3>
-          <div class="member__role">Webmaster</div>
-          <div class="member__dept">MBG</div>
-          <p class="member__bio">Maintain and update the IPS website.</p>
+        <!-- Sena Özbey -->
+        <a class="member group" href="people/sena-ozbey.html" aria-label="Sena Özbey">
+          <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+            <img class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+              src="assets/img/team/sena_ozbey.jpeg" alt="Sena Özbey" loading="lazy">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-white font-bold text-sm font-display">View Profile →</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="text-xl font-bold text-primary group-hover:text-primary-light transition-colors font-display">
+              Sena Özbey</h3>
+          </div>
+          <div class="text-sm font-bold text-gray-800 mb-1 font-display">Active Member</div>
+          <p class="text-xs text-text-light/70 line-clamp-2">Enthusiastic 1st year student.</p>
         </a>
-      </section>
+
+      </div>
     </div>
   </main>
 
-  <!-- Ortak FOOTER -->
+  <!-- Footer -->
   <script src="js/footer-loader.js" defer></script>
 
-  <!-- Ortak JS -->
-  <script src="assets/js/app.js"></script>
-  </body>
+</body>
+
 </html>

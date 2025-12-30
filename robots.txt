@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /partials/
+Disallow: /google*.html
+Disallow: /404.html
 
 Sitemap: https://furkanakosman.github.io/IPS/sitemap.xml

@@ -109,7 +109,7 @@
 
     // 4) Yıl (footer-year varsa)
     const y = document.getElementById("footer-year");
-    if (y) y.textContent = new Date().getFullYear();
+    if (y) y.textContent = "2026";
   } catch (e) {
     console.error("[IPS] footer-loader error:", e);
   }

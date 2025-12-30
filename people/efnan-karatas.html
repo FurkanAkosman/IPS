@@ -1,147 +1,222 @@
 <!doctype html>
-<html lang="tr">
-<head>
-  <!-- GA4: loader ile gelecek -->
-  <!-- GA4 -->
-<script src="js/analytics.js" defer></script>
+<html lang="en" class="scroll-smooth">
 
+<head>
+  <!-- GA4 -->
+  <script src="../js/analytics.js" defer></script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Efnan Karataş — IPS</title>
-  <meta name="description" content="IPS üyesi Efnan Karataş: ilgi alanları, katkıları ve hedefleri. Moleküler biyoloji, genetik, nörobilim ve biyoteknoloji odakları.">
-
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description"
+    content="Profile of Efnan Karataş, Social Media Team Member at IPS. Focusing on Psychology and Digital Communication.">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
-      darkMode:"class",
-      theme:{ extend:{
-        colors:{ primary:"#4d0011","background-light":"#f8f8f3","text-light":"#1D0C0F" },
-        fontFamily:{ display:["Inter","sans-serif"], body:["Lora","serif"] },
-        borderRadius:{ xl:"12px" }
-      }}
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4d0011",
+            "primary-light": "#6b0018",
+            "background-light": "#f8f8f3",
+            "background-dark": "#1a0508",
+            "text-light": "#1D0C0F",
+            "text-muted": "#9a4c59",
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+            body: ["Manrope", "sans-serif"],
+            serif: ["Lora", "serif"]
+          },
+        }
+      }
     };
   </script>
 
-  <!-- Page CSS -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;600;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="../assets/css/reset.css">
-  <link rel="stylesheet" href="person.css">
 
-  <!-- Canonical + OG + Twitter -->
-  <link rel="canonical" href="https://furkanakosman.github.io/IPS/people/efnan-karatas.html">
-  <meta property="og:type" content="profile">
-  <meta property="og:title" content="Efnan Karataş — IPS">
-  <meta property="og:description" content="IPS üyesi Efnan Karataş’ın ilgi alanları, katkıları ve hedefleri.">
-  <meta property="og:url" content="https://furkanakosman.github.io/IPS/people/efnan-karatas.html">
-  <meta property="og:site_name" content="Interdisciplinary Project Society">
-  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/team/efnan_karatas.jpeg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Efnan Karataş — IPS">
-  <meta name="twitter:description" content="IPS üyesi Efnan Karataş’ın profili.">
-  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/team/efnan_karatas.jpeg">
   <meta name="theme-color" content="#4d0011">
-
-  <!-- Prefetch -->
-  <link rel="prefetch" href="../team.html" as="document">
-  <link rel="prefetch" href="../events.html" as="document">
-  <link rel="prefetch" href="../blog.html" as="document">
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Interdisciplinary Project Society","url":"https://furkanakosman.github.io/IPS/","logo":"https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Efnan Karataş","image":"https://furkanakosman.github.io/IPS/assets/img/team/efnan_karatas.jpeg","jobTitle":"Treasurer","affiliation":{"@type":"Organization","name":"Interdisciplinary Project Society","url":"https://furkanakosman.github.io/IPS/"},"knowsAbout":["Moleküler Biyoloji ve Genetik","Nörobilim","Biyoteknoloji","Gen ifadesi düzenlenmesi","Bilgi-işlemsel araçlar"],"url":"https://furkanakosman.github.io/IPS/people/efnan-karatas.html"}
-  </script>
-
-  <style>img[loading="lazy"]{contain-intrinsic-size:auto 200px}</style>
-</head>
-<body>
-
-<!-- Header: loader -->
-<script src="../js/header-loader.js" defer></script>
-
-<main id="main" class="person">
-  <a class="back" href="../team.html" aria-label="Takım sayfasına geri dön">← Back to Team</a>
-
-  <div class="person__top">
-    <div class="person__photo">
-      <img src="../assets/img/team/efnan_karatas.jpeg" alt="Efnan Karataş" width="640" height="640" loading="lazy" decoding="async">
-    </div>
-
-    <div class="person__info">
-      <h1 class="person__name">Efnan Karataş</h1>
-      <p class="person__meta">Molecular Biology and Genetics • Bachelor • Istanbul Sabahattin Zaim University</p>
-      <ul class="person__social">
-        <li><a href="#" aria-label="LinkedIn" rel="noopener">
-          <img src="../assets/icon/social-media/linkedin.png" alt="LinkedIn" width="20" height="20" loading="lazy" decoding="async">
-        </a></li>
-        <li><a href="#" aria-label="Instagram" rel="noopener">
-          <img src="../assets/icon/social-media/instagram.png" alt="Instagram" width="20" height="20" loading="lazy" decoding="async">
-        </a></li>
-        <li><a href="#" aria-label="YouTube" rel="noopener">
-          <img src="../assets/icon/social-media/youtube.png" alt="YouTube" width="20" height="20" loading="lazy" decoding="async">
-        </a></li>
-      </ul>
-    </div>
-  </div>
-
-  <section class="person__section">
-    <h2>Areas of Interest</h2>
-    <p>Efnan’s interests focus on molecular genetics, neuroscience, and biotechnology. She is particularly engaged in understanding gene expression regulation and neurobiological processes that influence cognitive and behavioral functions. Her interdisciplinary approach integrates molecular biology techniques with computational tools to explore brain-related mechanisms.</p>
-  </section>
-
-  <section class="person__section">
-    <h2>IPS Contributions</h2>
-    <p>As an active member of the Interdisciplinary Project Society (IPS), Efnan contributes to the organization and coordination of academic workshops, collaborative research initiatives, and science communication projects. She supports project documentation, event planning, and interdepartmental collaboration within the IPS community.</p>
-  </section>
-
-  <section class="person__section">
-    <h2>Future Aspirations</h2>
-    <p>Efnan aims to pursue advanced studies in molecular neuroscience, focusing on neurodegenerative diseases and neural plasticity. Her long-term goal is to contribute to translational research that bridges molecular discoveries with therapeutic applications and to promote international collaboration in interdisciplinary scientific projects.</p>
-  </section>
-</main>
-
-<!-- Footer: loader -->
-<script src="../js/footer-loader.js" defer></script>
-
-<!-- Alt dizin düzeltmesi: header/footer içindeki göreli href/src yollarını prefix'le -->
-<script>
-  (function fixHeaderFooterRelativeUrls(){
-    if(!/\/people\//.test(location.pathname)) return; // sadece alt dizin sayfalarında uygula
-    const prefix = '../';
-    const ABS = /^(?:[a-z]+:|\/\/|#|mailto:|tel:|\/)/i;
-
-    function rewrite(container){
-      if(!container) return;
-      container.querySelectorAll('a[href]').forEach(a=>{
-        const h=a.getAttribute('href'); if(!h||ABS.test(h)) return;
-        a.setAttribute('href', prefix + h.replace(/^\.\//,''));
-      });
-      container.querySelectorAll('img[src]').forEach(img=>{
-        const s=img.getAttribute('src'); if(!s||ABS.test(s)) return;
-        img.setAttribute('src', prefix + s.replace(/^\.\//,''));
-      });
+  <style>
+    body {
+      background-color: #f8f8f3;
+      color: #1D0C0F;
     }
 
-    // header/footer loader'ları tamamlandıktan sonra çalıştır
-    window.addEventListener('DOMContentLoaded', ()=> {
-      rewrite(document.querySelector('header'));
-      rewrite(document.querySelector('footer'));
-    });
-  })();
-</script>
+    .timeline-line::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 7px;
+      width: 2px;
+      background-color: #e5e5e5;
+    }
+  </style>
+</head>
 
-<!-- Ortak davranışlar -->
-<script src="../assets/js/app.js" defer></script>
+<body class="selection:bg-primary/20 selection:text-primary font-body">
+
+  <!-- Header -->
+  <script src="../js/header-loader.js" defer></script>
+
+  <main class="min-h-screen pt-24 pb-20">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <!-- Navigation -->
+      <a href="../team.html"
+        class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all mb-12 group">
+        <span
+          class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+        Back to Team
+      </a>
+
+      <!-- Profile Hero -->
+      <div class="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-12 items-start mb-20 animate-[fade-in_0.5s_ease-out]">
+        <!-- Image Column -->
+        <div class="relative group">
+          <div
+            class="absolute inset-0 bg-primary rounded-2xl rotate-3 opacity-20 group-hover:rotate-6 transition-transform duration-500">
+          </div>
+          <img src="../assets/img/team/efnan_karatas.jpeg" alt="Efnan Karataş"
+            class="relative z-10 w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
+        </div>
+
+        <!-- Info Column -->
+        <div class="pt-4">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4 border border-primary/20">
+            Social Media Team
+          </div>
+
+          <h1 class="text-4xl md:text-6xl font-black text-primary mb-4 tracking-tight leading-tight font-display">Efnan
+            Karataş</h1>
+
+          <p class="text-xl md:text-2xl text-text-light/80 font-serif italic mb-6 leading-relaxed">
+            Psychology (2nd Year)<br>
+            <span class="text-base text-text-muted not-italic font-sans font-medium">Istanbul Sabahattin Zaim
+              University</span>
+          </p>
+
+          <p class="text-lg text-text-light/70 leading-relaxed mb-8 max-w-2xl">
+            Combining psychological insights with digital communication to engage our community.
+          </p>
+
+          <!-- Social Links -->
+          <div class="flex gap-4">
+            <a href="#"
+              class="size-12 rounded-full bg-white border border-primary/10 flex items-center justify-center hover:bg-primary/5 hover:border-primary transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1"
+              aria-label="LinkedIn">
+              <img src="../assets/icon/social-media/linkedin.png" alt="LinkedIn" class="w-6 h-6 object-contain">
+            </a>
+            <a href="#"
+              class="size-12 rounded-full bg-white border border-primary/10 flex items-center justify-center hover:bg-primary/5 hover:border-primary transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1"
+              aria-label="Instagram">
+              <img src="../assets/icon/social-media/instagram.png" alt="Instagram" class="w-6 h-6 object-contain">
+            </a>
+            <a href="mailto:contact@izu.edu.tr"
+              class="size-12 rounded-full bg-white border border-primary/10 flex items-center justify-center text-primary/80 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1"
+              aria-label="Email">
+              <span class="material-symbols-outlined">mail</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Me -->
+      <div class="mb-20">
+        <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2 font-display">
+          <span class="material-symbols-outlined">person</span> About Me
+        </h2>
+        <div
+          class="bg-white rounded-2xl p-8 shadow-sm border border-primary/5 leading-relaxed text-lg text-text-light/80 font-serif">
+          <p class="mb-4">
+            I am a 2nd-year Psychology student interested in social psychology and human interaction. I aim to apply my
+            academic knowledge to better understand how we connect in the digital age.
+          </p>
+          <p>
+            In IPS, I manage our social media presence, creating content that resonates with our audience and spreads
+            our mission effectively.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <!-- Experience -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2 font-display">
+            <span class="material-symbols-outlined">history_edu</span> Experience
+          </h2>
+          <div class="relative timeline-line pl-8 space-y-10">
+            <!-- Item -->
+            <div class="relative">
+              <div class="absolute -left-[39px] mt-1.5 size-4 rounded-full bg-primary border-4 border-[#f8f8f3]"></div>
+              <div class="text-sm font-bold text-primary/60 mb-1 font-display">2024 — Present</div>
+              <h3 class="text-lg font-bold text-text-light">Social Media Team</h3>
+              <div class="text-sm font-medium text-text-muted mb-2">Interdisciplinary Project Society (IPS)</div>
+              <p class="text-text-light/70 text-sm leading-relaxed">
+                Managing social media accounts and creating engaging content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2 font-display">
+            <span class="material-symbols-outlined">bolt</span> Skills & Interests
+          </h2>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-4 py-2 rounded-lg bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm">Psychology</span>
+            <span
+              class="px-4 py-2 rounded-lg bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm">Social
+              Media</span>
+            <span
+              class="px-4 py-2 rounded-lg bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm">Communication</span>
+            <span
+              class="px-4 py-2 rounded-lg bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm">Content
+              Creation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div>
+        <h2 class="text-2xl font-bold text-primary mb-8 text-center font-display">Current Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="group bg-white p-8 rounded-2xl shadow-sm border border-primary/5 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+            <div
+              class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-2xl">share</span>
+            </div>
+            <h3 class="text-xl font-bold text-text-light mb-3">Digital Engagement Strategy</h3>
+            <p class="text-text-light/70 leading-relaxed text-sm">
+              Developing new ways to interact with our community through social platforms.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <script src="../js/footer-loader.js" defer></script>
+  <!-- Scripts -->
+  <script src="../assets/js/app.js" defer></script>
+
 </body>
+
 </html>

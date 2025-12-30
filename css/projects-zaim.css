@@ -1,0 +1,100 @@
+/* projectzaim.css
+   - Bu dosyayı /IPS/assets/css/projectzaim.css (veya senin yapına göre /assets/css/) içine koy.
+   - projectzaim.html içinde <head> kısmına ekle:
+     <link rel="stylesheet" href="./assets/css/projectzaim.css" />
+   - Tailwind kullanmaya devam ediyorsun; bu CSS sadece “ek” (scrollbar, pattern, fade-in, clamp vb.)
+*/
+
+/* =========================
+   Base helpers
+   ========================= */
+html { scroll-behavior: smooth; }
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Material Symbols default tune */
+.material-symbols-outlined{
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* =========================
+   Animations
+   ========================= */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up{
+  animation: fadeInUp .7s ease-out both;
+}
+
+/* (Opsiyonel) hover lift daha yumuşak olsun */
+.card-lift{
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.card-lift:hover{
+  transform: translateY(-8px);
+}
+
+/* =========================
+   Text clamp
+   Tailwind line-clamp plugin yoksa da çalışsın
+   ========================= */
+.line-clamp-1, .line-clamp-2, .line-clamp-3{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-1{ -webkit-line-clamp: 1; }
+.line-clamp-2{ -webkit-line-clamp: 2; }
+.line-clamp-3{ -webkit-line-clamp: 3; }
+
+/* =========================
+   Pattern utilities (projede kullanıyorsun)
+   ========================= */
+
+/* Hero “bg-pattern” (çok hafif doku) */
+.bg-pattern{
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,.22) 1px, transparent 0);
+  background-size: 18px 18px;
+}
+
+/* CTA “pattern-dots” (dotted overlay) */
+.pattern-dots{
+  background-image:
+    radial-gradient(rgba(0,0,0,.12) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+.dark .pattern-dots{
+  background-image:
+    radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px);
+}
+
+/* =========================
+   Sticky / Backdrop hover-click safety
+   Bazı tarayıcılarda sticky+backdrop layer hover alanını bozabiliyor
+   ========================= */
+header{
+  isolation: isolate;
+}
+header, header *{
+  pointer-events: auto;
+}
+
+/* =========================
+   Focus improvements
+   ========================= */
+:focus-visible{
+  outline: 2px solid rgba(212,17,50,.55);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* =========================
+   Small responsive polish
+   ========================= */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

@@ -1,69 +1,61 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
+
 <head>
-  <!-- GA4: header-loader ekler, ELLE EKLEME -->
-  <!-- <script src="js/analytics.js"></script> -->
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-
-  <title>Interdisciplinary Project Society - FAQ</title>
-  <meta name="description" content="IPS FAQ: frequently asked questions and answers about membership, projects, events, and funding.">
+  <title>IPS — Frequently Asked Questions</title>
+  <meta name="description"
+    content="Find answers to common questions about membership, projects, funding, and events at Interdisciplinary Project Society.">
   <link rel="canonical" href="https://furkanakosman.github.io/IPS/sss.html" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#4d0011" />
 
   <!-- Favicon -->
   <link rel="icon" href="assets/img/kulup-logo.jpg" sizes="32x32" />
   <link rel="apple-touch-icon" href="assets/img/kulup-logo.jpg" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="IPS — Frequently Asked Questions" />
-  <meta property="og:description" content="FAQ about membership, projects, events, and funding." />
-  <meta property="og:url" content="https://furkanakosman.github.io/IPS/sss.html" />
-  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
-  <meta property="og:site_name" content="Interdisciplinary Project Society" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="IPS — Frequently Asked Questions" />
-  <meta name="twitter:description" content="FAQ about membership, projects, events, and funding." />
-  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-
   <script>
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
-            "primary": "#4d0011",
+            primary: "#4d0011",
+            "primary-hover": "#6e0019",
+            secondary: "#1D0C0F",
             "background-light": "#f8f8f3",
-            "background-dark": "#1a1a18",
-            "text-light": "#1b0d10",
-            "text-dark": "#e8e8e3",
-            "accent-light": "#a19b9c",
-            "accent-dark": "#7a7576"
+            "background-dark": "#101622",
+            surface: "#ffffff",
+            muted: "#6b5d60",
+            "border-color": "#e7cfd3"
           },
           fontFamily: {
-            display: ["Newsreader", "serif"],
-            body: ["Lato", "sans-serif"]
+            display: ["Manrope", "sans-serif"],
+            body: ["Noto Serif", "serif"],
           },
-          borderRadius: { "DEFAULT":"0.25rem", "lg":"0.5rem", "xl":"0.75rem", "full":"9999px" }
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "0.75rem",
+            xl: "1rem",
+            "2xl": "1.5rem"
+          }
         }
       }
     }
   </script>
-  <style>body { font-family: 'Lato', sans-serif; }</style>
 
-  <!-- FAQPage JSON-LD -->
+  <!-- FAQPage Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -73,207 +65,389 @@
       {"@type":"Question","name":"Do you provide financial support for projects?","acceptedAnswer":{"@type":"Answer","text":"Yes. We provide seed capital and resource support to selected projects. The amount and conditions of support vary depending on the nature of the project."}},
       {"@type":"Question","name":"What is IPS's mission?","acceptedAnswer":{"@type":"Answer","text":"To bring together students, academics, and professionals from various disciplines to promote collaborative projects and spread interdisciplinary thinking."}},
       {"@type":"Question","name":"Do I need to be from a specific department to participate in your projects?","acceptedAnswer":{"@type":"Answer","text":"No. IPS is open to participants from all disciplines. We believe that different perspectives enhance creativity and innovation."}},
-      {"@type":"Question","name":"How inclusive is your community? Can anyone join?","acceptedAnswer":{"@type":"Answer","text":"Our principles are built on diversity and inclusion. We provide a respectful environment where everyone can feel a sense of belonging and share their ideas."}},
-      {"@type":"Question","name":"How can I get information about your events?","acceptedAnswer":{"@type":"Answer","text":"Events are announced on the 'Events' page of our website and on our social media accounts. You can stay up to date by subscribing to our email newsletter."}}
+      {"@type":"Question","name":"How can I follow your events?","acceptedAnswer":{"@type":"Answer","text":"Events are announced on the 'Events' page of our website and on our social media accounts."}}
     ]
   }
   </script>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
-  <!-- Header: loader -->
+<body class="bg-background-light text-secondary font-display antialiased min-h-screen flex flex-col">
+
   <script src="js/header-loader.js" defer></script>
 
-  <!-- ===== Page content ===== -->
-  <div class="layout-container flex h-full grow flex-col pt-16">
-    <div class="flex flex-1 justify-center px-4 py-5 sm:px-8 md:px-20 lg:px-40">
-      <div class="layout-content-container flex w-full max-w-[960px] flex-1 flex-col">
+  <main class="flex-grow pt-20">
 
-        <main id="main" class="py-12 md:py-20">
-          <!-- Hero -->
-          <div class="flex flex-col items-center gap-3 px-4 text-center">
-            <h1 class="font-display text-4xl font-black leading-tight tracking-[-0.033em] text-primary sm:text-5xl">Frequently Asked Questions</h1>
-            <p class="max-w-xl text-base font-normal leading-normal text-accent-light dark:text-accent-dark">Find answers to frequently asked questions about membership, projects, and events.</p>
+    <!-- Hero Section -->
+    <section class="relative bg-primary overflow-hidden py-24 lg:py-32">
+      <!-- Background Pattern & Gradient -->
+      <div class="absolute inset-0 opacity-20"
+        style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); background-blend-mode: overlay;">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-br from-primary via-[#600018] to-black/80 opacity-90"></div>
+
+      <!-- Animated Shapes (CSS Only) -->
+      <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-white/5 blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-60 h-60 rounded-full bg-white/5 blur-2xl"></div>
+
+      <div class="relative max-w-4xl mx-auto px-4 text-center z-10">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight drop-shadow-sm">
+          How can we help?
+        </h1>
+        <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed font-body">
+          Explore our knowledge base to find answers about membership, funding, and our interdisciplinary mission.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="mt-10 max-w-xl mx-auto relative group">
+          <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+            <span
+              class="material-symbols-outlined text-white/60 group-focus-within:text-white transition-colors">search</span>
           </div>
+          <input type="text" id="faqSearch"
+            class="block w-full pl-14 pr-6 py-5 rounded-2xl border border-white/10 shadow-xl ring-1 ring-inset ring-white/10 placeholder:text-white/50 focus:ring-2 focus:ring-inset focus:ring-white/80 bg-white/10 text-white backdrop-blur-md outline-none transition-all hover:bg-white/20"
+            placeholder="Type keywords to search..." aria-label="Search FAQ">
+        </div>
+      </div>
+    </section>
 
-          <div class="mt-10 px-4">
-            <div class="relative w-full">
-              <input id="faqSearch" class="w-full rounded-lg border border-primary/20 bg-background-light py-3 pl-10 pr-4 font-body text-text-light focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:bg-background-dark dark:text-text-dark" placeholder="Search for a question..." type="search" aria-label="Search FAQ"/>
-              <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <span class="material-symbols-outlined text-accent-light dark:text-accent-dark">search</span>
-              </div>
-            </div>
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-16 -mt-10 relative z-20">
+
+      <!-- Categories -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <button
+          class="faq-tab px-6 py-3 rounded-xl text-sm font-bold transition-all transform hover:-translate-y-0.5 bg-primary text-white shadow-lg shadow-primary/30 ring-1 ring-white/20"
+          data-cat="all">
+          All Questions
+        </button>
+        <button
+          class="faq-tab px-6 py-3 rounded-xl text-sm font-bold transition-all transform hover:-translate-y-0.5 bg-white border border-border-color text-muted hover:bg-gray-50 shadow-sm"
+          data-cat="membership">
+          Membership
+        </button>
+        <button
+          class="faq-tab px-6 py-3 rounded-xl text-sm font-bold transition-all transform hover:-translate-y-0.5 bg-white border border-border-color text-muted hover:bg-gray-50 shadow-sm"
+          data-cat="projects">
+          Projects & Funding
+        </button>
+        <button
+          class="faq-tab px-6 py-3 rounded-xl text-sm font-bold transition-all transform hover:-translate-y-0.5 bg-white border border-border-color text-muted hover:bg-gray-50 shadow-sm"
+          data-cat="events">
+          Events & Community
+        </button>
+      </div>
+
+      <!-- FAQ List -->
+      <div id="faqList" class="space-y-4">
+
+        <!-- Item 1: Membership -->
+        <details
+          class="faq-item group bg-white rounded-2xl border border-border-color shadow-sm overflow-hidden transition-all hover:shadow-lg hover:border-primary/20"
+          data-cat="membership">
+          <summary class="flex cursor-pointer items-center justify-between p-6 list-none bg-white select-none">
+            <h3
+              class="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary/70">badge</span>
+              How can I become a member of IPS?
+            </h3>
+            <span
+              class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform duration-300 bg-gray-50 rounded-full p-1">expand_more</span>
+          </summary>
+          <div
+            class="px-6 pb-6 pt-0 text-muted leading-relaxed font-body border-t border-transparent group-open:border-gray-100 group-open:pt-4 transition-all">
+            <p class="mb-4">Membership applications open at the beginning of each academic year through our official
+              website. We welcome students who are eager to collaborate and innovate.</p>
+            <p class="mb-4">The process typically involves filling out an online form where you can highlight your
+              skills and interests. We do not require a specific GPA; passion is our priority.</p>
+            <a href="member-register.html"
+              class="inline-flex items-center text-primary font-bold text-sm hover:underline gap-1 bg-primary/5 px-3 py-1.5 rounded-lg">
+              Go to Application Form <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
           </div>
+        </details>
 
-          <!-- FAQ list -->
-          <div class="mt-8 flex flex-col gap-10 px-4">
-            <div id="faqList" class="mt-8 flex flex-col">
-              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="membership general">
-                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">How can I become a member of IPS?</p>
-                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-                    <span class="material-symbols-outlined">expand_more</span>
-                  </div>
-                </summary>
-                <div class="flex flex-col gap-3">
-                  <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-                    Membership applications open at the beginning of each academic year through our website. You can join our community by filling out the application form and following the specified steps.
-                  </p>
-                  <a class="text-sm font-semibold text-primary underline hover:text-opacity-80" href="join.html">Membership Page →</a>
-                </div>
-              </details>
-
-              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="funding projects">
-                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">Do you provide financial support for projects?</p>
-                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-                    <span class="material-symbols-outlined">expand_more</span>
-                  </div>
-                </summary>
-                <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-                  Yes, we provide seed capital and resource support to selected projects. The amount and conditions of support vary depending on the nature and needs of the project.
-                </p>
-              </details>
-
-              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="general">
-                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">What is IPS's mission?</p>
-                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-                    <span class="material-symbols-outlined">expand_more</span>
-                  </div>
-                </summary>
-                <div class="flex flex-col gap-3">
-                  <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-                    IPS aims to bring together students, academics, and professionals from various disciplines to promote collaborative projects and spread interdisciplinary thinking.
-                  </p>
-                  <a class="text-sm font-semibold text-primary underline hover:text-opacity-80" href="team.html">Learn More About Us →</a>
-                </div>
-              </details>
-
-              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="projects general">
-                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">Do I need to be from a specific department to participate in your projects?</p>
-                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-                    <span class="material-symbols-outlined">expand_more</span>
-                  </div>
-                </summary>
-                <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-                  No, it is absolutely not required. IPS is open to students and academics from all disciplines. We believe that different perspectives promote creativity and innovation.
-                </p>
-              </details>
-
-              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="general">
-                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">How inclusive is your community? Can anyone join?</p>
-                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-                    <span class="material-symbols-outlined">expand_more</span>
-                  </div>
-                </summary>
-                <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-                  IPS embraces diversity and inclusion as core values. We strive to create an environment where everyone can feel a sense of belonging, freely share their ideas, and be respected.
-                </p>
-              </details>
-
-              <details class="faq-item group flex flex-col border-t border-t-primary/20 py-2" data-cat="events general">
-                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4 hover:text-primary">
-                  <p class="font-display text-lg font-medium leading-normal text-text-light dark:text-text-dark group-hover:text-primary">How can I get information about your events?</p>
-                  <div class="text-primary transition-transform duration-300 group-open:rotate-180">
-                    <span class="material-symbols-outlined">expand_more</span>
-                  </div>
-                </summary>
-                <div class="flex flex-col gap-3">
-                  <p class="pb-2 pt-1 text-sm font-normal leading-relaxed text-accent-light dark:text-accent-dark">
-                    All our events are regularly announced on the 'Events' page of our website and on our social media accounts. You can also stay informed about the latest updates by subscribing to our email newsletter.
-                  </p>
-                  <a class="text-sm font-semibold text-primary underline hover:text-opacity-80" href="events.html">View Events Calendar →</a>
-                </div>
-              </details>
-
-              <div class="border-b border-b-primary/20"></div>
-            </div>
+        <!-- Item 2: Projects -->
+        <details
+          class="faq-item group bg-white rounded-2xl border border-border-color shadow-sm overflow-hidden transition-all hover:shadow-lg hover:border-primary/20"
+          data-cat="projects funding">
+          <summary class="flex cursor-pointer items-center justify-between p-6 list-none bg-white select-none">
+            <h3
+              class="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary/70">paid</span>
+              Do you provide financial support for projects?
+            </h3>
+            <span
+              class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform duration-300 bg-gray-50 rounded-full p-1">expand_more</span>
+          </summary>
+          <div
+            class="px-6 pb-6 pt-0 text-muted leading-relaxed font-body border-t border-transparent group-open:border-gray-100 group-open:pt-4 transition-all">
+            <p class="mb-4">Yes. We provide <strong>seed capital</strong>, technical mentorship, and resource support
+              (such as 3D printers and lab access) to selected projects.</p>
+            <p>Proposals are reviewed by our academic board every semester. Funding priority is given to
+              interdisciplinary teams with a clear prototype plan.</p>
           </div>
+        </details>
 
-          <div class="mt-20 rounded-lg border border-primary/20 bg-primary/5 p-8 text-center dark:bg-primary/10">
-            <h2 class="font-display text-2xl font-bold text-primary sm:text-3xl">Still Have Questions?</h2>
-            <p class="mx-auto mt-2 max-w-md text-base font-normal leading-normal text-accent-light dark:text-accent-dark">
-              If you couldn't find the answer you were looking for, we'd be happy to help you.
-            </p>
-            <div class="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a href="join.html" class="flex w-full sm:w-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-light text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90">
-                <span class="truncate">Contact Us</span>
-              </a>
-              <p class="text-sm text-accent-light dark:text-accent-dark">
-                or send us an email: <a class="font-semibold text-primary hover:underline" href="mailto:contact@ips.org">contact@ips.org</a>
-              </p>
-            </div>
+        <!-- Item 3: Mission -->
+        <details
+          class="faq-item group bg-white rounded-2xl border border-border-color shadow-sm overflow-hidden transition-all hover:shadow-lg hover:border-primary/20"
+          data-cat="membership general">
+          <summary class="flex cursor-pointer items-center justify-between p-6 list-none bg-white select-none">
+            <h3
+              class="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary/70">flag</span>
+              What is the core mission of IPS?
+            </h3>
+            <span
+              class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform duration-300 bg-gray-50 rounded-full p-1">expand_more</span>
+          </summary>
+          <div
+            class="px-6 pb-6 pt-0 text-muted leading-relaxed font-body border-t border-transparent group-open:border-gray-100 group-open:pt-4 transition-all">
+            <p>Our mission is to bring together students, academics, and professionals from various disciplines to
+              promote collaborative projects. We aim to bridge the gap between theoretical knowledge and practical
+              application.</p>
           </div>
-        </main>
+        </details>
 
-        <!-- Footer: loader -->
-        <script src="js/footer-loader.js" defer></script>
+        <!-- Item 4: Diversity -->
+        <details
+          class="faq-item group bg-white rounded-2xl border border-border-color shadow-sm overflow-hidden transition-all hover:shadow-lg hover:border-primary/20"
+          data-cat="membership">
+          <summary class="flex cursor-pointer items-center justify-between p-6 list-none bg-white select-none">
+            <h3
+              class="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary/70">diversity_3</span>
+              Do I need a specific major to join?
+            </h3>
+            <span
+              class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform duration-300 bg-gray-50 rounded-full p-1">expand_more</span>
+          </summary>
+          <div
+            class="px-6 pb-6 pt-0 text-muted leading-relaxed font-body border-t border-transparent group-open:border-gray-100 group-open:pt-4 transition-all">
+            <p>Absolutely not. IPS is open to participants from <strong>all disciplines</strong>—Engineering, Arts,
+              Psychology, Law, Business, and more. We believe that the best ideas emerge from diverse perspectives.</p>
+          </div>
+        </details>
+
+        <!-- Item 5: Events -->
+        <details
+          class="faq-item group bg-white rounded-2xl border border-border-color shadow-sm overflow-hidden transition-all hover:shadow-lg hover:border-primary/20"
+          data-cat="events">
+          <summary class="flex cursor-pointer items-center justify-between p-6 list-none bg-white select-none">
+            <h3
+              class="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary/70">event</span>
+              How can I follow your events?
+            </h3>
+            <span
+              class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform duration-300 bg-gray-50 rounded-full p-1">expand_more</span>
+          </summary>
+          <div
+            class="px-6 pb-6 pt-0 text-muted leading-relaxed font-body border-t border-transparent group-open:border-gray-100 group-open:pt-4 transition-all">
+            <p class="mb-4">We organize weekly workshops, guest speaker sessions, and hackathons. All events are
+              announced on our 'Events' calendar page and our social media channels.</p>
+            <a href="events.html"
+              class="inline-flex items-center text-primary font-bold text-sm hover:underline gap-1 bg-primary/5 px-3 py-1.5 rounded-lg">
+              View Events Calendar <span class="material-symbols-outlined text-[16px]">calendar_month</span>
+            </a>
+          </div>
+        </details>
+
+        <!-- NEW ITEM: Team Formation -->
+        <details
+          class="faq-item group bg-white rounded-2xl border border-border-color shadow-sm overflow-hidden transition-all hover:shadow-lg hover:border-primary/20"
+          data-cat="projects">
+          <summary class="flex cursor-pointer items-center justify-between p-6 list-none bg-white select-none">
+            <h3
+              class="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary/70">groups</span>
+              How do I find teammates for my project idea?
+            </h3>
+            <span
+              class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform duration-300 bg-gray-50 rounded-full p-1">expand_more</span>
+          </summary>
+          <div
+            class="px-6 pb-6 pt-0 text-muted leading-relaxed font-body border-t border-transparent group-open:border-gray-100 group-open:pt-4 transition-all">
+            <p>IPS hosts "Idea Pitch Nights" at the start of every month. This is a dedicated time for members to
+              present their concepts and recruit teammates. Additionally, our Discord server has a 'team-building'
+              channel specifically for this purpose.</p>
+          </div>
+        </details>
+
+        <!-- NEW ITEM: Mentorship -->
+        <details
+          class="faq-item group bg-white rounded-2xl border border-border-color shadow-sm overflow-hidden transition-all hover:shadow-lg hover:border-primary/20"
+          data-cat="projects">
+          <summary class="flex cursor-pointer items-center justify-between p-6 list-none bg-white select-none">
+            <h3
+              class="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary/70">school</span>
+              Is mentorship available for new members?
+            </h3>
+            <span
+              class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform duration-300 bg-gray-50 rounded-full p-1">expand_more</span>
+          </summary>
+          <div
+            class="px-6 pb-6 pt-0 text-muted leading-relaxed font-body border-t border-transparent group-open:border-gray-100 group-open:pt-4 transition-all">
+            <p>Yes. Each project team is assigned an academic advisor from relevant faculty. We also have a
+              peer-mentorship program where senior members guide new recruits through their first semester.</p>
+          </div>
+        </details>
+
+        <!-- NEW ITEM: Time Commitment -->
+        <details
+          class="faq-item group bg-white rounded-2xl border border-border-color shadow-sm overflow-hidden transition-all hover:shadow-lg hover:border-primary/20"
+          data-cat="membership">
+          <summary class="flex cursor-pointer items-center justify-between p-6 list-none bg-white select-none">
+            <h3
+              class="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary/70">schedule</span>
+              What is the expected time commitment?
+            </h3>
+            <span
+              class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform duration-300 bg-gray-50 rounded-full p-1">expand_more</span>
+          </summary>
+          <div
+            class="px-6 pb-6 pt-0 text-muted leading-relaxed font-body border-t border-transparent group-open:border-gray-100 group-open:pt-4 transition-all">
+            <p>While it varies by role, active members typically dedicate 3-5 hours per week. This includes weekly
+              general meetings and project-specific work sessions. We value consistency but understand academic
+              workloads.</p>
+          </div>
+        </details>
+
+        <!-- NEW ITEM: External Collaboration -->
+        <details
+          class="faq-item group bg-white rounded-2xl border border-border-color shadow-sm overflow-hidden transition-all hover:shadow-lg hover:border-primary/20"
+          data-cat="events projects">
+          <summary class="flex cursor-pointer items-center justify-between p-6 list-none bg-white select-none">
+            <h3
+              class="text-lg font-bold text-secondary group-hover:text-primary transition-colors flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary/70">public</span>
+              Can non-university students attend events?
+            </h3>
+            <span
+              class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform duration-300 bg-gray-50 rounded-full p-1">expand_more</span>
+          </summary>
+          <div
+            class="px-6 pb-6 pt-0 text-muted leading-relaxed font-body border-t border-transparent group-open:border-gray-100 group-open:pt-4 transition-all">
+            <p>Many of our large-scale seminars and hackathons are open to the public, though registration is required.
+              Internal workshops and project meetings are generally reserved for registered members.</p>
+          </div>
+        </details>
 
       </div>
+
+      <!-- Empty State (Hidden) -->
+      <div id="noResults" class="hidden text-center py-20">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 mb-6">
+          <span class="material-symbols-outlined text-4xl text-gray-400">search_off</span>
+        </div>
+        <h3 class="text-xl font-bold text-secondary mb-2">No answers found</h3>
+        <p class="text-muted mb-8">We couldn't find any questions matching your search.</p>
+        <button id="clearSearch"
+          class="px-6 py-2.5 bg-secondary text-white rounded-xl font-bold hover:bg-black transition-colors shadow-lg">
+          Clear Filters
+        </button>
+      </div>
+
     </div>
-  </div>
-</div>
 
-<!-- Lightweight search + category filter -->
-<script>
-  (function(){
-    const q = document.getElementById('faqSearch');
-    const items = Array.from(document.querySelectorAll('.faq-item'));
-    const tabs  = Array.from(document.querySelectorAll('.faq-tab')); // varsa kategori sekmeleri
+    <!-- Contact CTA -->
+    <section class="bg-white border-t border-primary/5 py-16">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-secondary mb-4">Still have questions?</h2>
+        <p class="text-muted text-lg mb-8 max-w-xl mx-auto">
+          We're here to help. If you couldn't find the answer you were looking for, feel free to reach out to our team
+          directly.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="contact.html"
+            class="inline-flex items-center justify-center h-12 px-8 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all transform hover:-translate-y-1">
+            Contact Support
+          </a>
+          <a href="mailto:contact@ips.org"
+            class="inline-flex items-center justify-center h-12 px-8 rounded-xl bg-white border border-border-color text-secondary font-bold hover:bg-gray-50 transition-colors">
+            Email Us
+          </a>
+        </div>
+      </div>
+    </section>
 
-    function applyFilters(){
-      const term = (q?.value || '').toLowerCase().trim();
-      const activeTab = tabs.find(t => t.classList.contains('bg-primary')) || tabs[0];
-      const cat = activeTab?.dataset.cat || 'all';
-      items.forEach(it => {
-        const text = it.textContent.toLowerCase();
-        const cats = (it.dataset.cat || '').split(/\s+/);
-        const catMatch = (cat === 'all') || cats.includes(cat);
-        const textMatch = term === '' || text.includes(term);
-        it.style.display = (catMatch && textMatch) ? '' : 'none';
-      });
-    }
-    q?.addEventListener('input', applyFilters);
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabs.forEach(b => b.classList.remove('bg-primary','text-background-light','shadow-md'));
-        tabs.forEach(b => b.classList.add('bg-transparent'));
-        btn.classList.remove('bg-transparent');
-        btn.classList.add('bg-primary','text-background-light','shadow-md');
-        applyFilters();
-      });
-    });
-    applyFilters();
+  </main>
 
-    // mobile menu: loader header kimlikleri
-    const toggle = document.getElementById('navToggle');
-    const mobileMenu = document.getElementById('navMenu');
-    const body = document.body;
-    function closeMenu(){
-      mobileMenu?.classList.add('hidden');
-      body.classList.remove('overflow-hidden');
-      toggle?.setAttribute('aria-expanded','false');
-    }
-    function toggleMenu(){
-      const open = !mobileMenu?.classList.contains('hidden');
-      if(open) closeMenu();
-      else{
-        mobileMenu?.classList.remove('hidden');
-        body.classList.add('overflow-hidden');
-        toggle?.setAttribute('aria-expanded','true');
+  <script src="js/footer-loader.js" defer></script>
+
+  <!-- Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('faqSearch');
+      const items = Array.from(document.querySelectorAll('.faq-item'));
+      const tabs = Array.from(document.querySelectorAll('.faq-tab'));
+      const noResults = document.getElementById('noResults');
+      const clearBtn = document.getElementById('clearSearch');
+
+      function filterFAQ() {
+        const query = searchInput.value.toLowerCase().trim();
+        // Determine active category from the tab that has 'bg-primary'
+        const activeTab = tabs.find(t => t.classList.contains('bg-primary'));
+        const category = activeTab ? activeTab.dataset.cat : 'all';
+
+        let visibleCount = 0;
+
+        items.forEach(item => {
+          const itemCats = (item.dataset.cat || '').split(' ');
+          const text = item.textContent.toLowerCase();
+
+          const matchesCategory = category === 'all' || itemCats.includes(category);
+          const matchesSearch = text.includes(query);
+
+          if (matchesCategory && matchesSearch) {
+            item.style.display = 'block';
+            visibleCount++;
+            // Highlight search term? (Optional improvement)
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        // Toggle empty state
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
       }
-    }
-    toggle?.addEventListener('click', toggleMenu);
-    mobileMenu?.addEventListener('click', (e)=>{ if(e.target.tagName === 'A') closeMenu(); });
-    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeMenu(); });
-  })();
-</script>
 
-<!-- Davranışlar (genel) -->
-<script src="assets/js/app.js" defer></script>
+      // Event Listeners
+      searchInput.addEventListener('input', filterFAQ);
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Reset styling for all tabs
+          tabs.forEach(t => {
+            t.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/20');
+            t.classList.add('bg-white', 'text-muted', 'hover:bg-gray-50', 'shadow-sm');
+            t.classList.remove('ring-1', 'ring-white/20', 'bg-primary', 'shadow-primary/30');
+            // Re-apply basic white styling
+          });
+
+          // Style active tab
+          tab.classList.remove('bg-white', 'text-muted', 'hover:bg-gray-50', 'shadow-sm');
+          tab.classList.add('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/30', 'ring-1', 'ring-white/20');
+
+          filterFAQ();
+        });
+      });
+
+      clearBtn?.addEventListener('click', () => {
+        searchInput.value = '';
+        // Reset to All (click the first tab)
+        tabs[0].click();
+      });
+
+    });
+  </script>
+
 </body>
+
 </html>

@@ -1,229 +1,307 @@
 <!DOCTYPE html>
-<html lang="tr" class="light">
+<html class="light" lang="en">
+
 <head>
+  <!-- GA4 -->
+  <script src="js/analytics.js" defer></script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>IPS — Events</title>
-  <meta name="description" content="IPS etkinlikleri ve zaman çizelgesi: atölyeler, konuşmalar ve sosyal buluşmalar. Disiplinler arası öğrenme ve işbirliği fırsatları." />
+  <title>IPS — Events & Calendar</title>
+  <meta name="description"
+    content="Join IPS for workshops, seminars, and social gatherings. Check our calendar for upcoming events." />
   <link rel="canonical" href="https://furkanakosman.github.io/IPS/events.html" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#4d0011" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="IPS — Events" />
-  <meta property="og:description" content="IPS etkinlikleri ve zaman çizelgesi: atölyeler, konuşmalar ve sosyal buluşmalar." />
-  <meta property="og:url" content="https://furkanakosman.github.io/IPS/events.html" />
-  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
-  <meta property="og:site_name" content="Interdisciplinary Project Society" />
-  <meta property="og:locale" content="tr_TR" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="IPS — Events" />
-  <meta name="twitter:description" content="IPS etkinlikleri ve zaman çizelgesi: atölyeler, konuşmalar ve sosyal buluşmalar." />
-  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
-
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:wght@400&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/figma.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/events.css" />
-
-  <!-- Tailwind CDN + tokens -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <style type="text/tailwindcss">
-    @layer base {
-      :root { --burgundy:#4d0011; --beige:#f8f8f3; --text-main:#1D0C0F; }
-      *,*::before,*::after { box-sizing:border-box; }
-      html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
-      body { margin:0; background:var(--beige); color:var(--text-main); font-family:Inter, system-ui, sans-serif; }
-      a { color:inherit; text-decoration:none; }
-      a:focus-visible, button:focus-visible, input:focus-visible {
-        outline:2px solid var(--burgundy);
-        outline-offset:2px;
-      }
-    }
-  </style>
   <script>
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
-            primary: "var(--burgundy)",
-            "background-light": "var(--beige)",
-            "text-light": "var(--text-main)"
+            primary: "#4d0011",
+            "primary-hover": "#6d0019",
+            secondary: "#1D0C0F",
+            "background-light": "#f8f8f3",
+            "background-dark": "#101622",
+            surface: "#ffffff",
+            muted: "#6b5d60",
+            border: "#e5e5e5"
           },
-          fontFamily: { display: ["Inter","sans-serif"], body: ["Lora","serif"] },
-          borderRadius: { xl: "12px" }
+          fontFamily: {
+            display: ["Manrope", "sans-serif"],
+            body: ["Noto Serif", "serif"]
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
         }
       }
-    };
-  </script>
-
-  <!-- JSON-LD: WebPage -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"IPS — Events",
-    "url":"https://furkanakosman.github.io/IPS/events.html",
-    "description":"IPS etkinlikleri ve zaman çizelgesi: atölyeler, konuşmalar ve sosyal buluşmalar.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Interdisciplinary Project Society",
-      "url": "https://furkanakosman.github.io/IPS/"
     }
-  }
   </script>
-
-  <!-- GA4: SADECE analytics.js kullan (header-loader ayrıca ekliyorsa burayı kaldır)
-       Not: Sen “elle ekleme” demişsin; bu yüzden analytics.js satırını KALDIRDIM. -->
 </head>
 
-<body class="bg-background-light font-display text-text-light">
-  <!-- Header: loader -->
+<body class="bg-background-light text-secondary font-display antialiased min-h-screen flex flex-col">
+
+  <!-- Header -->
   <script src="js/header-loader.js" defer></script>
+  <header id="siteHeader"></header>
 
-  <main class="section" id="main">
-    <div class="container events-wrap">
-      <!-- Başlık ve “Add Event” -->
-      <div class="events-head">
-        <div class="events-title">
-          <h1 class="h1">IPS Events &amp; Timeline</h1>
-          <p class="lead">Explore our upcoming and past events. Join us to learn, collaborate, and innovate across disciplines.</p>
+  <main class="flex-grow pt-24 pb-20">
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-primary mb-6 tracking-tight">
+          Events & Timeline
+        </h1>
+        <p class="text-lg md:text-xl text-muted leading-relaxed mb-10">
+          Connect, learn, and innovate. Join us for our weekly meetings, main summits, and social gatherings.
+        </p>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+      <!-- Left Column: Calendar & Weekly Schedule -->
+      <aside class="lg:col-span-4 space-y-8">
+
+        <!-- Weekly Schedule -->
+        <div class="bg-surface rounded-2xl shadow-sm border border-black/5 p-6">
+          <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">schedule</span>
+            Weekly Schedule
+          </h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 pb-4 border-b border-border last:border-0 last:pb-0">
+              <div class="bg-red-50 text-red-700 font-bold px-3 py-1 rounded-lg text-xs uppercase tracking-wide">
+                Mon
+              </div>
+              <div>
+                <p class="font-bold text-sm">Weekly Critique & Planning</p>
+                <p class="text-xs text-muted">18:00 - Online / Lab</p>
+              </div>
+            </div>
+            <!-- Add more weekly recurring events here -->
+          </div>
         </div>
 
-        <!-- href="#" yerine button: sayfa en üste zıplamasın -->
-        <button id="add" class="btn btn--primary add-btn" type="button" aria-label="Add new event">
-          <span class="add-btn__ico" aria-hidden="true">+</span>
-          <span>Add Event</span>
-        </button>
-      </div>
-
-      <!-- Arama ve Kategori filtreleri -->
-      <div class="events-toolbar">
-        <label class="search">
-          <span class="search__ico" aria-hidden="true">🔎</span>
-          <input id="eventSearch" type="search" placeholder="Search for events" aria-label="Search events" />
-        </label>
-
-        <div class="filters" role="tablist" aria-label="Categories">
-          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true" type="button">All</button>
-          <button class="chip" data-filter="workshop" role="tab" aria-selected="false" type="button">Workshops</button>
-          <button class="chip" data-filter="talk" role="tab" aria-selected="false" type="button">Talks</button>
-          <button class="chip" data-filter="social" role="tab" aria-selected="false" type="button">Social Events</button>
+        <!-- Visual Calendar (Mini) -->
+        <div class="bg-primary text-white rounded-2xl shadow-xl p-6 overflow-hidden relative">
+          <div class="absolute top-0 right-0 p-3 opacity-10">
+            <span class="material-symbols-outlined text-9xl">calendar_month</span>
+          </div>
+          <div class="relative z-10">
+            <h3 class="font-bold text-lg mb-6">February 2026</h3>
+            <div class="grid grid-cols-7 gap-2 text-center text-xs mb-2 opacity-70 font-bold">
+              <div>Mo</div>
+              <div>Tu</div>
+              <div>We</div>
+              <div>Th</div>
+              <div>Fr</div>
+              <div>Sa</div>
+              <div>Su</div>
+            </div>
+            <div class="grid grid-cols-7 gap-2 text-center text-sm font-medium">
+              <!-- Simple static generation for Feb 2026 (starts on Sunday) -->
+              <div class="text-white/20">26</div>
+              <div class="text-white/20">27</div>
+              <div class="text-white/20">28</div>
+              <div class="text-white/20">29</div>
+              <div class="text-white/20">30</div>
+              <div class="text-white/20">31</div>
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div class="bg-white text-primary rounded-full font-bold shadow-md transform scale-110">14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+              <div>21</div>
+              <div>22</div>
+              <div>23</div>
+              <div>24</div>
+              <div>25</div>
+              <div>26</div>
+              <div>27</div>
+              <div>28</div>
+            </div>
+          </div>
         </div>
+
+      </aside>
+
+      <!-- Right Column: Events List -->
+      <div class="lg:col-span-8 space-y-12">
+
+        <!-- Upcoming Events -->
+        <section>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="h-px bg-border flex-grow"></div>
+            <h2 class="text-sm font-bold text-muted uppercase tracking-widest">Upcoming</h2>
+            <div class="h-px bg-border flex-grow"></div>
+          </div>
+
+          <div class="space-y-6">
+
+            <!-- Event 1: Kai-Sen -->
+            <article
+              class="bg-surface rounded-2xl border border-black/5 shadow-sm hover:shadow-lg transition-all p-6 flex flex-col md:flex-row gap-6 group">
+              <div class="md:w-1/3 shrink-0">
+                <div class="aspect-video md:aspect-[4/3] rounded-xl bg-gray-100 overflow-hidden relative">
+                  <!-- Placeholder or Poster Image -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center text-primary/20">
+                    <span class="material-symbols-outlined text-6xl">published_with_changes</span>
+                  </div>
+                  <div
+                    class="absolute top-2 right-2 bg-white/90 backdrop-blur px-2 py-1 rounded text-xs font-bold shadow-sm text-primary">
+                    Feb 14
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col justify-center">
+                <div class="flex items-center gap-2 mb-2">
+                  <span
+                    class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-blue-50 text-blue-700">Workshop</span>
+                  <span
+                    class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-gray-100 text-gray-600">In-Person</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">IPS Kai-Sen: Efficiency &
+                  Flow</h3>
+                <p class="text-sm text-muted mb-4 line-clamp-2">
+                  A deep dive into Kaizen philosophy, workflow optimization, and thinking about efficiency in our daily
+                  and professional lives.
+                </p>
+                <div class="flex items-center gap-4 text-xs font-bold text-muted mb-6">
+                  <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">location_on</span>
+                    GSB Uluslararası Gençlik Merkezi
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">schedule</span>
+                    14:00 - 17:00
+                  </div>
+                </div>
+                <div class="mt-auto">
+                  <a href="event-register.html"
+                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-white text-sm font-bold hover:bg-primary-hover transition-colors shadow-md">
+                    Register Now
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Event 2: MUN -->
+            <article
+              class="bg-surface rounded-2xl border border-black/5 shadow-sm hover:shadow-lg transition-all p-6 flex flex-col md:flex-row gap-6 group">
+              <div class="md:w-1/3 shrink-0">
+                <div class="aspect-video md:aspect-[4/3] rounded-xl bg-gray-100 overflow-hidden relative">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center text-blue-900/20">
+                    <span class="material-symbols-outlined text-6xl">public</span>
+                  </div>
+                  <div
+                    class="absolute top-2 right-2 bg-white/90 backdrop-blur px-2 py-1 rounded text-xs font-bold shadow-sm text-blue-700">
+                    Summer '26
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col justify-center">
+                <div class="flex items-center gap-2 mb-2">
+                  <span
+                    class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-purple-50 text-purple-700">Conference</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">IPS Model United Nations
+                </h3>
+                <p class="text-sm text-muted mb-4 line-clamp-2">
+                  Debate global issues, draft resolutions, and develop leadership skills in our upcoming summer Model UN
+                  session.
+                </p>
+                <div class="mt-auto">
+                  <button disabled
+                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-100 text-muted text-sm font-bold cursor-not-allowed">
+                    Details Coming Soon
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- Past Events -->
+        <section>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="h-px bg-border flex-grow"></div>
+            <h2 class="text-sm font-bold text-muted uppercase tracking-widest">Past Events</h2>
+            <div class="h-px bg-border flex-grow"></div>
+          </div>
+
+          <div class="space-y-6 opacity-75 hover:opacity-100 transition-opacity">
+
+            <!-- Event 3: Frame Flow -->
+            <article
+              class="bg-gray-50 rounded-2xl border border-black/5 p-6 flex flex-col md:flex-row gap-6 grayscale hover:grayscale-0 transition-all">
+              <div class="md:w-1/4 shrink-0">
+                <div class="aspect-video rounded-lg bg-white overflow-hidden relative border border-black/5">
+                  <div class="absolute inset-0 flex items-center justify-center text-gray-300">
+                    <span class="material-symbols-outlined text-4xl">timeline</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col justify-center">
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="text-lg font-bold">Frame Flow: Project Communication</h3>
+                  <span class="text-xs font-bold text-muted">Nov 20, 2025</span>
+                </div>
+                <p class="text-sm text-muted mb-2">
+                  A session dedicated to strengthening internal communication and streamlining project workflows through
+                  better framing techniques.
+                </p>
+                <span class="text-xs text-primary font-bold">Completed</span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
       </div>
-
-      <!-- Yaklaşan Etkinlikler -->
-      <section class="timeline" aria-labelledby="upcoming-title">
-        <h2 class="h2" id="upcoming-title">Upcoming Events</h2>
-        <ol class="timeline__list">
-          <li class="tl-item" data-type="workshop">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <article class="card">
-              <h3 class="card__title">Project Writing Workshop</h3>
-              <p class="card__meta">November 23, 2025 · 16:00 · Innovation Hub</p>
-              <p class="card__text">
-                IPS’s first project writing event will guide participants through the essentials of preparing interdisciplinary research proposals.
-              </p>
-              <div class="card__tag">Workshop</div>
-            </article>
-          </li>
-
-          <li class="tl-item" data-type="talk">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <article class="card">
-              <h3 class="card__title">Student Seminar Series</h3>
-              <p class="card__meta">Date: TBA · Room 101</p>
-              <p class="card__text">
-                Members present ongoing research and share insights. Open to Q&amp;A and discussion.
-              </p>
-              <div class="card__tag">Talk</div>
-            </article>
-          </li>
-        </ol>
-      </section>
-
-      <!-- Geçmiş Etkinlikler -->
-      <section class="timeline" aria-labelledby="past-title">
-        <h2 class="h2" id="past-title">Past Events</h2>
-        <ol class="timeline__list">
-          <li class="tl-item" data-type="social">
-            <span class="tl-dot tl-dot--past" aria-hidden="true"></span>
-            <article class="card card--past">
-              <h3 class="card__title">Weekly Meeting – Project Coordination</h3>
-              <p class="card__meta">October 20, 2025 · IPS Office</p>
-              <p class="card__text">Coordination on milestones and upcoming workshops.</p>
-              <div class="card__tag card__tag--past">Social</div>
-            </article>
-          </li>
-
-          <li class="tl-item" data-type="talk">
-            <span class="tl-dot tl-dot--past" aria-hidden="true"></span>
-            <article class="card card--past">
-              <h3 class="card__title">Project Showcase Day</h3>
-              <p class="card__meta">October 27, 2025 · IPS Office</p>
-              <p class="card__text">Refining the blog workflow and publication timeline.</p>
-              <div class="card__tag card__tag--past">Talk</div>
-            </article>
-          </li>
-        </ol>
-      </section>
     </div>
   </main>
 
-  <!-- Footer: loader -->
   <script src="js/footer-loader.js" defer></script>
-
-  <!-- Davranış (yol düzeltmesi: assets/js yerine js/app.js kullanın; projende gerçekten assets/js ise geri al) -->
-  <script src="js/app.js" defer></script>
-
-  <script defer>
-    // Basit arama + kategori filtresi
-    const chips = Array.from(document.querySelectorAll('.chip'));
-    const items = Array.from(document.querySelectorAll('.tl-item'));
-    const q = document.getElementById('eventSearch');
-
-    function setActiveChip(btn){
-      chips.forEach(x => {
-        x.classList.remove('is-active');
-        x.setAttribute('aria-selected','false');
-      });
-      btn.classList.add('is-active');
-      btn.setAttribute('aria-selected','true');
-    }
-
-    function filter(){
-      const active = document.querySelector('.chip.is-active');
-      const type = active ? active.dataset.filter : 'all';
-      const text = (q?.value || '').trim().toLowerCase();
-
-      items.forEach(li => {
-        const okType = type === 'all' || li.dataset.type === type;
-        const okText = !text || li.textContent.toLowerCase().includes(text);
-        li.style.display = (okType && okText) ? '' : 'none';
-      });
-    }
-
-    chips.forEach(c => c.addEventListener('click', () => { setActiveChip(c); filter(); }));
-    q?.addEventListener('input', filter);
-
-    // Add Event butonu (şimdilik placeholder)
-    document.getElementById('add')?.addEventListener('click', () => {
-      // Burayı sonra modal / form açacak şekilde bağlayacağız
-      // Şimdilik hiçbir şey yapmasın.
-    });
-
-    // İlk render
-    filter();
-  </script>
 </body>
+
 </html>

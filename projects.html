@@ -1,247 +1,394 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
-<head>
-  <!-- GA4: header-loader ekler, ELLE EKLEMEYİN -->
-  <!-- <script src="js/analytics.js"></script> -->
+<html lang="en">
 
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IPS — Projects & Achievements</title>
-  <meta name="description" content="IPS projects and achievements: student-led research, featured initiatives, and milestones across neuroscience, biotechnology, AI, and more." />
-  <link rel="canonical" href="https://furkanakosman.github.io/IPS/projects.html" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="theme-color" content="#4d0011" />
+  <title>Our Projects — IPS</title>
+  <meta name="description"
+    content="Explore multidisciplinary projects from IPS. Discover innovations in AI, Sustainability, Health, and more, both from Zaim University and our public research hub." />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Interdisciplinary Project Society" />
-  <meta property="og:title" content="IPS — Projects & Achievements" />
-  <meta property="og:description" content="Student-led interdisciplinary projects and milestones." />
-  <meta property="og:url" content="https://furkanakosman.github.io/IPS/projects.html" />
-  <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="IPS — Projects & Achievements" />
-  <meta name="twitter:description" content="Student-led interdisciplinary projects and milestones." />
-  <meta name="twitter:image" content="https://furkanakosman.github.io/IPS/assets/img/kulup-logo.jpg" />
-
-  <!-- Icons + Fonts -->
-  <link rel="icon" type="image/jpeg" href="assets/img/kulup-logo.jpg" />
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <style type="text/tailwindcss">
-    @layer base { :root { --burgundy:#4d0011; --beige:#f8f8f3; --text-main:#1D0C0F; } }
-  </style>
   <script>
     tailwind.config = {
-      darkMode:"class",
-      theme:{ extend:{
-        colors:{ primary:"var(--burgundy)", "background-light":"var(--beige)", "text-light":"var(--text-main)" },
-        fontFamily:{ display:["Inter","sans-serif"], body:["Lora","serif"] },
-        borderRadius:{ xl:"12px" }
-      }}
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4d0011",
+            "primary-light": "#6b0018",
+            "background-light": "#f8f8f3",
+            "text-light": "#1D0C0F",
+            surface: "#ffffff"
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+            body: ["Lora", "serif"]
+          }
+        }
+      }
     };
   </script>
-
-  <!-- JSON-LD: WebPage + Breadcrumbs -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"IPS — Projects & Achievements",
-    "url":"https://furkanakosman.github.io/IPS/projects.html",
-    "publisher":{"@type":"Organization","name":"Interdisciplinary Project Society"},
-    "description":"Student-led interdisciplinary projects and milestones."
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://furkanakosman.github.io/IPS/"},
-      {"@type":"ListItem","position":2,"name":"Projects","item":"https://furkanakosman.github.io/IPS/projects.html"}
-    ]
-  }
-  </script>
-
-  <!-- Header/Footer loaders (defer) -->
-  <script src="js/header-loader.js" defer></script>
-  <script src="js/footer-loader.js" defer></script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+            .text-shadow-hero { text-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+        }
+    </style>
 </head>
 
-<body class="bg-background-light font-display text-text-light">
-  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<body class="bg-background-light text-text-light font-display min-h-screen flex flex-col">
 
-    <!-- Main (içerik aynen korunur) -->
-    <main id="main" class="flex-grow">
-      <!-- Hero -->
-      <section class="w-full bg-white py-20 md:py-28">
-        <div class="container mx-auto px-6 md:px-12 text-center">
-          <h1 class="text-4xl md:text-6xl font-black text-primary">Projects &amp; Achievements</h1>
-          <p class="mt-4 max-w-3xl mx-auto font-body text-lg md:text-xl text-text-light/80">
-            Exploring the forefront of interdisciplinary research and innovation led by our talented members.
-          </p>
+  <!-- Header -->
+  <script src="js/header-loader.js" defer></script>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] min-h-[500px] w-full flex items-center justify-center overflow-hidden">
+      <!-- Background with Overlay -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
+          class="w-full h-full object-cover" alt="Research Background">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-black/80 mix-blend-multiply">
         </div>
-      </section>
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
 
-      <!-- Featured -->
-      <section class="w-full bg-background-light py-20 md:py-24">
-        <div class="container mx-auto px-6 md:px-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-text-light text-center">Featured Projects</h2>
-          <p class="mt-3 text-center font-body text-text-light/70 max-w-2xl mx-auto">
-            A spotlight on our most impactful and innovative initiatives currently shaping the future.
-          </p>
+      <!-- Content -->
+      <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-6 animate-[fade-in-up_1s_ease-out]">
+          <span class="size-2 rounded-full bg-green-400 animate-pulse"></span>
+          IPS Project Archive
+        </div>
+        <h1
+          class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight mb-6 text-shadow-hero">
+          Designing the Future
+        </h1>
+        <p class="text-lg md:text-xl text-white/90 font-body max-w-2xl mx-auto leading-relaxed">
+          Explore our diverse portfolio of student-led innovations, from academic breakthroughs at Zaim University to
+          public research initiatives.
+        </p>
+      </div>
+    </section>
 
-          <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Card 1 -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row group">
-              <div class="md:w-5/12 h-64 md:h-auto">
-                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCONB_RO4id6iiUBR6wp4Xdokyx4vnoz2xXjne9BrHl_fMvXFK7ym53RthBAjoWLl-oKHuDEomkdEMN55RLcroj09I7MvNS_sWoTy6ljm6cCESQyI2Zz3jLeerVqwlrNI3UfbxaM5t56-mRpZzcxt2sLIHn-KkQfKiIdDmnHApBGiUQG1dH6Kd38q_5xEBjgSUTWv8kN3zQQO2rhMC8VaXJT9rOvldvHvgpqEbdamsEFEzAJmRU37xKjq6YKs5KX9odXV3epvCg7wU"
-                     alt="Brain-Computer Interface project">
-              </div>
-              <div class="p-8 flex flex-col md:w-7/12">
-                <div>
-                  <span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full mb-3">Devam Ediyor</span>
-                  <h3 class="text-2xl font-bold text-text-light">Neuro-Adaptive BCI</h3>
-                  <p class="mt-2 font-body text-base text-text-light/70">
-                    Developing a non-invasive brain-computer interface that adapts to individual neural patterns for enhanced prosthetic control.
-                  </p>
-                </div>
-                <div class="mt-6 border-t border-primary/10 pt-4">
-                  <h4 class="font-bold text-sm text-primary tracking-wider uppercase">Project Lead</h4>
-                  <p class="font-body text-text-light/90 mt-1">Dr. Elif Aydın &amp; Can Yılmaz</p>
-                </div>
-                <div class="mt-auto pt-6">
-                  <a class="inline-flex items-center font-bold text-primary group-hover:underline" href="#">
-                    Read More
-                    <span class="material-symbols-outlined ml-1 transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+    <!-- Filters & Tooling -->
+    <section
+      class="sticky top-20 z-40 bg-background-light/95 backdrop-blur-sm border-b border-primary/10 py-4 shadow-sm transition-all"
+      id="filterBar">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
 
-            <!-- Card 2 -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row group">
-              <div class="md:w-5/12 h-64 md:h-auto">
-                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXzig8E2tuUFR3FfqBvFoRV8dWmCnt-VkSqyQx6AKckJvb30be83trm_rmQnoSXq7GZx5Gq-ZlZccWXwqtrstLWvVKlgEjB_ccu5OqSmF2oxvG33ROepZ-Hpurf-JzBNEERljf4uP-LJeY2gbTX7sEkdAVV8oNomiw_iVOfD7pU-uZ10qatytBjiP5RiZ0kngifcGsDYHrmmS63Xjmj_KuRvwqC_NwNiOeydeJapp4AujO_cn1ua-DyPdBThjsOfyfESxXY1aiLQk"
-                     alt="Biomaterials for tissue regeneration">
-              </div>
-              <div class="p-8 flex flex-col md:w-7/12">
-                <div>
-                  <span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full mb-3">Devam Ediyor</span>
-                  <h3 class="text-2xl font-bold text-text-light">Smart Biomaterials</h3>
-                  <p class="mt-2 font-body text-base text-text-light/70">
-                    Engineering hydrogels that respond to biological stimuli for targeted drug delivery and accelerated tissue regeneration.
-                  </p>
-                </div>
-                <div class="mt-6 border-t border-primary/10 pt-4">
-                  <h4 class="font-bold text-sm text-primary tracking-wider uppercase">Participants</h4>
-                  <p class="font-body text-text-light/90 mt-1">Biotechnology Team</p>
-                </div>
-                <div class="mt-auto pt-6">
-                  <a class="inline-flex items-center font-bold text-primary group-hover:underline" href="#">
-                    Read More
-                    <span class="material-symbols-outlined ml-1 transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
+          <!-- Search -->
+          <div class="relative w-full md:w-96 group">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary/50 group-focus-within:text-primary transition-colors">search</span>
+            <input type="text" id="searchInput" placeholder="Search projects, topics, or authors..."
+              class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-primary/10 bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-medium placeholder:text-primary/40 shadow-sm">
           </div>
-        </div>
-      </section>
 
-      <!-- All projects -->
-      <section class="w-full bg-white py-20 md:py-24">
-        <div class="container mx-auto px-6 md:px-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-text-light text-center">All Projects &amp; Milestones</h2>
-          <p class="mt-3 text-center font-body text-text-light/70 max-w-2xl mx-auto">
-            Browse our complete portfolio of past and present projects that showcase our interdisciplinary spirit.
-          </p>
-
-          <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Card A -->
-            <div class="bg-background-light border border-primary/10 rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div class="h-52 overflow-hidden">
-                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeFWpVHjCjN92TzgOJehrUrPijCT11OXtIoDxvds5e1IV2y0v9sTAeux9TS3O0V7iHsCt_rWXYs0JONDTkCZaf_n9Z9bENYrSXGHPljKNut8X_oxZHps1C39lbyGcnYQm2xX2gdMJCh8CYBeFCMU-q5_viEWsba-J0ipjiNwMoHrEcAh5dUrRVydWvOZLrkHC01SS-YmMxQ6FzXfJ0r6yCBX6nTQEBYzsqkUbxXu7hON504QRPRf01d2XRQoVQye0zZc_1HYhNXL0"
-                  alt="AI in Cognitive Science" />
-              </div>
-              <div class="p-6 flex flex-col flex-grow">
-                <span class="inline-block bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full self-start">Tamamlandı</span>
-                <h3 class="mt-4 text-xl font-bold text-text-light">AI for Cognitive Modeling</h3>
-                <p class="mt-2 font-body text-sm text-text-light/70 flex-grow">
-                  Used machine learning algorithms to model human decision-making processes under uncertainty.
-                </p>
-                <div class="mt-4 border-t border-primary/10 pt-4">
-                  <p class="text-xs font-semibold text-primary uppercase">Project Leader</p>
-                  <p class="text-sm font-body text-text-light">Ahmet Çelik</p>
-                </div>
-                <a class="mt-6 inline-block text-center rounded-lg py-2 px-4 bg-primary text-background-light font-bold text-sm transition-colors hover:bg-primary/90" href="#">Read More</a>
-              </div>
+          <!-- Filter Groups -->
+          <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-hide">
+            <!-- Source Filter -->
+            <div class="flex p-1 bg-white rounded-lg border border-primary/10 mr-4 shrink-0">
+              <button class="filter-btn px-4 py-1.5 rounded-md text-xs font-bold transition-all active-source"
+                data-source="All">All Projects</button>
+              <button
+                class="filter-btn px-4 py-1.5 rounded-md text-xs font-bold text-primary/60 hover:text-primary hover:bg-primary/5 transition-all"
+                data-source="Academic">Academic</button>
+              <button
+                class="filter-btn px-4 py-1.5 rounded-md text-xs font-bold text-primary/60 hover:text-primary hover:bg-primary/5 transition-all"
+                data-source="Public">Public</button>
             </div>
 
-            <!-- Card B -->
-            <div class="bg-background-light border border-primary/10 rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div class="h-52 overflow-hidden">
-                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCejwWeVC2fqlew3TfFaBF558OK1AGg_dPYmZ7TUEdmWSAXCh_s1AZnyHAxXv0ShCtfh5GBWKqL5dhwb95iEcMxDaXHEQSKTDJ9ut7K_HQfdDGt_mPLVlcgFR5QGTWpRPD7GFJDauaHccy0x91tu4hv0o1WAk8BQFQWQe6n4OMrAEkYNdWUiqstvVb-qfLW1wg2lUiG5Od30vgVqaY8Re_0uxxO6aIm5SrSjOuvCtJTaMIICoHOTb-ap2VDgcf7H_Plm-5tE1FprQk"
-                  alt="Sustainable Urbanism Project" />
-              </div>
-              <div class="p-6 flex flex-col flex-grow">
-                <span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full self-start">Devam Ediyor</span>
-                <h3 class="mt-4 text-xl font-bold text-text-light">Sustainable Urbanism</h3>
-                <p class="mt-2 font-body text-sm text-text-light/70 flex-grow">
-                  A multi-disciplinary project on creating greener, more efficient urban environments using IoT and data analysis.
-                </p>
-                <div class="mt-4 border-t border-primary/10 pt-4">
-                  <p class="text-xs font-semibold text-primary uppercase">Participants</p>
-                  <p class="text-sm font-body text-text-light">Core Engineering &amp; Design Team</p>
-                </div>
-                <a class="mt-6 inline-block text-center rounded-lg py-2 px-4 bg-primary text-background-light font-bold text-sm transition-colors hover:bg-primary/90" href="#">Read More</a>
-              </div>
-            </div>
-
-            <!-- Card C -->
-            <div class="bg-background-light border border-primary/10 rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div class="h-52 overflow-hidden">
-                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe8BJa9XT_ZOiV1-JR0jq8ldUtCI3EBYmjSyzr8fAV2U6dLJEaAIoBTLBvHJlz7I_By6vwPmhgNxlsKYg3t-sRK-gd3ZE_lGdDYeXNr2uMXWiyvBkNAXqK4udtoUTF2pm4d_yb_j13zW1hyIniB4yYw7twz9aJ0s48xM5ZuxLgeEPXDz4EGGgZiFLNrk1G9iIxA5r4fZSLu4cii7qvx0H2bMCEVa0NmdGZ2JvdDCEUcm0M4qzrqPwyrcd-LuwsZdgAB2IXl_KLSF8"
-                  alt="Biosensor Development" />
-              </div>
-              <div class="p-6 flex flex-col flex-grow">
-                <span class="inline-block bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full self-start">Tamamlandı</span>
-                <h3 class="mt-4 text-xl font-bold text-text-light">Early Disease Biosensor</h3>
-                <p class="mt-2 font-body text-sm text-text-light/70 flex-grow">
-                  Developed a low-cost, portable biosensor for the rapid detection of infectious disease markers.
-                </p>
-                <div class="mt-4 border-t border-primary/10 pt-4">
-                  <p class="text-xs font-semibold text-primary uppercase">Project Leader</p>
-                  <p class="text-sm font-body text-text-light">Zeynep Kaya</p>
-                </div>
-                <a class="mt-6 inline-block text-center rounded-lg py-2 px-4 bg-primary text-background-light font-bold text-sm transition-colors hover:bg-primary/90" href="#">Read More</a>
-              </div>
-            </div>
-
+            <!-- Category Filters (generated dynamically or static basics) -->
+            <button
+              class="cat-btn px-3 py-1.5 rounded-full border border-primary/10 bg-white text-xs font-bold text-primary/70 hover:bg-primary hover:text-white transition-colors active-cat"
+              data-cat="All">All Topics</button>
+            <button
+              class="cat-btn px-3 py-1.5 rounded-full border border-primary/10 bg-white text-xs font-bold text-primary/70 hover:bg-primary hover:text-white transition-colors"
+              data-cat="Technology">Technology</button>
+            <button
+              class="cat-btn px-3 py-1.5 rounded-full border border-primary/10 bg-white text-xs font-bold text-primary/70 hover:bg-primary hover:text-white transition-colors"
+              data-cat="Science">Science</button>
+            <button
+              class="cat-btn px-3 py-1.5 rounded-full border border-primary/10 bg-white text-xs font-bold text-primary/70 hover:bg-primary hover:text-white transition-colors"
+              data-cat="Social">Social</button>
+            <button
+              class="cat-btn px-3 py-1.5 rounded-full border border-primary/10 bg-white text-xs font-bold text-primary/70 hover:bg-primary hover:text-white transition-colors"
+              data-cat="Art">Art</button>
           </div>
+
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <!-- Footer partial burada inject edilecek -->
-  </div>
+    <!-- Projects Grid -->
+    <section class="py-12 md:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-  <!-- Davranışlar -->
-  <script src="assets/js/app.js" defer></script>
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Javascript will populate this -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden flex-col items-center justify-center py-20 text-center">
+          <div class="size-20 bg-primary/5 rounded-full flex items-center justify-center text-primary/40 mb-4">
+            <span class="material-symbols-outlined text-4xl">search_off</span>
+          </div>
+          <h3 class="text-xl font-bold text-primary">No projects found</h3>
+          <p class="text-primary/60 mt-2">Try adjusting your filters or search terms.</p>
+          <button onclick="resetFilters()"
+            class="mt-6 px-6 py-2 bg-primary text-white rounded-lg font-bold hover:opacity-90 transition-opacity">
+            Clear Filters
+          </button>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-16 flex justify-center" id="pagination">
+          <!-- JS Controls -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white border-t border-primary/10">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-black text-primary mb-6">Have a Revolutionary Idea?</h2>
+        <p class="text-lg text-primary/70 font-body mb-10 max-w-2xl mx-auto">
+          Whether you are an academic researcher or a student with a dream, we provide the platform to showcase and
+          realize your projects.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="submit-idea.html"
+            class="inline-flex items-center justify-center h-14 px-8 rounded-xl bg-primary text-white font-bold text-lg shadow-xl shadow-primary/20 hover:-translate-y-1 transition-all">
+            Submit Proposal
+            <span class="material-symbols-outlined ml-2">arrow_forward</span>
+          </a>
+          <a href="contact.html"
+            class="inline-flex items-center justify-center h-14 px-8 rounded-xl border-2 border-primary/10 text-primary font-bold text-lg hover:bg-primary/5 transition-colors">
+            Contact Support
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <script src="js/footer-loader.js" defer></script>
+
+  <!-- Project Data & Logic -->
+  <script src="js/all-projects.js"></script>
+  <script>
+    // State
+    let currentPage = 1;
+    const itemsPerPage = 9;
+    let activeSource = 'All';
+    let activeCat = 'All';
+    let searchQuery = '';
+
+    // Elements
+    const grid = document.getElementById('projectsGrid');
+    const emptyState = document.getElementById('emptyState');
+    const pagination = document.getElementById('pagination');
+    const sourceButtons = document.querySelectorAll('.filter-btn');
+    const catButtons = document.querySelectorAll('.cat-btn');
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProjects();
+      setupListeners();
+    });
+
+    function setupListeners() {
+      // Search
+      document.getElementById('searchInput').addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase();
+        currentPage = 1;
+        renderProjects();
+      });
+
+      // Source Filter
+      sourceButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Update visual
+          sourceButtons.forEach(b => {
+            b.classList.remove('active-source', 'bg-primary', 'text-white', 'shadow-md');
+            b.classList.add('text-primary/60', 'hover:text-primary', 'hover:bg-primary/5');
+          });
+
+          // Specific active styles based on implementation pattern in HTML
+          // Here we just use a helper class idea or direct manipulation
+          // Let's reset all to base and highlight clicked
+          sourceButtons.forEach(b => {
+            b.className = "filter-btn px-4 py-1.5 rounded-md text-xs font-bold text-primary/60 hover:text-primary hover:bg-primary/5 transition-all";
+          });
+
+          btn.className = "filter-btn px-4 py-1.5 rounded-md text-xs font-bold bg-primary text-white shadow-md transition-all active-source";
+
+          activeSource = btn.dataset.source;
+          currentPage = 1;
+          renderProjects();
+        });
+      });
+
+      // Set initial active source style
+      document.querySelector('[data-source="All"]').click();
+
+      // Cat Filter
+      catButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          catButtons.forEach(b => {
+            b.classList.remove('bg-primary', 'text-white', 'active-cat');
+            b.classList.add('bg-white', 'text-primary/70', 'hover:bg-primary', 'hover:text-white');
+            b.classList.replace('border-transparent', 'border-primary/10'); // if exists
+          });
+
+          btn.classList.add('bg-primary', 'text-white', 'active-cat');
+          btn.classList.remove('bg-white', 'text-primary/70', 'hover:bg-primary', 'hover:text-white');
+
+          activeCat = btn.dataset.cat;
+          currentPage = 1;
+          renderProjects();
+        });
+      });
+
+      // Set initial active cat style
+      document.querySelector('[data-cat="All"]').click();
+    }
+
+    function resetFilters() {
+      searchQuery = '';
+      document.getElementById('searchInput').value = '';
+      document.querySelector('[data-source="All"]').click();
+      document.querySelector('[data-cat="All"]').click();
+    }
+
+    function getFilteredProjects() {
+      return allProjectsData.filter(p => {
+        const matchesSource = activeSource === 'All' || p.source === activeSource;
+        const matchesCat = activeCat === 'All' || p.category === activeCat;
+        const matchesSearch = p.title.toLowerCase().includes(searchQuery) ||
+          p.author.toLowerCase().includes(searchQuery) ||
+          p.desc.toLowerCase().includes(searchQuery);
+        return matchesSource && matchesCat && matchesSearch;
+      });
+    }
+
+    function renderProjects() {
+      const filtered = getFilteredProjects();
+
+      // Empty State
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+        pagination.innerHTML = '';
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      emptyState.classList.remove('flex');
+
+      // Pagination Logic
+      const totalPages = Math.ceil(filtered.length / itemsPerPage);
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const itemsToShow = filtered.slice(start, end);
+
+      // Render Grid
+      grid.innerHTML = itemsToShow.map(p => {
+        // Determine Badge Color based on source
+        const badgeClass = p.source === 'Academic'
+          ? 'bg-blue-50 text-blue-700 border-blue-100'
+          : 'bg-green-50 text-green-700 border-green-100';
+
+        return `
+                <article class="group bg-white rounded-2xl border border-primary/10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer" 
+                         onclick="location.href='${p.url}'">
+                    
+                    <!-- Image Area -->
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3">
+                            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider rounded border ${badgeClass}">
+                                ${p.source}
+                            </span>
+                        </div>
+                        <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-3 left-4 text-white text-xs font-bold flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">schedule</span>
+                            ${p.date}
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-primary/60">${p.subcategory}</span>
+                            ${p.status === 'Ongoing' ? '<span class="size-1.5 rounded-full bg-green-500 animate-pulse"></span>' : ''}
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-text-light mb-2 leading-tight group-hover:text-primary transition-colors">
+                            ${p.title}
+                        </h3>
+                        
+                        <p class="text-sm text-primary/70 line-clamp-3 mb-6 font-body flex-grow">
+                            ${p.desc}
+                        </p>
+
+                        <div class="pt-4 border-t border-primary/5 flex items-center justify-between mt-auto">
+                            <div class="flex flex-col">
+                                <span class="text-[10px] uppercase font-bold text-primary/40">Author</span>
+                                <span class="text-xs font-bold text-primary">${p.author}</span>
+                            </div>
+                            <button class="size-8 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-lg">arrow_outward</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                `;
+      }).join('');
+
+      // Render Pagination
+      if (totalPages > 1) {
+        let btns = '';
+        // Prev
+        btns += `<button onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''} class="size-10 flex items-center justify-center rounded-lg hover:bg-primary/5 disabled:opacity-30 transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>`;
+
+        // Numbers
+        for (let i = 1; i <= totalPages; i++) {
+          btns += `<button onclick="changePage(${i})" class="size-10 flex items-center justify-center rounded-lg font-bold text-sm transition-colors ${i === currentPage ? 'bg-primary text-white shadow-lg' : 'hover:bg-primary/5 text-primary'}">${i}</button>`;
+        }
+
+        // Next
+        btns += `<button onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''} class="size-10 flex items-center justify-center rounded-lg hover:bg-primary/5 disabled:opacity-30 transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>`;
+
+        pagination.innerHTML = `<div class="flex items-center gap-2 bg-white p-2 rounded-xl border border-primary/10 shadow-sm">${btns}</div>`;
+      } else {
+        pagination.innerHTML = '';
+      }
+    }
+
+    function changePage(page) {
+      currentPage = page;
+      renderProjects();
+      document.getElementById('projectsGrid').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
 </body>
+
 </html>

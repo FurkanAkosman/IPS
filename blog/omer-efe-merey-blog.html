@@ -1,404 +1,337 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <!-- GA4 -->
-<script src="js/analytics.js" defer></script>
+  <script src="../js/analytics.js" defer></script>
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>How Do Environmental Factors Influence the Behavior and Reproduction of Guppies? — IPS</title>
-  <meta name="description" content="Light and water conditions shaping guppy (Poecilia reticulata) behavior and breeding. Aquarium setup, observations, Endler (1987) findings, and practical care protocol." />
+  <title>How Do Environmental Factors Influence the Behavior and Reproduction of Guppies? — IPS Research</title>
+  <meta name="description"
+    content="A study on light and water conditions shaping guppy behavior. Insights from aquarium observations and Endler's (1987) research." />
   <meta name="theme-color" content="#4d0011" />
 
-  <!-- Canonical + Open Graph (opsiyonel) -->
   <link rel="icon" href="../assets/img/kulup-logo.jpg" sizes="32x32" />
-  <link rel="apple-touch-icon" href="../assets/img/kulup-logo.jpg" />
 
-  <!-- Tailwind + Fonts -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
-  <script id="tailwind-config">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
             primary: "#4d0011",
-            "background-light": "#f8f8f3",
-            "background-dark": "#101622",
-            "accent-subtle": "#e0e0e0",
-            "muted": "#6b6063"
+            "primary-hover": "#6d0019",
+            text: "#1D0C0F",
+            muted: "#5a5254",
+            background: "#fdfdfb",
+            surface: "#ffffff"
           },
-          fontFamily: { display: ["Montserrat","sans-serif"], body: ["Lora","serif"] },
-          borderRadius: { "xl": "0.75rem", "2xl": "1.25rem" }
+          fontFamily: {
+            display: ["Manrope", "sans-serif"],
+            body: ["Noto Serif", "serif"]
+          },
+          typography: {
+            DEFAULT: {
+              css: {
+                maxWidth: '65ch',
+                color: '#1D0C0F',
+                h1: { fontFamily: 'Manrope', fontWeight: '800' },
+                h2: { fontFamily: 'Manrope', fontWeight: '700', marginTop: '2em' },
+                h3: { fontFamily: 'Manrope', fontWeight: '600' },
+                blockquote: { borderLeftColor: '#4d0011', fontStyle: 'italic' },
+              }
+            }
+          }
         }
       }
     }
   </script>
-
-  <style>
-    body { 
-      font-family:'Lora',serif;
-      scroll-behavior: smooth;
-    }
-    h1,h2,h3,h4 { font-family:'Montserrat',sans-serif }
-    h1 { 
-      color:#4d0011; 
-      font-weight:900; 
-      line-height:1.2;
-      margin-bottom:1rem;
-    }
-    h2 { 
-      color:#4d0011; 
-      font-weight:800; 
-      margin-top:3rem; 
-      margin-bottom:1.5rem;
-      line-height:1.3;
-    }
-    h3 { 
-      font-weight:600; 
-      margin-top:2rem;
-      margin-bottom:1rem;
-      line-height:1.4;
-    }
-    
-    /* Okunabilirlik */
-    .prose {
-      line-height: 1.85;
-      font-size: 1.125rem;
-      max-width: 100%;
-    }
-    .prose p {
-      margin-bottom: 1.5rem;
-      text-align: justify;
-    }
-    .prose ul, .prose ol {
-      margin: 1.5rem 0;
-      padding-left: 2rem;
-    }
-    .prose li {
-      margin: 0.75rem 0;
-      line-height: 1.8;
-    }
-    
-    /* Başlık bölümü */
-    .blog-header {
-      border-bottom: 2px solid rgba(77, 0, 17, 0.1);
-      padding-bottom: 2rem;
-      margin-bottom: 3rem;
-      opacity: 1 !important;
-      visibility: visible !important;
-      display: block !important;
-      text-align: center;
-    }
-    .blog-header h1 {
-      margin-bottom: 1rem;
-      opacity: 1 !important;
-      visibility: visible !important;
-      display: block !important;
-      color: #4d0011 !important;
-    }
-    .blog-meta {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      font-size: 0.875rem;
-      color: #6b6063;
-      margin-top: 0.5rem;
-    }
-    .blog-meta a {
-      color: #4d0011;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .blog-meta a:hover {
-      text-decoration: underline;
-      color: #6d0015;
-    }
-    
-    /* Figürler arası içerik */
-    .content-section {
-      margin: 2.5rem 0;
-    }
-    .media-section {
-      margin: 3rem 0;
-    }
-    
-    /* Yazar kartı */
-    .author-card-full {
-      background: linear-gradient(135deg, rgba(77, 0, 17, 0.03) 0%, rgba(77, 0, 17, 0.08) 100%);
-      border: 1px solid rgba(77, 0, 17, 0.15);
-      border-radius: 1.25rem;
-      padding: 2rem;
-      margin-top: 4rem;
-    }
-    .author-card-full h3 {
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      color: #4d0011;
-    }
-    .author-info {
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-    }
-    .author-photo {
-      flex-shrink: 0;
-    }
-    .author-photo img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(77, 0, 17, 0.2);
-    }
-    .author-details {
-      flex: 1;
-    }
-    .author-name {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #4d0011;
-      margin-bottom: 0.5rem;
-    }
-    .author-title {
-      color: #6b6063;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
-    .author-bio {
-      line-height: 1.8;
-      color: #1D0C0F;
-    }
-    .author-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      color: #4d0011;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .author-link:hover {
-      text-decoration: underline;
-      gap: 0.75rem;
-    }
-    
-    .fadein { 
-      opacity:0; 
-      transform:translateY(20px); 
-      transition:all 0.8s ease; 
-    }
-    .fadein.visible { 
-      opacity:1; 
-      transform:translateY(0); 
-    }
-    figcaption { 
-      text-align:center; 
-      font-style:italic; 
-      margin-top: 0.75rem;
-      color: #6b6063;
-      font-size: 0.9rem;
-    }
-    
-    @media (max-width: 768px) {
-      .author-info {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .author-details {
-        text-align: center;
-      }
-    }
-  </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-300 leading-loose">
-<div class="min-h-screen flex flex-col">
+<body class="bg-background text-text font-body antialiased selection:bg-primary/10 selection:text-primary">
 
-  <!-- Dinamik Header + GA (logo yolu otomatik çözülür) -->
+  <!-- Header Loader -->
   <script src="../js/header-loader.js" defer></script>
+  <header id="siteHeader"></header> <!-- Placeholder -->
 
-  <!-- MAIN -->
-  <main class="flex-1 flex justify-center px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-    <article class="max-w-7xl w-full flex flex-col gap-10">
+  <main class="min-h-screen pb-20">
 
-      <!-- Title -->
-      <div class="blog-header">
-        <h1 class="text-4xl sm:text-5xl font-black text-primary">
+    <!-- Hero Header -->
+    <header class="relative pt-32 pb-20 px-4 mb-12 bg-surface border-b border-black/5">
+      <div class="max-w-3xl mx-auto text-center">
+        <!-- Tag -->
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold uppercase tracking-wider mb-6 font-display">
+          <span class="size-2 rounded-full bg-primary"></span>
+          Behavioral Biology Research
+        </div>
+
+        <h1
+          class="text-3xl md:text-5xl lg:text-6xl font-black font-display text-primary leading-tight tracking-tight mb-8">
           How Do Environmental Factors Influence the Behavior and Reproduction of Guppies?
         </h1>
-        <div class="blog-meta">
-          <span>By</span>
-          <a href="../people/omer-efe-merey.html">Ömer Efe Merey</a>
-          <span>•</span>
-          <time datetime="2025-11-02">02 Nov 2025</time>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-display text-muted">
+          <a href="../people/omer-efe-merey.html"
+            class="flex items-center gap-3 group hover:text-primary transition-colors">
+            <img src="../assets/img/team/omer_efe_merey.jpg" alt="Ömer Efe Merey"
+              class="size-10 rounded-full object-cover border border-black/10 group-hover:border-primary">
+            <div class="text-left leading-tight">
+              <span class="block font-bold text-text group-hover:text-primary">Ömer Efe Merey</span>
+              <span class="text-xs">Researcher</span>
+            </div>
+          </a>
+          <div class="w-px h-8 bg-black/10 hidden sm:block"></div>
+          <div class="flex flex-col text-left">
+            <span class="font-bold text-text">Published</span>
+            <time datetime="2025-11-02">Nov 2, 2025</time>
+          </div>
+          <div class="flex flex-col text-left">
+            <span class="font-bold text-text">Reading Time</span>
+            <span>5 min read</span>
+          </div>
         </div>
       </div>
+    </header>
 
-      <!-- Hero -->
-      <figure class="relative aspect-video rounded-2xl overflow-hidden fadein">
-        <img src="blogimage/omerimage1.jpg" alt="Aquarium observation" class="w-full h-full object-cover" loading="eager" decoding="async">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+
+      <!-- Main Visual -->
+      <figure class="relative aspect-video rounded-3xl overflow-hidden shadow-2xl mb-16 group">
+        <img src="blogimage/omerimage1.jpg" alt="Aquarium observation environment"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <figcaption
+          class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white text-sm font-display text-center opacity-0 group-hover:opacity-100 transition-opacity">
+          Figure 1: Controlled observation tank setup for guppy behavioral analysis.
+        </figcaption>
       </figure>
 
-      <!-- Content with interspersed media -->
-      <div class="prose prose-lg md:prose-xl dark:prose-invert max-w-none fadein">
-        
-        <!-- Abstract Section -->
-        <section class="content-section">
-          <h2>Abstract</h2>
-          <p>This article explores how environmental factors—especially light and water conditions—affect the behavior and breeding of guppies (<i>Poecilia reticulata</i>). It combines personal aquarium observations with John A. Endler's 1987 findings, showing how these fish reflect broader ecological and evolutionary principles.</p>
-        </section>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
-        <!-- Introduction Section -->
-        <section class="content-section">
+        <!-- Article Content -->
+        <article class="lg:col-span-8 prose prose-lg prose-slate mx-auto lg:mx-0">
+
+          <div class="bg-primary/5 p-6 rounded-2xl border border-primary/10 not-prose mb-10">
+            <h3 class="font-display font-bold text-primary text-lg mb-2 flex items-center gap-2">
+              <span class="material-symbols-outlined">psychology</span>
+              Abstract
+            </h3>
+            <p class="font-body text-text/80 italic leading-relaxed">
+              This article explores how environmental factors—especially light and water conditions—affect the behavior
+              and breeding of guppies (<i>Poecilia reticulata</i>). It combines personal aquarium observations with John
+              A. Endler's 1987 findings, showing how these fish reflect broader ecological and evolutionary principles
+              in a controlled environment.
+            </p>
+          </div>
+
           <h2>1. Introduction</h2>
-          <p>Guppies are widely used in aquaria and research for their ease of breeding and sensitivity to environmental change. I am Ömer Efe Merey, a second-year Molecular Biology and Genetics student at Istanbul Sabahattin Zaim University. My interest began with breeding my own guppies and evolved into an academic focus on animal experimentation and behavioral biology.</p>
-        </section>
+          <p>
+            Guppies are widely used in aquaria and research for their ease of breeding and particular sensitivity to
+            environmental change. I am <strong>Ömer Efe Merey</strong>, a second-year Molecular Biology and Genetics
+            student at Istanbul Sabahattin Zaim University. My interest began with breeding my own guppies and rapidly
+            evolved into an academic focus on animal experimentation and behavioral biology.
+          </p>
 
-        <!-- Media: Tank Setup Image -->
-        <section class="media-section fadein">
-          <figure>
-            <img src="blogimage/omerimage2.jpg" class="rounded-2xl w-full h-auto" alt="Tank setup and enrichment" loading="lazy" decoding="async">
-            <figcaption>Tank layout and enrichment</figcaption>
+          <figure class="my-10">
+            <img src="blogimage/omerimage2.jpg" class="rounded-2xl w-full shadow-lg" alt="Enriched tank environment">
+            <figcaption class="text-center text-sm text-muted mt-3 font-display">
+              Figure 2: The enriched tank environment supporting natural behaviors.
+            </figcaption>
           </figure>
-        </section>
 
-        <!-- Background Section -->
-        <section class="content-section">
           <h2>2. Background: Biology of Guppies</h2>
-          <ul>
-            <li>Origin: South America; warm freshwater habitats.</li>
-            <li>Temperature range: ~26 °C; pH 6.8–7.6.</li>
-            <li>Livebearers; gestation ≈ 30 days; monthly birth cycles.</li>
-            <li>Gravid spot darkens before birth; fry separation prevents cannibalism.</li>
+          <p>Understanding the natural history of <i>Poecilia reticulata</i> is crucial for replicating optimal
+            conditions:</p>
+          <ul class="marker:text-primary">
+            <li><strong>Origin:</strong> South American warm freshwater habitats.</li>
+            <li><strong>Parameters:</strong> Temp ~26 °C; pH 6.8–7.6.</li>
+            <li><strong>Reproduction:</strong> Livebearers with a gestation of approx. 30 days.</li>
+            <li><strong>Signs:</strong> The "gravid spot" darkens significantly before birth.</li>
           </ul>
-        </section>
 
-        <!-- Aquarium Conditions Section -->
-        <section class="content-section">
-          <h2>3. Aquarium Conditions and Maintenance</h2>
-          <ul>
-            <li>Stocking ≈ 5 L water per guppy; air pump, heater, filter required.</li>
-            <li>Live plants improve water quality; lava rock supports growth.</li>
-            <li>Supplements: conditioners, bacterial cultures, fertilizers.</li>
-            <li>Weekly ¼ water change with dechlorinated water.</li>
-          </ul>
-        </section>
+          <h2>3. Scientific Findings: Endler (1987)</h2>
+          <p>
+            Predation and light intensity are key modulators of male courtship behavior. Research indicates:
+          </p>
+          <blockquote>
+            Low light environments increase courtship displays, whereas bright light (or predator presence) reduces
+            conspicuous displays, favoring "sneak copulation" strategies to avoid detection.
+          </blockquote>
 
-        <!-- Video 1 -->
-        <section class="media-section fadein">
-          <figure>
-            <video class="w-full rounded-2xl" controls preload="none" poster="blogimage/omerimage1.jpg">
-              <source src="video1.mp4" type="video/mp4">
-            </video>
-            <figcaption>Observation video #1: Guppy behavior in different light conditions</figcaption>
-          </figure>
-        </section>
-
-        <!-- Scientific Findings Section -->
-        <section class="content-section">
-          <h2>4. Scientific Findings: Endler (1987)</h2>
-          <p>Predation and light intensity modulate male courtship. Low light increases displays; bright light or predator presence reduces displays and increases "sneak copulation."</p>
-        </section>
-
-        <!-- Observations Section -->
-        <section class="content-section">
-          <h2>5. Observations</h2>
-          <p>Activity and courtship were higher in low-to-moderate light. Bright light increased caution and hiding. Softer lighting correlated with more fry.</p>
-        </section>
-
-        <!-- Video 2 -->
-        <section class="media-section fadein">
-          <figure>
-            <video class="w-full rounded-2xl" controls preload="none" poster="blogimage/omerimage2.jpg">
-              <source src="video2.mp4" type="video/mp4">
-            </video>
-            <figcaption>Observation video #2: Breeding behavior and fry development</figcaption>
-          </figure>
-        </section>
-
-        <!-- Discussion Section -->
-        <section class="content-section">
-          <h2>6. Discussion</h2>
-          <p>Guppies show adaptive behavior depending on light, temperature, and risk. Even in controlled aquaria, ecological balance can be observed.</p>
-        </section>
-
-        <!-- Conclusion Section -->
-        <section class="content-section">
-          <h2>Conclusion</h2>
-          <p>Balanced lighting, stable temperature and chemistry, and structural enrichment improve welfare and reproduction.</p>
-        </section>
-
-      </div>
-
-      <!-- Author Card Full -->
-      <section class="author-card-full fadein">
-        <h3>About the Author</h3>
-        <div class="author-info">
-          <div class="author-photo">
-            <img src="../assets/img/team/omer_efe_merey.jpg" alt="Ömer Efe Merey" loading="lazy" decoding="async">
-          </div>
-          <div class="author-details">
-            <div class="author-name">Ömer Efe Merey</div>
-            <div class="author-title">Molecular Biology and Genetics Student · Istanbul Sabahattin Zaim University</div>
-            <div class="author-bio">
-              <p><strong>Areas of Interest:</strong> Ömer'in ilgi alanları moleküler genetik, nörobilim ve biyoteknolojiyi kapsar. Hücre sinyalizasyonu ve gen ifadesinin deneysel ve hesaplamalı yöntemlerle analizi üzerinde yoğunlaşır.</p>
-              <p><strong>IPS Contributions:</strong> IPS kapsamındaki atölye ve etkinliklerin planlanması, içerik dokümantasyonu ve araştırma grupları arasındaki koordinasyona katkı verir. Proje yazımı ve veri düzeni standartlarının uygulanmasını destekler.</p>
-              <p><strong>Future Aspirations:</strong> Çeviri nörobilim araştırmalarında ilerlemeyi ve deneysel bulguları klinik/uygulamalı çıktılara dönüştürmeyi hedefler. Uluslararası ortaklıklarla disiplinler arası projeler geliştirmeyi planlar.</p>
+          <h2>4. Key Observations</h2>
+          <div class="not-prose grid gap-4 my-8">
+            <div class="flex gap-4 p-4 bg-white rounded-xl border border-black/5 shadow-sm">
+              <span class="material-symbols-outlined text-3xl text-primary shrink-0">light_mode</span>
+              <div>
+                <h4 class="font-display font-bold text-lg mb-1">Light Intensity</h4>
+                <p class="text-sm text-muted">Activity and courtship were significantly higher in low-to-moderate light.
+                  Bright light triggered caution and hiding behavior.</p>
+              </div>
             </div>
-            <a href="../people/omer-efe-merey.html" class="author-link">
-              View Full Profile <span>→</span>
-            </a>
+            <div class="flex gap-4 p-4 bg-white rounded-xl border border-black/5 shadow-sm">
+              <span class="material-symbols-outlined text-3xl text-primary shrink-0">water_drop</span>
+              <div>
+                <h4 class="font-display font-bold text-lg mb-1">Water Quality</h4>
+                <p class="text-sm text-muted">Stable parameters (NO3 &lt; 20ppm) correlated directly with successful fry
+                  survival rates.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Tags -->
-      <div class="flex flex-wrap items-center gap-3 pt-6 border-t border-accent-subtle fadein">
-        <h4 class="font-display text-sm font-bold">Tags:</h4>
-        <a class="text-sm px-3 py-1 rounded-full bg-accent-subtle hover:bg-primary/20" href="../blog.html">Aquaculture</a>
-        <a class="text-sm px-3 py-1 rounded-full bg-accent-subtle hover:bg-primary/20" href="../blog.html">Behavior</a>
-        <a class="text-sm px-3 py-1 rounded-full bg-accent-subtle hover:bg-primary/20" href="../blog.html">Environmental Factors</a>
+          <!-- Video Evidence -->
+          <div class="my-10 space-y-4 not-prose">
+            <h3 class="font-display font-bold text-xl">Video Evidence</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="relative rounded-xl overflow-hidden bg-black aspect-[9/16] md:aspect-video">
+                <video class="w-full h-full object-cover" controls preload="none" poster="blogimage/omerimage1.jpg">
+                  <source src="video1.mp4" type="video/mp4">
+                </video>
+                <div
+                  class="absolute top-2 left-2 px-2 py-1 bg-black/60 text-white text-xs rounded font-display backdrop-blur-sm">
+                  Behavior Test A</div>
+              </div>
+              <div class="relative rounded-xl overflow-hidden bg-black aspect-[9/16] md:aspect-video">
+                <video class="w-full h-full object-cover" controls preload="none" poster="blogimage/omerimage2.jpg">
+                  <source src="video2.mp4" type="video/mp4">
+                </video>
+                <div
+                  class="absolute top-2 left-2 px-2 py-1 bg-black/60 text-white text-xs rounded font-display backdrop-blur-sm">
+                  Fry Development</div>
+              </div>
+            </div>
+          </div>
+
+          <h2>5. Conclusion</h2>
+          <p>
+            Guppies demonstrate highly adaptive behavior modulated by environmental cues such as light and water
+            chemistry. For successful breeding and welfare, a balanced environment that mimics their natural
+            habitat—specifically regarding structural enrichment and stable photoperiods—is essential.
+          </p>
+
+          <hr class="border-primary/20 my-10">
+
+          <!-- Bibliography -->
+          <div class="not-prose bg-stone-50 p-6 rounded-xl border border-stone-200">
+            <h3 class="font-display font-bold text-lg mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-muted">menu_book</span>
+              References & Further Reading
+            </h3>
+            <ul class="space-y-3 text-sm text-muted font-body">
+              <li class="pl-4 border-l-2 border-stone-300">
+                <strong>Endler, J. A. (1987).</strong> <i>Predation, light intensity and courtship behaviour in Poecilia
+                  reticulata (Pisces: Poeciliidae).</i> Animal Behaviour, 35(5), 1376-1385.
+              </li>
+              <li class="pl-4 border-l-2 border-stone-300">
+                <strong>Magurran, A. E. (2005).</strong> <i>Evolutionary Ecology: The Trinidadian Guppy.</i> Oxford
+                University Press.
+              </li>
+              <li class="pl-4 border-l-2 border-stone-300">
+                <strong>Houde, A. E. (1997).</strong> <i>Sex, Color, and Mate Choice in Guppies.</i> Princeton
+                University Press.
+              </li>
+            </ul>
+          </div>
+
+        </article>
+
+        <!-- Sidebar / Author Bio -->
+        <aside class="lg:col-span-4 space-y-8">
+
+          <!-- Author Card -->
+          <div class="sticky top-24">
+            <div class="bg-surface rounded-2xl shadow-lg border border-black/5 overflow-hidden">
+              <div class="h-24 bg-gradient-to-br from-primary to-rose-900 relative">
+                <div class="absolute -bottom-10 left-6">
+                  <img src="../assets/img/team/omer_efe_merey.jpg" alt="Author"
+                    class="size-20 rounded-xl border-4 border-white shadow-md object-cover">
+                </div>
+              </div>
+              <div class="pt-12 px-6 pb-6">
+                <h3 class="font-display font-bold text-xl text-primary">Ömer Efe Merey</h3>
+                <p class="text-xs font-bold text-muted uppercase tracking-wider mb-4">Student Researcher</p>
+
+                <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                  Molecular Biology and Genetics student at IZU. Passionate about understanding biological systems
+                  through experimentation.
+                </p>
+
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="text-xs font-bold text-primary uppercase mb-2 flex items-center gap-1">
+                      <span class="material-symbols-outlined text-sm">biotech</span>
+                      Research Interests
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span
+                        class="px-2 py-1 bg-stone-100 text-stone-600 text-xs font-semibold rounded-md border border-stone-200">Molecular
+                        Genetics</span>
+                      <span
+                        class="px-2 py-1 bg-stone-100 text-stone-600 text-xs font-semibold rounded-md border border-stone-200">Neuroscience</span>
+                      <span
+                        class="px-2 py-1 bg-stone-100 text-stone-600 text-xs font-semibold rounded-md border border-stone-200">Biotechnology</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="text-xs font-bold text-primary uppercase mb-2 flex items-center gap-1">
+                      <span class="material-symbols-outlined text-sm">groups</span>
+                      IPS Contributions
+                    </h4>
+                    <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4 marker:text-primary">
+                      <li>Workshop Planning</li>
+                      <li>Content Documentation</li>
+                      <li>Research Coordination</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-black/5">
+                  <a href="../people/omer-efe-merey.html"
+                    class="flex items-center justify-between w-full px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary-hover transition-colors shadow-md group">
+                    <span>View Full Profile</span>
+                    <span
+                      class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Share/Tags -->
+            <div class="mt-6">
+              <h4 class="text-xs font-bold text-muted uppercase mb-3">Tags</h4>
+              <div class="flex flex-wrap gap-2">
+                <a href="#"
+                  class="px-3 py-1 bg-white border border-black/10 rounded-full text-xs font-semibold text-slate-600 hover:text-primary hover:border-primary transition-colors">Behavioral
+                  Biology</a>
+                <a href="#"
+                  class="px-3 py-1 bg-white border border-black/10 rounded-full text-xs font-semibold text-slate-600 hover:text-primary hover:border-primary transition-colors">Experiment</a>
+                <a href="#"
+                  class="px-3 py-1 bg-white border border-black/10 rounded-full text-xs font-semibold text-slate-600 hover:text-primary hover:border-primary transition-colors">Aquaria</a>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+
       </div>
-
-      <!-- Related -->
-      <section class="pt-8 border-t border-accent-subtle dark:border-gray-700 fadein">
-        <h2 class="text-2xl font-bold text-primary mb-4">Related Content</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <article>
-            <img class="rounded-xl w-full h-40 object-cover mb-3" src="blogimage/omerimage1.jpg" alt="Water quality checks" loading="lazy" decoding="async">
-            <h3 class="font-bold">Routine Water Quality Checklist</h3>
-            <a class="text-primary font-bold" href="../blog.html">Read More →</a>
-          </article>
-          <article>
-            <img class="rounded-xl w-full h-40 object-cover mb-3" src="blogimage/omerimage2.jpg" alt="Tank layout" loading="lazy" decoding="async">
-            <h3 class="font-bold">Optimizing Tank Layout for Spawning</h3>
-            <a class="text-primary font-bold" href="../blog.html">Read More →</a>
-          </article>
-        </div>
-      </section>
-    </article>
+    </div>
   </main>
 
-  <!-- Dinamik Footer -->
+  <!-- Footer Loader -->
   <script src="../js/footer-loader.js" defer></script>
-</div>
 
-<!-- Animations -->
-<script>
-const obs = new IntersectionObserver(e => e.forEach(x => {
-  if (x.isIntersecting) x.target.classList.add('visible');
-}));
-document.querySelectorAll('.fadein').forEach(el => obs.observe(el));
-</script>
 </body>
+
 </html>

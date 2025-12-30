@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="light" lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>IPS Core Team Application</title>
+
+    <!-- SEO / Social -->
+    <meta name="description" content="IPS Core Team Application Form. Join our team, let's build together." />
+    <link rel="canonical" href="https://furkanakosman.github.io/IPS/core-register.html" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <meta property="og:site_name" content="IPS" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="IPS Core Team Application" />
+    <meta property="og:description" content="IPS Core Team Application Form. Join our team, let's build together." />
+    <meta property="og:url" content="https://furkanakosman.github.io/IPS/core-register.html" />
+    <meta property="og:image" content="https://furkanakosman.github.io/IPS/assets/og/ips-general.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4d0011",
+                        "primary-hover": "#6e0019",
+                        accent: "#d41132",
+                        "background-light": "#f8f8f3",
+                        "background-white": "#ffffff",
+                        "text-main": "#1b0d10",
+                        "text-muted": "#6b5d60",
+                        "border-color": "#e7cfd3"
+                    },
+                    fontFamily: {
+                        display: ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        xl: "1rem"
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Global Header/Footer + GA -->
+    <script defer src="js/header-loader.js"></script>
+    <script defer src="js/footer-loader.js"></script>
+</head>
+
+<body class="bg-background-light text-text-main font-display antialiased min-h-screen flex flex-col">
+    <!-- Header partial -->
+    <header id="siteHeader"></header>
+
+    <main class="flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Left Column: Info -->
+                <aside class="lg:col-span-4 space-y-8">
+                    <div class="lg:sticky lg:top-24 space-y-8">
+                        <!-- Page Heading -->
+                        <div class="flex flex-col gap-4">
+                            <h1 class="text-text-main text-3xl md:text-4xl font-black leading-tight tracking-tight">
+                                IPS Core Team Application
+                            </h1>
+                            <p class="text-primary text-lg font-medium leading-relaxed border-l-4 border-primary pl-4">
+                                We are waiting for your application to take part in the kitchen of projects, manage
+                                organizational processes and grow IPS culture together.
+                            </p>
+                        </div>
+
+                        <!-- Info Card -->
+                        <div class="bg-white rounded-xl shadow-sm border border-border-color p-6 space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-background-light p-2 rounded-lg text-primary">
+                                    <span class="material-symbols-outlined">group_add</span>
+                                </div>
+                                <div>
+                                    <p class="text-text-muted text-xs font-bold uppercase tracking-wider mb-1">Who Can
+                                        Apply?</p>
+                                    <p class="text-text-main font-semibold">All university students who want to take
+                                        active responsibility.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-background-light p-2 rounded-lg text-primary">
+                                    <span class="material-symbols-outlined">diversity_3</span>
+                                </div>
+                                <div>
+                                    <p class="text-text-muted text-xs font-bold uppercase tracking-wider mb-1">
+                                        Our Teams</p>
+                                    <p class="text-text-main font-semibold">Technology, Design, Social Media,
+                                        Organization, R&D...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Right Column: Registration Form -->
+                <div class="lg:col-span-8">
+                    <div class="bg-white rounded-xl shadow-sm border border-border-color p-6 md:p-8 lg:p-10">
+                        <form id="coreApplicationForm" class="space-y-10" novalidate>
+                            <!-- Hidden Type Field -->
+                            <input type="hidden" name="form_type" value="core_application" />
+
+                            <!-- Section 1 -->
+                            <section>
+                                <div class="flex items-center gap-3 mb-6 pb-2 border-b border-border-color">
+                                    <span
+                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold text-sm">1</span>
+                                    <h3 class="text-text-main text-lg font-bold">Personal Information</h3>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="col-span-1 md:col-span-2">
+                                        <label class="block text-sm font-semibold text-text-main mb-2" for="full_name">
+                                            Full Name <span class="text-accent">*</span>
+                                        </label>
+                                        <input
+                                            class="w-full rounded-lg border-border-color bg-background-light focus:border-primary focus:ring-primary/20 text-text-main py-2.5 px-4 text-sm placeholder:text-text-muted/60 transition-colors"
+                                            id="full_name" name="full_name" placeholder="Your Name and Surname"
+                                            type="text" required autocomplete="name" />
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-semibold text-text-main mb-2" for="email">
+                                            Email Address <span class="text-accent">*</span>
+                                        </label>
+                                        <input
+                                            class="w-full rounded-lg border-border-color bg-background-light focus:border-primary focus:ring-primary/20 text-text-main py-2.5 px-4 text-sm placeholder:text-text-muted/60 transition-colors"
+                                            id="email" name="email" placeholder="example@email.com" type="email"
+                                            required autocomplete="email" />
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-semibold text-text-main mb-2" for="phone">
+                                            Phone Number <span class="text-accent">*</span>
+                                        </label>
+                                        <input
+                                            class="w-full rounded-lg border-border-color bg-background-light focus:border-primary focus:ring-primary/20 text-text-main py-2.5 px-4 text-sm placeholder:text-text-muted/60 transition-colors"
+                                            id="phone" name="phone" placeholder="05XX XXX XX XX" type="tel" required
+                                            autocomplete="tel" inputmode="tel" />
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-semibold text-text-main mb-2"
+                                            for="institution">
+                                            University / Institution <span class="text-accent">*</span>
+                                        </label>
+                                        <input
+                                            class="w-full rounded-lg border-border-color bg-background-light focus:border-primary focus:ring-primary/20 text-text-main py-2.5 px-4 text-sm transition-colors"
+                                            id="institution" name="institution" type="text" required
+                                            placeholder="Ex: Istanbul Sabahattin Zaim University" />
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-semibold text-text-main mb-2" for="department">
+                                            Department / Year <span class="text-accent">*</span>
+                                        </label>
+                                        <input
+                                            class="w-full rounded-lg border-border-color bg-background-light focus:border-primary focus:ring-primary/20 text-text-main py-2.5 px-4 text-sm placeholder:text-text-muted/60 transition-colors"
+                                            id="department" name="department" placeholder="Ex: Computer Eng. 3rd Year"
+                                            type="text" required />
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Section 2 -->
+                            <section>
+                                <div class="flex items-center gap-3 mb-6 pb-2 border-b border-border-color">
+                                    <span
+                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold text-sm">2</span>
+                                    <h3 class="text-text-main text-lg font-bold">Application Details</h3>
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-text-main mb-2"
+                                            for="team_preference">
+                                            Which team would you like to join? <span class="text-accent">*</span>
+                                        </label>
+                                        <select
+                                            class="w-full rounded-lg border-border-color bg-background-light focus:border-primary focus:ring-primary/20 text-text-main py-2.5 px-4 text-sm transition-colors"
+                                            id="team_preference" name="team_preference" required>
+                                            <option value="">Select...</option>
+                                            <option value="software">Software & Technology</option>
+                                            <option value="design">Design & Media</option>
+                                            <option value="social_media">Social Media & Communication</option>
+                                            <option value="organization">Organization & Events</option>
+                                            <option value="r_and_d">R&D & Project Development</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-semibold text-text-main mb-2" for="motivation">
+                                            Why do you want to join the IPS Core Team? <span
+                                                class="text-accent">*</span>
+                                        </label>
+                                        <textarea
+                                            class="w-full rounded-lg border-border-color bg-background-light focus:border-primary focus:ring-primary/20 text-text-main py-2.5 px-4 text-sm transition-colors resize-none"
+                                            id="motivation" name="motivation"
+                                            placeholder="Tell us about yourself, your goals and areas where you can contribute..."
+                                            rows="4" required></textarea>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-semibold text-text-main mb-2" for="skills">
+                                            Skills / Tools Used / Portfolio Link
+                                        </label>
+                                        <textarea
+                                            class="w-full rounded-lg border-border-color bg-background-light focus:border-primary focus:ring-primary/20 text-text-main py-2.5 px-4 text-sm transition-colors resize-none"
+                                            id="skills" name="skills"
+                                            placeholder="Ex: Photoshop, Python, Event Management etc. GitHub/Behance/LinkedIn link if available..."
+                                            rows="3"></textarea>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-semibold text-text-main mb-2" for="source">How
+                                            did you hear about IPS?</label>
+                                        <select
+                                            class="w-full md:w-1/2 rounded-lg border-border-color bg-background-light focus:border-primary focus:ring-primary/20 text-text-main py-2.5 px-4 text-sm transition-colors"
+                                            id="source" name="source">
+                                            <option value="">Select...</option>
+                                            <option value="social_media">Social Media</option>
+                                            <option value="friend">Friend Recommendation</option>
+                                            <option value="event">Saw at an Event</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Section 3: Consent -->
+                            <section class="bg-background-light rounded-lg p-5 border border-border-color/50">
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="flex h-5 items-center">
+                                            <input
+                                                class="h-4 w-4 rounded border-border-color text-primary focus:ring-primary"
+                                                id="gdpr" name="gdpr" type="checkbox" required />
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label class="font-medium text-text-main" for="gdpr">
+                                                Privacy Policy & Data Consent <span class="text-accent">*</span>
+                                            </label>
+                                            <p class="text-text-muted text-xs mt-1">
+                                                I have read and accept the
+                                                <a class="text-primary underline" href="kvkk.html">privacy policy</a>
+                                                regarding the processing of my personal data.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Submit -->
+                            <div class="pt-4 flex flex-col md:flex-row gap-4 justify-end items-center">
+                                <p class="text-xs text-text-muted">
+                                    <span class="text-accent">*</span> Marked fields are required.
+                                </p>
+                                <button
+                                    class="w-full md:w-auto min-w-[200px] flex items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-primary-hover text-white text-base font-bold shadow-lg shadow-primary/20 transition-all transform active:scale-95"
+                                    type="submit">
+                                    <span>Submit Application</span>
+                                    <span class="material-symbols-outlined ml-2 text-[20px]">send</span>
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Script -->
+                        <script>
+                            (function () {
+                                const form = document.getElementById("coreApplicationForm");
+                                // Use same Web App URL, backend should handle form_type
+                                const WEB_APP_URL =
+                                    "https://script.google.com/macros/s/AKfycbw8HkZkC7_wJFmZBwuLT2uya4FzvjFOsmWi6uFHbMz8VWP6txbx1ShGhWvGnUzTUaSEVA/exec";
+
+                                const hp = document.createElement("input");
+                                hp.type = "text";
+                                hp.name = "website";
+                                hp.style.position = "absolute";
+                                hp.style.left = "-9999px";
+                                hp.tabIndex = -1;
+                                form.appendChild(hp);
+
+                                function val(id) {
+                                    const el = document.getElementById(id);
+                                    return el ? (el.value || "").trim() : "";
+                                }
+                                function checked(id) {
+                                    const el = document.getElementById(id);
+                                    return !!(el && el.checked);
+                                }
+
+                                form.addEventListener("submit", async (e) => {
+                                    e.preventDefault();
+                                    if ((hp.value || "").trim()) return;
+
+                                    const payload = {
+                                        form_type: "core_application",
+                                        full_name: val("full_name"),
+                                        email: val("email"),
+                                        phone: val("phone"),
+                                        institution: val("institution"),
+                                        department: val("department"),
+
+                                        team_preference: val("team_preference"),
+                                        motivation: val("motivation"),
+                                        skills: val("skills"),
+                                        source: val("source"),
+
+                                        gdpr: checked("gdpr"),
+
+                                        page_path: location.pathname,
+                                        user_agent: navigator.userAgent
+                                    };
+
+                                    if (!payload.full_name || !payload.email || !payload.phone || !payload.institution || !payload.team_preference || !payload.motivation) {
+                                        alert("Please fill in the required fields.");
+                                        return;
+                                    }
+                                    if (!payload.gdpr) {
+                                        alert("Privacy policy consent is required.");
+                                        return;
+                                    }
+
+                                    const submitBtn = form.querySelector('button[type="submit"]');
+                                    const oldHtml = submitBtn ? submitBtn.innerHTML : "";
+                                    if (submitBtn) {
+                                        submitBtn.disabled = true;
+                                        submitBtn.innerHTML = "Sending...";
+                                    }
+
+                                    try {
+                                        // Using no-cors might prevent reading response but allows submission to Google
+                                        const res = await fetch(WEB_APP_URL, {
+                                            method: "POST",
+                                            headers: { "Content-Type": "text/plain;charset=utf-8" },
+                                            body: JSON.stringify(payload)
+                                        });
+
+                                        const txt = await res.text();
+                                        let json;
+                                        try { json = JSON.parse(txt); } catch { json = { ok: true }; }
+
+                                        alert("Your application has been received successfully. Thank you!");
+                                        form.reset();
+                                    } catch (err) {
+                                        console.error(err);
+                                        alert("An error occurred. Please try again later.");
+                                    } finally {
+                                        if (submitBtn) {
+                                            submitBtn.disabled = false;
+                                            submitBtn.innerHTML = oldHtml;
+                                        }
+                                    }
+                                });
+                            })();
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

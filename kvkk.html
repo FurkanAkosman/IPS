@@ -1,456 +1,523 @@
 <!DOCTYPE html>
-<html class="light scroll-smooth" lang="tr" id="top">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>KVKK ve Gizlilik Politikası - IPS</title>
+<html class="light scroll-smooth" lang="en" id="top">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Privacy Policy - IPS</title>
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 
-    <!-- Theme Configuration (index ile uyumlu: bordo) -->
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#4d0011",          // bordo (index)
-              burgundy: "#4d0011",
-              "background-light": "#f8f8f3",
-              "background-dark": "#221013",
-              "text-main": "#1b0d10",
-              "text-secondary": "#6b4b53",
-            },
-            fontFamily: {
-              display: ["Manrope", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              "2xl": "1rem",
-              full: "9999px",
-            },
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Theme Configuration (index ile uyumlu: bordo) -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4d0011",          // bordo (index)
+            burgundy: "#4d0011",
+            "background-light": "#f8f8f3",
+            "background-dark": "#221013",
+            "text-main": "#1b0d10",
+            "text-secondary": "#6b4b53",
+          },
+          fontFamily: {
+            display: ["Manrope", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            "2xl": "1rem",
+            full: "9999px",
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <style>
-      /* Custom scrollbar (kırmızı -> bordo) */
-      ::-webkit-scrollbar { width: 8px; }
-      ::-webkit-scrollbar-track { background: transparent; }
-      ::-webkit-scrollbar-thumb {
-        background: #4d0011;
-        border-radius: 4px;
-        opacity: 0.2;
+  <style>
+    /* Custom scrollbar (kırmızı -> bordo) */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #4d0011;
+      border-radius: 4px;
+      opacity: 0.2;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3a000d;
+    }
+
+    /* Scrollspy active (kırmızı -> bordo) */
+    .sticky-nav-item.active {
+      background-color: rgba(77, 0, 17, 0.10);
+      color: #4d0011;
+      font-weight: 700;
+      border-left: 3px solid #4d0011;
+    }
+
+    .dark .sticky-nav-item.active {
+      background-color: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+      border-left: 3px solid rgba(255, 255, 255, 0.55);
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
       }
-      ::-webkit-scrollbar-thumb:hover { background: #3a000d; }
 
-      /* Scrollspy active (kırmızı -> bordo) */
-      .sticky-nav-item.active {
-        background-color: rgba(77, 0, 17, 0.10);
-        color: #4d0011;
-        font-weight: 700;
-        border-left: 3px solid #4d0011;
+      body {
+        background: white;
+        color: black;
       }
-      .dark .sticky-nav-item.active {
-        background-color: rgba(255, 255, 255, 0.06);
-        color: #ffffff;
-        border-left: 3px solid rgba(255, 255, 255, 0.55);
-      }
+    }
 
-      @media print {
-        .no-print { display: none !important; }
-        body { background: white; color: black; }
-      }
+    details>summary {
+      list-style: none;
+    }
 
-      details > summary { list-style: none; }
-      details > summary::-webkit-details-marker { display: none; }
-    </style>
+    details>summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
 
-    <!-- IPS global header/footer injectors (tek kez) -->
-    <script defer src="js/header-loader.js"></script>
-    <script defer src="js/footer-loader.js"></script>
-  </head>
+  <!-- IPS global header/footer injectors (tek kez) -->
+  <script defer src="js/header-loader.js"></script>
+  <script defer src="js/footer-loader.js"></script>
+</head>
 
-  <body
-    class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 font-display transition-colors duration-200"
-  >
-    <!-- Ortak Header: js/header-loader.js enjekte eder -->
+<body
+  class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 font-display transition-colors duration-200">
+  <!-- Ortak Header: js/header-loader.js enjekte eder -->
 
-    <main class="layout-container flex flex-col min-h-screen">
-      <!-- Page Heading & Meta -->
-      <section
-        class="w-full bg-white dark:bg-[#2a1418] border-b border-gray-100 dark:border-white/5 py-12 lg:py-16 px-6 lg:px-40"
-      >
-        <div class="max-w-[1200px] mx-auto">
-          <div class="flex flex-col gap-4">
-            <div class="flex items-center gap-2 mb-2 text-primary">
-              <span class="material-symbols-outlined text-sm">shield</span>
-              <span class="text-xs font-bold uppercase tracking-wider">Hukuki Metinler</span>
+  <main class="layout-container flex flex-col min-h-screen">
+    <!-- Page Heading & Meta -->
+    <section
+      class="w-full bg-white dark:bg-[#2a1418] border-b border-gray-100 dark:border-white/5 py-12 lg:py-16 px-6 lg:px-40">
+      <div class="max-w-[1200px] mx-auto">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-2 mb-2 text-primary">
+            <span class="material-symbols-outlined text-sm">shield</span>
+            <span class="text-xs font-bold uppercase tracking-wider">Legal Texts</span>
+          </div>
+
+          <h1 class="text-4xl lg:text-5xl font-black text-text-main dark:text-white leading-tight tracking-tight">
+            Privacy Policy & GDPR
+          </h1>
+
+          <p class="text-text-secondary dark:text-gray-400 text-lg max-w-2xl mt-2">
+            The security and privacy of your personal data is a top priority for the Interdisciplinary Project Society
+            (IPS).
+          </p>
+
+          <div class="flex flex-wrap items-center gap-6 mt-6 text-sm text-gray-500 dark:text-gray-400">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-lg">calendar_today</span>
+              <span>Last Updated: October 15, 2023</span>
             </div>
-
-            <h1
-              class="text-4xl lg:text-5xl font-black text-text-main dark:text-white leading-tight tracking-tight"
-            >
-              KVKK ve Gizlilik Politikası
-            </h1>
-
-            <p class="text-text-secondary dark:text-gray-400 text-lg max-w-2xl mt-2">
-              Kişisel verilerinizin güvenliği ve gizliliği Interdisciplinary Project Society
-              (IPS) için en önemli önceliktir.
-            </p>
-
-            <div class="flex flex-wrap items-center gap-6 mt-6 text-sm text-gray-500 dark:text-gray-400">
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-lg">calendar_today</span>
-                <span>Son Güncelleme: 15 Ekim 2023</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-lg">verified_user</span>
-                <span>Sürüm: v2.4</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-lg">gavel</span>
-                <span>Hukuk Birimi</span>
-              </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-lg">verified_user</span>
+              <span>Version: v2.4</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-lg">gavel</span>
+              <span>Legal Department</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Main Content Area with Sidebar -->
-      <div
-        class="flex flex-col lg:flex-row flex-1 max-w-[1200px] mx-auto w-full px-6 lg:px-10 py-10 gap-10"
-      >
-        <!-- Sidebar Navigation (Desktop Sticky) -->
-        <aside class="hidden lg:block w-64 shrink-0 no-print">
-          <div class="sticky top-28 bg-white dark:bg-[#2a1418] rounded-xl shadow-sm border border-gray-100 dark:border-white/5 p-4">
-            <h3 class="text-text-main dark:text-white font-bold mb-4 px-3 flex items-center gap-2">
-              <span class="material-symbols-outlined text-primary">toc</span> İçindekiler
-            </h3>
+    <!-- Main Content Area with Sidebar -->
+    <div class="flex flex-col lg:flex-row flex-1 max-w-[1200px] mx-auto w-full px-6 lg:px-10 py-10 gap-10">
+      <!-- Sidebar Navigation (Desktop Sticky) -->
+      <aside class="hidden lg:block w-64 shrink-0 no-print">
+        <div
+          class="sticky top-28 bg-white dark:bg-[#2a1418] rounded-xl shadow-sm border border-gray-100 dark:border-white/5 p-4">
+          <h3 class="text-text-main dark:text-white font-bold mb-4 px-3 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">toc</span> Table of Contents
+          </h3>
 
-            <nav class="flex flex-col gap-1" id="toc">
-              <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all" href="#genel-bakis">Genel Bakış</a>
-              <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all" href="#toplanan-veriler">Toplanan Veriler</a>
-              <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all" href="#isleme-amaci">Veri İşleme Amacı</a>
-              <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all" href="#veri-paylasimi">Veri Paylaşımı</a>
-              <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all" href="#veri-guvenligi">Veri Güvenliği</a>
-              <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all" href="#kullanici-haklari">Kullanıcı Hakları</a>
-              <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all" href="#cerezler">Çerez Politikası</a>
-              <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all" href="#iletisim">İletişim</a>
-            </nav>
+          <nav class="flex flex-col gap-1" id="toc">
+            <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all"
+              href="#genel-bakis">Overview</a>
+            <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all"
+              href="#toplanan-veriler">Collected Data</a>
+            <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all"
+              href="#isleme-amaci">Processing Purpose</a>
+            <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all"
+              href="#veri-paylasimi">Data Sharing</a>
+            <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all"
+              href="#veri-guvenligi">Data Security</a>
+            <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all"
+              href="#kullanici-haklari">User Rights</a>
+            <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all"
+              href="#cerezler">Cookie Policy</a>
+            <a class="sticky-nav-item block px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all"
+              href="#iletisim">Contact</a>
+          </nav>
 
-            <div class="mt-8 p-4 bg-background-light dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5">
-              <p class="text-xs text-text-secondary dark:text-gray-400 font-medium mb-2">Hızlı Destek</p>
-              <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">Sorularınız için bizimle iletişime geçebilirsiniz.</p>
-              <a class="text-xs font-bold text-primary flex items-center gap-1 hover:underline" href="mailto:kvkk@ips.org">
-                kvkk@ips.org
-                <span class="material-symbols-outlined text-xs">arrow_outward</span>
-              </a>
+          <div
+            class="mt-8 p-4 bg-background-light dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5">
+            <p class="text-xs text-text-secondary dark:text-gray-400 font-medium mb-2">Quick Support</p>
+            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3">You can contact us for your questions.</p>
+            <a class="text-xs font-bold text-primary flex items-center gap-1 hover:underline"
+              href="mailto:kvkk@ips.org">
+              kvkk@ips.org
+              <span class="material-symbols-outlined text-xs">arrow_outward</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Content Column -->
+      <article class="flex-1 flex flex-col gap-12 text-text-main dark:text-gray-200">
+        <section class="scroll-mt-32" id="genel-bakis">
+          <h2 class="text-2xl font-bold mb-4 text-text-main dark:text-white">Overview</h2>
+          <div class="prose prose-lg dark:prose-invert max-w-none">
+            <p class="leading-relaxed text-gray-600 dark:text-gray-300 mb-4">
+              As Interdisciplinary Project Society (IPS), we show maximum sensitivity to the security of your personal
+              data. With this awareness, we attach great importance to the processing and preservation of all kinds of
+              personal data belonging to all persons associated with our community in accordance with the Law on the
+              Protection of Personal Data No. 6698 (KVKK).
+            </p>
+            <p class="leading-relaxed text-gray-600 dark:text-gray-300">
+              With full awareness of this responsibility, we process your personal data as "Data Controller" under the
+              KVKK, as explained below and within the limits ordered by the legislation.
+            </p>
+          </div>
+        </section>
+
+        <hr class="border-gray-200 dark:border-white/10" />
+
+        <section class="scroll-mt-32" id="toplanan-veriler">
+          <h2 class="text-2xl font-bold mb-6 text-text-main dark:text-white">Collected Data</h2>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div
+              class="p-5 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-primary/30 transition-colors">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-primary/10 text-primary p-2 rounded-lg material-symbols-outlined">badge</span>
+                <h3 class="font-bold text-lg">Identity Information</h3>
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Name, surname, ID number (if
+                necessary), date of birth.</p>
+            </div>
+
+            <div
+              class="p-5 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-primary/30 transition-colors">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-primary/10 text-primary p-2 rounded-lg material-symbols-outlined">contact_mail</span>
+                <h3 class="font-bold text-lg">Contact Information</h3>
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Email address, phone number,
+                residential address.</p>
+            </div>
+
+            <div
+              class="p-5 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-primary/30 transition-colors">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-primary/10 text-primary p-2 rounded-lg material-symbols-outlined">school</span>
+                <h3 class="font-bold text-lg">Education Data</h3>
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Student certificate, department info,
+                university, graduation status.</p>
+            </div>
+
+            <div
+              class="p-5 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-primary/30 transition-colors">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-primary/10 text-primary p-2 rounded-lg material-symbols-outlined">monitoring</span>
+                <h3 class="font-bold text-lg">Transaction Security</h3>
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">IP addresses, login-logout records,
+                password information.</p>
             </div>
           </div>
-        </aside>
+        </section>
 
-        <!-- Content Column -->
-        <article class="flex-1 flex flex-col gap-12 text-text-main dark:text-gray-200">
-          <section class="scroll-mt-32" id="genel-bakis">
-            <h2 class="text-2xl font-bold mb-4 text-text-main dark:text-white">Genel Bakış</h2>
-            <div class="prose prose-lg dark:prose-invert max-w-none">
-              <p class="leading-relaxed text-gray-600 dark:text-gray-300 mb-4">
-                Interdisciplinary Project Society (IPS) olarak, kişisel verilerinizin güvenliği hususuna azami hassasiyet göstermekteyiz. Bu bilinçle, topluluğumuz ile ilişkili tüm şahıslara ait her türlü kişisel verinin 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVK Kanunu)'na uygun olarak işlenerek, muhafaza edilmesine büyük önem atfetmekteyiz.
-              </p>
-              <p class="leading-relaxed text-gray-600 dark:text-gray-300">
-                Bu sorumluluğumuzun tam idraki ile KVK Kanunu kapsamında "Veri Sorumlusu" sıfatıyla, kişisel verilerinizi aşağıda izah edildiği surette ve mevzuat tarafından emredilen sınırlar çerçevesinde işlemekteyiz.
-              </p>
-            </div>
-          </section>
+        <hr class="border-gray-200 dark:border-white/10" />
 
-          <hr class="border-gray-200 dark:border-white/10" />
+        <section class="scroll-mt-32" id="isleme-amaci">
+          <h2 class="text-2xl font-bold mb-4 text-text-main dark:text-white">Purpose of Processing Personal Data</h2>
 
-          <section class="scroll-mt-32" id="toplanan-veriler">
-            <h2 class="text-2xl font-bold mb-6 text-text-main dark:text-white">Toplanan Veriler</h2>
+          <ul class="space-y-3">
+            <li class="flex gap-3 items-start">
+              <span class="material-symbols-outlined text-primary mt-1 shrink-0">check_circle</span>
+              <span class="text-gray-700 dark:text-gray-300">Execution and management of community membership
+                processes.</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="material-symbols-outlined text-primary mt-1 shrink-0">check_circle</span>
+              <span class="text-gray-700 dark:text-gray-300">Planning and announcing events, project and training
+                organizations.</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="material-symbols-outlined text-primary mt-1 shrink-0">check_circle</span>
+              <span class="text-gray-700 dark:text-gray-300">Ensuring communication with members and evaluating
+                feedback.</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="material-symbols-outlined text-primary mt-1 shrink-0">check_circle</span>
+              <span class="text-gray-700 dark:text-gray-300">Fulfillment of legal obligations (Associations Desk
+                notifications etc.).</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="material-symbols-outlined text-primary mt-1 shrink-0">check_circle</span>
+              <span class="text-gray-700 dark:text-gray-300">Ensuring the security of the website and digital
+                platforms.</span>
+            </li>
+          </ul>
+        </section>
 
-            <div class="grid md:grid-cols-2 gap-4">
-              <div class="p-5 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-primary/30 transition-colors">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="bg-primary/10 text-primary p-2 rounded-lg material-symbols-outlined">badge</span>
-                  <h3 class="font-bold text-lg">Kimlik Bilgileri</h3>
-                </div>
-                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Ad, soyad, T.C. kimlik numarası (gerekli hallerde), doğum tarihi.</p>
-              </div>
-
-              <div class="p-5 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-primary/30 transition-colors">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="bg-primary/10 text-primary p-2 rounded-lg material-symbols-outlined">contact_mail</span>
-                  <h3 class="font-bold text-lg">İletişim Bilgileri</h3>
-                </div>
-                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">E-posta adresi, telefon numarası, ikametgah adresi.</p>
-              </div>
-
-              <div class="p-5 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-primary/30 transition-colors">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="bg-primary/10 text-primary p-2 rounded-lg material-symbols-outlined">school</span>
-                  <h3 class="font-bold text-lg">Eğitim Verileri</h3>
-                </div>
-                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Öğrenci belgesi, bölüm bilgisi, üniversite, mezuniyet durumu.</p>
-              </div>
-
-              <div class="p-5 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-primary/30 transition-colors">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="bg-primary/10 text-primary p-2 rounded-lg material-symbols-outlined">monitoring</span>
-                  <h3 class="font-bold text-lg">İşlem Güvenliği</h3>
-                </div>
-                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">IP adresleri, giriş-çıkış kayıtları, şifre ve parola bilgileri.</p>
-              </div>
-            </div>
-          </section>
-
-          <hr class="border-gray-200 dark:border-white/10" />
-
-          <section class="scroll-mt-32" id="isleme-amaci">
-            <h2 class="text-2xl font-bold mb-4 text-text-main dark:text-white">Kişisel Verilerin İşlenme Amacı</h2>
-
-            <ul class="space-y-3">
-              <li class="flex gap-3 items-start">
-                <span class="material-symbols-outlined text-primary mt-1 shrink-0">check_circle</span>
-                <span class="text-gray-700 dark:text-gray-300">Topluluk üyelik süreçlerinin yürütülmesi ve yönetilmesi.</span>
-              </li>
-              <li class="flex gap-3 items-start">
-                <span class="material-symbols-outlined text-primary mt-1 shrink-0">check_circle</span>
-                <span class="text-gray-700 dark:text-gray-300">Etkinlik, proje ve eğitim organizasyonlarının planlanması ve duyurulması.</span>
-              </li>
-              <li class="flex gap-3 items-start">
-                <span class="material-symbols-outlined text-primary mt-1 shrink-0">check_circle</span>
-                <span class="text-gray-700 dark:text-gray-300">Üyeler ile iletişimin sağlanması ve geri bildirimlerin değerlendirilmesi.</span>
-              </li>
-              <li class="flex gap-3 items-start">
-                <span class="material-symbols-outlined text-primary mt-1 shrink-0">check_circle</span>
-                <span class="text-gray-700 dark:text-gray-300">Yasal yükümlülüklerin yerine getirilmesi (Dernekler Masası bildirimleri vb.).</span>
-              </li>
-              <li class="flex gap-3 items-start">
-                <span class="material-symbols-outlined text-primary mt-1 shrink-0">check_circle</span>
-                <span class="text-gray-700 dark:text-gray-300">Web sitesi ve dijital platformların güvenliğinin sağlanması.</span>
-              </li>
-            </ul>
-          </section>
-
-          <section class="scroll-mt-32" id="veri-paylasimi">
-            <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-6 rounded-r-lg">
-              <h3 class="text-lg font-bold text-yellow-800 dark:text-yellow-200 mb-2 flex items-center gap-2">
-                <span class="material-symbols-outlined">warning</span>
-                Veri Paylaşımı Hakkında Önemli Not
-              </h3>
-              <p class="text-yellow-900/80 dark:text-yellow-100/80">
-                Kişisel verileriniz, kural olarak üçüncü kişilerle paylaşılmamaktadır. Ancak, yasal zorunluluklar gereği yetkili kamu kurum ve kuruluşları ile (örn. İçişleri Bakanlığı, Mahkemeler) paylaşılması gerekebilir. Ayrıca, etkinlik sponsorlukları kapsamında anonimleştirilmiş istatistiksel veriler kullanılabilir.
-              </p>
-            </div>
-          </section>
-
-          <hr class="border-gray-200 dark:border-white/10" />
-
-          <section class="scroll-mt-32" id="veri-guvenligi">
-            <h2 class="text-2xl font-bold mb-4 text-text-main dark:text-white">Veri Güvenliği</h2>
-            <p class="mb-4 text-gray-600 dark:text-gray-300">
-              Verilerinizin güvenliğini sağlamak amacıyla uluslararası standartlara uygun teknik ve idari tedbirler almaktayız:
+        <section class="scroll-mt-32" id="veri-paylasimi">
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+            <h3 class="text-lg font-bold text-yellow-800 dark:text-yellow-200 mb-2 flex items-center gap-2">
+              <span class="material-symbols-outlined">warning</span>
+              Important Note on Data Sharing
+            </h3>
+            <p class="text-yellow-900/80 dark:text-yellow-100/80">
+              As a rule, your personal data is not shared with third parties. However, it may need to be shared with
+              authorized public institutions and organizations (e.g. Ministry of Interior, Courts) due to legal
+              obligations. In addition, anonymized statistical data may be used within the scope of event sponsorships.
             </p>
+          </div>
+        </section>
 
-            <div class="grid gap-3">
-              <div class="flex items-center p-3 bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 shadow-sm">
-                <span class="material-symbols-outlined text-green-600 mr-3">lock</span>
-                <span class="text-sm font-medium">SSL şifreleme ile veri iletimi</span>
-              </div>
-              <div class="flex items-center p-3 bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 shadow-sm">
-                <span class="material-symbols-outlined text-green-600 mr-3">admin_panel_settings</span>
-                <span class="text-sm font-medium">Erişim yetkilendirmesi ve kısıtlamaları</span>
-              </div>
-              <div class="flex items-center p-3 bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 shadow-sm">
-                <span class="material-symbols-outlined text-green-600 mr-3">dns</span>
-                <span class="text-sm font-medium">Düzenli güvenlik taramaları ve yedekleme</span>
-              </div>
+        <hr class="border-gray-200 dark:border-white/10" />
+
+        <section class="scroll-mt-32" id="veri-guvenligi">
+          <h2 class="text-2xl font-bold mb-4 text-text-main dark:text-white">Data Security</h2>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">
+            We take technical and administrative measures in accordance with international standards to ensure the
+            security of your data:
+          </p>
+
+          <div class="grid gap-3">
+            <div
+              class="flex items-center p-3 bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 shadow-sm">
+              <span class="material-symbols-outlined text-green-600 mr-3">lock</span>
+              <span class="text-sm font-medium">Data transmission with SSL encryption</span>
             </div>
-          </section>
-
-          <hr class="border-gray-200 dark:border-white/10" />
-
-          <section class="scroll-mt-32" id="kullanici-haklari">
-            <h2 class="text-2xl font-bold mb-6 text-text-main dark:text-white">KVKK 11. Madde Uyarınca Haklarınız</h2>
-
-            <div class="space-y-4">
-              <details class="group bg-white dark:bg-white/5 rounded-lg border border-gray-200 dark:border-white/10 overflow-hidden open:ring-2 open:ring-primary/20">
-                <summary class="flex justify-between items-center p-4 cursor-pointer font-medium text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-white/10">
-                  <span>Verilerimin işlenip işlenmediğini öğrenme hakkı</span>
-                  <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-                </summary>
-                <div class="p-4 pt-0 text-sm text-gray-600 dark:text-gray-400 bg-gray-50/50 dark:bg-black/20">
-                  Kişisel verilerinizin işlenip işlenmediğini, işlenmişse buna ilişkin bilgileri talep etme hakkına sahipsiniz.
-                </div>
-              </details>
-
-              <details class="group bg-white dark:bg-white/5 rounded-lg border border-gray-200 dark:border-white/10 overflow-hidden open:ring-2 open:ring-primary/20">
-                <summary class="flex justify-between items-center p-4 cursor-pointer font-medium text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-white/10">
-                  <span>Verilerimin silinmesini veya yok edilmesini isteme hakkı</span>
-                  <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-                </summary>
-                <div class="p-4 pt-0 text-sm text-gray-600 dark:text-gray-400 bg-gray-50/50 dark:bg-black/20">
-                  KVKK'da öngörülen şartlar çerçevesinde kişisel verilerinizin silinmesini veya yok edilmesini isteyebilirsiniz.
-                </div>
-              </details>
-
-              <details class="group bg-white dark:bg-white/5 rounded-lg border border-gray-200 dark:border-white/10 overflow-hidden open:ring-2 open:ring-primary/20">
-                <summary class="flex justify-between items-center p-4 cursor-pointer font-medium text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-white/10">
-                  <span>Verilerin düzeltilmesini talep etme hakkı</span>
-                  <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-                </summary>
-                <div class="p-4 pt-0 text-sm text-gray-600 dark:text-gray-400 bg-gray-50/50 dark:bg-black/20">
-                  Kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme hakkına sahipsiniz.
-                </div>
-              </details>
-
-              <details class="group bg-white dark:bg-white/5 rounded-lg border border-gray-200 dark:border-white/10 overflow-hidden open:ring-2 open:ring-primary/20">
-                <summary class="flex justify-between items-center p-4 cursor-pointer font-medium text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-white/10">
-                  <span>İtiraz etme ve tazminat talep etme hakkı</span>
-                  <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-                </summary>
-                <div class="p-4 pt-0 text-sm text-gray-600 dark:text-gray-400 bg-gray-50/50 dark:bg-black/20">
-                  İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme ve kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme hakkına sahipsiniz.
-                </div>
-              </details>
+            <div
+              class="flex items-center p-3 bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 shadow-sm">
+              <span class="material-symbols-outlined text-green-600 mr-3">admin_panel_settings</span>
+              <span class="text-sm font-medium">Access authorization and restrictions</span>
             </div>
-          </section>
+            <div
+              class="flex items-center p-3 bg-white dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/5 shadow-sm">
+              <span class="material-symbols-outlined text-green-600 mr-3">dns</span>
+              <span class="text-sm font-medium">Regular security scans and backups</span>
+            </div>
+          </div>
+        </section>
 
-          <hr class="border-gray-200 dark:border-white/10" />
+        <hr class="border-gray-200 dark:border-white/10" />
 
-          <section class="scroll-mt-32" id="cerezler">
-            <h2 class="text-2xl font-bold mb-4 text-text-main dark:text-white">Çerez Politikası</h2>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">
-              Web sitemizden en verimli şekilde faydalanabilmeniz ve kullanıcı deneyiminizi geliştirebilmek amacıyla Çerez (Cookie) kullanıyoruz. Çerez tercihlerinizi tarayıcınızın ayarlarından değiştirebilirsiniz.
-            </p>
+        <section class="scroll-mt-32" id="kullanici-haklari">
+          <h2 class="text-2xl font-bold mb-6 text-text-main dark:text-white">Your Rights Under Article 11 of KVKK</h2>
 
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-gray-100 dark:bg-white/5 p-4 rounded-lg">
-              <div>
-                <p class="font-bold text-sm">Çerez Tercihleri</p>
-                <p class="text-xs text-gray-500 dark:text-gray-400">Zorunlu çerezler dışındaki çerezleri yönetebilirsiniz.</p>
+          <div class="space-y-4">
+            <details
+              class="group bg-white dark:bg-white/5 rounded-lg border border-gray-200 dark:border-white/10 overflow-hidden open:ring-2 open:ring-primary/20">
+              <summary
+                class="flex justify-between items-center p-4 cursor-pointer font-medium text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-white/10">
+                <span>Right to learn whether my data is processed</span>
+                <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="p-4 pt-0 text-sm text-gray-600 dark:text-gray-400 bg-gray-50/50 dark:bg-black/20">
+                You have the right to request information about whether your personal data is processed, and if so,
+                information about it.
               </div>
-              <button
-                class="text-xs font-bold bg-text-main text-white dark:bg-white dark:text-black px-4 py-2 rounded-md hover:bg-primary transition-colors"
-                type="button"
-              >
-                Ayarları Yönet
-              </button>
+            </details>
+
+            <details
+              class="group bg-white dark:bg-white/5 rounded-lg border border-gray-200 dark:border-white/10 overflow-hidden open:ring-2 open:ring-primary/20">
+              <summary
+                class="flex justify-between items-center p-4 cursor-pointer font-medium text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-white/10">
+                <span>Right to request deletion or destruction of my data</span>
+                <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="p-4 pt-0 text-sm text-gray-600 dark:text-gray-400 bg-gray-50/50 dark:bg-black/20">
+                You can request the deletion or destruction of your personal data within the framework of the conditions
+                stipulated in the KVKK.
+              </div>
+            </details>
+
+            <details
+              class="group bg-white dark:bg-white/5 rounded-lg border border-gray-200 dark:border-white/10 overflow-hidden open:ring-2 open:ring-primary/20">
+              <summary
+                class="flex justify-between items-center p-4 cursor-pointer font-medium text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-white/10">
+                <span>Right to request correction of data</span>
+                <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="p-4 pt-0 text-sm text-gray-600 dark:text-gray-400 bg-gray-50/50 dark:bg-black/20">
+                You have the right to request correction of your personal data if it is incomplete or incorrectly
+                processed.
+              </div>
+            </details>
+
+            <details
+              class="group bg-white dark:bg-white/5 rounded-lg border border-gray-200 dark:border-white/10 overflow-hidden open:ring-2 open:ring-primary/20">
+              <summary
+                class="flex justify-between items-center p-4 cursor-pointer font-medium text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-white/10">
+                <span>Right to object and claim compensation</span>
+                <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="p-4 pt-0 text-sm text-gray-600 dark:text-gray-400 bg-gray-50/50 dark:bg-black/20">
+                You have the right to object to a result against you by analyzing the processed data exclusively through
+                automated systems and to demand compensation for the damage in case you suffer damage due to unlawful
+                processing.
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <hr class="border-gray-200 dark:border-white/10" />
+
+        <section class="scroll-mt-32" id="cerezler">
+          <h2 class="text-2xl font-bold mb-4 text-text-main dark:text-white">Cookie Policy</h2>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            We use Cookies so that you can benefit from our website most efficiently and improve your user experience.
+            You can change your cookie preferences from your browser settings.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-gray-100 dark:bg-white/5 p-4 rounded-lg">
+            <div>
+              <p class="font-bold text-sm">Cookie Preferences</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">You can manage cookies other than mandatory cookies.
+              </p>
             </div>
-          </section>
+            <button
+              class="text-xs font-bold bg-text-main text-white dark:bg-white dark:text-black px-4 py-2 rounded-md hover:bg-primary transition-colors"
+              type="button">
+              Manage Settings
+            </button>
+          </div>
+        </section>
 
-          <section class="scroll-mt-32 mb-10" id="iletisim">
-            <div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-8 border border-primary/10">
-              <div class="flex flex-col md:flex-row gap-8 items-start">
-                <div class="flex-1">
-                  <h2 class="text-2xl font-bold mb-3 text-text-main dark:text-white">İletişim</h2>
-                  <p class="text-gray-600 dark:text-gray-300 mb-6">
-                    KVKK kapsamındaki haklarınızı kullanmak veya gizlilik politikamızla ilgili sorularınız için bizimle aşağıdaki kanallardan iletişime geçebilirsiniz. Başvurularınız en geç 30 gün içinde yanıtlanacaktır.
-                  </p>
+        <section class="scroll-mt-32 mb-10" id="iletisim">
+          <div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-8 border border-primary/10">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+              <div class="flex-1">
+                <h2 class="text-2xl font-bold mb-3 text-text-main dark:text-white">Contact</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                  You can contact us via the channels below to exercise your rights under the KVKK or for your questions
+                  regarding our privacy policy. Your applications will be answered within 30 days at the latest.
+                </p>
 
-                  <div class="flex flex-col gap-4">
-                    <a class="flex items-center gap-3 p-3 bg-white dark:bg-black/20 rounded-lg hover:shadow-md transition-shadow group" href="mailto:kvkk@ips.org">
-                      <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined">mail</span>
-                      </div>
-                      <div>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">E-Posta Adresi</p>
-                        <p class="font-bold text-text-main dark:text-white">kvkk@ips.org</p>
-                      </div>
-                    </a>
+                <div class="flex flex-col gap-4">
+                  <a class="flex items-center gap-3 p-3 bg-white dark:bg-black/20 rounded-lg hover:shadow-md transition-shadow group"
+                    href="mailto:kvkk@ips.org">
+                    <div
+                      class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                      <span class="material-symbols-outlined">mail</span>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-500 dark:text-gray-400">Email Address</p>
+                      <p class="font-bold text-text-main dark:text-white">kvkk@ips.org</p>
+                    </div>
+                  </a>
 
-                    <div class="flex items-center gap-3 p-3 bg-white dark:bg-black/20 rounded-lg hover:shadow-md transition-shadow group">
-                      <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined">location_on</span>
-                      </div>
-                      <div>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">Yazışma Adresi</p>
-                        <p class="font-bold text-text-main dark:text-white">Üniversite Mah. Kampüs Cad. IPS Ofisi, İstanbul</p>
-                      </div>
+                  <div
+                    class="flex items-center gap-3 p-3 bg-white dark:bg-black/20 rounded-lg hover:shadow-md transition-shadow group">
+                    <div
+                      class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                      <span class="material-symbols-outlined">location_on</span>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-500 dark:text-gray-400">Correspondence Address</p>
+                      <p class="font-bold text-text-main dark:text-white">Üniversite Mah. Kampüs Cad. IPS Office,
+                        Istanbul</p>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div class="w-full md:w-1/3 bg-white dark:bg-black/20 p-6 rounded-xl border border-primary/10 shadow-lg">
-                  <h4 class="font-bold text-lg mb-4">Başvuru Formu</h4>
-                  <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Kişisel veri sahibi başvuru formunu indirerek taleplerinizi bize iletebilirsiniz.</p>
-                  <button class="w-full flex items-center justify-center gap-2 bg-primary hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition-colors" type="button">
-                    <span class="material-symbols-outlined">download</span>
-                    Formu İndir (PDF)
-                  </button>
-                </div>
+              <div class="w-full md:w-1/3 bg-white dark:bg-black/20 p-6 rounded-xl border border-primary/10 shadow-lg">
+                <h4 class="font-bold text-lg mb-4">Application Form</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">You can submit your requests to us by
+                  downloading the personal data owner application form.</p>
+                <button
+                  class="w-full flex items-center justify-center gap-2 bg-primary hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition-colors"
+                  type="button">
+                  <span class="material-symbols-outlined">download</span>
+                  Download Form (PDF)
+                </button>
               </div>
             </div>
-          </section>
-        </article>
-      </div>
-    </main>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
 
-    <!-- Ortak Footer: js/footer-loader.js enjekte eder -->
+  <!-- Ortak Footer: js/footer-loader.js enjekte eder -->
 
-    <!-- Back to top button (kırmızı hover kaldırıldı) -->
-    <a
-      aria-label="Yukarı Çık"
-      class="fixed bottom-6 right-6 p-3 bg-text-main dark:bg-primary text-white rounded-full shadow-lg hover:opacity-90 transition z-40 no-print"
-      href="#top"
-      id="backTopLink"
-    >
-      <span class="material-symbols-outlined">arrow_upward</span>
-    </a>
+  <!-- Back to top button (kırmızı hover kaldırıldı) -->
+  <a aria-label="Scroll to Top"
+    class="fixed bottom-6 right-6 p-3 bg-text-main dark:bg-primary text-white rounded-full shadow-lg hover:opacity-90 transition z-40 no-print"
+    href="#top" id="backTopLink">
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </a>
 
-    <!-- Scrollspy (TOC active) -->
-    <script>
-      (function () {
-        const toc = document.getElementById("toc");
-        if (!toc) return;
+  <!-- Scrollspy (TOC active) -->
+  <script>
+    (function () {
+      const toc = document.getElementById("toc");
+      if (!toc) return;
 
-        const links = Array.from(toc.querySelectorAll('a[href^="#"]'));
-        const sections = links
-          .map((a) => {
-            const id = (a.getAttribute("href") || "").slice(1);
-            const el = document.getElementById(id);
-            return el ? { id, el, a } : null;
-          })
-          .filter(Boolean);
+      const links = Array.from(toc.querySelectorAll('a[href^="#"]'));
+      const sections = links
+        .map((a) => {
+          const id = (a.getAttribute("href") || "").slice(1);
+          const el = document.getElementById(id);
+          return el ? { id, el, a } : null;
+        })
+        .filter(Boolean);
 
-        if (!sections.length) return;
+      if (!sections.length) return;
 
-        function setActive(id) {
-          links.forEach((a) => a.classList.remove("active"));
-          const hit = sections.find((s) => s.id === id);
-          if (hit) hit.a.classList.add("active");
-        }
+      function setActive(id) {
+        links.forEach((a) => a.classList.remove("active"));
+        const hit = sections.find((s) => s.id === id);
+        if (hit) hit.a.classList.add("active");
+      }
 
-        setActive(sections[0].id);
+      setActive(sections[0].id);
 
-        const io = new IntersectionObserver(
-          (entries) => {
-            const visible = entries
-              .filter((e) => e.isIntersecting)
-              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-            if (visible && visible.target && visible.target.id) setActive(visible.target.id);
-          },
-          { threshold: [0.2, 0.35, 0.5], rootMargin: "-25% 0px -60% 0px" }
-        );
+      const io = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((e) => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (visible && visible.target && visible.target.id) setActive(visible.target.id);
+        },
+        { threshold: [0.2, 0.35, 0.5], rootMargin: "-25% 0px -60% 0px" }
+      );
 
-        sections.forEach((s) => io.observe(s.el));
-      })();
-    </script>
-  </body>
+      sections.forEach((s) => io.observe(s.el));
+    })();
+  </script>
+</body>
+
 </html>

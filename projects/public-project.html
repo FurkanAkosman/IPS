@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>IPS — Project Detail</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4d0011",
+                        "background-light": "#f8f8f3",
+                        "text-main": "#1D0C0F",
+                        "text-muted": "#6b4b53",
+                        surface: "#ffffff",
+                    },
+                    fontFamily: {
+                        display: ["Manrope", "sans-serif"],
+                        body: ["Noto Serif", "serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-background-light text-text-main antialiased min-h-screen flex flex-col font-display">
+
+    <!-- Header -->
+    <script src="../js/header-loader.js" defer></script>
+
+    <main id="mainContent" class="flex-grow pt-24 pb-20 opacity-0 transition-opacity duration-500">
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+
+            <!-- Back Link -->
+            <a href="../projects-public.html"
+                class="inline-flex items-center gap-2 text-sm font-bold text-text-muted hover:text-primary mb-8 transition-colors">
+                <span class="material-symbols-outlined text-lg">arrow_back</span>
+                Back to Project Hub
+            </a>
+
+            <!-- Header -->
+            <div class="mb-10">
+                <div class="flex items-center gap-3 mb-4">
+                    <span id="projCategory"
+                        class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-widest">
+                        Category
+                    </span>
+                    <span id="projDate" class="text-text-muted font-serif italic">Date</span>
+                </div>
+                <h1 id="projTitle" class="text-3xl md:text-5xl font-black leading-tight mb-6">
+                    Project Title Loading...
+                </h1>
+
+                <div class="flex items-center gap-4 border-y border-black/10 py-6">
+                    <div
+                        class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 text-gray-500 font-bold text-lg">
+                        IPS
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-text-muted mb-0.5">Primary Research
+                            Team</p>
+                        <p id="projAuthor" class="font-bold text-lg">Team Name</p>
+                    </div>
+                    <div class="ml-auto">
+                        <p class="text-xs font-bold uppercase tracking-wider text-text-muted mb-0.5 text-right">Project
+                            ID</p>
+                        <p id="projId" class="font-mono text-sm text-right">ID-000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image -->
+            <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-xl mb-12 bg-gray-100 relative">
+                <img id="projImage" src="" alt="Project Visual" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <article
+                    class="lg:col-span-8 prose prose-lg prose-headings:font-display prose-headings:font-bold prose-p:font-body prose-p:text-text-muted"
+                    id="projContent">
+                    <!-- Injected formatted HTML content -->
+                </article>
+
+                <aside class="lg:col-span-4 space-y-8">
+                    <div class="bg-white p-6 rounded-xl border border-black/5 shadow-sm">
+                        <h3 class="font-bold mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">info</span>
+                            Status
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-xs uppercase font-bold text-text-muted">Current Phase</p>
+                                <p class="font-bold text-green-700">Active Research</p>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase font-bold text-text-muted">Institution</p>
+                                <p>Interdisciplinary Project Society</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-primary text-white p-6 rounded-xl shadow-lg">
+                        <h3 class="font-bold mb-2">Interested in this work?</h3>
+                        <p class="text-sm opacity-90 mb-4">Contact the research team or propose a collaboration.</p>
+                        <a href="../contact.html"
+                            class="inline-block w-full text-center bg-white text-primary font-bold py-2 rounded-lg hover:bg-gray-100 transition-colors">
+                            Contact Us
+                        </a>
+                    </div>
+                </aside>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <script src="../js/footer-loader.js" defer></script>
+
+    <!-- Data & Logic -->
+    <script src="../js/all-projects.js"></script>
+    <script>
+        // Parse Query Param
+        const params = new URLSearchParams(window.location.search);
+        const targetId = params.get("id");
+
+        // Find Project
+        const project = allProjectsData.find(p => p.id === targetId);
+
+        const main = document.getElementById("mainContent");
+
+        if (project) {
+            document.title = \`IPS — \${project.title}\`;
+          
+          document.getElementById("projTitle").textContent = project.title;
+          document.getElementById("projCategory").textContent = project.category;
+          document.getElementById("projDate").textContent = new Date(project.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+          document.getElementById("projAuthor").textContent = project.author;
+          document.getElementById("projId").textContent = project.id;
+          document.getElementById("projImage").src = project.image;
+          
+          // Fallback content if fullContent isn't defined for all mock items yet
+          document.getElementById("projContent").innerHTML = project.fullContent || \`
+            <h3 class="text-xl font-bold mb-4">Project Overview</h3>
+            <p class="text-lg leading-relaxed mb-6">\${project.desc}</p>
+            <p class="italic text-gray-500">Full detailed documentation for this project is currently being digitized.</p>
+          \`;
+
+          main.classList.remove("opacity-0");
+      } else {
+          main.innerHTML = \`
+            <div class="min-h-[50vh] flex flex-col items-center justify-center text-center px-4">
+                <span class="material-symbols-outlined text-6xl text-gray-300 mb-4">running_with_errors</span>
+                <h1 class="text-3xl font-bold mb-2">Project Not Found</h1>
+                <p class="text-text-muted mb-6">The project ID "\${targetId}" does not exist in our public archive.</p>
+                <a href="../projects-public.html" class="px-6 py-3 bg-primary text-white rounded-xl font-bold">Return to Hub</a>
+            </div>
+          \`;
+          main.classList.remove("opacity-0");
+      }
+    </script>
+
+</body>
+
+</html>

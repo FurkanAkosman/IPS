@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script src="../js/analytics.js" defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Future of AI in Interdisciplinary Research — IPS Insights</title>
+    <meta name="description"
+        content="How Artificial Intelligence is bridging the gap between molecular biology and computer science." />
+    <meta name="theme-color" content="#4d0011" />
+    <link rel="icon" href="../assets/img/kulup-logo.jpg" sizes="32x32" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { primary: "#4d0011", "primary-hover": "#6d0019", text: "#1D0C0F", muted: "#5a5254", background: "#fdfdfb", surface: "#ffffff" },
+                    fontFamily: { display: ["Manrope", "sans-serif"], body: ["Noto Serif", "serif"] },
+                    typography: { DEFAULT: { css: { maxWidth: '65ch', color: '#1D0C0F', h1: { fontFamily: 'Manrope', fontWeight: '800' }, h2: { fontFamily: 'Manrope', fontWeight: '700', marginTop: '2em' }, h3: { fontFamily: 'Manrope', fontWeight: '600' }, blockquote: { borderLeftColor: '#4d0011', fontStyle: 'italic' } } } }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-text font-body antialiased selection:bg-primary/10 selection:text-primary">
+
+    <script src="../js/header-loader.js" defer></script>
+    <header id="siteHeader"></header>
+
+    <main class="min-h-screen pb-20">
+        <header class="relative pt-32 pb-20 px-4 mb-12 bg-surface border-b border-black/5">
+            <div class="max-w-3xl mx-auto text-center">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold uppercase tracking-wider mb-6 font-display">
+                    <span class="size-2 rounded-full bg-primary"></span>
+                    Artificial Intelligence
+                </div>
+                <h1
+                    class="text-3xl md:text-5xl lg:text-6xl font-black font-display text-primary leading-tight tracking-tight mb-8">
+                    The Future of AI in Interdisciplinary Research
+                </h1>
+                <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-display text-muted">
+                    <a href="../people/furkan-akosman.html"
+                        class="flex items-center gap-3 group hover:text-primary transition-colors">
+                        <img src="../assets/img/team/furkan_akosman.jpg" alt="Furkan Akosman"
+                            class="size-10 rounded-full object-cover border border-black/10 group-hover:border-primary">
+                        <div class="text-left leading-tight">
+                            <span class="block font-bold text-text group-hover:text-primary">Furkan Akosman</span>
+                            <span class="text-xs">President & AI Researcher</span>
+                        </div>
+                    </a>
+                    <div class="w-px h-8 bg-black/10 hidden sm:block"></div>
+                    <div class="flex flex-col text-left">
+                        <span class="font-bold text-text">Published</span>
+                        <time datetime="2025-11-15">Nov 15, 2025</time>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <figure class="relative aspect-video rounded-3xl overflow-hidden shadow-2xl mb-16 group">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop"
+                    alt="AI Network"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <figcaption
+                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white text-sm font-display text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    Neural networks analyzing protein structures.
+                </figcaption>
+            </figure>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <article class="lg:col-span-8 prose prose-lg prose-slate mx-auto lg:mx-0">
+                    <div class="bg-primary/5 p-6 rounded-2xl border border-primary/10 not-prose mb-10">
+                        <h3 class="font-display font-bold text-primary text-lg mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined">psychology</span>
+                            Abstract
+                        </h3>
+                        <p class="font-body text-text/80 italic leading-relaxed">
+                            This article discusses the transformative potential of Machine Learning in the field of
+                            Molecular Biology, specifically how generative models are revolutionizing drug discovery and
+                            protein folding prediction.
+                        </p>
+                    </div>
+
+                    <h2>1. Introduction</h2>
+                    <p>The intersection of computer science and biology has always been a fertile ground for innovation.
+                        However, the recent explosion in AI capabilities has turned this steady stream of progress into
+                        a tsunami. We are no longer just analyzing biological data; we are beginning to speak the
+                        language of life itself through computational models.</p>
+
+                    <p>At IPS, we believe that the next decade of scientific breakthroughs will not come from silos, but
+                        from the seamless integration of wet-lab experimentation and dry-lab computation. This synergy
+                        is particularly evident in the rapid adoption of machine learning algorithms for complex
+                        problem-solving in genomics and proteomics.</p>
+
+                    <h2>2. The Protein Folding Revolution</h2>
+                    <p>For over 50 years, the "protein folding problem"—predicting a protein's 3D structure solely from
+                        its amino acid sequence—stood as a grand challenge in biology. Tools like AlphaFold have largely
+                        solved this, protecting us from decades of trial-and-error experimentation.</p>
+                    <p>But prediction is just the beginning. The new frontier is "inverse design" or "de novo protein
+                        design." Instead of asking "what does this sequence look like?", researchers are now asking
+                        "what sequence do I need to create a protein that binds to this specific cancer marker?"
+                        Generative diffusion models, similar to those used in DALL-E or Midjourney, are being adapted to
+                        "hallucinate" new proteins that nature never evolved.</p>
+
+                    <h2>3. AI in Genomic Analysis</h2>
+                    <p>Beyond structures, AI is reshaping how we interpret the human genome. Large Language Models
+                        (LLMs) are being trained on DNA sequences instead of text. These "Genomic Foundation Models" can
+                        identify regulatory elements, predict gene expression levels, and even flag potential pathogenic
+                        mutations with unprecedented accuracy.</p>
+                    <p>This allows interdisciplinary teams to process vast datasets—from single-cell RNA sequencing to
+                        population-scale genomics—in days rather than years, accelerating the path to personalized
+                        medicine.</p>
+
+                    <h2>4. Challenges and Ethics</h2>
+                    <p>With great power comes great responsibility. The democratization of biological design tools
+                        raises concerns about dual-use research. As we empower students and researchers with these
+                        tools, we must also instill a strong ethical framework. At IPS, we emphasize "Responsible
+                        Innovation," ensuring that our projects consider safety and societal impact from day one.</p>
+
+                    <h2>5. Conclusion</h2>
+                    <p>The future belongs to the polymaths—those who can pipette a sample in the morning and train a
+                        neural network in the afternoon. Artificial Intelligence is not replacing biologists; it is
+                        augmenting them, giving them a new set of eyes to see the molecular world.</p>
+
+                    <div class="not-prose bg-stone-50 p-6 rounded-xl border border-stone-200 mt-10">
+                        <h3 class="font-display font-bold text-lg mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-muted">menu_book</span>
+                            References
+                        </h3>
+                        <ul class="space-y-3 text-sm text-muted font-body">
+                            <li class="pl-4 border-l-2 border-stone-300"><strong>Jumper, J. et al. (2021).</strong>
+                                Highly accurate protein structure prediction with AlphaFold. <i>Nature</i>.</li>
+                            <li class="pl-4 border-l-2 border-stone-300"><strong>Watson, J. L. et al. (2023).</strong>
+                                De novo design of protein structure and function with RFdiffusion. <i>Nature</i>.</li>
+                            <li class="pl-4 border-l-2 border-stone-300"><strong>Nijkamp, E. et al. (2023).</strong>
+                                Large language models for genomic interpretation. <i>Nature Genetics</i>.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <aside class="lg:col-span-4 space-y-8">
+                    <div class="sticky top-24">
+                        <div class="bg-surface rounded-2xl shadow-lg border border-black/5 overflow-hidden">
+                            <div class="h-24 bg-gradient-to-br from-primary to-gray-900 relative">
+                                <div class="absolute -bottom-10 left-6">
+                                    <img src="../assets/img/team/furkan_akosman.jpg" alt="Author"
+                                        class="size-20 rounded-xl border-4 border-white shadow-md object-cover">
+                                </div>
+                            </div>
+                            <div class="pt-12 px-6 pb-6">
+                                <h3 class="font-display font-bold text-xl text-primary">Furkan Akosman</h3>
+                                <p class="text-xs font-bold text-muted uppercase tracking-wider mb-4">President & AI
+                                    Lead</p>
+                                <p class="text-sm text-slate-600 mb-6 leading-relaxed">Driving IPS towards technological
+                                    innovation. Focusing on AI applications in life sciences.</p>
+                                <div class="mt-6 pt-6 border-t border-black/5">
+                                    <a href="../people/furkan-akosman.html"
+                                        class="flex items-center justify-between w-full px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary-hover transition-colors shadow-md group">
+                                        <span>View Full Profile</span>
+                                        <span
+                                            class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+    <script src="../js/footer-loader.js" defer></script>
+</body>
+
+</html>
