@@ -13,7 +13,8 @@
     const last = segs[segs.length - 1] || "";
     const isFile = /\.[a-z0-9]+$/i.test(last);
     const dirSegs = isFile ? segs.slice(0, -1) : segs;
-    const prefix = siteBase + "../".repeat(dirSegs.length); // '', '../', '../../', ...
+    const relPrefix = "../".repeat(dirSegs.length); // '', '../', '../../', ...
+    const prefix = relPrefix; // Use relative prefix for fetch and rewrites
 
     // ----- Yardımcılar -----
     const ABS = /^(?:[a-z]+:|\/\/|#|mailto:|tel:)/i;

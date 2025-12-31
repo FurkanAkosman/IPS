@@ -1,125 +1,129 @@
 <!DOCTYPE html>
 <html class="light scroll-smooth" lang="tr" id="top">
-  <head>
-    <!-- GA4: header-loader ekler, ELLE EKLEMEYİN -->
-    <!-- <script src="js/analytics.js"></script> -->
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IPS Kullanım Koşulları</title>
+<head>
+  <!-- GA4: header-loader ekler, ELLE EKLEMEYİN -->
+  <!-- <script src="js/analytics.js"></script> -->
 
-    <!-- Fonts and Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-      rel="stylesheet"
-    />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPS Kullanım Koşulları</title>
 
-    <!-- Tailwind CSS with Plugins -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 
-    <!-- Theme Configuration (Index bordo rengi: #4d0011) -->
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#4d0011",
-              burgundy: "#4d0011",
-              "background-light": "#f8f8f3",
-              "background-dark": "#221013",
-              paper: "#ffffff",
-            },
-            fontFamily: {
-              display: ["Manrope", "sans-serif"],
-              body: ["Manrope", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.375rem",
-              lg: "0.5rem",
-              xl: "1rem",
-              full: "9999px",
-            },
+  <!-- Tailwind CSS with Plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Theme Configuration (Index bordo rengi: #4d0011) -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4d0011",
+            burgundy: "#4d0011",
+            "background-light": "#f8f8f3",
+            "background-dark": "#221013",
+            paper: "#ffffff",
+          },
+          fontFamily: {
+            display: ["Manrope", "sans-serif"],
+            body: ["Manrope", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.375rem",
+            lg: "0.5rem",
+            xl: "1rem",
+            full: "9999px",
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <style>
+  <style>
+    body {
+      font-family: "Manrope", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #e2e2e2;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c1c1c1;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+
       body {
-        font-family: "Manrope", sans-serif;
-        -webkit-font-smoothing: antialiased;
+        background: white !important;
+        color: black !important;
       }
+    }
+  </style>
 
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #e2e2e2;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #c1c1c1;
-      }
+  <!-- Header/Footer Loaders (header-loader ayrıca GA'yı tekil yükler) -->
+  <script defer src="js/header-loader.js"></script>
+  <script defer src="js/footer-loader.js"></script>
+</head>
 
-      html {
-        scroll-behavior: smooth;
-      }
+<body class="bg-background-light dark:bg-background-dark text-burgundy dark:text-gray-100 flex flex-col min-h-screen">
+  <!-- Header inject (partials/header.html) -->
 
-      @media print {
-        .no-print {
-          display: none !important;
-        }
-        body {
-          background: white !important;
-          color: black !important;
-        }
-      }
-    </style>
-
-    <!-- Header/Footer Loaders (header-loader ayrıca GA'yı tekil yükler) -->
-    <script defer src="js/header-loader.js"></script>
-    <script defer src="js/footer-loader.js"></script>
-  </head>
-
-  <body class="bg-background-light dark:bg-background-dark text-burgundy dark:text-gray-100 flex flex-col min-h-screen">
-    <!-- Header inject (partials/header.html) -->
-
-    <!-- Main Content Wrapper -->
-    <main class="flex-grow">
-      <!-- Hero Section -->
-      <section class="relative bg-white dark:bg-[#1a0c0e] border-b border-[#e5e5e0] dark:border-white/5 py-16 sm:py-24">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <div
-            class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary ring-1 ring-inset ring-primary/20 mb-6"
-          >
-            <span class="material-symbols-outlined text-[16px]">gavel</span>
-            Yasal Bilgilendirme
-          </div>
-
-          <h1 class="text-4xl font-black tracking-tight text-burgundy dark:text-white sm:text-5xl mb-4">Kullanım Koşulları</h1>
-
-          <p class="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-            Interdisciplinary Project Society (IPS) web sitesini ve hizmetlerini kullanırken haklarınızı,
-            sorumluluklarınızı ve kurallarımızı lütfen dikkatlice okuyunuz.
-          </p>
-
-          <div class="mt-6 flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-            <span class="material-symbols-outlined text-[18px]">calendar_month</span>
-            Son Güncelleme: 15 Ekim 2023
-          </div>
+  <!-- Main Content Wrapper -->
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative bg-white dark:bg-[#1a0c0e] border-b border-[#e5e5e0] dark:border-white/5 py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        <div
+          class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary ring-1 ring-inset ring-primary/20 mb-6">
+          <span class="material-symbols-outlined text-[16px]">gavel</span>
+          Yasal Bilgilendirme
         </div>
 
-        <!-- Abstract Pattern Background -->
-        <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-          <div
-            class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-            style="
+        <h1 class="text-4xl font-black tracking-tight text-burgundy dark:text-white sm:text-5xl mb-4">Kullanım Koşulları
+        </h1>
+
+        <p class="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+          Interdisciplinary Project Society (IPS) web sitesini ve hizmetlerini kullanırken haklarınızı,
+          sorumluluklarınızı ve kurallarımızı lütfen dikkatlice okuyunuz.
+        </p>
+
+        <div class="mt-6 flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+          <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+          Son Güncelleme: 15 Ekim 2023
+        </div>
+      </div>
+
+      <!-- Abstract Pattern Background -->
+      <div aria-hidden="true"
+        class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+        <div
+          class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          style="
               clip-path: polygon(
                 74.1% 44.1%,
                 100% 61.6%,
@@ -138,278 +142,265 @@
                 76.1% 97.7%,
                 74.1% 44.1%
               );
-            "
-          ></div>
+            "></div>
+      </div>
+    </section>
+
+    <!-- Content Layout: Sidebar + Main Text -->
+    <div class="mx-auto flex w-full max-w-7xl flex-col items-start gap-10 px-4 py-12 sm:px-6 lg:flex-row lg:px-8">
+      <!-- Sticky Sidebar Navigation (Desktop) -->
+      <aside class="hidden lg:block sticky top-28 w-64 flex-shrink-0 no-print">
+        <div class="flex flex-col gap-2">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2 pl-3">İçindekiler
+          </h3>
+
+          <a class="group flex items-center justify-between rounded-lg bg-primary/10 px-3 py-2 text-sm font-bold text-primary transition-colors"
+            href="#section-1">
+            <span>1. Giriş ve Kabul</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+
+          <a class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-burgundy dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white transition-colors"
+            href="#section-2">
+            <span>2. Fikri Mülkiyet</span>
+          </a>
+
+          <a class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-burgundy dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white transition-colors"
+            href="#section-3">
+            <span>3. Kullanıcı Yükümlülükleri</span>
+          </a>
+
+          <a class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-burgundy dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white transition-colors"
+            href="#section-4">
+            <span>4. Sorumluluk Reddi</span>
+          </a>
+
+          <a class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-burgundy dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white transition-colors"
+            href="#section-5">
+            <span>5. Yürürlükteki Hukuk</span>
+          </a>
         </div>
-      </section>
 
-      <!-- Content Layout: Sidebar + Main Text -->
-      <div class="mx-auto flex w-full max-w-7xl flex-col items-start gap-10 px-4 py-12 sm:px-6 lg:flex-row lg:px-8">
-        <!-- Sticky Sidebar Navigation (Desktop) -->
-        <aside class="hidden lg:block sticky top-28 w-64 flex-shrink-0 no-print">
-          <div class="flex flex-col gap-2">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2 pl-3">İçindekiler</h3>
+        <!-- PDF Download Button -->
+        <div class="mt-8 border-t border-gray-200 dark:border-white/10 pt-6">
+          <button
+            class="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-bold text-burgundy shadow-sm transition-colors hover:bg-gray-50 dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10"
+            type="button">
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            PDF Olarak İndir
+          </button>
+        </div>
+      </aside>
 
-            <a
-              class="group flex items-center justify-between rounded-lg bg-primary/10 px-3 py-2 text-sm font-bold text-primary transition-colors"
-              href="#section-1"
-            >
-              <span>1. Giriş ve Kabul</span>
-              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </a>
+      <!-- Main Legal Text Area -->
+      <div class="flex-1 min-w-0">
+        <!-- Mobile Table of Contents -->
+        <div class="lg:hidden mb-8 no-print">
+          <details class="group rounded-lg border border-gray-200 bg-white p-4 dark:border-white/10 dark:bg-[#1a0c0e]">
+            <summary class="flex cursor-pointer items-center justify-between font-bold text-burgundy dark:text-white">
+              <span>Bu Sayfada:</span>
+              <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+            </summary>
 
-            <a
-              class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-burgundy dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white transition-colors"
-              href="#section-2"
-            >
-              <span>2. Fikri Mülkiyet</span>
-            </a>
+            <nav class="mt-4 flex flex-col gap-2 border-t border-gray-100 pt-4 dark:border-white/5">
+              <a class="text-sm font-medium text-primary" href="#section-1">1. Giriş ve Kabul</a>
+              <a class="text-sm text-gray-600 dark:text-gray-300" href="#section-2">2. Fikri Mülkiyet</a>
+              <a class="text-sm text-gray-600 dark:text-gray-300" href="#section-3">3. Kullanıcı Yükümlülükleri</a>
+              <a class="text-sm text-gray-600 dark:text-gray-300" href="#section-4">4. Sorumluluk Reddi</a>
+              <a class="text-sm text-gray-600 dark:text-gray-300" href="#section-5">5. Yürürlükteki Hukuk</a>
+            </nav>
+          </details>
+        </div>
 
-            <a
-              class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-burgundy dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white transition-colors"
-              href="#section-3"
-            >
-              <span>3. Kullanıcı Yükümlülükleri</span>
-            </a>
-
-            <a
-              class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-burgundy dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white transition-colors"
-              href="#section-4"
-            >
-              <span>4. Sorumluluk Reddi</span>
-            </a>
-
-            <a
-              class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-burgundy dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white transition-colors"
-              href="#section-5"
-            >
-              <span>5. Yürürlükteki Hukuk</span>
-            </a>
-          </div>
-
-          <!-- PDF Download Button -->
-          <div class="mt-8 border-t border-gray-200 dark:border-white/10 pt-6">
-            <button
-              class="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-bold text-burgundy shadow-sm transition-colors hover:bg-gray-50 dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10"
-              type="button"
-            >
-              <span class="material-symbols-outlined text-[18px]">download</span>
-              PDF Olarak İndir
-            </button>
-          </div>
-        </aside>
-
-        <!-- Main Legal Text Area -->
-        <div class="flex-1 min-w-0">
-          <!-- Mobile Table of Contents -->
-          <div class="lg:hidden mb-8 no-print">
-            <details class="group rounded-lg border border-gray-200 bg-white p-4 dark:border-white/10 dark:bg-[#1a0c0e]">
-              <summary class="flex cursor-pointer items-center justify-between font-bold text-burgundy dark:text-white">
-                <span>Bu Sayfada:</span>
-                <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
-              </summary>
-
-              <nav class="mt-4 flex flex-col gap-2 border-t border-gray-100 pt-4 dark:border-white/5">
-                <a class="text-sm font-medium text-primary" href="#section-1">1. Giriş ve Kabul</a>
-                <a class="text-sm text-gray-600 dark:text-gray-300" href="#section-2">2. Fikri Mülkiyet</a>
-                <a class="text-sm text-gray-600 dark:text-gray-300" href="#section-3">3. Kullanıcı Yükümlülükleri</a>
-                <a class="text-sm text-gray-600 dark:text-gray-300" href="#section-4">4. Sorumluluk Reddi</a>
-                <a class="text-sm text-gray-600 dark:text-gray-300" href="#section-5">5. Yürürlükteki Hukuk</a>
-              </nav>
-            </details>
-          </div>
-
-          <div class="space-y-12">
-            <!-- Section 1 -->
-            <section class="scroll-mt-32" id="section-1">
-              <div class="flex items-center gap-3 mb-4">
-                <div
-                  class="flex size-8 items-center justify-center rounded-full bg-burgundy/10 text-burgundy dark:bg-white/10 dark:text-white font-bold text-sm"
-                >
-                  1
-                </div>
-                <h2 class="text-2xl font-bold text-burgundy dark:text-white">Giriş ve Kabul</h2>
+        <div class="space-y-12">
+          <!-- Section 1 -->
+          <section class="scroll-mt-32" id="section-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="flex size-8 items-center justify-center rounded-full bg-burgundy/10 text-burgundy dark:bg-white/10 dark:text-white font-bold text-sm">
+                1
               </div>
-
-              <div class="max-w-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
-                <p>
-                  Bu web sitesine erişerek veya kullanarak, Interdisciplinary Project Society (IPS) tarafından belirlenen
-                  bu kullanım koşullarını kabul etmiş sayılırsınız. Hizmetlerimizi kullanmaya devam etmeniz, bu kurallara
-                  ve gelecekteki değişikliklere bağlı kalmayı kayıtsız şartsız kabul ettiğiniz anlamına gelir. Eğer bu
-                  şartların herhangi bir kısmını kabul etmiyorsanız, lütfen web sitemizi kullanmayınız.
-                </p>
-                <p>
-                  IPS, bu koşulları önceden haber vermeksizin herhangi bir zamanda değiştirme hakkını saklı tutar.
-                  Değişiklikler sitede yayınlandığı andan itibaren geçerli olacaktır.
-                </p>
-              </div>
-            </section>
-
-            <div class="h-px bg-gray-200 dark:bg-white/10 w-full"></div>
-
-            <!-- Section 2 -->
-            <section class="scroll-mt-32" id="section-2">
-              <div class="flex items-center gap-3 mb-4">
-                <div
-                  class="flex size-8 items-center justify-center rounded-full bg-burgundy/10 text-burgundy dark:bg-white/10 dark:text-white font-bold text-sm"
-                >
-                  2
-                </div>
-                <h2 class="text-2xl font-bold text-burgundy dark:text-white">Fikri Mülkiyet Hakları</h2>
-              </div>
-
-              <div class="rounded-lg bg-white p-6 shadow-sm border border-gray-100 dark:bg-[#1a0c0e] dark:border-white/5">
-                <div class="flex items-start gap-4">
-                  <span class="material-symbols-outlined text-primary mt-1">copyright</span>
-                  <div class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    <p class="mb-4">
-                      Bu web sitesinde yer alan tüm içerik, logolar, grafikler, metinler, yazılımlar ve diğer materyaller
-                      ("İçerik"), IPS'in veya lisans verenlerinin mülkiyetindedir ve uluslararası telif hakkı yasaları ile
-                      korunmaktadır.
-                    </p>
-                    <ul class="list-disc pl-5 space-y-2 text-sm md:text-base">
-                      <li>İçeriği ticari amaçlarla kopyalayamaz, çoğaltamaz veya dağıtamazsınız.</li>
-                      <li>IPS markasını veya logosunu izinsiz kullanamazsınız.</li>
-                      <li>Site üzerindeki akademik çalışmaların kaynak gösterilmeden kullanılması yasaktır.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <div class="h-px bg-gray-200 dark:bg-white/10 w-full"></div>
-
-            <!-- Section 3 -->
-            <section class="scroll-mt-32" id="section-3">
-              <div class="flex items-center gap-3 mb-4">
-                <div
-                  class="flex size-8 items-center justify-center rounded-full bg-burgundy/10 text-burgundy dark:bg-white/10 dark:text-white font-bold text-sm"
-                >
-                  3
-                </div>
-                <h2 class="text-2xl font-bold text-burgundy dark:text-white">Kullanıcı Yükümlülükleri ve Davranış Kuralları</h2>
-              </div>
-
-              <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-                <p>Web sitemizi kullanırken aşağıdaki davranış kurallarına uymayı taahhüt edersiniz:</p>
-
-                <div class="grid md:grid-cols-2 gap-4">
-                  <!-- KIRMIZI -> BORDO (primary) -->
-                  <div class="bg-primary/5 dark:bg-primary/10 p-4 rounded-lg border border-primary/20 dark:border-white/10">
-                    <h4 class="font-bold text-primary mb-2 flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[20px]">block</span>
-                      Yasaklı Eylemler
-                    </h4>
-                    <ul class="text-sm space-y-2">
-                      <li>Yasa dışı içerik paylaşmak veya tanıtmak.</li>
-                      <li>Sistemin güvenliğini tehdit edecek saldırılar düzenlemek.</li>
-                      <li>Diğer kullanıcıların gizliliğini ihlal etmek.</li>
-                    </ul>
-                  </div>
-
-                  <!-- YEŞİLİ KORU (uyarı/pozitif semantik), kırmızıyla karışmaz -->
-                  <div class="bg-green-50 dark:bg-green-900/10 p-4 rounded-lg border border-green-100 dark:border-green-900/20">
-                    <h4 class="font-bold text-green-700 dark:text-green-400 mb-2 flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[20px]">check_circle</span>
-                      Beklenen Davranışlar
-                    </h4>
-                    <ul class="text-sm space-y-2">
-                      <li>Akademik dürüstlük ilkelerine bağlı kalmak.</li>
-                      <li>Topluluk kurallarına saygılı olmak.</li>
-                      <li>Profil bilgilerini doğru ve güncel tutmak.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <div class="h-px bg-gray-200 dark:bg-white/10 w-full"></div>
-
-            <!-- Section 4 -->
-            <section class="scroll-mt-32" id="section-4">
-              <div class="flex items-center gap-3 mb-4">
-                <div
-                  class="flex size-8 items-center justify-center rounded-full bg-burgundy/10 text-burgundy dark:bg-white/10 dark:text-white font-bold text-sm"
-                >
-                  4
-                </div>
-                <h2 class="text-2xl font-bold text-burgundy dark:text-white">Sorumluluk Reddi (Disclaimer)</h2>
-              </div>
-
-              <div class="max-w-none text-gray-700 dark:text-gray-300 leading-relaxed">
-                <p>
-                  Bu web sitesi ve içeriği "olduğu gibi" sunulmaktadır. IPS, sitenin kesintisiz, hatasız veya virüssüz
-                  olacağını garanti etmez. Web sitesindeki bilgiler yalnızca genel bilgilendirme amaçlıdır ve profesyonel
-                  tavsiye niteliği taşımaz. IPS, bu bilgilerin kullanımından doğabilecek doğrudan veya dolaylı zararlardan
-                  sorumlu tutulamaz.
-                </p>
-              </div>
-            </section>
-
-            <div class="h-px bg-gray-200 dark:bg-white/10 w-full"></div>
-
-            <!-- Section 5 -->
-            <section class="scroll-mt-32" id="section-5">
-              <div class="flex items-center gap-3 mb-4">
-                <div
-                  class="flex size-8 items-center justify-center rounded-full bg-burgundy/10 text-burgundy dark:bg-white/10 dark:text-white font-bold text-sm"
-                >
-                  5
-                </div>
-                <h2 class="text-2xl font-bold text-burgundy dark:text-white">Geçerli Hukuk ve Yetki</h2>
-              </div>
-
-              <div class="max-w-none text-gray-700 dark:text-gray-300 leading-relaxed">
-                <p>
-                  Bu Kullanım Koşulları, Türkiye Cumhuriyeti yasalarına tabidir ve buna göre yorumlanacaktır. Bu koşullardan
-                  kaynaklanan veya bunlarla ilgili herhangi bir uyuşmazlıkta, İstanbul Mahkemeleri ve İcra Daireleri münhasır
-                  yetkiye sahiptir.
-                </p>
-              </div>
-            </section>
-          </div>
-
-          <!-- CTA Box -->
-          <div class="mt-16 rounded-xl bg-burgundy dark:bg-white/5 p-8 text-center text-white shadow-lg relative overflow-hidden group">
-            <div
-              class="absolute -top-12 -right-12 w-32 h-32 bg-primary/30 rounded-full blur-2xl group-hover:bg-primary/50 transition duration-500"
-            ></div>
-            <div class="absolute bottom-0 left-0 w-48 h-48 bg-black/20 rounded-full blur-3xl"></div>
-
-            <div class="relative z-10 flex flex-col items-center gap-4">
-              <div class="p-3 bg-white/10 rounded-full inline-flex">
-                <span class="material-symbols-outlined text-[32px]">support_agent</span>
-              </div>
-              <h3 class="text-2xl font-bold">Sorularınız mı var?</h3>
-              <p class="max-w-xl text-white/80 mx-auto">
-                Bu kullanım koşulları hakkında herhangi bir sorunuz, endişeniz veya geri bildiriminiz varsa, lütfen hukuk
-                ekibimizle iletişime geçmekten çekinmeyin.
-              </p>
-              <a
-                class="mt-4 flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-bold text-burgundy hover:bg-gray-100 transition-colors"
-                href="contact.html"
-              >
-                <span>Bize Ulaşın</span>
-                <span class="material-symbols-outlined text-[18px]">send</span>
-              </a>
+              <h2 class="text-2xl font-bold text-burgundy dark:text-white">Giriş ve Kabul</h2>
             </div>
+
+            <div class="max-w-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+              <p>
+                Bu web sitesine erişerek veya kullanarak, Interdisciplinary Project Society (IPS) tarafından belirlenen
+                bu kullanım koşullarını kabul etmiş sayılırsınız. Hizmetlerimizi kullanmaya devam etmeniz, bu kurallara
+                ve gelecekteki değişikliklere bağlı kalmayı kayıtsız şartsız kabul ettiğiniz anlamına gelir. Eğer bu
+                şartların herhangi bir kısmını kabul etmiyorsanız, lütfen web sitemizi kullanmayınız.
+              </p>
+              <p>
+                IPS, bu koşulları önceden haber vermeksizin herhangi bir zamanda değiştirme hakkını saklı tutar.
+                Değişiklikler sitede yayınlandığı andan itibaren geçerli olacaktır.
+              </p>
+            </div>
+          </section>
+
+          <div class="h-px bg-gray-200 dark:bg-white/10 w-full"></div>
+
+          <!-- Section 2 -->
+          <section class="scroll-mt-32" id="section-2">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="flex size-8 items-center justify-center rounded-full bg-burgundy/10 text-burgundy dark:bg-white/10 dark:text-white font-bold text-sm">
+                2
+              </div>
+              <h2 class="text-2xl font-bold text-burgundy dark:text-white">Fikri Mülkiyet Hakları</h2>
+            </div>
+
+            <div class="rounded-lg bg-white p-6 shadow-sm border border-gray-100 dark:bg-[#1a0c0e] dark:border-white/5">
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-1">copyright</span>
+                <div class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <p class="mb-4">
+                    Bu web sitesinde yer alan tüm içerik, logolar, grafikler, metinler, yazılımlar ve diğer materyaller
+                    ("İçerik"), IPS'in veya lisans verenlerinin mülkiyetindedir ve uluslararası telif hakkı yasaları ile
+                    korunmaktadır.
+                  </p>
+                  <ul class="list-disc pl-5 space-y-2 text-sm md:text-base">
+                    <li>İçeriği ticari amaçlarla kopyalayamaz, çoğaltamaz veya dağıtamazsınız.</li>
+                    <li>IPS markasını veya logosunu izinsiz kullanamazsınız.</li>
+                    <li>Site üzerindeki akademik çalışmaların kaynak gösterilmeden kullanılması yasaktır.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="h-px bg-gray-200 dark:bg-white/10 w-full"></div>
+
+          <!-- Section 3 -->
+          <section class="scroll-mt-32" id="section-3">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="flex size-8 items-center justify-center rounded-full bg-burgundy/10 text-burgundy dark:bg-white/10 dark:text-white font-bold text-sm">
+                3
+              </div>
+              <h2 class="text-2xl font-bold text-burgundy dark:text-white">Kullanıcı Yükümlülükleri ve Davranış
+                Kuralları</h2>
+            </div>
+
+            <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p>Web sitemizi kullanırken aşağıdaki davranış kurallarına uymayı taahhüt edersiniz:</p>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <!-- KIRMIZI -> BORDO (primary) -->
+                <div
+                  class="bg-primary/5 dark:bg-primary/10 p-4 rounded-lg border border-primary/20 dark:border-white/10">
+                  <h4 class="font-bold text-primary mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">block</span>
+                    Yasaklı Eylemler
+                  </h4>
+                  <ul class="text-sm space-y-2">
+                    <li>Yasa dışı içerik paylaşmak veya tanıtmak.</li>
+                    <li>Sistemin güvenliğini tehdit edecek saldırılar düzenlemek.</li>
+                    <li>Diğer kullanıcıların gizliliğini ihlal etmek.</li>
+                  </ul>
+                </div>
+
+                <!-- YEŞİLİ KORU (uyarı/pozitif semantik), kırmızıyla karışmaz -->
+                <div
+                  class="bg-green-50 dark:bg-green-900/10 p-4 rounded-lg border border-green-100 dark:border-green-900/20">
+                  <h4 class="font-bold text-green-700 dark:text-green-400 mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                    Beklenen Davranışlar
+                  </h4>
+                  <ul class="text-sm space-y-2">
+                    <li>Akademik dürüstlük ilkelerine bağlı kalmak.</li>
+                    <li>Topluluk kurallarına saygılı olmak.</li>
+                    <li>Profil bilgilerini doğru ve güncel tutmak.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="h-px bg-gray-200 dark:bg-white/10 w-full"></div>
+
+          <!-- Section 4 -->
+          <section class="scroll-mt-32" id="section-4">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="flex size-8 items-center justify-center rounded-full bg-burgundy/10 text-burgundy dark:bg-white/10 dark:text-white font-bold text-sm">
+                4
+              </div>
+              <h2 class="text-2xl font-bold text-burgundy dark:text-white">Sorumluluk Reddi (Disclaimer)</h2>
+            </div>
+
+            <div class="max-w-none text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p>
+                Bu web sitesi ve içeriği "olduğu gibi" sunulmaktadır. IPS, sitenin kesintisiz, hatasız veya virüssüz
+                olacağını garanti etmez. Web sitesindeki bilgiler yalnızca genel bilgilendirme amaçlıdır ve profesyonel
+                tavsiye niteliği taşımaz. IPS, bu bilgilerin kullanımından doğabilecek doğrudan veya dolaylı zararlardan
+                sorumlu tutulamaz.
+              </p>
+            </div>
+          </section>
+
+          <div class="h-px bg-gray-200 dark:bg-white/10 w-full"></div>
+
+          <!-- Section 5 -->
+          <section class="scroll-mt-32" id="section-5">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="flex size-8 items-center justify-center rounded-full bg-burgundy/10 text-burgundy dark:bg-white/10 dark:text-white font-bold text-sm">
+                5
+              </div>
+              <h2 class="text-2xl font-bold text-burgundy dark:text-white">Geçerli Hukuk ve Yetki</h2>
+            </div>
+
+            <div class="max-w-none text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p>
+                Bu Kullanım Koşulları, Türkiye Cumhuriyeti yasalarına tabidir ve buna göre yorumlanacaktır. Bu
+                koşullardan
+                kaynaklanan veya bunlarla ilgili herhangi bir uyuşmazlıkta, İstanbul Mahkemeleri ve İcra Daireleri
+                münhasır
+                yetkiye sahiptir.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- CTA Box -->
+        <div
+          class="mt-16 rounded-xl bg-burgundy dark:bg-white/5 p-8 text-center text-white shadow-lg relative overflow-hidden group">
+          <div
+            class="absolute -top-12 -right-12 w-32 h-32 bg-primary/30 rounded-full blur-2xl group-hover:bg-primary/50 transition duration-500">
+          </div>
+          <div class="absolute bottom-0 left-0 w-48 h-48 bg-black/20 rounded-full blur-3xl"></div>
+
+          <div class="relative z-10 flex flex-col items-center gap-4">
+            <div class="p-3 bg-white/10 rounded-full inline-flex">
+              <span class="material-symbols-outlined text-[32px]">support_agent</span>
+            </div>
+            <h3 class="text-2xl font-bold">Sorularınız mı var?</h3>
+            <p class="max-w-xl text-white/80 mx-auto">
+              Bu kullanım koşulları hakkında herhangi bir sorunuz, endişeniz veya geri bildiriminiz varsa, lütfen hukuk
+              ekibimizle iletişime geçmekten çekinmeyin.
+            </p>
+            <a class="mt-4 flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-bold text-burgundy hover:bg-gray-100 transition-colors"
+              href="contact.html">
+              <span>Bize Ulaşın</span>
+              <span class="material-symbols-outlined text-[18px]">send</span>
+            </a>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- Footer inject (partials/footer.html) -->
+  <!-- Footer inject (partials/footer.html) -->
 
-    <!-- Back to top -->
-    <a
-      href="#top"
-      class="no-print fixed bottom-6 right-6 z-40 inline-flex items-center justify-center rounded-full bg-burgundy text-white dark:bg-primary shadow-lg hover:opacity-90 transition px-3 py-3"
-      aria-label="Yukarı çık"
-    >
-      <span class="material-symbols-outlined">arrow_upward</span>
-    </a>
+  <!-- Back to top -->
+  <a href="#top"
+    class="no-print fixed bottom-6 right-6 z-40 inline-flex items-center justify-center rounded-full bg-burgundy text-white dark:bg-primary shadow-lg hover:opacity-90 transition px-3 py-3"
+    aria-label="Yukarı çık">
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </a>
 
-    <!-- Davranışlar -->
-    <script src="assets/js/app.js" defer></script>
-  </body>
+  <!-- Davranışlar -->
+  <script src="js/app.js" defer></script>
+</body>
+
 </html>

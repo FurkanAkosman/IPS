@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Commercial Pipeline — IPS</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Noto+Sans:wght@300..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4d0011",
+                        secondary: "#1D0C0F",
+                        "background-light": "#f8f8f3",
+                        "background-dark": "#101622",
+                        surface: "#ffffff",
+                        muted: "#6b4b53"
+                    },
+                    fontFamily: {
+                        display: ["Manrope", "sans-serif"],
+                        body: ["Noto Sans", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-background-light text-secondary font-display antialiased min-h-screen flex flex-col">
+
+    <script src="js/header-loader.js" defer></script>
+
+    <!-- COMMERCIAL HERO -->
+    <section class="relative w-full h-[500px] flex items-center justify-center bg-cover bg-center overflow-hidden"
+        style="background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(77, 0, 17, 0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000');">
+        <div class="relative z-10 w-full max-w-6xl px-6 text-center">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/20 border border-green-500/40 text-green-300 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur">
+                <span class="material-symbols-outlined text-sm">rocket_launch</span>
+                Startup Pipeline
+            </div>
+            <h1 class="text-white text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6">
+                Commercialization Hub
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl font-medium max-w-3xl mx-auto leading-relaxed opacity-90">
+                Discover projects that are transitioning from academic research to real-world products.
+                These initiatives are verified for TRL 6+ and market potential.
+            </p>
+
+            <div class="mt-8 flex justify-center gap-4">
+                <a href="commercialization.html"
+                    class="px-6 py-3 rounded-xl bg-white text-primary font-bold hover:bg-gray-100 transition-colors">
+                    View The Process
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIPELINE STAGES (Main Filters) -->
+    <div class="bg-white border-b border-black/5 sticky top-20 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-6 flex overflow-x-auto gap-8 justify-center min-w-max">
+            <button class="stage-btn flex items-center gap-3 opacity-50 hover:opacity-100 transition-all select-none"
+                data-stage="Idea">
+                <span
+                    class="size-8 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-500 ring-2 ring-transparent transition-all">1</span>
+                <span class="font-bold text-sm text-gray-500">Idea</span>
+            </button>
+
+            <div class="w-8 h-px bg-gray-200"></div>
+
+            <button class="stage-btn flex items-center gap-3 opacity-50 hover:opacity-100 transition-all select-none"
+                data-stage="Project">
+                <span
+                    class="size-8 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-500 ring-2 ring-transparent transition-all">2</span>
+                <span class="font-bold text-sm text-gray-500">Project</span>
+            </button>
+
+            <div class="w-8 h-px bg-gray-200"></div>
+
+            <button class="stage-btn flex items-center gap-3 opacity-50 hover:opacity-100 transition-all select-none"
+                data-stage="Validation">
+                <span
+                    class="size-8 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-500 ring-2 ring-transparent transition-all">3</span>
+                <span class="font-bold text-sm text-gray-500">Validation</span>
+            </button>
+
+            <div class="w-8 h-px bg-gray-200"></div>
+
+            <button class="stage-btn flex items-center gap-3 opacity-50 hover:opacity-100 transition-all select-none"
+                data-stage="Company">
+                <span
+                    class="size-8 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-500 ring-2 ring-transparent transition-all">4</span>
+                <span class="font-bold text-sm text-gray-500">Company</span>
+            </button>
+
+            <div class="w-px h-8 bg-gray-300 mx-4"></div>
+
+            <button
+                class="stage-btn flex items-center gap-3 font-bold text-primary hover:text-primary-light transition-all select-none active-stage"
+                data-stage="All">
+                <span class="material-symbols-outlined">grid_view</span>
+                <span>All Stages</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 w-full max-w-7xl mx-auto px-4 md:px-8 py-16">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="pipelineGrid">
+            <!-- JS Populated -->
+        </div>
+
+    </main>
+
+    <script src="js/footer-loader.js" defer></script>
+    <script src="js/all-projects.js"></script>
+
+    <script>
+        // Logic to render only "type: commercial" projects
+        const grid = document.getElementById('pipelineGrid');
+        let currentStage = 'All';
+        const stageButtons = document.querySelectorAll('.stage-btn');
+
+        function render() {
+            // Filter: Type=Commercial AND Stage
+            const items = allProjectsData.filter(p => {
+                return p.type === 'commercial' && (currentStage === 'All' || p.stage === currentStage);
+            });
+
+            if (items.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-20">\
+                <div class="size-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4 text-gray-400">\
+                    <span class="material-symbols-outlined text-3xl">folder_off</span>\
+                </div>\
+                <h3 class="text-xl font-bold text-gray-800">No projects found in this stage</h3>\
+                <p class="text-gray-500 mt-2">Try selecting a different pipeline stage.</p>\
+            </div>`;
+                return;
+            }
+
+            grid.innerHTML = items.map(p => `
+             <article class="bg-white rounded-2xl overflow-hidden border border-black/5 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group relative" onclick="location.href='${p.url}'">
+                
+                <div class="absolute top-4 right-4 z-10 px-3 py-1.5 bg-white/95 backdrop-blur rounded-lg text-xs font-bold text-primary shadow-sm border border-black/5 flex items-center gap-1.5">
+                    <span class="size-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="uppercase tracking-wider text-[10px]">${p.stage || 'Project'}</span>
+                </div>
+
+                <div class="h-56 overflow-hidden relative">
+                    <img src="${p.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="${p.title}">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <div class="text-[10px] font-bold uppercase tracking-wider opacity-80 mb-1">${p.category}</div>
+                        <h3 class="text-2xl font-black leading-tight">${p.title}</h3>
+                    </div>
+                </div>
+                
+                <div class="p-6 flex flex-col flex-1 bg-white">
+                    <p class="text-sm text-gray-600 line-clamp-3 mb-6 flex-1">${p.desc}</p>
+                    
+                    <button class="w-full py-3 rounded-xl bg-gray-50 border border-black/5 text-primary font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group-hover:shadow-md">
+                        Review Proposal
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+             </article>
+        `).join('');
+        }
+
+        // Stage Filter Logic
+        stageButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Reset Styles
+                stageButtons.forEach(b => {
+                    b.classList.remove('active-stage', 'text-primary', 'opacity-100');
+                    b.classList.add('opacity-50', 'text-gray-500');
+
+                    // Reset circle
+                    const circle = b.querySelector('.rounded-full');
+                    if (circle) {
+                        circle.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/30');
+                        circle.classList.add('bg-gray-100', 'text-gray-500');
+                    }
+                });
+
+                // Set Active Style
+                btn.classList.add('active-stage', 'text-primary', 'opacity-100');
+                btn.classList.remove('opacity-50', 'text-gray-500');
+
+                // Highlight Circle
+                const circle = btn.querySelector('.rounded-full');
+                if (circle) {
+                    circle.classList.add('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/30');
+                    circle.classList.remove('bg-gray-100', 'text-gray-500');
+                }
+
+                currentStage = btn.dataset.stage;
+                render();
+            });
+        });
+
+        render();
+    </script>
+
+</body>
+
+</html>
+```

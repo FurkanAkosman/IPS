@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="light" lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Şirketleşme Süreci — IPS</title>
+    <meta name="description"
+        content="IPS projelerinin fikir aşamasından şirketleşmeye giden yolculuğu ve ticarileşme süreçleri." />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4d0011",
+                        "background-light": "#f8f8f3",
+                        "text-main": "#1D0C0F",
+                        "text-muted": "#6b4b53",
+                        surface: "#ffffff",
+                    },
+                    fontFamily: {
+                        display: ["Manrope", "sans-serif"],
+                        body: ["Manrope", "sans-serif"],
+                        serif: ["Noto Serif", "serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-background-light text-text-main antialiased min-h-screen flex flex-col font-display">
+
+    <!-- Header -->
+    <script src="js/header-loader.js" defer></script>
+
+    <main class="flex-grow pt-24 pb-20">
+
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 text-center">
+            <div
+                class="inline-flex items-center gap-2 rounded-full bg-primary/5 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary mb-6">
+                <span class="material-symbols-outlined text-sm">rocket_launch</span>
+                Pipeline Yaklaşımı
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-primary tracking-tight mb-6 leading-tight">
+                Projelerden Şirketleşmeye<br />Giden Süreç
+            </h1>
+            <p class="text-xl text-text-muted max-w-3xl mx-auto font-serif italic leading-relaxed">
+                Fikir → Proje → Doğrulama → Ürün → Şirket
+            </p>
+            <div class="mt-8 flex justify-center gap-4">
+                <a href="#pipeline"
+                    class="px-6 py-3 rounded-xl bg-primary text-white font-bold hover:bg-[#3a000d] transition-colors shadow-lg shadow-primary/20">
+                    Süreci Keşfet
+                </a>
+            </div>
+        </section>
+
+        <!-- 1. Amaç ve Kapsam -->
+        <section class="max-w-4xl mx-auto px-4 mb-24">
+            <div class="bg-white rounded-2xl p-8 md:p-12 border border-black/5 shadow-sm">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-primary">
+                    <span class="material-symbols-outlined">target</span>
+                    Amaç ve Kapsam
+                </h2>
+                <p class="text-lg text-text-muted leading-relaxed mb-6">
+                    Bu platform; bir proje ekosisteminde geliştirilen fikirlerin <strong>akademik/teknik
+                        projeden</strong>, <strong>ürünleşmeye</strong> ve nihayetinde <strong>şirketleşmeye</strong>
+                    giden yolculuğunun, analiz edilebilir, şeffaf ve değerlendirilebilir biçimde sunulmasını sağlar.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-background-light p-4 rounded-xl">
+                        <h3 class="font-bold text-sm uppercase tracking-wide mb-2 text-primary">Hedef Kitle</h3>
+                        <ul class="space-y-2 text-sm text-text-main">
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-base">check</span> Akademisyenler</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-base">check</span> Mentorlar</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-base">check</span> Yatırımcılar</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-base">check</span> Kuluçka Merkezleri</li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <p class="text-center italic text-text-muted">
+                            "Site tekil projelerin sergilendiği bir vitrin değil, sürekli proje üreten bir pipeline
+                            mantığını yansıtır."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Pipeline Görseli -->
+        <section id="pipeline" class="max-w-7xl mx-auto px-4 mb-24">
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                    <div class="w-full border-t-2 border-primary/10 border-dashed"></div>
+                </div>
+                <div class="relative flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4">
+
+                    <!-- Step 1 -->
+                    <div
+                        class="bg-white p-6 rounded-xl border border-primary/10 shadow-lg w-full md:w-64 text-center relative group hover:-translate-y-1 transition-transform duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4 text-2xl font-bold group-hover:bg-primary group-hover:text-white transition-colors">
+                            1</div>
+                        <h3 class="font-bold text-lg mb-2">Fikir</h3>
+                        <p class="text-xs text-text-muted">Problemin tanımlanması ve çözüm hipotezi.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div
+                        class="bg-white p-6 rounded-xl border border-primary/10 shadow-lg w-full md:w-64 text-center relative group hover:-translate-y-1 transition-transform duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4 text-2xl font-bold group-hover:bg-primary group-hover:text-white transition-colors">
+                            2</div>
+                        <h3 class="font-bold text-lg mb-2">Proje</h3>
+                        <p class="text-xs text-text-muted">Teknik altyapı ve prototipleme (TRL 1-4).</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div
+                        class="bg-white p-6 rounded-xl border border-primary/10 shadow-lg w-full md:w-64 text-center relative group hover:-translate-y-1 transition-transform duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4 text-2xl font-bold group-hover:bg-primary group-hover:text-white transition-colors">
+                            3</div>
+                        <h3 class="font-bold text-lg mb-2">Doğrulama</h3>
+                        <p class="text-xs text-text-muted">Pilot çalışmalar ve kanıt toplama (TRL 5-7).</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div
+                        class="bg-white p-6 rounded-xl border border-primary/10 shadow-lg w-full md:w-64 text-center relative group hover:-translate-y-1 transition-transform duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-primary flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white shadow-lg shadow-primary/30">
+                            4</div>
+                        <h3 class="font-bold text-lg mb-2 text-primary">Şirket</h3>
+                        <p class="text-xs text-text-muted">Ürünleşme ve ticari operasyon (TRL 8-9).</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Şirketleşme Kriterleri & Modelleri -->
+        <section class="max-w-7xl mx-auto px-4 mb-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <!-- Kriterler -->
+                <div>
+                    <h2 class="text-3xl font-black mb-8 text-primary">Şirketleşme Kriterleri</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-black/5">
+                            <span class="material-symbols-outlined text-primary text-3xl">science</span>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">TRL ≥ 6</h4>
+                                <p class="text-text-muted text-sm">Teknoloji Hazırlık Seviyesi'nin en az 6 (Prototip
+                                    demosu) olması.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-black/5">
+                            <span class="material-symbols-outlined text-primary text-3xl">repeat</span>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Tekrarlanabilirlik</h4>
+                                <p class="text-text-muted text-sm">Tutarlı ve bilimsel olarak doğrulanmış sonuçlar.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-black/5">
+                            <span class="material-symbols-outlined text-primary text-3xl">scale</span>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Ölçeklenebilirlik</h4>
+                                <p class="text-text-muted text-sm">Teknik yapının büyümeye uygun olması.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-black/5">
+                            <span class="material-symbols-outlined text-primary text-3xl">group</span>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Tanımlı Müşteri</h4>
+                                <p class="text-text-muted text-sm">Ürünün kime satılacağının netleşmiş olması.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modeller -->
+                <div>
+                    <h2 class="text-3xl font-black mb-8 text-primary">İş Modelleri</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div
+                            class="bg-primary text-white p-6 rounded-2xl shadow-lg hover:scale-[1.02] transition-transform">
+                            <h3 class="font-bold text-xl mb-2">Spin-off</h3>
+                            <p class="text-white/80 text-sm">Üniversite bünyesinden ayrılan teknoloji odaklı şirket
+                                yapısı.</p>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl border border-black/5 hover:border-primary/30 transition-colors shadow-sm">
+                            <h3 class="font-bold text-xl mb-2 text-primary">Startup</h3>
+                            <p class="text-text-muted text-sm">Tam bağımsız, hızlı büyüme odaklı girişim.</p>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl border border-black/5 hover:border-primary/30 transition-colors shadow-sm">
+                            <h3 class="font-bold text-xl mb-2 text-primary">Lisanslama</h3>
+                            <p class="text-text-muted text-sm">Teknolojinin kullanım hakkının başka bir firmaya
+                                devredilmesi.</p>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl border border-black/5 hover:border-primary/30 transition-colors shadow-sm">
+                            <h3 class="font-bold text-xl mb-2 text-primary">Ortak Girişim</h3>
+                            <p class="text-text-muted text-sm">Joint Venture ile kurumsal partnerlik.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Yol Haritası (Roadmap) -->
+        <section class="max-w-5xl mx-auto px-4 mb-24">
+            <h2 class="text-3xl font-black mb-12 text-center text-primary">Yol Haritası (Roadmap)</h2>
+            <div
+                class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/20 before:to-transparent">
+
+                <!-- Phase 1 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-primary text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <span class="material-symbols-outlined text-sm">science</span>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl border border-black/5 shadow-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-bold text-lg text-primary">0–6 Ay: Doğrulama</h3>
+                            <span class="text-xs font-bold uppercase tracking-wider text-text-muted">Phase I</span>
+                        </div>
+                        <p class="text-text-muted text-sm">Hipotez doğrulaması, laboratuvar testleri ve kavram kanıtlama
+                            (PoC) çalışmaları.</p>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-white text-primary border-primary/20 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <span class="material-symbols-outlined text-sm">flight_takeoff</span>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl border border-black/5 shadow-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-bold text-lg text-primary">6–12 Ay: Pilot</h3>
+                            <span class="text-xs font-bold uppercase tracking-wider text-text-muted">Phase II</span>
+                        </div>
+                        <p class="text-text-muted text-sm">Saha testleri, pilot müşteri denemeleri ve prototip
+                            iterasyonları.</p>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-white text-primary border-primary/20 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <span class="material-symbols-outlined text-sm">business_center</span>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl border border-black/5 shadow-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-bold text-lg text-primary">12–24 Ay: Şirketleşme</h3>
+                            <span class="text-xs font-bold uppercase tracking-wider text-text-muted">Phase III</span>
+                        </div>
+                        <p class="text-text-muted text-sm">Resmi kuruluş, ilk satış, yatırım turu ve büyüme
+                            operasyonları.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="max-w-4xl mx-auto px-4 text-center">
+            <div class="bg-primary text-white p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-black mb-4">Projeniz Bu Aşamada mı?</h2>
+                    <p class="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
+                        Projenizi IPS Pipeline sistemine dahil etmek ve şirketleşme desteği almak için hemen başvurun.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="submit-idea.html"
+                            class="px-8 py-3 bg-white text-primary font-bold rounded-xl hover:bg-gray-100 transition-colors">
+                            Projemi Kaydet
+                        </a>
+                        <a href="contact.html"
+                            class="px-8 py-3 border border-white/30 hover:bg-white/10 font-bold rounded-xl transition-colors">
+                            İletişime Geç
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <script src="js/footer-loader.js" defer></script>
+
+</body>
+
+</html>

@@ -45,7 +45,7 @@
 
     <main id="mainContent" class="flex-grow pt-24 pb-20 opacity-0 transition-opacity duration-500">
 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Back Link -->
             <a href="../projects-public.html"
@@ -54,77 +54,125 @@
                 Back to Project Hub
             </a>
 
-            <!-- Header -->
-            <div class="mb-10">
-                <div class="flex items-center gap-3 mb-4">
+            <!-- 4.1 Identity Header -->
+            <header class="mb-12 border-b border-black/10 pb-8">
+                <div class="flex flex-wrap items-center gap-3 mb-4">
                     <span id="projCategory"
                         class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-widest">
                         Category
                     </span>
-                    <span id="projDate" class="text-text-muted font-serif italic">Date</span>
+                    <span id="projPhase"
+                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase tracking-widest">
+                        Phase
+                    </span>
+                    <span id="projIdBadge"
+                        class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-mono text-xs font-bold border border-gray-200">
+                        ID
+                    </span>
                 </div>
-                <h1 id="projTitle" class="text-3xl md:text-5xl font-black leading-tight mb-6">
+
+                <h1 id="projTitle" class="text-4xl md:text-5xl font-black text-primary leading-tight mb-6">
                     Project Title Loading...
                 </h1>
 
-                <div class="flex items-center gap-4 border-y border-black/10 py-6">
-                    <div
-                        class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 text-gray-500 font-bold text-lg">
-                        IPS
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-sm font-bold text-gray-500">
+                            IPS
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-wider text-text-muted mb-0.5">Author / Team
+                            </p>
+                            <p id="projAuthor" class="font-bold text-sm">Team Name</p>
+                        </div>
                     </div>
+                    <div class="h-8 w-px bg-gray-300"></div>
                     <div>
-                        <p class="text-xs font-bold uppercase tracking-wider text-text-muted mb-0.5">Primary Research
-                            Team</p>
-                        <p id="projAuthor" class="font-bold text-lg">Team Name</p>
-                    </div>
-                    <div class="ml-auto">
-                        <p class="text-xs font-bold uppercase tracking-wider text-text-muted mb-0.5 text-right">Project
-                            ID</p>
-                        <p id="projId" class="font-mono text-sm text-right">ID-000</p>
+                        <p class="text-xs font-bold uppercase tracking-wider text-text-muted mb-0.5">Date</p>
+                        <p id="projDate" class="font-bold text-sm text-mono">Date</p>
                     </div>
                 </div>
-            </div>
+            </header>
 
-            <!-- Image -->
-            <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-xl mb-12 bg-gray-100 relative">
-                <img id="projImage" src="" alt="Project Visual" class="w-full h-full object-cover">
-            </div>
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 
-            <!-- Content -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <article
-                    class="lg:col-span-8 prose prose-lg prose-headings:font-display prose-headings:font-bold prose-p:font-body prose-p:text-text-muted"
-                    id="projContent">
-                    <!-- Injected formatted HTML content -->
+                <!-- Left Content -->
+                <article class="lg:col-span-8 space-y-16">
+
+                    <!-- Image -->
+                    <div class="rounded-2xl overflow-hidden shadow-xl aspect-video relative bg-gray-100">
+                        <img id="projImage" src="" alt="Project Visual" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Dynamic Content Sections -->
+                    <div id="projContent">
+                        <!-- Fallback content injected here -->
+                    </div>
+
                 </article>
 
+                <!-- Right Sidebar -->
                 <aside class="lg:col-span-4 space-y-8">
-                    <div class="bg-white p-6 rounded-xl border border-black/5 shadow-sm">
-                        <h3 class="font-bold mb-4 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary">info</span>
-                            Status
-                        </h3>
-                        <div class="space-y-4">
-                            <div>
-                                <p class="text-xs uppercase font-bold text-text-muted">Current Phase</p>
-                                <p class="font-bold text-green-700">Active Research</p>
+
+                    <!-- Evaluation Summary -->
+                    <div class="bg-primary text-white p-6 rounded-xl shadow-lg">
+                        <h3 class="font-bold text-lg mb-4 border-b border-white/20 pb-2">Evaluation Summary</h3>
+                        <div class="space-y-4 text-sm">
+                            <div class="flex justify-between">
+                                <span class="opacity-80">TRL Level</span>
+                                <span class="font-bold text-lg" id="metaTRL">N/A</span>
                             </div>
-                            <div>
-                                <p class="text-xs uppercase font-bold text-text-muted">Institution</p>
-                                <p>Interdisciplinary Project Society</p>
+                            <div class="flex justify-between">
+                                <span class="opacity-80">Status</span>
+                                <span class="font-bold bg-white/20 px-2 rounded" id="metaStatus">Ongoing</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="opacity-80">Commercial Pot.</span>
+                                <span class="font-bold text-green-300" id="metaPot">Assessing</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-primary text-white p-6 rounded-xl shadow-lg">
-                        <h3 class="font-bold mb-2">Interested in this work?</h3>
-                        <p class="text-sm opacity-90 mb-4">Contact the research team or propose a collaboration.</p>
-                        <a href="../contact.html"
-                            class="inline-block w-full text-center bg-white text-primary font-bold py-2 rounded-lg hover:bg-gray-100 transition-colors">
-                            Contact Us
-                        </a>
+                    <!-- Risk Analysis (Dynamic or Placeholder) -->
+                    <div class="bg-white p-6 rounded-xl border border-red-100 shadow-sm">
+                        <h3 class="font-bold text-lg text-red-800 mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined">warning</span> Risk Analysis
+                        </h3>
+                        <ul class="space-y-3 text-sm text-text-muted" id="metaRisks">
+                            <li class="italic opacity-70">Risk analysis data not available for this project.</li>
+                        </ul>
                     </div>
+
+                    <!-- Next Step -->
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                        <h3 class="font-bold text-lg text-blue-900 mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined">next_plan</span> Next Steps
+                        </h3>
+                        <p class="text-sm text-blue-800 font-bold mb-2" id="metaNextTitle">Research Phase</p>
+                        <p class="text-xs text-blue-700 mb-4" id="metaNextDesc">Continuing data collection and analysis.
+                        </p>
+                        <div
+                            class="flex items-center gap-2 text-xs font-bold text-blue-900/60 uppercase tracking-widest">
+                            <span class="material-symbols-outlined text-sm">schedule</span>
+                            Estimate: TBD
+                        </div>
+                    </div>
+
+                    <!-- Pipeline Link -->
+                    <a href="../commercialization.html"
+                        class="block bg-gray-900 text-white p-6 rounded-xl hover:bg-black transition-colors group">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-bold">Process Pipeline</h3>
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </div>
+                        <p class="text-xs opacity-70">See the commercialization roadmap.</p>
+                    </a>
+
                 </aside>
+
             </div>
 
         </div>
@@ -137,44 +185,113 @@
     <!-- Data & Logic -->
     <script src="../js/all-projects.js"></script>
     <script>
-        // Parse Query Param
         const params = new URLSearchParams(window.location.search);
         const targetId = params.get("id");
-
-        // Find Project
         const project = allProjectsData.find(p => p.id === targetId);
-
         const main = document.getElementById("mainContent");
 
         if (project) {
-            document.title = \`IPS — \${project.title}\`;
-          
-          document.getElementById("projTitle").textContent = project.title;
-          document.getElementById("projCategory").textContent = project.category;
-          document.getElementById("projDate").textContent = new Date(project.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-          document.getElementById("projAuthor").textContent = project.author;
-          document.getElementById("projId").textContent = project.id;
-          document.getElementById("projImage").src = project.image;
-          
-          // Fallback content if fullContent isn't defined for all mock items yet
-          document.getElementById("projContent").innerHTML = project.fullContent || \`
-            <h3 class="text-xl font-bold mb-4">Project Overview</h3>
-            <p class="text-lg leading-relaxed mb-6">\${project.desc}</p>
-            <p class="italic text-gray-500">Full detailed documentation for this project is currently being digitized.</p>
-          \`;
+            document.title = `IPS — ${project.title}`;
 
-          main.classList.remove("opacity-0");
-      } else {
-          main.innerHTML = \`
-            <div class="min-h-[50vh] flex flex-col items-center justify-center text-center px-4">
-                <span class="material-symbols-outlined text-6xl text-gray-300 mb-4">running_with_errors</span>
-                <h1 class="text-3xl font-bold mb-2">Project Not Found</h1>
-                <p class="text-text-muted mb-6">The project ID "\${targetId}" does not exist in our public archive.</p>
-                <a href="../projects-public.html" class="px-6 py-3 bg-primary text-white rounded-xl font-bold">Return to Hub</a>
-            </div>
-          \`;
-          main.classList.remove("opacity-0");
-      }
+            // Header Data
+            document.getElementById("projTitle").textContent = project.title;
+            document.getElementById("projCategory").textContent = project.category;
+            document.getElementById("projPhase").textContent = project.status === "Completed" ? "Phase 4: Product" : "Phase 2: Project";
+            document.getElementById("projIdBadge").textContent = project.id;
+            document.getElementById("projAuthor").textContent = project.author;
+            document.getElementById("projDate").textContent = project.date;
+            document.getElementById("projImage").src = project.image;
+
+            // Sidebar Data (Mock if missing)
+            document.getElementById("metaStatus").textContent = project.status;
+            document.getElementById("metaTRL").textContent = project.trl || (project.status === "Completed" ? "6-7" : "3-4");
+
+            // Risks
+            if (project.risks && project.risks.length > 0) {
+                const riskHtml = project.risks.map(r => `
+                    <li class="flex gap-2">
+                        <span class="font-bold text-text-main shrink-0">${r.type}:</span>
+                        <span>${r.desc}</span>
+                    </li>
+                `).join("");
+                document.getElementById("metaRisks").innerHTML = riskHtml;
+            }
+
+            // Main Content Injection using Standard Structure
+            // If the project object has specific fields, use them. Else fallback to 'desc'.
+
+            let contentHtml = "";
+
+            // 1. Problem
+            contentHtml += `
+                <section>
+                    <h2 class="text-2xl font-bold text-primary mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined">report_problem</span>
+                        Problem Definition
+                    </h2>
+                    <div class="prose prose-lg text-text-muted font-body leading-relaxed">
+                        <p>${project.problem || project.desc || "Problem definition pending."}</p>
+                    </div>
+                </section>
+            `;
+
+            // 2. Solution
+            if (project.solution) {
+                contentHtml += `
+                <section>
+                    <h2 class="text-2xl font-bold text-primary mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined">lightbulb</span>
+                        Solution Approach
+                    </h2>
+                    <div class="bg-primary/5 p-6 rounded-2xl border border-primary/10">
+                        <p class="text-text-main">${project.solution}</p>
+                    </div>
+                </section>
+                `;
+            }
+
+            // 3. Validation
+            if (project.validation) {
+                contentHtml += `
+                <section>
+                    <h2 class="text-2xl font-bold text-primary mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined">verified</span>
+                        Validation & Metrics
+                    </h2>
+                    <div class="bg-white border border-green-200 p-6 rounded-2xl shadow-sm">
+                        <p class="text-text-muted">${project.validation}</p>
+                    </div>
+                </section>
+                `;
+            }
+
+            // Fallback for simple projects (Standard Description)
+            if (!project.problem && !project.solution) {
+                contentHtml = `
+                    <section>
+                        <h2 class="text-2xl font-bold text-primary mb-4">Project Overview</h2>
+                         <div class="prose prose-lg text-text-muted font-body leading-relaxed">
+                            <p class="text-lg leading-relaxed">${project.desc}</p>
+                            <p class="italic text-gray-400 mt-8">Note: Detailed commercialization data (Problem, Solution, Risks) is being digitized for this project.</p>
+                        </div>
+                    </section>
+                 `;
+            }
+
+            document.getElementById("projContent").innerHTML = contentHtml;
+            main.classList.remove("opacity-0");
+
+        } else {
+            main.innerHTML = `
+                <div class="min-h-[50vh] flex flex-col items-center justify-center text-center px-4">
+                    <span class="material-symbols-outlined text-6xl text-gray-300 mb-4">running_with_errors</span>
+                    <h1 class="text-3xl font-bold mb-2">Project Not Found</h1>
+                    <p class="text-text-muted mb-6">The project ID "${targetId}" does not exist.</p>
+                    <a href="../projects-public.html" class="px-6 py-3 bg-primary text-white rounded-xl font-bold">Return to Hub</a>
+                </div>
+              `;
+            main.classList.remove("opacity-0");
+        }
     </script>
 
 </body>

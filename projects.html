@@ -105,10 +105,10 @@
                 data-source="All">All Projects</button>
               <button
                 class="filter-btn px-4 py-1.5 rounded-md text-xs font-bold text-primary/60 hover:text-primary hover:bg-primary/5 transition-all"
-                data-source="Academic">Academic</button>
+                data-source="academic">Academic</button>
               <button
                 class="filter-btn px-4 py-1.5 rounded-md text-xs font-bold text-primary/60 hover:text-primary hover:bg-primary/5 transition-all"
-                data-source="Public">Public</button>
+                data-source="commercial">Commercial / Startup</button>
             </div>
 
             <!-- Category Filters (generated dynamically or static basics) -->
@@ -278,7 +278,9 @@
 
     function getFilteredProjects() {
       return allProjectsData.filter(p => {
-        const matchesSource = activeSource === 'All' || p.source === activeSource;
+        // activeSource is now matched against p.type (academic/commercial)
+        // We map button labels to data-source values in HTML below: "All", "academic", "commercial"
+        const matchesSource = activeSource === 'All' || p.type === activeSource;
         const matchesCat = activeCat === 'All' || p.category === activeCat;
         const matchesSearch = p.title.toLowerCase().includes(searchQuery) ||
           p.author.toLowerCase().includes(searchQuery) ||
@@ -310,10 +312,13 @@
 
       // Render Grid
       grid.innerHTML = itemsToShow.map(p => {
-        // Determine Badge Color based on source
-        const badgeClass = p.source === 'Academic'
+        // Determine Badge Color based on type
+        const isAcademic = p.type === 'academic';
+        const badgeClass = isAcademic
           ? 'bg-blue-50 text-blue-700 border-blue-100'
           : 'bg-green-50 text-green-700 border-green-100';
+
+        const badgeLabel = isAcademic ? 'Academic' : 'Commercial';
 
         return `
                 <article class="group bg-white rounded-2xl border border-primary/10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer" 
@@ -324,7 +329,7 @@
                         <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-3 right-3">
                             <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider rounded border ${badgeClass}">
-                                ${p.source}
+                                ${badgeLabel}
                             </span>
                         </div>
                         <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
